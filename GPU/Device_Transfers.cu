@@ -9,7 +9,8 @@
  
 __global__ void negate(int *d_a)
 {
- // CODE_1
+  int idx = threadIdx.x;
+  d_a[idx] = -1 * d_a[idx];
 }
  
 __global__ void negate_multiblock(int *d_a)
@@ -36,8 +37,8 @@ int main(int argc, char *argv[])
  
     cudaMemcpy(&d_a, &h_a, siz_b, cudaMemcpyHostToDevice);
  
-    //dim3 blocksPerGrid( ); 
-    //dim3 threadsPerBlock( );
+    dim3 blocksPerGrid(1); 
+    dim3 threadsPerBlock(ARRAY_SIZE);
     negate<<< , >>>( );
     //negate_multiblock<<<,>>>();
     cudaDeviceSynchronize();

@@ -36,10 +36,9 @@ int main(int argc, char *argv[])
     }   
  
     cudaMemcpy(&d_a, &h_a, siz_b, cudaMemcpyHostToDevice);
- d_a
     dim3 blocksPerGrid(1); 
     dim3 threadsPerBlock(ARRAY_SIZE);
-    negate<<< 1,1 >>>(&d_a);
+    negate<<<blocksPerGrid, threadsPerBlock>>>(d_a);
     //negate_multiblock<<<,>>>();
     cudaDeviceSynchronize();
  

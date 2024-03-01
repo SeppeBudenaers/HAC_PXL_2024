@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     h_a = (int *) malloc(siz_b);
     h_out = (int *) malloc(siz_b);
  
-    cudaMalloc((void**)&d_a,sizeof(siz_b));
+    cudaMalloc((void**)&,sizeof(siz_b));
  
     for (i = 0; i < ARRAY_SIZE; i++) {
         h_a[i] = i;
@@ -36,10 +36,10 @@ int main(int argc, char *argv[])
     }   
  
     cudaMemcpy(&d_a, &h_a, siz_b, cudaMemcpyHostToDevice);
- 
+ d_a
     dim3 blocksPerGrid(1); 
     dim3 threadsPerBlock(ARRAY_SIZE);
-    negate<<< , >>>( );
+    negate<<< 1,1 >>>(&d_a);
     //negate_multiblock<<<,>>>();
     cudaDeviceSynchronize();
  

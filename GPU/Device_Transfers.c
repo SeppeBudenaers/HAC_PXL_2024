@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "cuda.h"
 #include "cuda_runtime.h" 
-﻿
+
 #define ARRAY_SIZE 256
 #define NUM_BLOCKS  1
 #define THREADS_PER_BLOCK 256
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     h_a = (int *) malloc(siz_b);
     h_out = (int *) malloc(siz_b);
  
-    cudaMalloc(d_a,sizeof(size_b));
+    cudaMalloc(d_a,sizeof(siz_b));
  
     for (i = 0; i < ARRAY_SIZE; i++) {
         h_a[i] = i;

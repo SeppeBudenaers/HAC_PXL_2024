@@ -4,8 +4,8 @@
 #include "cuda_runtime.h" 
 
 #define ARRAY_SIZE 256
-#define NUM_BLOCKS  1
-#define THREADS_PER_BLOCK 256
+#define NUM_BLOCKS  4
+#define THREADS_PER_BLOCK 64
  
 __global__ void negate(int *d_a)
 {
@@ -15,7 +15,8 @@ __global__ void negate(int *d_a)
  
 __global__ void negate_multiblock(int *d_a)
 {
- // CODE_2
+  int idx = threadIdx.x + (blockIdx.x * blockDim.x);
+  d_a[idx] = -1 * d_a[idx];
 }
  
 int main(int argc, char *argv[])
@@ -36,10 +37,10 @@ int main(int argc, char *argv[])
     }   
  
     cudaMemcpy(&d_a, &h_a, siz_b, cudaMemcpyHostToDevice);
-    dim3 blocksPerGrid(1); 
-    dim3 threadsPerBlock(ARRAY_SIZE);
-    negate<<<blocksPerGrid, threadsPerBlock>>>(d_a);
-    //negate_multiblock<<<,>>>();
+    dim3 blocksPerGrid(NUM_BLOCKS); 
+    dim3 threadsPerBlock(THREADS_PER_BLOCK);
+    negate<<<1,256>>>(d_a);
+    negate_multiblock<<<blocksPerGrid,threadsPerBlock>>>();
     cudaDeviceSynchronize();
  
     cudaMemcpy(&h_out, &d_a, siz_b, cudaMemcpyDeviceToHost);

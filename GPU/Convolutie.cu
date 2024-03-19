@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include "cuda.h"
 #include "cuda_runtime.h" 
-#include "../Include/stb_image.h"
+#define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "../Include/stb_image_write.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "../Include/stb_image.h"
 
 #define BLOCK_SIZE 16
 
@@ -82,7 +84,7 @@ int main(int argc, char* argv[]) {
     cudaMemcpy(outputImg, d_outputImg, width * height * channels, cudaMemcpyDeviceToHost);
 
     char OutputPath[100];
-    snprintf(OutputPath, sizeof(OutputPath), "../Images/%s-output.png", argv[1]);
+    snprintf(OutputPath, sizeof(OutputPath), "%s-output.png", argv[1]);
     stbi_write_png(OutputPath, width, height, channels, outputImg, width * channels);
 
     stbi_image_free(img);

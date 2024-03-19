@@ -11,7 +11,7 @@
 clock_t start, stop;
 double cpu_time;
 
-#define BLOCK_SIZE 16
+#define BLOCK_SIZE 128
 
 __global__ void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels, float* kernel) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;

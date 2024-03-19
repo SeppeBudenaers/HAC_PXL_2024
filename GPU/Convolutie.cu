@@ -86,7 +86,7 @@ int main(int argc, char* argv[]) {
         dim3 gridSize((width + BLOCK_SIZE - 1) / BLOCK_SIZE, (height + BLOCK_SIZE - 1) / BLOCK_SIZE);
     
         applyConvolution<<<gridSize, blockSize>>>(d_img, d_outputImg, width, height, channels, d_kernel);
-        cudasyncronize();
+        cudaDeviceSynchronize();
         cudaMemcpy(outputImg, d_outputImg, width * height * channels, cudaMemcpyDeviceToHost);
     
     stop =clock();

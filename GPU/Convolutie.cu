@@ -6,6 +6,10 @@
 #include "../Include/stb_image_write.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "../Include/stb_image.h"
+#include <time.h>
+
+clock_t start, stop;
+double cpu_time;
 
 #define BLOCK_SIZE 16
 
@@ -65,23 +69,28 @@ int main(int argc, char* argv[]) {
 
     unsigned char* outputImg = (unsigned char*)malloc(width * height * channels);
 
-    unsigned char* d_img;
-    cudaMalloc(&d_img, width * height * channels);
-    cudaMemcpy(d_img, img, width * height * channels, cudaMemcpyHostToDevice);
+    start =clock();
 
-    unsigned char* d_outputImg;
-    cudaMalloc(&d_outputImg, width * height * channels);
+        unsigned char* d_img;
+        cudaMalloc(&d_img, width * height * channels);
+        cudaMemcpy(d_img, img, width * height * channels, cudaMemcpyHostToDevice);
 
-    float* d_kernel;
-    cudaMalloc(&d_kernel, 3 * 3 * sizeof(float));
-    cudaMemcpy(d_kernel, kernel, 3 * 3 * sizeof(float), cudaMemcpyHostToDevice);
+        unsigned char* d_outputImg;
+        cudaMalloc(&d_outputImg, width * height * channels);
 
-    dim3 blockSize(BLOCK_SIZE, BLOCK_SIZE);
-    dim3 gridSize((width + BLOCK_SIZE - 1) / BLOCK_SIZE, (height + BLOCK_SIZE - 1) / BLOCK_SIZE);
+        float* d_kernel;
+        cudaMalloc(&d_kernel, 3 * 3 * sizeof(float));
+        cudaMemcpy(d_kernel, kernel, 3 * 3 * sizeof(float), cudaMemcpyHostToDevice);
 
-    applyConvolution<<<gridSize, blockSize>>>(d_img, d_outputImg, width, height, channels, d_kernel);
-
-    cudaMemcpy(outputImg, d_outputImg, width * height * channels, cudaMemcpyDeviceToHost);
+        dim3 blockSize(BLOCK_SIZE, BLOCK_SIZE);
+        dim3 gridSize((width + BLOCK_SIZE - 1) / BLOCK_SIZE, (height + BLOCK_SIZE - 1) / BLOCK_SIZE);
+    
+        applyConvolution<<<gridSize, blockSize>>>(d_img, d_outputImg, width, height, channels, d_kernel);
+        cudaMemcpy(outputImg, d_outputImg, width * height * channels, cudaMemcpyDeviceToHost);
+    
+    stop =clock();
+    cpu_time = ((double)(stop - start)) / CLOCKS_PER_SEC;
+    printf("Time taken: %f\n", cpu_time);
 
     char OutputPath[100];
     snprintf(OutputPath, sizeof(OutputPath), "%s-output.png", argv[1]);

@@ -5,6 +5,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
+clock_t start, stop;
+double cpu_time;
 
 void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels, float kernel[3][3]) {
     int edge = 1; // Since kernel size is 3x3
@@ -60,7 +64,14 @@ int main(int argc, char* argv[]) {
     };
 
     unsigned char* outputImg = (unsigned char*)malloc(width * height * channels);
-    applyConvolution(img, outputImg, width, height, channels, kernel);
+
+    start =clock();
+
+        applyConvolution(img, outputImg, width, height, channels, kernel);
+        
+    stop =clock();
+    cpu_time = ((double)(stop - start)) / CLOCKS_PER_SEC;
+    printf("Time taken: %f\n", cpu_time);
 
     char OutputPath[100];
     snprintf(OutputPath, sizeof(OutputPath), "../Images/%s-output.png", argv[1]);

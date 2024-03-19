@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "convolutie": "c"
+        "convolutie": "c",
+        "stb_image.h": "c",
+        "stb_image_write.h": "c"
     }
 }

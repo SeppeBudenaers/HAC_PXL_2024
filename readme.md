@@ -1,0 +1,5 @@
+## Convolution 
+Tested Image `DSCF1413.JPG`
+- CPU `2.532000`
+- GOOGLE COLAB `0.253050`
+- JETSON NANO `NOT TESTED YET`

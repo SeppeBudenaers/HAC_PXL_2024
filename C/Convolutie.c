@@ -1,51 +1,73 @@
+#define STB_IMAGE_IMPLEMENTATION
+#include "../Include/stb_image.h"
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "../Include/stb_image_write.h"
+
 #include <stdio.h>
+#include <stdlib.h>
 
-#define IMAGE_WIDTH 6
-#define IMAGE_HEIGHT 6
+void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels, float kernel[3][3]) {
+    int edge = 1; // Since kernel size is 3x3
 
-void convolution(int image[IMAGE_HEIGHT][IMAGE_WIDTH], int kernel[3][3], int result[IMAGE_HEIGHT-2][IMAGE_WIDTH-2]) {
-    for (int i = 1; i < IMAGE_HEIGHT - 1; i++) {
-        for (int j = 1; j < IMAGE_WIDTH - 1; j++) {
-            printf("i: %d, j: %d\n", i, j);
-            int sum = 0;
-            for (int k = -1; k <= 1; k++) {
-                for (int l = -1; l <= 1; l++) {
-                    sum += image[i + k][j + l] * kernel[k + 1][l + 1];
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            float sum[3] = {0.0, 0.0, 0.0}; // Sum for each channel
+
+            for (int ky = -edge; ky <= edge; ky++) {
+                for (int kx = -edge; kx <= edge; kx++) {
+                    int ix = x + kx;
+                    int iy = y + ky;
+                    if (ix >= 0 && ix < width && iy >= 0 && iy < height) {
+                        for (int ch = 0; ch < channels; ch++) {
+                            if (ch < 3) { // Apply convolution only to RGB channels
+                                sum[ch] += kernel[ky + edge][kx + edge] * image[(iy * width + ix) * channels + ch];
+                            }
+                        }
+                    }
                 }
             }
-            result[i-1][j-1] = sum;
+            for (int ch = 0; ch < channels; ch++) {
+                if (ch < 3) {
+                    int val = (int)sum[ch];
+                    output[(y * width + x) * channels + ch] = (unsigned char)(val > 255 ? 255 : (val < 0 ? 0 : val));
+                } else {
+                    // Preserve the alpha channel if present
+                    output[(y * width + x) * channels + ch] = 255;
+                }
+            }
         }
     }
-    
 }
 
-int main() {
-    int image[IMAGE_HEIGHT][IMAGE_WIDTH] = {
-        {10,10,10,0,0,0},
-        {10,10,10,0,0,0},
-        {10,10,10,0,0,0},
-        {10,10,10,0,0,0},
-        {10,10,10,0,0,0},
-        {10,10,10,0,0,0}
-    };
-    
-    int kernel[3][3] = {
+int main(int argc, char* argv[]) {
+    if (argc < 2) {
+        printf("Usage: %s <image_path>\n", argv[0]);
+        return 1;
+    }
+
+    int width, height, channels;
+    unsigned char* img = stbi_load(argv[1], &width, &height, &channels, 0);
+    if (img == NULL) {
+        printf("Error in loading the image\n");
+        exit(1);
+    }
+
+    // Define your convolution kernel
+    float kernel[3][3] = {
         {1, 0, -1},
         {1, 0, -1},
         {1, 0, -1}
     };
-    
-    int result[IMAGE_HEIGHT-2][IMAGE_WIDTH-2];
-    
-    convolution(image, kernel, result);
-    
-    printf("Convolution result:\n");
-    for (int i = 0; i < IMAGE_HEIGHT-2; i++) {
-        for (int j = 0; j < IMAGE_WIDTH-2; j++) {
-            printf("%d ", result[i][j]);
-        }
-        printf("\n");
-    }
-    
+
+    unsigned char* outputImg = (unsigned char*)malloc(width * height * channels);
+    applyConvolution(img, outputImg, width, height, channels, kernel);
+
+    char OutputPath[100];
+    snprintf(OutputPath, sizeof(OutputPath), "../Images/%s-output.png", argv[1]);
+    stbi_write_png(OutputPath, width, height, channels, outputImg, width * channels);
+
+    stbi_image_free(img);
+    free(outputImg);
+
     return 0;
 }

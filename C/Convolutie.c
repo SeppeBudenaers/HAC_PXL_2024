@@ -68,13 +68,13 @@ int main(int argc, char* argv[]) {
     start =clock();
 
         applyConvolution(img, outputImg, width, height, channels, kernel);
-        
+
     stop =clock();
     cpu_time = ((double)(stop - start)) / CLOCKS_PER_SEC;
     printf("Time taken: %f\n", cpu_time);
 
     char OutputPath[100];
-    snprintf(OutputPath, sizeof(OutputPath), "../Images/%s-output.png", argv[1]);
+    snprintf(OutputPath, sizeof(OutputPath), "%s-output.png", argv[1]);
     stbi_write_png(OutputPath, width, height, channels, outputImg, width * channels);
 
     stbi_image_free(img);

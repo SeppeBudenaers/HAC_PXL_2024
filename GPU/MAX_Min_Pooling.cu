@@ -7,27 +7,26 @@
 #include <stdlib.h>
 #include <time.h>
 
-// CUDA kernel for max pooling
 __global__ void Max_Pooling_CUDA(unsigned char* image, unsigned char* output, int width, int height, int channels) {
     int i = blockIdx.y * blockDim.y + threadIdx.y;
     int j = blockIdx.x * blockDim.x + threadIdx.x;
     
-    if (i < height && j < width) {
+    if (i < height/2 && j < width/2) {
         for (int c = 0; c < channels; c++) {
             unsigned char max_val = 0;
-            max_val = image[(i-1) * width * channels + (j-1) * channels + c];
+            max_val = image[(2*i) * width * channels + (2*j) * channels + c];
 
-            if (image[(i-1) * width * channels + j * channels + c] > max_val) {
-                max_val = image[(i-1) * width * channels + j * channels + c];
+            if (image[(2*i) * width * channels + (2*j+1) * channels + c] > max_val) {
+                max_val = image[(2*i) * width * channels + (2*j+1) * channels + c];
             }
-            if (image[i * width * channels + (j-1) * channels + c] > max_val) {
-                max_val = image[i * width * channels + (j-1) * channels + c];
+            if (image[(2*i+1) * width * channels + (2*j) * channels + c] > max_val) {
+                max_val = image[(2*i+1) * width * channels + (2*j) * channels + c];
             }
-            if (image[i * width * channels + j * channels + c] > max_val) {
-                max_val = image[i * width * channels + j * channels + c];
+            if (image[(2*i+1) * width * channels + (2*j+1) * channels + c] > max_val) {
+                max_val = image[(2*i+1) * width * channels + (2*j+1) * channels + c];
             }
 
-            output[(i/2) * (width/2) * channels + (j/2) * channels + c] = max_val;
+            output[i * (width/2) * channels + j * channels + c] = max_val;
         }
     }
 }
@@ -105,7 +104,7 @@ int main(int argc, char* argv[]) {
     double cpu_time;
 
     start = clock();
-    Min_Pooling_CUDA<<<numBlocks, threadsPerBlock>>>(d_img, d_outputImg, width, height, channels);
+    Max_Pooling_CUDA<<<numBlocks, threadsPerBlock>>>(d_img, d_outputImg, width, height, channels);
     cudaDeviceSynchronize();
     stop = clock();
 

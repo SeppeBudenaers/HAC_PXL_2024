@@ -1,51 +1,81 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "cuda.h"
-#include "cuda_runtime.h" 
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "../Include/stb_image_write.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "../Include/stb_image.h"
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "../Include/stb_image_write.h"
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
-clock_t start, stop;
-double cpu_time;
+// CUDA kernel for max pooling
+__global__ void Max_Pooling_CUDA(unsigned char* image, unsigned char* output, int width, int height, int channels) {
+    int i = blockIdx.y * blockDim.y + threadIdx.y;
+    int j = blockIdx.x * blockDim.x + threadIdx.x;
+    
+    if (i < height && j < width) {
+        for (int c = 0; c < channels; c++) {
+            unsigned char max_val = 0;
+            max_val = image[(i-1) * width * channels + (j-1) * channels + c];
 
-#define BLOCK_SIZE 128
+            if (image[(i-1) * width * channels + j * channels + c] > max_val) {
+                max_val = image[(i-1) * width * channels + j * channels + c];
+            }
+            if (image[i * width * channels + (j-1) * channels + c] > max_val) {
+                max_val = image[i * width * channels + (j-1) * channels + c];
+            }
+            if (image[i * width * channels + j * channels + c] > max_val) {
+                max_val = image[i * width * channels + j * channels + c];
+            }
 
-// __global__ void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels, float* kernel) {
-//     int x = blockIdx.x * blockDim.x + threadIdx.x;
-//     int y = blockIdx.y * blockDim.y + threadIdx.y;
+            output[(i/2) * (width/2) * channels + (j/2) * channels + c] = max_val;
+        }
+    }
+}
 
-//     if (x < width && y < height) {
-//         int edge = 1; // Since kernel size is 3x3
-//         float sum[3] = {0.0, 0.0, 0.0}; // Sum for each channel
+// CUDA kernel for min pooling
+__global__ void Min_Pooling_CUDA(unsigned char* image, unsigned char* output, int width, int height, int channels) {
+    int i = blockIdx.y * blockDim.y + threadIdx.y;
+    int j = blockIdx.x * blockDim.x + threadIdx.x;
+    
+    if (i < height && j < width) {
+        for (int c = 0; c < channels; c++) {
+            unsigned char min_val = 255; // Initialize with maximum possible value
+            min_val = image[(i-1) * width * channels + (j-1) * channels + c];
 
-//         for (int ky = -edge; ky <= edge; ky++) {
-//             for (int kx = -edge; kx <= edge; kx++) {
-//                 int ix = x + kx;
-//                 int iy = y + ky;
-//                 if (ix >= 0 && ix < width && iy >= 0 && iy < height) {
-//                     for (int ch = 0; ch < channels; ch++) {
-//                         if (ch < 3) { // Apply convolution only to RGB channels
-//                             sum[ch] += kernel[(ky + edge) * 3 + (kx + edge)] * image[(iy * width + ix) * channels + ch];
-//                         }
-//                     }
-//                 }
-//             }
-//         }
+            if (image[(i-1) * width * channels + j * channels + c] < min_val) {
+                min_val = image[(i-1) * width * channels + j * channels + c];
+            }
+            if (image[i * width * channels + (j-1) * channels + c] < min_val) {
+                min_val = image[i * width * channels + (j-1) * channels + c];
+            }
+            if (image[i * width * channels + j * channels + c] < min_val) {
+                min_val = image[i * width * channels + j * channels + c];
+            }
 
-//         for (int ch = 0; ch < channels; ch++) {
-//             if (ch < 3) {
-//                 int val = (int)sum[ch];
-//                 output[(y * width + x) * channels + ch] = (unsigned char)(val > 255 ? 255 : (val < 0 ? 0 : val));
-//             } else {
-//                 // Preserve the alpha channel if present
-//                 output[(y * width + x) * channels + ch] = 255;
-//             }
-//         }
-//     }
-// }
+            output[(i/2) * (width/2) * channels + (j/2) * channels + c] = min_val;
+        }
+    }
+}
+
+// CUDA kernel for average pooling
+__global__ void Average_Pooling_CUDA(unsigned char* image, unsigned char* output, int width, int height, int channels) {
+    int i = blockIdx.y * blockDim.y + threadIdx.y;
+    int j = blockIdx.x * blockDim.x + threadIdx.x;
+    
+    if (i < height && j < width) {
+        for (int c = 0; c < channels; c++) {
+            unsigned int sum = 0;
+            sum += image[(i-1) * width * channels + (j-1) * channels + c];
+            sum += image[(i-1) * width * channels + j * channels + c];
+            sum += image[i * width * channels + (j-1) * channels + c];
+            sum += image[i * width * channels + j * channels + c];
+
+            unsigned char average_val = sum / 4;
+
+            output[(i/2) * (width/2) * channels + (j/2) * channels + c] = average_val;
+        }
+    }
+}
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
@@ -60,49 +90,38 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
 
-    // Define your convolution kernel
-    float kernel[9] = {
-        1, 0, -1,
-        1, 0, -1,
-        1, 0, -1
-    };
+    unsigned char* outputImg = (unsigned char*)malloc((width/2) * (height/2) * channels);
 
-    unsigned char* outputImg = (unsigned char*)malloc(width * height * channels);
+    unsigned char *d_img, *d_outputImg;
+    cudaMalloc((void**)&d_img, width * height * channels * sizeof(unsigned char));
+    cudaMalloc((void**)&d_outputImg, (width/2) * (height/2) * channels * sizeof(unsigned char));
 
-    start =clock();
+    cudaMemcpy(d_img, img, width * height * channels * sizeof(unsigned char), cudaMemcpyHostToDevice);
 
-        unsigned char* d_img;
-        cudaMalloc(&d_img, width * height * channels);
-        cudaMemcpy(d_img, img, width * height * channels, cudaMemcpyHostToDevice);
+    dim3 threadsPerBlock(16, 16);
+    dim3 numBlocks((width + threadsPerBlock.x - 1) / threadsPerBlock.x, (height + threadsPerBlock.y - 1) / threadsPerBlock.y);
 
-        unsigned char* d_outputImg;
-        cudaMalloc(&d_outputImg, width * height * channels);
+    clock_t start, stop;
+    double cpu_time;
 
-        float* d_kernel;
-        cudaMalloc(&d_kernel, 3 * 3 * sizeof(float));
-        cudaMemcpy(d_kernel, kernel, 3 * 3 * sizeof(float), cudaMemcpyHostToDevice);
+    start = clock();
+    Min_Pooling_CUDA<<<numBlocks, threadsPerBlock>>>(d_img, d_outputImg, width, height, channels);
+    cudaDeviceSynchronize();
+    stop = clock();
 
-        dim3 blockSize(BLOCK_SIZE, BLOCK_SIZE);
-        dim3 gridSize((width + BLOCK_SIZE - 1) / BLOCK_SIZE, (height + BLOCK_SIZE - 1) / BLOCK_SIZE);
-    
-        //applyConvolution<<<gridSize, blockSize>>>(d_img, d_outputImg, width, height, channels, d_kernel);
-        cudaDeviceSynchronize();
-        cudaMemcpy(outputImg, d_outputImg, width * height * channels, cudaMemcpyDeviceToHost);
-    
-    stop =clock();
     cpu_time = ((double)(stop - start)) / CLOCKS_PER_SEC;
     printf("Time taken: %f\n", cpu_time);
 
+    cudaMemcpy(outputImg, d_outputImg, (width/2) * (height/2) * channels * sizeof(unsigned char), cudaMemcpyDeviceToHost);
+
     char OutputPath[100];
     snprintf(OutputPath, sizeof(OutputPath), "%s-output.png", argv[1]);
-    stbi_write_png(OutputPath, width, height, channels, outputImg, width * channels);
+    stbi_write_png(OutputPath, (width/2), (height/2), channels, outputImg, (width/2) * channels);
 
     stbi_image_free(img);
     free(outputImg);
-
     cudaFree(d_img);
     cudaFree(d_outputImg);
-    cudaFree(d_kernel);
 
     return 0;
 }

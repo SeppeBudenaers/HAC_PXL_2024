@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+// CUDA kernel for max pooling
 __global__ void Max_Pooling_CUDA(unsigned char* image, unsigned char* output, int width, int height, int channels) {
     int i = blockIdx.y * blockDim.y + threadIdx.y;
     int j = blockIdx.x * blockDim.x + threadIdx.x;
@@ -36,22 +37,18 @@ __global__ void Min_Pooling_CUDA(unsigned char* image, unsigned char* output, in
     int i = blockIdx.y * blockDim.y + threadIdx.y;
     int j = blockIdx.x * blockDim.x + threadIdx.x;
     
-    if (i < height && j < width) {
+    if (i < height/2 && j < width/2) {
         for (int c = 0; c < channels; c++) {
             unsigned char min_val = 255; // Initialize with maximum possible value
-            min_val = image[(i-1) * width * channels + (j-1) * channels + c];
+            
+            unsigned char val_00 = image[2*i * width * channels + 2*j * channels + c];
+            unsigned char val_01 = image[2*i * width * channels + (2*j+1) * channels + c];
+            unsigned char val_10 = image[(2*i+1) * width * channels + 2*j * channels + c];
+            unsigned char val_11 = image[(2*i+1) * width * channels + (2*j+1) * channels + c];
+            
+            min_val = min(min(val_00, val_01), min(val_10, val_11));
 
-            if (image[(i-1) * width * channels + j * channels + c] < min_val) {
-                min_val = image[(i-1) * width * channels + j * channels + c];
-            }
-            if (image[i * width * channels + (j-1) * channels + c] < min_val) {
-                min_val = image[i * width * channels + (j-1) * channels + c];
-            }
-            if (image[i * width * channels + j * channels + c] < min_val) {
-                min_val = image[i * width * channels + j * channels + c];
-            }
-
-            output[(i/2) * (width/2) * channels + (j/2) * channels + c] = min_val;
+            output[i * (width/2) * channels + j * channels + c] = min_val;
         }
     }
 }
@@ -61,17 +58,17 @@ __global__ void Average_Pooling_CUDA(unsigned char* image, unsigned char* output
     int i = blockIdx.y * blockDim.y + threadIdx.y;
     int j = blockIdx.x * blockDim.x + threadIdx.x;
     
-    if (i < height && j < width) {
+    if (i < height/2 && j < width/2) {
         for (int c = 0; c < channels; c++) {
             unsigned int sum = 0;
-            sum += image[(i-1) * width * channels + (j-1) * channels + c];
-            sum += image[(i-1) * width * channels + j * channels + c];
-            sum += image[i * width * channels + (j-1) * channels + c];
-            sum += image[i * width * channels + j * channels + c];
+            sum += image[2*i * width * channels + 2*j * channels + c];
+            sum += image[2*i * width * channels + (2*j+1) * channels + c];
+            sum += image[(2*i+1) * width * channels + 2*j * channels + c];
+            sum += image[(2*i+1) * width * channels + (2*j+1) * channels + c];
 
             unsigned char average_val = sum / 4;
 
-            output[(i/2) * (width/2) * channels + (j/2) * channels + c] = average_val;
+            output[i * (width/2) * channels + j * channels + c] = average_val;
         }
     }
 }
@@ -104,7 +101,7 @@ int main(int argc, char* argv[]) {
     double cpu_time;
 
     start = clock();
-    Max_Pooling_CUDA<<<numBlocks, threadsPerBlock>>>(d_img, d_outputImg, width, height, channels);
+    Min_Pooling_CUDA<<<numBlocks, threadsPerBlock>>>(d_img, d_outputImg, width, height, channels);
     cudaDeviceSynchronize();
     stop = clock();
 

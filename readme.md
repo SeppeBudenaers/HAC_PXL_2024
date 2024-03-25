@@ -1,5 +1,8 @@
 ## Convolution 
-Tested Image `DSCF1413.JPG`
-- CPU `2.532000`
-- GOOGLE COLAB `0.253050`
-- JETSON NANO `NOT TESTED YET`
+| Image | T4   | RTX 3070-TI | 5-7640u | i5-1135G7 |
+| ----- | ---- | ----------- | ------- | --------- |
+|       |      |             |         |           |
+|       |      |             |         |           |
+|       |      |             |         |           |
+|       |      |             |         |           |
+

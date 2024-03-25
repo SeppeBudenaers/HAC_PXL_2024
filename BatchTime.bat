@@ -4,6 +4,8 @@ cls
 REM Get the image location from the first argument
 set imageLocation=./Images/
 
+set out=%1
+
 REM Compile the GPU code
 nvcc .\GPU\Convolutie.cu -o ./gpu.exe
 
@@ -22,7 +24,8 @@ for %%F in (%imageLocation%*) do (
     echo %%~nxF | findstr /I /C:"-output.png" > nul
     if errorlevel 1 (
         REM Run the GPU code and measure the time taken
-        for /f "tokens=*" %%i in ('.\gpu.exe !imageLocation!%%F "noOut" ^| findstr "Time taken:"') do set GPUtime=%%i
+        
+        for /f "tokens=*" %%i in ('.\gpu.exe !imageLocation!%%F !out! ^| findstr "Time taken:"') do set GPUtime=%%i
         REM Remove dot and replace with comma in GPUtime
         set GPUtime=!GPUtime:.=,!
         REM echo !imageLocation!%%F !GPUtime!

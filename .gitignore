@@ -3,3 +3,6 @@
 
 # Ignore .vscode folder
 .vscode/
+
+# Ignore files ending in "-output.png"
+*-output.png

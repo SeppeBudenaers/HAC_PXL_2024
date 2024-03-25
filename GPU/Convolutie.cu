@@ -100,9 +100,11 @@ int main(int argc, char* argv[]) {
     cpu_time = ((double)(stop - start)) / CLOCKS_PER_SEC;
     printf("Time taken: %f\n", cpu_time);
 
-    char OutputPath[100];
-    snprintf(OutputPath, sizeof(OutputPath), "%s-output.png", argv[1]);
-    stbi_write_png(OutputPath, width, height, channels, outputImg, width * channels);
+    if (strcmp(argv[2], "noOut") != 0) {
+        char OutputPath[100];
+        snprintf(OutputPath, sizeof(OutputPath), "%s-output.png", argv[1]);
+        stbi_write_png(OutputPath, width, height, channels, outputImg, width * channels);
+    }
 
     stbi_image_free(img);
     free(outputImg);

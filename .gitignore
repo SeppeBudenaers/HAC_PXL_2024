@@ -6,3 +6,5 @@
 
 # Ignore files ending in "-output.png"
 *-output.png
+
+gpu.*

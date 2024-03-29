@@ -30,7 +30,7 @@ for %%F in (%imageLocation%*) do (
         set GPUtime=!GPUtime:.=,!
         REM echo !imageLocation!%%F !GPUtime!
         REM Run the CPU code and measure the time taken
-        for /f "tokens=*" %%i in ('.\cpu.exe !imageLocation!%%F "noOut" ^| findstr "Time taken:"') do set CPUtime=%%i
+        for /f "tokens=*" %%i in ('.\cpu.exe !imageLocation!%%F !out! ^| findstr "Time taken:"') do set CPUtime=%%i
         REM Remove dot and replace with comma in CPUtime
         set CPUtime=!CPUtime:.=,!
         REM echo !imageLocation!%%F !CPUtime!

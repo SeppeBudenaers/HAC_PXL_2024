@@ -22,7 +22,8 @@ __global__ void applyConvolution(unsigned char* image, unsigned char* output, in
 
     while (y < height) {
         float sum[3] = {0.0, 0.0, 0.0}; // Sum for each channel
-
+        float r = 0.0, g = 0.0, b = 0.0 a = 0.0;
+        /*Dit zou in een kernel moeten*/
         for (int ky = -edge; ky <= edge; ky++) {
             for (int kx = -edge; kx <= edge; kx++) {
                 int ix = x + kx;
@@ -36,6 +37,7 @@ __global__ void applyConvolution(unsigned char* image, unsigned char* output, in
                 }
             }
         }
+        /*tot hier*/
         for (int ch = 0; ch < channels; ch++) {
             if (ch < 3) {
                 int val = (int)sum[ch];

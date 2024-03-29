@@ -16,16 +16,16 @@ double cpu_time;
 
 __global__ void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
     __shared__ float RGBA[9*4];
-    
+    int offset = 0;
     int blockid = blockIdx.x + blockIdx.y * gridDim.x;
-    int out_x = blockid % (width - 2); // Adjust for the convolution window size
-    int out_y = blockid / (width - 2); // Adjust for the convolution window size
+    int out_x = blockid % (width - offset); // Adjust for the convolution window size
+    int out_y = blockid / (width - offset); // Adjust for the convolution window size
     // Calculate absolute position in the original image
     int absolute_x = out_x + 1;
     int absolute_y = out_y + 1;
     int ch = threadIdx.z;
     int color_offset = ch * 9;
-    int offset = 2;
+    
     int kernel = 0 ;
     switch (threadIdx.y)
     {
@@ -108,7 +108,7 @@ int main(int argc, char* argv[]) {
         cudaMalloc(&d_outputImg, width * height * channels);
 
         dim3 blockSize(1,9,channels);
-        dim3 gridSize(1,1);
+        dim3 gridSize(1023,1023);
         
         applyConvolution<<<gridSize, blockSize>>>(d_img, d_outputImg, width, height, channels);
         // applyConvolution<<<gridSize, blockSize>>>(d_arr, d_out, 6, 6, channels);

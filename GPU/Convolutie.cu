@@ -12,7 +12,6 @@
 clock_t start, stop;
 double cpu_time;
 
-#define BLOCK_SIZE 128
 
 __global__ void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
     const float kernel[9] = {
@@ -21,23 +20,26 @@ __global__ void applyConvolution(unsigned char* image, unsigned char* output, in
         1, 0, -1
     };
 
-    __shared__ float r = 0.0, g = 0.0, b = 0.0, a = 0.0; // dit moet nog global voor de hele block 
+    __shared__ float r, g, b,a;
 
     int blockid = blockIdx.x + blockIdx.y * gridDim.x;
-
     int x = blockid % width;
     int y = blockid / width;
 
-    int convolutie_kernel_x = (threadIdx.y %3)-1;
-    int convolutie_kernel_Y = (threadIdx.y /3)-1;
-    int ch = threadIdx.z;
+    
 
-    while (y < height) {
+    while (blockid < width * height) {
         
-
+        r = 0.0, g = 0.0, b = 0.0, a = 0.0;
+        int convolutie_kernel_x = (threadIdx.y %3)-1;
+        int convolutie_kernel_Y = (threadIdx.y /3)-1;
+        int ch = threadIdx.z;
         int absolute_x = x + convolutie_kernel_x;
         int absolute_y = y + convolutie_kernel_Y;
-                
+        
+        if(absolute_x > 0 && absolute_x < width ){}
+        //printf("X: %d, Y: %d absolute: x: %d y: %d, convolutie: x:%d y:%d\n", x, y, absolute_x, absolute_y, convolutie_kernel_x, convolutie_kernel_Y);
+        __syncthreads();       
                 switch (ch)
                 {
                 case 0:
@@ -77,7 +79,7 @@ __global__ void applyConvolution(unsigned char* image, unsigned char* output, in
                     break;
             }
         }
-
+        __syncthreads();
         blockid += gridDim.y * gridDim.x;
         x = blockid % width;
         y = blockid / width;
@@ -112,9 +114,9 @@ int main(int argc, char* argv[]) {
         cudaMalloc(&d_outputImg, width * height * channels);
 
         dim3 blockSize(1,9,channels);
-        dim3 gridSize();
+        dim3 gridSize(1023,1023);
     
-        applyConvolution<<<1023, 256>>>(d_img, d_outputImg, width, height, channels);
+        applyConvolution<<<gridSize, blockSize>>>(d_img, d_outputImg, width, height, channels);
     
     
         cudaDeviceSynchronize();
@@ -127,6 +129,7 @@ int main(int argc, char* argv[]) {
     if (strcmp(argv[2], "noOut") != 0) {
         char OutputPath[100];
         snprintf(OutputPath, sizeof(OutputPath), "%s-output.png", argv[1]);
+        printf("path : %s",OutputPath);
         stbi_write_png(OutputPath, width, height, channels, outputImg, width * channels);
     }
 

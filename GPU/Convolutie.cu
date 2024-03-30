@@ -12,77 +12,44 @@
 clock_t start, stop;
 double cpu_time;
 
+#define BLOCK_SIZE 128
 
-__global__ void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
-    const float kernel[9] = {
-        1, 0, -1,
-        1, 0, -1,
-        1, 0, -1
-    };
+__global__ void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels, float* kernel) {
+    int threadid = blockIdx.x * blockDim.x + threadIdx.x;
+    int x = threadid % width;
+    int y = threadid / width;
+    int edge = 1; // Since kernel size is 3x3
 
-    __shared__ float r, g, b,a;
-
-    int blockid = blockIdx.x + blockIdx.y * gridDim.x;
-    int x = blockid % width;
-    int y = blockid / width;
-
-    
-
-    while (blockid < width * height) {
-        
-        r = 0.0, g = 0.0, b = 0.0, a = 0.0;
-        int convolutie_kernel_x = (threadIdx.y %3)-1;
-        int convolutie_kernel_Y = (threadIdx.y /3)-1;
-        int ch = threadIdx.z;
-        int absolute_x = x + convolutie_kernel_x;
-        int absolute_y = y + convolutie_kernel_Y;
-        
-        if(absolute_x > 0 && absolute_x < width ){}
-        //printf("X: %d, Y: %d absolute: x: %d y: %d, convolutie: x:%d y:%d\n", x, y, absolute_x, absolute_y, convolutie_kernel_x, convolutie_kernel_Y);
-        __syncthreads();       
-                switch (ch)
-                {
-                case 0:
-                    r += kernel[threadIdx.y]* image[(absolute_y * width + absolute_x) * channels + ch];
-                    break;
-                case 1:
-                    g += kernel[threadIdx.y]* image[(absolute_y * width + absolute_x) * channels + ch];
-                    break;
-                case 2:
-                    b += kernel[threadIdx.y]* image[(absolute_y * width + absolute_x) * channels + ch];
-                    break;
-                case 3:
-                    a += kernel[threadIdx.y]* image[(absolute_y * width + absolute_x) * channels + ch];
-                    break;
-                default:
-                    break;
+    while (y < height) {
+        float sum[3] = {0.0, 0.0, 0.0}; // Sum for each channel
+        /*Dit zou in een kernel moeten*/
+        for (int ky = -edge; ky <= edge; ky++) {
+            for (int kx = -edge; kx <= edge; kx++) {
+                int ix = x + kx;
+                int iy = y + ky;
+                if (ix >= 0 && ix < width && iy >= 0 && iy < height) {
+                    for (int ch = 0; ch < channels; ch++) {
+                        if (ch < 3) { // Apply convolution only to RGB channels
+                            sum[ch] += kernel[(ky + edge) * 3 + (kx + edge)] * image[(iy * width + ix) * channels + ch];
+                        }
+                    }
                 }
-            __syncthreads();
-
-
-        if(threadIdx.y == 0){
-            switch (ch)
-            {
-                case 0:
-                    output[(y * width + x) * channels + ch] = (unsigned char)(r > 255 ? 255 : (r < 0 ? 0 : r));
-                    break;
-                case 1:
-                    output[(y * width + x) * channels + ch] = (unsigned char)(g > 255 ? 255 : (g < 0 ? 0 : g));
-                    break;
-                case 2:
-                    output[(y * width + x) * channels + ch] = (unsigned char)(b > 255 ? 255 : (b < 0 ? 0 : b));
-                    break;
-                case 3:
-                    output[(y * width + x) * channels + ch] = (unsigned char)(a > 255 ? 255 : (a < 0 ? 0 : a));
-                    break;
-                default:
-                    break;
             }
         }
-        __syncthreads();
-        blockid += gridDim.y * gridDim.x;
-        x = blockid % width;
-        y = blockid / width;
+        /*tot hier*/
+        for (int ch = 0; ch < channels; ch++) {
+            if (ch < 3) {
+                int val = (int)sum[ch];
+                output[(y * width + x) * channels + ch] = (unsigned char)(val > 255 ? 255 : (val < 0 ? 0 : val));
+            } else {
+                // Preserve the alpha channel if present
+                output[(y * width + x) * channels + ch] = 255;
+            }
+        }
+
+        threadid += blockDim.x * gridDim.x;
+        x = threadid % width;
+        y = threadid / width;
     }
 }
 
@@ -100,7 +67,11 @@ int main(int argc, char* argv[]) {
     }
 
     // Define your convolution kernel
-   
+    float kernel[9] = {
+        1, 0, -1,
+        1, 0, -1,
+        1, 0, -1
+    };
 
     unsigned char* outputImg = (unsigned char*)malloc(width * height * channels);
 
@@ -113,10 +84,14 @@ int main(int argc, char* argv[]) {
         unsigned char* d_outputImg;
         cudaMalloc(&d_outputImg, width * height * channels);
 
-        dim3 blockSize(1,9,channels);
-        dim3 gridSize(1023,1023);
+        float* d_kernel;
+        cudaMalloc(&d_kernel, 3 * 3 * sizeof(float));
+        cudaMemcpy(d_kernel, kernel, 3 * 3 * sizeof(float), cudaMemcpyHostToDevice);
+
+        dim3 blockSize(BLOCK_SIZE, BLOCK_SIZE);
+        dim3 gridSize((width + BLOCK_SIZE - 1) / BLOCK_SIZE, (height + BLOCK_SIZE - 1) / BLOCK_SIZE);
     
-        applyConvolution<<<gridSize, blockSize>>>(d_img, d_outputImg, width, height, channels);
+        applyConvolution<<<1023, 256>>>(d_img, d_outputImg, width, height, channels, d_kernel);
     
     
         cudaDeviceSynchronize();
@@ -129,7 +104,6 @@ int main(int argc, char* argv[]) {
     if (strcmp(argv[2], "noOut") != 0) {
         char OutputPath[100];
         snprintf(OutputPath, sizeof(OutputPath), "%s-output.png", argv[1]);
-        printf("path : %s",OutputPath);
         stbi_write_png(OutputPath, width, height, channels, outputImg, width * channels);
     }
 
@@ -138,5 +112,7 @@ int main(int argc, char* argv[]) {
 
     cudaFree(d_img);
     cudaFree(d_outputImg);
+    cudaFree(d_kernel);
+
     return 0;
 }

@@ -10,3 +10,6 @@
 gpu.*
 main.*
 *.csv
+*.exe
+*.exp
+*.lib

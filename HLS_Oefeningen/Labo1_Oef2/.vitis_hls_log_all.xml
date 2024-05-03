@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="Labo1_Oef2" solutionName="solution1" date="2024-05-03T10:44:55.068+0200"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="Labo1_Oef2" solutionName="solution1" date="2024-05-03T10:44:55.008+0200"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="Labo1_Oef2" solutionName="solution1" date="2024-05-03T10:44:54.991+0200"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="Labo1_Oef2" solutionName="solution1" date="2024-05-03T10:44:54.977+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="Labo1_Oef2" solutionName="solution1" date="2024-05-03T10:43:43.357+0200"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="Labo1_Oef2" solutionName="solution1" date="2024-05-03T10:43:43.337+0200"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="Labo1_Oef2" solutionName="solution1" date="2024-05-03T10:43:43.321+0200"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="Labo1_Oef2" solutionName="solution1" date="2024-05-03T10:43:43.305+0200"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="Labo1_Oef2" solutionName="solution1" date="2024-05-03T10:43:43.292+0200"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="Labo1_Oef2" solutionName="solution1" date="2024-05-03T10:43:43.278+0200"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="Labo1_Oef2" solutionName="solution1" date="2024-05-03T10:43:43.263+0200"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

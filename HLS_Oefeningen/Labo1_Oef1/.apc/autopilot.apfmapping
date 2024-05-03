@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="hls_and_gate.h" path="C:\02_PXL\HAC_PXL_2024\HLS_Oefeningen\Labo1_Oef1\source\hls_and_gate.h"/>
+    <originFiles name="hls_and_gate.c" path="C:\02_PXL\HAC_PXL_2024\HLS_Oefeningen\Labo1_Oef1\source\hls_and_gate.c"/>
+  </source>
+  <testbench>
+    <originFiles name="hls_and_gate_tb.c" path="C:\02_PXL\HAC_PXL_2024\HLS_Oefeningen\Labo1_Oef1\source\hls_and_gate_tb.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

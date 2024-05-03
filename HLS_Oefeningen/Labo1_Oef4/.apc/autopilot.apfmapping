@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="Dobblesteen.h" path="C:\02_PXL\HAC_PXL_2024\HLS_Oefeningen\Labo1_Oef4\source\Dobblesteen.h"/>
+    <originFiles name="Dobblesteen.c" path="C:\02_PXL\HAC_PXL_2024\HLS_Oefeningen\Labo1_Oef4\source\Dobblesteen.c"/>
+  </source>
+  <testbench>
+    <originFiles name="Dobblesteen_TB.c" path="C:\02_PXL\HAC_PXL_2024\HLS_Oefeningen\Labo1_Oef4\source\Dobblesteen_TB.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

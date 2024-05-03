@@ -1,53 +1,44 @@
 ECHO is off.
 ECHO is off.
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'seppe' on host 'wheatley' (Windows NT_amd64 version 6.2) on Fri May 03 10:45:38 +0200 2024
-INFO: [HLS 200-10] In directory 'C:/02_PXL/HAC_PXL_2024/HLS_Oefeningen'
+INFO: [HLS 200-10] For user 'kobed' on host 'beta' (Windows NT_amd64 version 6.2) on Fri May 03 13:49:21 +0200 2024
+INFO: [HLS 200-10] In directory 'C:/XilinxDev/HACPXL2024/HLS_Oefeningen'
 INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
-Sourcing Tcl script 'C:/02_PXL/HAC_PXL_2024/HLS_Oefeningen/Labo1_Oef2/solution1/csim.tcl'
-INFO: [HLS 200-1510] Running: source C:/02_PXL/HAC_PXL_2024/HLS_Oefeningen/Labo1_Oef2/solution1/csim.tcl
-INFO: [HLS 200-1510] Running: open_project Labo1_Oef2 
-INFO: [HLS 200-10] Opening project 'C:/02_PXL/HAC_PXL_2024/HLS_Oefeningen/Labo1_Oef2'.
-INFO: [HLS 200-1510] Running: set_top comb_oef2 
-INFO: [HLS 200-1510] Running: add_files Labo1_Oef2/source/hls_Custom_Gate.c 
-INFO: [HLS 200-10] Adding design file 'Labo1_Oef2/source/hls_Custom_Gate.c' to the project
-INFO: [HLS 200-1510] Running: add_files Labo1_Oef2/source/hls_Custom_Gate.h 
-INFO: [HLS 200-10] Adding design file 'Labo1_Oef2/source/hls_Custom_Gate.h' to the project
-INFO: [HLS 200-1510] Running: add_files -tb Labo1_Oef2/source/hls_Custom_Gate_tb.c 
-INFO: [HLS 200-10] Adding test bench file 'Labo1_Oef2/source/hls_Custom_Gate_tb.c' to the project
+Sourcing Tcl script 'C:/XilinxDev/HACPXL2024/HLS_Oefeningen/Labo1_Oef3/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: source C:/XilinxDev/HACPXL2024/HLS_Oefeningen/Labo1_Oef3/solution1/csim.tcl
+INFO: [HLS 200-1510] Running: open_project Labo1_Oef3 
+INFO: [HLS 200-10] Opening project 'C:/XilinxDev/HACPXL2024/HLS_Oefeningen/Labo1_Oef3'.
+INFO: [HLS 200-1510] Running: set_top CombLogic 
+INFO: [HLS 200-1510] Running: add_files Labo1_Oef3/source/hls_custom_ex3.c 
+INFO: [HLS 200-10] Adding design file 'Labo1_Oef3/source/hls_custom_ex3.c' to the project
+INFO: [HLS 200-1510] Running: add_files Labo1_Oef3/source/hls_custom_ex3.h 
+INFO: [HLS 200-10] Adding design file 'Labo1_Oef3/source/hls_custom_ex3.h' to the project
+INFO: [HLS 200-1510] Running: add_files -tb Labo1_Oef3/source/hls_custom_ex3_tb.c 
+INFO: [HLS 200-10] Adding test bench file 'Labo1_Oef3/source/hls_custom_ex3_tb.c' to the project
 INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
-INFO: [HLS 200-10] Opening solution 'C:/02_PXL/HAC_PXL_2024/HLS_Oefeningen/Labo1_Oef2/solution1'.
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
-INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-10] Opening solution 'C:/XilinxDev/HACPXL2024/HLS_Oefeningen/Labo1_Oef3/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z010i-clg225-1L'
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
-INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
-INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+INFO: [HLS 200-1510] Running: set_part xc7z010iclg225-1L 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
 INFO: [HLS 200-1510] Running: csim_design -setup -quiet 
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
-   Compiling(apcc) ../../../source/hls_Custom_Gate_tb.c in debug mode
+   Compiling(apcc) ../../../source/hls_custom_ex3.c in debug mode
 ECHO is off.
 ECHO is off.
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'seppe' on host 'wheatley' (Windows NT_amd64 version 6.2) on Fri May 03 10:45:42 +0200 2024
-INFO: [HLS 200-10] In directory 'C:/02_PXL/HAC_PXL_2024/HLS_Oefeningen/Labo1_Oef2/solution1/csim/build'
-INFO: [APCC 202-3] Tmp directory is C:/02_PXL/HAC_PXL_2024/HLS_Oefeningen/Labo1_Oef2/solution1/csim/build/apcc_db_seppe/125083198880091
+INFO: [HLS 200-10] For user 'kobed' on host 'beta' (Windows NT_amd64 version 6.2) on Fri May 03 13:49:24 +0200 2024
+INFO: [HLS 200-10] In directory 'C:/XilinxDev/HACPXL2024/HLS_Oefeningen/Labo1_Oef3/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is C:/XilinxDev/HACPXL2024/HLS_Oefeningen/Labo1_Oef3/solution1/csim/build/apcc_db_kobed/119001336532014
 INFO: [APCC 202-1] APCC is done.
-INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 0.824 seconds; peak allocated memory: 0.000 MB.
-   Compiling(apcc) ../../../source/hls_Custom_Gate.c in debug mode
-ECHO is off.
-ECHO is off.
-INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'seppe' on host 'wheatley' (Windows NT_amd64 version 6.2) on Fri May 03 10:45:44 +0200 2024
-INFO: [HLS 200-10] In directory 'C:/02_PXL/HAC_PXL_2024/HLS_Oefeningen/Labo1_Oef2/solution1/csim/build'
-INFO: [APCC 202-3] Tmp directory is C:/02_PXL/HAC_PXL_2024/HLS_Oefeningen/Labo1_Oef2/solution1/csim/build/apcc_db_seppe/178403201630068
-INFO: [APCC 202-1] APCC is done.
-INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 0.798 seconds; peak allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 0.744 seconds; peak allocated memory: 0.000 MB.
    Generating csim.exe
 INFO: [HLS 200-2035] Skipping execution of C Simulation due to 'setup' option
 INFO: [SIM 211-1] CSim file generation done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 6.02 seconds; current allocated memory: 0.363 MB.
-INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 7.185 seconds; peak allocated memory: 115.863 MB.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.927 seconds; current allocated memory: 0.359 MB.
+INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 4.023 seconds; peak allocated memory: 115.824 MB.

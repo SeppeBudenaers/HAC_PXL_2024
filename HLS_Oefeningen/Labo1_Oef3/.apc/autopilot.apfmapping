@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="hls_custom_ex3.c" path="C:\XilinxDev\HACPXL2024\HLS_Oefeningen\Labo1_Oef3\source\hls_custom_ex3.c"/>
+    <originFiles name="hls_custom_ex3.h" path="C:\XilinxDev\HACPXL2024\HLS_Oefeningen\Labo1_Oef3\source\hls_custom_ex3.h"/>
+  </source>
+  <testbench>
+    <originFiles name="hls_custom_ex3_tb.c" path="C:\XilinxDev\HACPXL2024\HLS_Oefeningen\Labo1_Oef3\source\hls_custom_ex3_tb.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

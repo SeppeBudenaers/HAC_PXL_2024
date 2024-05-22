@@ -29,62 +29,62 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/.apc/.src</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/.apc/.tb</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.tcls</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/Convolutie.c</name>
 			<type>1</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/source/Convolutie.c</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/source/Convolutie.c</location>
 		</link>
 		<link>
 			<name>source/Convolutie.h</name>
 			<type>1</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/source/Convolutie.h</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/source/Convolutie.h</location>
 		</link>
 		<link>
 			<name>source/input.JPG</name>
 			<type>1</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/source/input.JPG</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/source/input.JPG</location>
 		</link>
 		<link>
 			<name>source/stb_image.h</name>
 			<type>1</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/source/stb_image.h</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/source/stb_image.h</location>
 		</link>
 		<link>
 			<name>source/stb_image_write.h</name>
 			<type>1</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/source/stb_image_write.h</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/source/stb_image_write.h</location>
 		</link>
 		<link>
 			<name>testbench/Convolutie_TB.c</name>
 			<type>1</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/source/Convolutie_TB.c</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/source/Convolutie_TB.c</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/solution1.directive</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/directives.tcl</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/script.tcl</location>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

@@ -60,6 +60,8 @@
                                     <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/etc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS"/>
                                     								
                                 </option>
                                 								
@@ -94,6 +96,8 @@
                                     <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/etc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS"/>
                                     								
                                 </option>
                                 								
@@ -167,8 +171,6 @@
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/auto_cc/include"/>
                                 								
-                                <listOptionValue builtIn="false" value="C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS"/>
-                                								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/ap_sysc"/>
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include"/>
@@ -176,6 +178,8 @@
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/systemc/include"/>
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS"/>
                                 							
                             </option>
                             							
@@ -258,6 +262,8 @@
                                     <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/etc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS"/>
                                     								
                                 </option>
                                 								
@@ -282,6 +288,8 @@
                                     <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/etc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS"/>
                                     								
                                 </option>
                                 								
@@ -345,8 +353,6 @@
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/auto_cc/include"/>
                                 								
-                                <listOptionValue builtIn="false" value="C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS"/>
-                                								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/ap_sysc"/>
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include"/>
@@ -354,6 +360,8 @@
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/systemc/include"/>
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS"/>
                                 							
                             </option>
                             							

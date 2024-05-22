@@ -1,7 +1,8 @@
 #include "Convolutie.h"
 #include "stdbool.h"
+#include <stdint.h>
 
-void applyConvolution( unsigned char* image,  unsigned char* output) {
+void applyConvolution( char* image,  char* output) {
 	#pragma HLS INTERFACE s_axilite port=return bundle=control
 	#pragma HLS INTERFACE s_axilite port=image bundle=control
 	#pragma HLS INTERFACE s_axilite port=output bundle=control
@@ -23,40 +24,27 @@ void applyConvolution( unsigned char* image,  unsigned char* output) {
 	 */
 
 	float kernel[3][3] = {
-        {1, 0, -1},
-        {1, 0, -1},
-        {1, 0, -1}};
-	int width = 6;
-	int height = 6;
-	int channels = 1;
-	int edge = 1; // Since kernel size is 3x3
+	        {1, 0, -1},
+	        {1, 0, -1},
+	        {1, 0, -1}
+	    };
+	    int width = 6;
+	    int height = 6;
+	    int edge = 1; // Since kernel size is 3x3
 
-    	for (int y = 1; y < height; y++) {
-    		for (int x = 1; x < width; x++) {
-    			float sum[3] = {0.0, 0.0, 0.0}; // Sum for each channel
-    			for (int ky = -edge; ky <= edge; ky++) {
-    				for (int kx = -edge; kx <= edge; kx++) {
-    					int ix = x + kx;
-    					int iy = y + ky;
-    					if (ix >= 0 && ix < width && iy >= 0 && iy < height) {
-
-    						for (int ch = 0; ch < channels; ch++) {
-    							if (ch < 3) { // Apply convolution only to RGB channels
-    								sum[ch] += kernel[ky + edge][kx + edge] * image[(iy * width + ix) * channels + ch];
-    							}
-    						}
-    					}
-    				}
-    			}
-    			for (int ch = 0; ch < channels; ch++) {
-    				if (ch < 3) {
-    					int val = (int)sum[ch];
-    					output[(y * width + x) * channels + ch] = (unsigned char)(val > 255 ? 255 : (val < 0 ? 0 : val));
-    				} else {
-    					// Preserve the alpha channel if present
-    					output[(y * width + x) * channels + ch] = image[(y * width + x) * channels + ch];
-    			}
-    		}
-    	}
-    }
-}
+	    for (int y = edge; y < height - edge; y++) {
+	        for (int x = edge; x < width - edge; x++) {
+	            float sum = 0.0; // Single sum for single channel
+	            for (int ky = -edge; ky <= edge; ky++) {
+	                for (int kx = -edge; kx <= edge; kx++) {
+	                    int ix = x + kx;
+	                    int iy = y + ky;
+	                    sum += kernel[ky + edge][kx + edge] * image[iy * width + ix];
+	                }
+	            }
+	            // Convert sum to int8_t and store in the output array
+	            int val = (int)sum;
+	            output[(y - edge) * (width - 2 * edge) + (x - edge)] = (int8_t)(val > 127 ? 127 : (val < -128 ? -128 : val));
+	        }
+	    }
+	}

@@ -2,4 +2,4 @@
 #define CONVOLUTIE_H
 #endif
 
-void applyConvolution( unsigned char* image,  unsigned char* output);
+void applyConvolution( char* image,  char* output);

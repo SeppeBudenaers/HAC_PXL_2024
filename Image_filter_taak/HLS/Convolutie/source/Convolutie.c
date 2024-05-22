@@ -2,7 +2,7 @@
 #include "stdbool.h"
 #include <stdint.h>
 
-void applyConvolution( char* image,  char* output) {
+void applyConvolution(char* image, char* output, int width, int height, int channels) {
 	#pragma HLS INTERFACE s_axilite port=return bundle=control
 	#pragma HLS INTERFACE s_axilite port=image bundle=control
 	#pragma HLS INTERFACE s_axilite port=output bundle=control
@@ -28,23 +28,23 @@ void applyConvolution( char* image,  char* output) {
 	        {1, 0, -1},
 	        {1, 0, -1}
 	    };
-	    int width = 6;
-	    int height = 6;
 	    int edge = 1; // Since kernel size is 3x3
 
 	    for (int y = edge; y < height - edge; y++) {
 	        for (int x = edge; x < width - edge; x++) {
-	            float sum = 0.0; // Single sum for single channel
-	            for (int ky = -edge; ky <= edge; ky++) {
-	                for (int kx = -edge; kx <= edge; kx++) {
-	                    int ix = x + kx;
-	                    int iy = y + ky;
-	                    sum += kernel[ky + edge][kx + edge] * image[iy * width + ix];
+	            for (int ch = 0; ch < channels; ch++) {
+	                float sum = 0.0; // Sum for each channel
+	                for (int ky = -edge; ky <= edge; ky++) {
+	                    for (int kx = -edge; kx <= edge; kx++) {
+	                        int ix = x + kx;
+	                        int iy = y + ky;
+	                        sum += kernel[ky + edge][kx + edge] * image[(iy * width + ix) * channels + ch];
+	                    }
 	                }
+	                // Convert sum to int8_t and store in the output array
+	                int val = (int)sum;
+	                output[((y - edge) * (width - 2 * edge) + (x - edge)) * channels + ch] = (int8_t)(val > 127 ? 127 : (val < -128 ? -128 : val));
 	            }
-	            // Convert sum to int8_t and store in the output array
-	            int val = (int)sum;
-	            output[(y - edge) * (width - 2 * edge) + (x - edge)] = (int8_t)(val > 127 ? 127 : (val < -128 ? -128 : val));
 	        }
 	    }
 	}

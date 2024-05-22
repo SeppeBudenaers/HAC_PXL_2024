@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
 
     start =clock();
 
-        applyConvolution(Input, outputImg);
+        applyConvolution(Input, outputImg, width, height, channels);
 
     stop =clock();
     cpu_time = ((double)(stop - start)) / CLOCKS_PER_SEC;

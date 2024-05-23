@@ -1,8 +1,22 @@
 #include "Convolutie.h"
 #include "stdbool.h"
 #include <stdint.h>
+#include "ap_axi_sdata.h"
+#include "hls_stream.h"
 
+<<<<<<< Updated upstream
 void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
+=======
+<<<<<<< Updated upstream
+void applyConvolution(char* image, char* output, int width, int height, int channels) {
+=======
+void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
+
+
+
+	/*
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 	#pragma HLS INTERFACE s_axilite port=return bundle=control
 	#pragma HLS INTERFACE s_axilite port=image bundle=control
 	#pragma HLS INTERFACE s_axilite port=output bundle=control
@@ -12,7 +26,7 @@ void applyConvolution(unsigned char* image, unsigned char* output, int width, in
 
 	#pragma HLS INTERFACE m_axi depth=65536 port=image offset=slave bundle=input //gmem
 	#pragma HLS INTERFACE m_axi depth=65536 port=output offset=slave bundle=output //gmem
-
+	*/
 	/*
 	#pragma HLS INTERFACE ap_ctrl_none port = return
 	#pragma HLS INTERFACE ap_none port = image

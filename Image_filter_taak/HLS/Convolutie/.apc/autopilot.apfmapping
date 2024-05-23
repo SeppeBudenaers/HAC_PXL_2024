@@ -9,5 +9,6 @@
   </source>
   <testbench>
     <originFiles name="Convolutie_TB.c" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\Convolutie\source\Convolutie_TB.c"/>
+    <originFiles name="input.png" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\input.png"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

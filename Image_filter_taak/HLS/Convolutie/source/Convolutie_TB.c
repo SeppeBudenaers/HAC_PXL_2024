@@ -1,3 +1,4 @@
+#define STBI_X64_TARGET
 #define STBI_NO_THREAD_LOCALS
 #define STBI_NO_SIMD
 #define STB_IMAGE_IMPLEMENTATION
@@ -13,9 +14,10 @@
 clock_t start, stop;
 double cpu_time;
 int main(int argc, char* argv[]) {
-// Load the image
+	printf("tiktok\n");
+	// Load the image
     int width, height, channels;
-    char* inputImage = (char*)stbi_load("C:\\XilinxDev\\HACPXL2024\\Image_filter_taak\\input.png", &width, &height, &channels, 0);
+    unsigned char* inputImage = (unsigned char*)stbi_load(argv[1], &width, &height, &channels, 0);
     if (inputImage == NULL) {
         printf("Error loading image\n");
         return 1;
@@ -24,7 +26,7 @@ int main(int argc, char* argv[]) {
     // Prepare the output image buffer
     int newWidth = width - 2;
     int newHeight = height - 2;
-    char* outputImg = (char*)malloc(newWidth * newHeight * channels);
+    unsigned char* outputImg = (unsigned char*)malloc(newWidth * newHeight * channels);
 
     // Start the clock
     clock_t start = clock();
@@ -40,7 +42,7 @@ int main(int argc, char* argv[]) {
     printf("Time taken: %f\n", cpu_time);
     printf("saving image\n");
     // Save the output image
-    if (!stbi_write_png("C:\\XilinxDev\\HACPXL2024\\Image_filter_taak\\output.png", newWidth, newHeight, channels, outputImg, newWidth * channels)) {
+    if (!stbi_write_png("output.png", newWidth, newHeight, channels, outputImg, newWidth * channels)) {
         printf("Error saving image\n");
         return 1;
     }

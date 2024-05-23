@@ -3,6 +3,18 @@
   <errorLogs>
     <logs>
       <csimLog>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:44:31.488+0200"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:44:31.423+0200"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:44:31.399+0200"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:44:31.385+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:37:14.819+0200"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:37:14.756+0200"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:37:14.740+0200"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:37:14.725+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:34:33.320+0200"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:34:33.108+0200"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:34:33.092+0200"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="Convolutie" solutionName="solution1" date="2024-05-23T12:34:33.075+0200"/>
         <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="Convolutie" solutionName="solution1" date="2024-05-22T22:03:02.001+0200"/>
         <logs message="ERROR: [APCC 202-1] APCC failed." projectName="Convolutie" solutionName="solution1" date="2024-05-22T22:03:01.957+0200"/>
         <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="Convolutie" solutionName="solution1" date="2024-05-22T22:03:01.944+0200"/>

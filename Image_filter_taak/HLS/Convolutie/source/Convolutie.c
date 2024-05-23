@@ -1,7 +1,7 @@
 #include "Convolutie.h"
 #include "stdbool.h"
 #include <stdint.h>
-#include "ap_axi_sdata.h"
+//#include "ap_axi_sdata.h"
 #include "hls_stream.h"
 
 void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {

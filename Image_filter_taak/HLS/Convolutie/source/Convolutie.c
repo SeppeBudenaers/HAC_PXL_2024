@@ -4,19 +4,11 @@
 #include "ap_axi_sdata.h"
 #include "hls_stream.h"
 
-<<<<<<< Updated upstream
-void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
-=======
-<<<<<<< Updated upstream
-void applyConvolution(char* image, char* output, int width, int height, int channels) {
-=======
 void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
 
 
 
 	/*
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 	#pragma HLS INTERFACE s_axilite port=return bundle=control
 	#pragma HLS INTERFACE s_axilite port=image bundle=control
 	#pragma HLS INTERFACE s_axilite port=output bundle=control

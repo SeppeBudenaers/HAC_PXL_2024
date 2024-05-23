@@ -2,7 +2,7 @@
 #include "stdbool.h"
 #include <stdint.h>
 
-void applyConvolution(char* image, char* output, int width, int height, int channels) {
+void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
 	#pragma HLS INTERFACE s_axilite port=return bundle=control
 	#pragma HLS INTERFACE s_axilite port=image bundle=control
 	#pragma HLS INTERFACE s_axilite port=output bundle=control
@@ -43,7 +43,7 @@ void applyConvolution(char* image, char* output, int width, int height, int chan
 	                }
 	                // Convert sum to int8_t and store in the output array
 	                int val = (int)sum;
-	                output[((y - edge) * (width - 2 * edge) + (x - edge)) * channels + ch] = (int8_t)(val > 127 ? 127 : (val < -128 ? -128 : val));
+	                output[((y - edge) * (width - 2 * edge) + (x - edge)) * channels + ch] = (int8_t)(val > 255 ? 255 : (val < 0 ? 0 : val));
 	            }
 	        }
 	    }

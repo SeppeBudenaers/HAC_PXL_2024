@@ -4,34 +4,11 @@ INFO: [SIM 4] CSIM will launch GCC as the compiler.
 ECHO is off.
 ECHO is off.
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'kobed' on host 'beta' (Windows NT_amd64 version 6.2) on Wed May 22 21:36:28 +0200 2024
+INFO: [HLS 200-10] For user 'kobed' on host 'beta' (Windows NT_amd64 version 6.2) on Thu May 23 09:37:09 +0200 2024
 INFO: [HLS 200-10] In directory 'C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build'
-../../../source/Convolutie_TB.c:32:26: warning: passing 'int8_t [36]' to parameter of type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
-        applyConvolution(Input, outputImg, width, height, channels);
-                         ^~~~~
-../../../source/Convolutie.h:5:29: note: passing argument to parameter 'image' here
-void applyConvolution(char* image, char* output, int width, int height, int channels);
-                            ^
-1 warning generated.
-../../../source/Convolutie_TB.c:32:26: warning: passing 'int8_t [36]' to parameter of type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
-        applyConvolution(Input, outputImg, width, height, channels);
-                         ^~~~~
-../../../source/Convolutie.h:5:29: note: passing argument to parameter 'image' here
-void applyConvolution(char* image, char* output, int width, int height, int channels);
-                            ^
-1 warning generated.
-INFO: [APCC 202-3] Tmp directory is C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build/apcc_db_kobed/21576217791881
+INFO: [APCC 202-3] Tmp directory is C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build/apcc_db_kobed/5772509257542
 INFO: [APCC 202-1] APCC is done.
-INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 57.125 seconds; peak allocated memory: 0.000 MB.
-   Compiling(apcc) ../../../source/Convolutie.c in debug mode
-ECHO is off.
-ECHO is off.
-INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'kobed' on host 'beta' (Windows NT_amd64 version 6.2) on Wed May 22 21:37:27 +0200 2024
-INFO: [HLS 200-10] In directory 'C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build'
-INFO: [APCC 202-3] Tmp directory is C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build/apcc_db_kobed/3432276847111
-INFO: [APCC 202-1] APCC is done.
-INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 0 seconds. Total elapsed time: 0.929 seconds; peak allocated memory: 7.055 MB.
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 0 seconds. Total elapsed time: 43.224 seconds; peak allocated memory: 12.398 MB.
    Generating csim.exe
 INFO: [SIM 1] CSim file generation done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

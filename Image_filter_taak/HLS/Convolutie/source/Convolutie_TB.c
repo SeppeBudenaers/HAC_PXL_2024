@@ -13,32 +13,42 @@
 clock_t start, stop;
 double cpu_time;
 int main(int argc, char* argv[]) {
-
-    int8_t Input[36] ={3,0,1,2,7,4,1,5,8,9,3,1,2,7,2,5,1,3,0,1,3,1,7,8,4,2,1,6,2,8,2,4,5,2,3,9};
-    int8_t output[4][4] ={
-        {-5,-4,0,8},
-        {-10,-2,2,3},
-        {0,-2,-4,-7},
-        {-3,-2,-3,-16}
-    };
-    int channels = 1;
-    int width = 6;
-    int height = 6;
-
-    char* outputImg = (char*)malloc(16);
-
-    start =clock();
-
-        applyConvolution(Input, outputImg, width, height, channels);
-
-    stop =clock();
-    cpu_time = ((double)(stop - start)) / CLOCKS_PER_SEC;
-    printf("output\n");
-    for(int i = 0; i < 4*4*1; i++){
-            printf("%d\n", outputImg[i]);
+// Load the image
+    int width, height, channels;
+    char* inputImage = (char*)stbi_load("C:\\XilinxDev\\HACPXL2024\\Image_filter_taak\\input.png", &width, &height, &channels, 0);
+    if (inputImage == NULL) {
+        printf("Error loading image\n");
+        return 1;
     }
-    printf("Time taken: %f\n", cpu_time);
+    printf("Image loaded: %dx%d, %d channels\n", width, height, channels);
+    // Prepare the output image buffer
+    int newWidth = width - 2;
+    int newHeight = height - 2;
+    char* outputImg = (char*)malloc(newWidth * newHeight * channels);
 
+    // Start the clock
+    clock_t start = clock();
+    printf("Start\n");
+    // Apply convolution
+    applyConvolution(inputImage, outputImg, width, height, channels);
+    printf("End\n");
+    // Stop the clock
+    clock_t stop = clock();
+    double cpu_time = ((double)(stop - start)) / CLOCKS_PER_SEC;
+
+    // Print processing time
+    printf("Time taken: %f\n", cpu_time);
+    printf("saving image\n");
+    // Save the output image
+    if (!stbi_write_png("C:\\XilinxDev\\HACPXL2024\\Image_filter_taak\\output.png", newWidth, newHeight, channels, outputImg, newWidth * channels)) {
+        printf("Error saving image\n");
+        return 1;
+    }
+    printf("Image saved\n");
+    // Free memory
+    stbi_image_free(inputImage);
     free(outputImg);
+    printf("Memory freed\n");
+    printf("Done\n");
     return 0;
 }

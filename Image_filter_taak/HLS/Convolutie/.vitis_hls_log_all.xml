@@ -3,6 +3,10 @@
   <errorLogs>
     <logs>
       <csimLog>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="Convolutie" solutionName="solution1" date="2024-05-22T22:03:02.001+0200"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="Convolutie" solutionName="solution1" date="2024-05-22T22:03:01.957+0200"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="Convolutie" solutionName="solution1" date="2024-05-22T22:03:01.944+0200"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="Convolutie" solutionName="solution1" date="2024-05-22T22:03:01.931+0200"/>
         <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="Convolutie" solutionName="solution1" date="2024-05-22T21:22:29.470+0200"/>
         <logs message="ERROR: [APCC 202-1] APCC failed." projectName="Convolutie" solutionName="solution1" date="2024-05-22T21:22:29.429+0200"/>
         <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="Convolutie" solutionName="solution1" date="2024-05-22T21:22:29.419+0200"/>

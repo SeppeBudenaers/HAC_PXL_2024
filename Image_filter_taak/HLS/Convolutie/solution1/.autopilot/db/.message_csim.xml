@@ -4,17 +4,12 @@
 	<Message severity="INFO" prefix="[SIM 211-4]" key="SIM_4_1577" tag="" content="CSIM will launch GCC as the compiler." resolution=""/>
 	<Message severity="INFO" prefix="[HLS 200-2036]" key="HLS 200-2036" tag="" content="Building debug C Simulation binaries" resolution=""/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1427" tag="" content="Running &apos;C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/apcc.exe&apos;" resolution=""/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;kobed&apos; on host &apos;beta&apos; (Windows NT_amd64 version 6.2) on Wed May 22 21:36:28 +0200 2024" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;kobed&apos; on host &apos;beta&apos; (Windows NT_amd64 version 6.2) on Thu May 23 09:37:09 +0200 2024" resolution=""/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1430" tag="" content="In directory &apos;C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build&apos;" resolution=""/>
-	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build/apcc_db_kobed/21576217791881" resolution=""/>
-	<Message severity="INFO" prefix="[APCC 202-1]" key="APCC_1_1611" tag="" content="APCC is done." resolution=""/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1427" tag="" content="Running &apos;C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/apcc.exe&apos;" resolution=""/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;kobed&apos; on host &apos;beta&apos; (Windows NT_amd64 version 6.2) on Wed May 22 21:37:27 +0200 2024" resolution=""/>
-	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1430" tag="" content="In directory &apos;C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build&apos;" resolution=""/>
-	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build/apcc_db_kobed/3432276847111" resolution=""/>
+	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build/apcc_db_kobed/5772509257542" resolution=""/>
 	<Message severity="INFO" prefix="[APCC 202-1]" key="APCC_1_1611" tag="" content="APCC is done." resolution=""/>
 	<Message severity="INFO" prefix="[HLS 200-2035]" key="HLS 200-2035" tag="" content="Skipping execution of C Simulation due to &apos;setup&apos; option" resolution=""/>
 	<Message severity="INFO" prefix="[SIM 211-1]" key="SIM_1_1587" tag="" content="CSim file generation done with 0 errors." resolution=""/>
 	<Message severity="INFO" prefix="[SIM 211-3]" key="SIM_3_1588" tag="" content="*************** CSIM finish ***************" resolution=""/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 62.41 seconds; current allocated memory: 0.363 MB." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 49.031 seconds; current allocated memory: 0.477 MB." resolution=""/>
 </Messages>

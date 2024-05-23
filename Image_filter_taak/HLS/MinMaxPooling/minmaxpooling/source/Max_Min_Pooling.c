@@ -1,14 +1,7 @@
-#define STB_IMAGE_IMPLEMENTATION
-#include "../Include/stb_image.h"
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "../Include/stb_image_write.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
-clock_t start, stop;
-double cpu_time;
+
+
 
 void Max_Pooling(unsigned char* image, unsigned char* output, int width, int height, int channels) {
     for(int i = 1; i < height; i+=2)

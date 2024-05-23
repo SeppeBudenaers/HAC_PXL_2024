@@ -42,6 +42,31 @@
 			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/MinMaxPooling/minmaxpooling/solution1/.tcls</location>
 		</link>
 		<link>
+			<name>source/Max_Min_Pooling.c</name>
+			<type>1</type>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/MinMaxPooling/minmaxpooling/source/Max_Min_Pooling.c</location>
+		</link>
+		<link>
+			<name>source/Max_Min_Pooling.h</name>
+			<type>1</type>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/MinMaxPooling/minmaxpooling/source/Max_Min_Pooling.h</location>
+		</link>
+		<link>
+			<name>source/stb_image.h</name>
+			<type>1</type>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/MinMaxPooling/minmaxpooling/source/stb_image.h</location>
+		</link>
+		<link>
+			<name>source/stb_image_write.h</name>
+			<type>1</type>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/MinMaxPooling/minmaxpooling/source/stb_image_write.h</location>
+		</link>
+		<link>
+			<name>testbench/MinMax_tb.c</name>
+			<type>1</type>
+			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/MinMaxPooling/minmaxpooling/source/MinMax_tb.c</location>
+		</link>
+		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
 			<location>C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/MinMaxPooling/minmaxpooling/solution1/solution1.directive</location>

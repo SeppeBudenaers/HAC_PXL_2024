@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
-  <source/>
-  <testbench/>
+  <source>
+    <originFiles name="Max_Min_Pooling.c" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\MinMaxPooling\minmaxpooling\source\Max_Min_Pooling.c"/>
+    <originFiles name="Max_Min_Pooling.h" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\MinMaxPooling\minmaxpooling\source\Max_Min_Pooling.h"/>
+    <originFiles name="stb_image.h" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\MinMaxPooling\minmaxpooling\source\stb_image.h"/>
+    <originFiles name="stb_image_write.h" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\MinMaxPooling\minmaxpooling\source\stb_image_write.h"/>
+  </source>
+  <testbench>
+    <originFiles name="MinMax_tb.c" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\MinMaxPooling\minmaxpooling\source\MinMax_tb.c"/>
+  </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

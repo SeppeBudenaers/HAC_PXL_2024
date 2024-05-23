@@ -1,2 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog"/>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:43:03.905+0200"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:43:03.798+0200"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:43:03.774+0200"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:43:03.759+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:42:38.940+0200"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:42:38.845+0200"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:42:38.829+0200"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:42:38.812+0200"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:40:51.974+0200"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:40:51.910+0200"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:40:51.894+0200"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="minmaxpooling" solutionName="solution1" date="2024-05-23T11:40:51.879+0200"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

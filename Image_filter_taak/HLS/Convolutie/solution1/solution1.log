@@ -1365,3 +1365,343 @@ INFO: [HLS 200-2035] Skipping execution of C Simulation due to 'setup' option
 INFO: [SIM 211-1] CSim file generation done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.946 seconds; current allocated memory: 0.371 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+Tool Version Limit: 2023.10
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite applyConvolution 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.122 seconds; current allocated memory: 115.852 MB.
+INFO: [HLS 200-10] Analyzing design file 'Convolutie/source/Convolutie.c' ... 
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.h:5:88)
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.h:5:95)
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.h:5:101)
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.c:6:88)
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.c:6:95)
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.c:6:101)
+WARNING: [HLS 200-1986] Could not apply TOP directive, invalid function, label, or variable (C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/csynth.tcl:22)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.024 seconds; current allocated memory: 118.254 MB.
+ERROR: [HLS 214-157] Top function not found: there is no function named 'Convolutie'
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.533 seconds; current allocated memory: 2.625 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+Tool Version Limit: 2023.10
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite applyConvolution 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.132 seconds; current allocated memory: 115.711 MB.
+INFO: [HLS 200-10] Analyzing design file 'Convolutie/source/Convolutie.c' ... 
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.h:5:88)
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.h:5:95)
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.h:5:101)
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.c:6:88)
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.c:6:95)
+WARNING: [HLS 207-3972] type specifier missing, defaults to 'int' (Convolutie/source/Convolutie.c:6:101)
+WARNING: [HLS 200-1986] Could not apply TOP directive, invalid function, label, or variable (C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/csynth.tcl:22)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.168 seconds; current allocated memory: 118.211 MB.
+ERROR: [HLS 214-157] Top function not found: there is no function named 'Convolutie'
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.152 seconds; current allocated memory: 2.832 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+Tool Version Limit: 2023.10
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite applyConvolution 
+INFO: [HLS 200-1510] Running: csim_design -argv input.png -setup -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [HLS 200-2035] Skipping execution of C Simulation due to 'setup' option
+INFO: [SIM 211-1] CSim file generation done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 49.367 seconds; current allocated memory: 0.449 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+Tool Version Limit: 2023.10
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite applyConvolution 
+INFO: [HLS 200-1510] Running: csim_design -argv input.png -setup -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [HLS 200-2035] Skipping execution of C Simulation due to 'setup' option
+INFO: [SIM 211-1] CSim file generation done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 43.151 seconds; current allocated memory: 0.344 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+Tool Version Limit: 2023.10
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite applyConvolution 
+INFO: [HLS 200-1510] Running: csim_design -argv input.png -setup -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [HLS 200-2035] Skipping execution of C Simulation due to 'setup' option
+INFO: [SIM 211-1] CSim file generation done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 43.726 seconds; current allocated memory: 0.352 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+Tool Version Limit: 2023.10
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite applyConvolution 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.115 seconds; current allocated memory: 110.027 MB.
+INFO: [HLS 200-10] Analyzing design file 'Convolutie/source/Convolutie.c' ... 
+WARNING: [HLS 200-1986] Could not apply TOP directive, invalid function, label, or variable (C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/csynth.tcl:22)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.06 seconds; current allocated memory: 112.039 MB.
+ERROR: [HLS 214-157] Top function not found: there is no function named 'Convolutie'
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.961 seconds; current allocated memory: 2.383 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+Tool Version Limit: 2023.10
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite applyConvolution 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.113 seconds; current allocated memory: 110.047 MB.
+INFO: [HLS 200-10] Analyzing design file 'Convolutie/source/Convolutie.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.861 seconds; current allocated memory: 111.992 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 2,263 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 317 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 176 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 175 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 147 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 147 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 147 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 149 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 149 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 151 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 151 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 147 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 147 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 147 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 141 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 157 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::mantissa() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::expv() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::__signbit() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' into 'int generic_cast_IEEE754<int, float>(float, bool)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, float>(float, bool)' into '__hls_fptosi_float_i32' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_float_i32' into 'applyConvolution' (Convolutie/source/Convolutie.c:6:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_41_6> at Convolutie/source/Convolutie.c:41:30 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_33_5> at Convolutie/source/Convolutie.c:33:38 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at  
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'image_r' (Convolutie/source/Convolutie.c:6:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'output_r' (Convolutie/source/Convolutie.c:6:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 8.335 seconds; current allocated memory: 114.102 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.002 seconds; current allocated memory: 114.102 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 120.512 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 122.828 MB.
+INFO: [XFORM 203-102] Automatically partitioning small array 'sum' (Convolutie/source/Convolutie.c:26) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'sum' (Convolutie/source/Convolutie.c:26) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Convolutie/source/Convolutie.c:35:75) to (Convolutie/source/Convolutie.c:36:29) in function 'applyConvolution'... converting 5 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'applyConvolution' (Convolutie/source/Convolutie.c:6:38)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.193 seconds; current allocated memory: 146.660 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_28_4' (Convolutie/source/Convolutie.c:28:34) in function 'applyConvolution' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_27_3' (Convolutie/source/Convolutie.c:27:30) in function 'applyConvolution'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_24_1' (Convolutie/source/Convolutie.c:24:22) in function 'applyConvolution'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.201 seconds; current allocated memory: 167.496 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'applyConvolution' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'applyConvolution_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.363 seconds; current allocated memory: 171.934 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.098 seconds; current allocated memory: 173.121 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'applyConvolution_Pipeline_VITIS_LOOP_33_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_33_5'.
+WARNING: [HLS 200-880] The II Violation in module 'applyConvolution_Pipeline_VITIS_LOOP_33_5' (loop 'VITIS_LOOP_33_5'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_0_6_write_ln35', Convolutie/source/Convolutie.c:35) of variable 'sum[2]', Convolutie/source/Convolutie.c:35 on local variable 'sum_0_6' and 'load' operation 32 bit ('sum_0_6_load_1', Convolutie/source/Convolutie.c:35) on local variable 'sum_0_6'.
+WARNING: [HLS 200-880] The II Violation in module 'applyConvolution_Pipeline_VITIS_LOOP_33_5' (loop 'VITIS_LOOP_33_5'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_0_6_write_ln35', Convolutie/source/Convolutie.c:35) of variable 'sum[2]', Convolutie/source/Convolutie.c:35 on local variable 'sum_0_6' and 'load' operation 32 bit ('sum_0_6_load_1', Convolutie/source/Convolutie.c:35) on local variable 'sum_0_6'.
+WARNING: [HLS 200-880] The II Violation in module 'applyConvolution_Pipeline_VITIS_LOOP_33_5' (loop 'VITIS_LOOP_33_5'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_0_6_write_ln35', Convolutie/source/Convolutie.c:35) of variable 'sum[2]', Convolutie/source/Convolutie.c:35 on local variable 'sum_0_6' and 'load' operation 32 bit ('sum_0_6_load_1', Convolutie/source/Convolutie.c:35) on local variable 'sum_0_6'.
+WARNING: [HLS 200-880] The II Violation in module 'applyConvolution_Pipeline_VITIS_LOOP_33_5' (loop 'VITIS_LOOP_33_5'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_0_6_write_ln35', Convolutie/source/Convolutie.c:35) of variable 'sum[2]', Convolutie/source/Convolutie.c:35 on local variable 'sum_0_6' and 'load' operation 32 bit ('sum_0_6_load_1', Convolutie/source/Convolutie.c:35) on local variable 'sum_0_6'.
+WARNING: [HLS 200-880] The II Violation in module 'applyConvolution_Pipeline_VITIS_LOOP_33_5' (loop 'VITIS_LOOP_33_5'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_0_6_write_ln35', Convolutie/source/Convolutie.c:35) of variable 'sum[2]', Convolutie/source/Convolutie.c:35 on local variable 'sum_0_6' and 'load' operation 32 bit ('sum_0_6_load_1', Convolutie/source/Convolutie.c:35) on local variable 'sum_0_6'.
+WARNING: [HLS 200-880] The II Violation in module 'applyConvolution_Pipeline_VITIS_LOOP_33_5' (loop 'VITIS_LOOP_33_5'): Unable to enforce a carried dependence constraint (II = 8, distance = 1, offset = 0) between 'store' operation 0 bit ('sum_0_6_write_ln35', Convolutie/source/Convolutie.c:35) of variable 'sum[2]', Convolutie/source/Convolutie.c:35 on local variable 'sum_0_6' and 'load' operation 32 bit ('sum_0_6_load_1', Convolutie/source/Convolutie.c:35) on local variable 'sum_0_6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 9, Depth = 22, loop 'VITIS_LOOP_33_5'
+WARNING: [HLS 200-871] Estimated clock period (6.312 ns) exceeds the target (target clock period: 8.000 ns, clock uncertainty: 2.160 ns, effective delay budget: 5.840 ns).
+WARNING: [HLS 200-1016] The critical path in module 'applyConvolution_Pipeline_VITIS_LOOP_33_5' consists of the following:
+	'sitofp' operation 32 bit ('conv', Convolutie/source/Convolutie.c:35) [42]  (6.312 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.285 seconds; current allocated memory: 173.922 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.085 seconds; current allocated memory: 174.027 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'applyConvolution_Pipeline_VITIS_LOOP_41_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_41_6'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 4, loop 'VITIS_LOOP_41_6'
+WARNING: [HLS 200-871] Estimated clock period (6.178 ns) exceeds the target (target clock period: 8.000 ns, clock uncertainty: 2.160 ns, effective delay budget: 5.840 ns).
+WARNING: [HLS 200-1016] The critical path in module 'applyConvolution_Pipeline_VITIS_LOOP_41_6' consists of the following:
+	'store' operation 0 bit ('ch_write_ln41', Convolutie/source/Convolutie.c:41) of constant 0 on local variable 'ch', Convolutie/source/Convolutie.c:41 [14]  (1.588 ns)
+	'load' operation 31 bit ('ch', Convolutie/source/Convolutie.c:43) on local variable 'ch', Convolutie/source/Convolutie.c:41 [17]  (0.000 ns)
+	'mux' operation 32 bit ('x', Convolutie/source/Convolutie.c:43) [33]  (1.707 ns)
+	'add' operation 9 bit ('add_ln317', C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:317->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51->Convolutie/source/Convolutie.c:43) [41]  (1.915 ns)
+	'select' operation 9 bit ('select_ln18', C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51->Convolutie/source/Convolutie.c:43) [45]  (0.968 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.175 seconds; current allocated memory: 174.859 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.091 seconds; current allocated memory: 175.156 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'applyConvolution' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.176 seconds; current allocated memory: 176.164 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.112 seconds; current allocated memory: 176.582 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'applyConvolution_Pipeline_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'applyConvolution_Pipeline_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.144 seconds; current allocated memory: 178.191 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'applyConvolution_Pipeline_VITIS_LOOP_33_5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'applyConvolution_Pipeline_VITIS_LOOP_33_5' pipeline 'VITIS_LOOP_33_5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_8_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_3_2_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32ns_32_7_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'applyConvolution_Pipeline_VITIS_LOOP_33_5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.293 seconds; current allocated memory: 180.875 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'applyConvolution_Pipeline_VITIS_LOOP_41_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'applyConvolution_Pipeline_VITIS_LOOP_41_6' pipeline 'VITIS_LOOP_41_6' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mux_3_2_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'applyConvolution_Pipeline_VITIS_LOOP_41_6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 182.492 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'applyConvolution' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'applyConvolution/image_r' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'applyConvolution/output_r' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'applyConvolution/height' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'applyConvolution/width' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'applyConvolution/channels' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'applyConvolution' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'height', 'width' and 'channels' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port control_r.
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'applyConvolution'.
+INFO: [RTMG 210-279] Implementing memory 'applyConvolution_kernel_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.385 seconds; current allocated memory: 185.488 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.868 seconds; current allocated memory: 190.805 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.969 seconds; current allocated memory: 198.160 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for applyConvolution.
+INFO: [VLOG 209-307] Generating Verilog RTL for applyConvolution.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 158.43 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 14.575 seconds; current allocated memory: 88.938 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2 (64-bit)
+Tool Version Limit: 2023.10
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite applyConvolution 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file Convolutie/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 34.207 seconds; current allocated memory: 8.391 MB.

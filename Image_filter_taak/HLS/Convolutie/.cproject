@@ -171,6 +171,8 @@
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/auto_cc/include"/>
                                 								
+                                <listOptionValue builtIn="false" value="C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS"/>
+                                								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/ap_sysc"/>
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include"/>
@@ -178,8 +180,6 @@
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/systemc/include"/>
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/etc"/>
-                                								
-                                <listOptionValue builtIn="false" value="C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS"/>
                                 							
                             </option>
                             							
@@ -190,6 +190,14 @@
                         </tool>
                         					
                     </fileInfo>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1695917184.620453623" name="stb_image_write.h" rcbsApplicability="disable" resourcePath="testbench/stb_image_write.h" toolsToInvoke=""/>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1695917184.1511319251" name="Convolutie.h" rcbsApplicability="disable" resourcePath="testbench/Convolutie.h" toolsToInvoke=""/>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1695917184.551660512" name="input.png" rcbsApplicability="disable" resourcePath="testbench/input.png" toolsToInvoke=""/>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1695917184.444345331" name="stb_image.h" rcbsApplicability="disable" resourcePath="testbench/stb_image.h" toolsToInvoke=""/>
                     					
                     <sourceEntries>
                         						
@@ -353,6 +361,8 @@
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/auto_cc/include"/>
                                 								
+                                <listOptionValue builtIn="false" value="C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS"/>
+                                								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/ap_sysc"/>
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include"/>
@@ -360,8 +370,6 @@
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/win64/tools/systemc/include"/>
                                 								
                                 <listOptionValue builtIn="false" value="C:/Xilinx/Vitis_HLS/2023.2/include/etc"/>
-                                								
-                                <listOptionValue builtIn="false" value="C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS"/>
                                 							
                             </option>
                             							
@@ -372,6 +380,14 @@
                         </tool>
                         					
                     </fileInfo>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.941443958.1756472258" name="stb_image_write.h" rcbsApplicability="disable" resourcePath="testbench/stb_image_write.h" toolsToInvoke=""/>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.941443958.623270088" name="Convolutie.h" rcbsApplicability="disable" resourcePath="testbench/Convolutie.h" toolsToInvoke=""/>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.941443958.955076700" name="input.png" rcbsApplicability="disable" resourcePath="testbench/input.png" toolsToInvoke=""/>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.941443958.1964845597" name="stb_image.h" rcbsApplicability="disable" resourcePath="testbench/stb_image.h" toolsToInvoke=""/>
                     					
                     <sourceEntries>
                         						

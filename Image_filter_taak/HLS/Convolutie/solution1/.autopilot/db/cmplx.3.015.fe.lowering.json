@@ -1,0 +1,18 @@
+{
+  "0": {
+    "basicblocks": 26,
+    "calls": "",
+    "file": "Convolutie.c",
+    "fileloc": 6,
+    "instructions": 141,
+    "loads": {
+      "G": 1,
+      "L": 2
+    },
+    "name": "applyConvolution",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 141
+  }
+}

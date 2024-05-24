@@ -3,30 +3,15 @@
 #include <stdint.h>
 //#include "hls_stream.h"
 
-void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
-#pragma HLS INTERFACE s_axilite port=return bundle=control
-#pragma HLS INTERFACE s_axilite port=image bundle=control
-#pragma HLS INTERFACE s_axilite port=output bundle=control
-#pragma HLS INTERFACE s_axilite port=width bundle=control
-#pragma HLS INTERFACE s_axilite port=height bundle=control
-#pragma HLS INTERFACE s_axilite port=channels bundle=control
-#pragma HLS INTERFACE s_axilite port=kernel bundle=control
+void applyConvolution( unsigned char image[256*256*4],  unsigned char output[254*254*4],int height,int width,int channels) {
+	//DMA
+	#pragma HLS INTERFACE axis port = image
+	#pragma HLS INTERFACE axis port = output
 
-#pragma HLS INTERFACE m_axi depth=65536 port=image offset=slave bundle=input //gmem
-#pragma HLS INTERFACE m_axi depth=65536 port=output offset=slave bundle=output //gmem
-
-
-/*
-
-#pragma HLS INTERFACE ap_ctrl_none port = return
-#pragma HLS INTERFACE ap_none port = image
-#pragma HLS INTERFACE ap_none port = output
-#pragma HLS INTERFACE ap_none port = width
-#pragma HLS INTERFACE ap_none port = height
-#pragma HLS INTERFACE ap_none port = channels
-#pragma HLS INTERFACE ap_none port = kernel
-
-*/
+	//AXI bus
+	#pragma HLS INTERFACE s_axilite port=width bundle=control
+	#pragma HLS INTERFACE s_axilite port=height bundle=control
+	#pragma HLS INTERFACE s_axilite port=channels bundle=control
 
 	float kernel[3][3] = {
 		        {1, 0, -1},

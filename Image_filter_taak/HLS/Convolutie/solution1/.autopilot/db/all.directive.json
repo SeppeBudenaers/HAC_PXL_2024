@@ -1,0 +1,48 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "applyConvolution",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "INTERFACE",
+      "option": [
+        {
+          "name": "s_axilite",
+          "value": ""
+        },
+        {
+          "name": "port",
+          "value": "return"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/directives.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "applyConvolution",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "applyConvolution"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/csynth.tcl",
+    "sourceLine": 22,
+    "success": true
+  }
+]

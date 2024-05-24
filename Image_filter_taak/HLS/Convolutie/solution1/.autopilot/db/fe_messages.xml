@@ -1,0 +1,51 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/csynth.tcl:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=applyConvolution" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/directives.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port = image" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="axis port = output" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=width bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=height bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=channels bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::fp_struct(float)' into 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)'">
+        <args Callee="fp_struct&lt;float&gt;::fp_struct(float)" Callee-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 283 Column 0" Caller="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Caller-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::mantissa() const' into 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)'">
+        <args Callee="fp_struct&lt;float&gt;::mantissa() const" Callee-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 340 Column 0" Caller="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Caller-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::expv() const' into 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)'">
+        <args Callee="fp_struct&lt;float&gt;::expv() const" Callee-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 316 Column 0" Caller="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Caller-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::__signbit() const' into 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)'">
+        <args Callee="fp_struct&lt;float&gt;::__signbit() const" Callee-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 349 Column 0" Caller="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Caller-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:116:0" msg_body="Inlining function 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)' into 'int generic_cast_IEEE754&lt;int, float&gt;(float, bool)'">
+        <args Callee="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Callee-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0" Caller="int generic_cast_IEEE754&lt;int, float&gt;(float, bool)" Caller-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 116 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51:0" msg_body="Inlining function 'int generic_cast_IEEE754&lt;int, float&gt;(float, bool)' into '__hls_fptosi_float_i32'">
+        <args Callee="int generic_cast_IEEE754&lt;int, float&gt;(float, bool)" Callee-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 116 Column 0" Caller="__hls_fptosi_float_i32" Caller-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp} Line 51 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="Convolutie/source/Convolutie.c:6:0" msg_body="Inlining function '__hls_fptosi_float_i32' into 'applyConvolution'">
+        <args Callee="__hls_fptosi_float_i32" Callee-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp} Line 51 Column 0" Caller="applyConvolution" Caller-DebugLoc="File Convolutie/source/Convolutie.c Line 6 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:6:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'image_r'">
+        <args Name="image_r"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:6:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'output_r'">
+        <args Name="output_r"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

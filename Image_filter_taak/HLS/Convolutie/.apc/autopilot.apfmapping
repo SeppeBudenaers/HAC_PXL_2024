@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="Convolutie.c" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.c"/>
-    <originFiles name="Convolutie.h" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.h"/>
-    <originFiles name="stb_image.h" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\Convolutie\source\stb_image.h"/>
-    <originFiles name="stb_image_write.h" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\Convolutie\source\stb_image_write.h"/>
+    <originFiles name="Convolutie.c" path="C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.c"/>
+    <originFiles name="Convolutie.h" path="C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.h"/>
+    <originFiles name="stb_image.h" path="C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\stb_image.h"/>
+    <originFiles name="stb_image_write.h" path="C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\stb_image_write.h"/>
   </source>
   <testbench>
-    <originFiles name="Convolutie_TB.c" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\Convolutie\source\Convolutie_TB.c"/>
-    <originFiles name="Convolutie.h" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.h"/>
-    <originFiles name="input.png" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\Convolutie\source\input.png"/>
-    <originFiles name="stb_image.h" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\Convolutie\source\stb_image.h"/>
-    <originFiles name="stb_image_write.h" path="C:\XilinxDev\HACPXL2024\Image_filter_taak\HLS\Convolutie\source\stb_image_write.h"/>
+    <originFiles name="Convolutie.h" path="C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.h"/>
+    <originFiles name="Convolutie_TB.c" path="C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\Convolutie_TB.c"/>
+    <originFiles name="input.png" path="C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\input.png"/>
+    <originFiles name="stb_image.h" path="C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\stb_image.h"/>
+    <originFiles name="stb_image_write.h" path="C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\stb_image_write.h"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

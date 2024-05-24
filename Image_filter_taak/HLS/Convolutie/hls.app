@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" name="Convolutie" top="Convolutie" projectType="C/C++">
+<project xmlns="com.autoesl.autopilot.project" name="Convolutie" top="applyConvolution" projectType="C/C++">
     <includePaths/>
     <libraryPaths/>
     <Simulation argv="input.png">

@@ -1,0 +1,30 @@
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:398:5: warning: Added loop label VITIS_LOOP_24_1:   [xilinx-label-all-loops]
+    for (int y = 0; y < height; y++) {
+    ^~~
+    VITIS_LOOP_24_1: 
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:398:5: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:399:9: warning: Added loop label VITIS_LOOP_25_2:   [xilinx-label-all-loops]
+        for (int x = 0; x < width; x++) {
+        ^~~
+        VITIS_LOOP_25_2: 
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:399:9: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:401:13: warning: Added loop label VITIS_LOOP_27_3:   [xilinx-label-all-loops]
+            for (int ky = -edge; ky <= edge; ky++) {
+            ^~~
+            VITIS_LOOP_27_3: 
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:401:13: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:402:17: warning: Added loop label VITIS_LOOP_28_4:   [xilinx-label-all-loops]
+                for (int kx = -edge; kx <= edge; kx++) {
+                ^~~
+                VITIS_LOOP_28_4: 
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:402:17: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:407:21: warning: Added loop label VITIS_LOOP_33_5:   [xilinx-label-all-loops]
+                    for (int ch = 0; ch < channels; ch++) {
+                    ^~~
+                    VITIS_LOOP_33_5: 
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:407:21: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:415:13: warning: Added loop label VITIS_LOOP_41_6:   [xilinx-label-all-loops]
+            for (int ch = 0; ch < channels; ch++) {
+            ^~~
+            VITIS_LOOP_41_6: 
+C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c:415:13: note: FIX-IT applied suggested code changes

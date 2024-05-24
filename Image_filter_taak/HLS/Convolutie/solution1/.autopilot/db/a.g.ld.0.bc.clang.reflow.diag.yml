@@ -1,0 +1,167 @@
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 12, Column: 0 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::fp_struct(float)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 283, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 12, Column: 0 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::mantissa() const'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 340, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 12, Column: 0 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::expv() const'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 316, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 12, Column: 0 }
+Function:        _Z20generic_cast_IEEE754IiL9ap_q_mode6EfET_T1_bN3hls9enable_ifIXsr3std14numeric_limitsIS1_EE9is_signedEbE4typeE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<float>::__signbit() const'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 349, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                   Line: 116, Column: 0 }
+Function:        _Z20generic_cast_IEEE754IifET_T0_b
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 12, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'int generic_cast_IEEE754<int, float>(float, bool)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 116, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                   Line: 51, Column: 0 }
+Function:        __hls_fptosi_float_i32
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'int generic_cast_IEEE754<int, float>(float, bool)'
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h', 
+                       Line: 116, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          __hls_fptosi_float_i32
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                       Line: 51, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+Function:        applyConvolution
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          __hls_fptosi_float_i32
+    DebugLoc:        { File: 'C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp', 
+                       Line: 51, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          applyConvolution
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+  - String:          ''''
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_41_6
+  - String:          '> at '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:41:30'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_33_5
+  - String:          '> at '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:33:38'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         ''
+  - String:          ' '
+...
+--- !Missed
+Pass:            pasta-interface-builder
+Name:            UnsupportArrayToStream
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+Function:        applyConvolution
+Args:            
+  - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
+  - Name:            image_r
+  - String:          ''''
+...
+--- !Missed
+Pass:            pasta-interface-builder
+Name:            UnsupportArrayToStream
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+Function:        applyConvolution
+Args:            
+  - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
+  - Name:            output_r
+  - String:          ''''
+...

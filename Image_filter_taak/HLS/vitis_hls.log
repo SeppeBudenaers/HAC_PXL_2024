@@ -1,14 +1,14 @@
 ECHO is off.
 ECHO is off.
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'kobed' on host 'beta' (Windows NT_amd64 version 6.2) on Thu May 23 14:21:17 +0200 2024
-INFO: [HLS 200-10] In directory 'C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS'
+INFO: [HLS 200-10] For user 'seppe' on host 'wheatley' (Windows NT_amd64 version 6.2) on Fri May 24 10:36:20 +0200 2024
+INFO: [HLS 200-10] In directory 'C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS'
 INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
-Sourcing Tcl script 'C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim.tcl'
-INFO: [HLS 200-1510] Running: source C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim.tcl
+Sourcing Tcl script 'C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/export.tcl'
+INFO: [HLS 200-1510] Running: source C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/export.tcl
 INFO: [HLS 200-1510] Running: open_project Convolutie 
-INFO: [HLS 200-10] Opening project 'C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie'.
-INFO: [HLS 200-1510] Running: set_top Convolutie 
+INFO: [HLS 200-10] Opening project 'C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie'.
+INFO: [HLS 200-1510] Running: set_top applyConvolution 
 INFO: [HLS 200-1510] Running: add_files Convolutie/source/Convolutie.c 
 INFO: [HLS 200-10] Adding design file 'Convolutie/source/Convolutie.c' to the project
 INFO: [HLS 200-1510] Running: add_files Convolutie/source/Convolutie.h 
@@ -17,40 +17,56 @@ INFO: [HLS 200-1510] Running: add_files Convolutie/source/stb_image.h
 INFO: [HLS 200-10] Adding design file 'Convolutie/source/stb_image.h' to the project
 INFO: [HLS 200-1510] Running: add_files Convolutie/source/stb_image_write.h 
 INFO: [HLS 200-10] Adding design file 'Convolutie/source/stb_image_write.h' to the project
-INFO: [HLS 200-1510] Running: add_files -tb Convolutie/source/Convolutie.h 
+INFO: [HLS 200-1510] Running: add_files -tb Convolutie/source/Convolutie.h -cflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'Convolutie/source/Convolutie.h' to the project
 INFO: [HLS 200-1510] Running: add_files -tb Convolutie/source/Convolutie_TB.c -cflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'Convolutie/source/Convolutie_TB.c' to the project
-INFO: [HLS 200-1510] Running: add_files -tb Convolutie/source/input.png 
+INFO: [HLS 200-1510] Running: add_files -tb Convolutie/source/input.png -cflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'Convolutie/source/input.png' to the project
-INFO: [HLS 200-1510] Running: add_files -tb Convolutie/source/stb_image.h 
+INFO: [HLS 200-1510] Running: add_files -tb Convolutie/source/stb_image.h -cflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'Convolutie/source/stb_image.h' to the project
-INFO: [HLS 200-1510] Running: add_files -tb Convolutie/source/stb_image_write.h 
+INFO: [HLS 200-1510] Running: add_files -tb Convolutie/source/stb_image_write.h -cflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'Convolutie/source/stb_image_write.h' to the project
 INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
-INFO: [HLS 200-10] Opening solution 'C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1'.
+INFO: [HLS 200-10] Opening solution 'C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
 INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
-INFO: [HLS 200-1510] Running: csim_design -argv input.png -setup -quiet 
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-INFO: [HLS 200-2036] Building debug C Simulation binaries
-   Compiling(apcc) ../../../source/Convolutie.c in debug mode
-ECHO is off.
-ECHO is off.
-INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/apcc.exe'
-INFO: [HLS 200-10] For user 'kobed' on host 'beta' (Windows NT_amd64 version 6.2) on Thu May 23 14:21:21 +0200 2024
-INFO: [HLS 200-10] In directory 'C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build'
-INFO: [APCC 202-3] Tmp directory is C:/XilinxDev/HACPXL2024/Image_filter_taak/HLS/Convolutie/solution1/csim/build/apcc_db_kobed/8108381839038
-INFO: [APCC 202-1] APCC is done.
-INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 1.73 seconds; peak allocated memory: 0.000 MB.
-   Generating csim.exe
-INFO: [HLS 200-2035] Skipping execution of C Simulation due to 'setup' option
-INFO: [SIM 211-1] CSim file generation done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.946 seconds; current allocated memory: 0.371 MB.
-INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 7.743 seconds; peak allocated memory: 117.094 MB.
+INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite applyConvolution 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+ECHO is off.
+ECHO is off.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 451.746 ; gain = 184.457
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'applyConvolution_fadd_32ns_32ns_32_8_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'applyConvolution_fadd_32ns_32ns_32_8_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'applyConvolution_fadd_32ns_32ns_32_8_full_dsp_1_ip'...
+WARNING: [IP_Flow 19-4832] The IP name 'applyConvolution_fmul_32ns_32ns_32_4_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'applyConvolution_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'applyConvolution_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+WARNING: [IP_Flow 19-4832] The IP name 'applyConvolution_sitofp_32ns_32_7_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'applyConvolution_sitofp_32ns_32_7_no_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'applyConvolution_sitofp_32ns_32_7_no_dsp_1_ip'...
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Fri May 24 10:36:55 2024...
+INFO: [HLS 200-802] Generated output file Convolutie/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 34.207 seconds; current allocated memory: 8.391 MB.
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 0 seconds. Total elapsed time: 35.952 seconds; peak allocated memory: 123.383 MB.

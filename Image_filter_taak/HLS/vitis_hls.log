@@ -1,7 +1,7 @@
 ECHO is off.
 ECHO is off.
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2023.2/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'seppe' on host 'wheatley' (Windows NT_amd64 version 6.2) on Fri May 24 10:36:20 +0200 2024
+INFO: [HLS 200-10] For user 'seppe' on host 'wheatley' (Windows NT_amd64 version 6.2) on Fri May 24 11:25:18 +0200 2024
 INFO: [HLS 200-10] In directory 'C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS'
 INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
 Sourcing Tcl script 'C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/export.tcl'
@@ -33,8 +33,11 @@ INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
 INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
 INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
 INFO: [HLS 200-1510] Running: set_directive_interface -mode s_axilite applyConvolution 
 INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
@@ -50,7 +53,7 @@ ECHO is off.
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source run_ippack.tcl -notrace
-create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 451.746 ; gain = 184.457
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 450.758 ; gain = 183.312
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
@@ -66,7 +69,7 @@ INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'applyConvolution_
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Fri May 24 10:36:55 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri May 24 11:25:55 2024...
 INFO: [HLS 200-802] Generated output file Convolutie/solution1/impl/export.zip
-INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 34.207 seconds; current allocated memory: 8.391 MB.
-INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 0 seconds. Total elapsed time: 35.952 seconds; peak allocated memory: 123.383 MB.
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 35.685 seconds; current allocated memory: 8.070 MB.
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 0 seconds. Total elapsed time: 37.314 seconds; peak allocated memory: 118.293 MB.

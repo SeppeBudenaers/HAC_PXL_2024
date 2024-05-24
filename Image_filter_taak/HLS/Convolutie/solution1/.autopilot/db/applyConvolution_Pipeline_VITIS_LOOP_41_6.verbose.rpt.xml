@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'applyConvolution_Pipeline_VITIS_LOOP_41_6'" level="0">
-<item name = "Date">Fri May 24 10:34:46 2024
+<item name = "Date">Fri May 24 11:24:39 2024
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">Convolutie</item>
@@ -53,7 +53,7 @@
 <column name="Instance">-, -, 0, 14, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 68, -</column>
-<column name="Register">-, -, 369, 96, -</column>
+<column name="Register">-, -, 393, 96, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, 1, 0</specialColumn>
 </table>
@@ -95,8 +95,8 @@
 <column name="or_ln44_fu_345_p2">or, 0, 0, 2, 1, 1</column>
 <column name="result_fu_304_p3">select, 0, 0, 32, 1, 32</column>
 <column name="select_ln18_fu_227_p3">select, 0, 0, 9, 1, 9</column>
-<column name="select_ln44_1_fu_351_p3">select, 0, 0, 8, 1, 8</column>
-<column name="select_ln44_fu_337_p3">select, 0, 0, 2, 1, 2</column>
+<column name="select_ln44_1_fu_337_p3">select, 0, 0, 2, 1, 2</column>
+<column name="select_ln44_fu_351_p3">select, 0, 0, 8, 1, 8</column>
 <column name="val_1_fu_292_p3">select, 0, 0, 32, 1, 32</column>
 <column name="shl_ln18_fu_266_p2">shl, 0, 0, 242, 79, 79</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
@@ -109,7 +109,7 @@
 <column name="ap_sig_allocacmp_ch_1">9, 2, 31, 62</column>
 <column name="ch_fu_86">9, 2, 31, 62</column>
 <column name="image_r_TDATA_blk_n">9, 2, 1, 2</column>
-<column name="output_r_TDATA">14, 3, 8, 24</column>
+<column name="output_r_TDATA">14, 3, 32, 96</column>
 <column name="output_r_TDATA_blk_n">9, 2, 1, 2</column>
 </table>
 </item>
@@ -123,18 +123,18 @@
 <column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter2_reg">1, 0, 1, 0</column>
 <column name="ch_fu_86">31, 0, 31, 0</column>
-<column name="icmp_ln42_reg_371">1, 0, 1, 0</column>
-<column name="image_r_read_reg_375">8, 0, 8, 0</column>
-<column name="result_2_reg_406">32, 0, 32, 0</column>
-<column name="select_ln18_reg_395">9, 0, 9, 0</column>
-<column name="tmp_reg_390">1, 0, 1, 0</column>
-<column name="trunc_ln342_reg_385">23, 0, 23, 0</column>
-<column name="val_1_reg_400">32, 0, 32, 0</column>
-<column name="val_1_reg_400_pp0_iter2_reg">32, 0, 32, 0</column>
-<column name="xs_sign_reg_380">1, 0, 1, 0</column>
-<column name="icmp_ln42_reg_371">64, 32, 1, 0</column>
-<column name="image_r_read_reg_375">64, 32, 8, 0</column>
-<column name="xs_sign_reg_380">64, 32, 1, 0</column>
+<column name="icmp_ln42_reg_375">1, 0, 1, 0</column>
+<column name="image_r_read_reg_379">32, 0, 32, 0</column>
+<column name="result_2_reg_410">32, 0, 32, 0</column>
+<column name="select_ln18_reg_399">9, 0, 9, 0</column>
+<column name="tmp_reg_394">1, 0, 1, 0</column>
+<column name="trunc_ln342_reg_389">23, 0, 23, 0</column>
+<column name="val_1_reg_404">32, 0, 32, 0</column>
+<column name="val_1_reg_404_pp0_iter2_reg">32, 0, 32, 0</column>
+<column name="xs_sign_reg_384">1, 0, 1, 0</column>
+<column name="icmp_ln42_reg_375">64, 32, 1, 0</column>
+<column name="image_r_read_reg_379">64, 32, 32, 0</column>
+<column name="xs_sign_reg_384">64, 32, 1, 0</column>
 </table>
 </item>
 </section>
@@ -151,10 +151,10 @@
 <column name="ap_idle">out, 1, ap_ctrl_hs, applyConvolution_Pipeline_VITIS_LOOP_41_6, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, applyConvolution_Pipeline_VITIS_LOOP_41_6, return value</column>
 <column name="image_r_TVALID">in, 1, axis, image_r, pointer</column>
-<column name="image_r_TDATA">in, 8, axis, image_r, pointer</column>
+<column name="image_r_TDATA">in, 32, axis, image_r, pointer</column>
 <column name="image_r_TREADY">out, 1, axis, image_r, pointer</column>
 <column name="output_r_TREADY">in, 1, axis, output_r, pointer</column>
-<column name="output_r_TDATA">out, 8, axis, output_r, pointer</column>
+<column name="output_r_TDATA">out, 32, axis, output_r, pointer</column>
 <column name="output_r_TVALID">out, 1, axis, output_r, pointer</column>
 <column name="channels">in, 32, ap_none, channels, scalar</column>
 <column name="sum_0_5">in, 32, ap_none, sum_0_5, scalar</column>

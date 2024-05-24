@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'applyConvolution'" level="0">
-<item name = "Date">Fri May 24 10:34:46 2024
+<item name = "Date">Fri May 24 11:24:40 2024
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">Convolutie</item>
@@ -54,7 +54,7 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 695, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">0, 9, 1729, 2595, -</column>
+<column name="Instance">0, 9, 1777, 2595, -</column>
 <column name="Memory">0, -, 32, 5, -</column>
 <column name="Multiplexer">-, -, -, 230, -</column>
 <column name="Register">-, -, 907, -, -</column>
@@ -67,8 +67,8 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="grp_applyConvolution_Pipeline_1_fu_275">applyConvolution_Pipeline_1, 0, 0, 100, 76, 0</column>
-<column name="grp_applyConvolution_Pipeline_VITIS_LOOP_33_5_fu_285">applyConvolution_Pipeline_VITIS_LOOP_33_5, 0, 5, 914, 1225, 0</column>
-<column name="grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303">applyConvolution_Pipeline_VITIS_LOOP_41_6, 0, 0, 369, 973, 0</column>
+<column name="grp_applyConvolution_Pipeline_VITIS_LOOP_33_5_fu_285">applyConvolution_Pipeline_VITIS_LOOP_33_5, 0, 5, 938, 1225, 0</column>
+<column name="grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303">applyConvolution_Pipeline_VITIS_LOOP_41_6, 0, 0, 393, 973, 0</column>
 <column name="control_r_s_axi_U">control_r_s_axi, 0, 0, 36, 40, 0</column>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 144, 232, 0</column>
 <column name="mul_32ns_32ns_64_3_1_U31">mul_32ns_32ns_64_3_1, 0, 4, 166, 49, 0</column>
@@ -234,10 +234,10 @@
 <column name="ap_clk">in, 1, ap_ctrl_hs, applyConvolution, return value</column>
 <column name="ap_rst_n">in, 1, ap_ctrl_hs, applyConvolution, return value</column>
 <column name="interrupt">out, 1, ap_ctrl_hs, applyConvolution, return value</column>
-<column name="image_r_TDATA">in, 8, axis, image_r, pointer</column>
+<column name="image_r_TDATA">in, 32, axis, image_r, pointer</column>
 <column name="image_r_TVALID">in, 1, axis, image_r, pointer</column>
 <column name="image_r_TREADY">out, 1, axis, image_r, pointer</column>
-<column name="output_r_TDATA">out, 8, axis, output_r, pointer</column>
+<column name="output_r_TDATA">out, 32, axis, output_r, pointer</column>
 <column name="output_r_TVALID">out, 1, axis, output_r, pointer</column>
 <column name="output_r_TREADY">in, 1, axis, output_r, pointer</column>
 </table>

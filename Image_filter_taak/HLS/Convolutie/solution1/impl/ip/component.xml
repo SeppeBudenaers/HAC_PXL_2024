@@ -437,7 +437,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>TDATA_NUM_BYTES</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.IMAGE_R.TDATA_NUM_BYTES">1</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.IMAGE_R.TDATA_NUM_BYTES">4</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>TUSER_WIDTH</spirit:name>
@@ -483,7 +483,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>TDATA_NUM_BYTES</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.OUTPUT_R.TDATA_NUM_BYTES">1</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.OUTPUT_R.TDATA_NUM_BYTES">4</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>TUSER_WIDTH</spirit:name>
@@ -893,7 +893,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ed216430</spirit:value>
+            <spirit:value>14d9f4eb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -912,7 +912,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>27e4804e</spirit:value>
+            <spirit:value>1f2e7633</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -931,7 +931,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>360f353b</spirit:value>
+            <spirit:value>036c18ac</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -950,7 +950,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>3b52a952</spirit:value>
+            <spirit:value>55f73c36</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1588,7 +1588,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long">7</spirit:left>
+            <spirit:left spirit:format="long">31</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1631,7 +1631,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long">7</spirit:left>
+            <spirit:left spirit:format="long">31</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1957,7 +1957,7 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/applyConvolution.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_8ff08f00</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_6cc627eb</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -2180,8 +2180,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Applyconvolution</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2113571496</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-05-24T08:36:54Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2113571545</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-05-24T09:25:53Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -2189,10 +2189,10 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2023.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="2ec9ccd2"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="484056bd"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="9ca28ad4"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="737322cb"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="5eaeb140"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="953f5989"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="cf3a126e"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="dab66528"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="8b2a73d6"/>
     </xilinx:packagingInfo>

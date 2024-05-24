@@ -19,7 +19,7 @@ set C_modelArgList {
 	{ sum_1_5 float 32 regular  }
 	{ sum_0_5 float 32 regular  }
 	{ channels int 32 regular  }
-	{ image_r int 8 regular {axi_s 0 volatile  { image_r Data } }  }
+	{ image_r int 32 regular {axi_s 0 volatile  { image_r Data } }  }
 	{ kernel_load float 32 regular  }
 	{ sum_2_6_out float 32 regular {pointer 1}  }
 	{ sum_1_6_out float 32 regular {pointer 1}  }
@@ -32,7 +32,7 @@ set C_modelArgMapList {[
  	{ "Name" : "sum_1_5", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "sum_0_5", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "channels", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "image_r", "interface" : "axis", "bitwidth" : 8, "direction" : "READONLY"} , 
+ 	{ "Name" : "image_r", "interface" : "axis", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "kernel_load", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "sum_2_6_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "sum_1_6_out", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
@@ -50,7 +50,7 @@ set portList {
 	{ sum_1_5 sc_in sc_lv 32 signal 1 } 
 	{ sum_0_5 sc_in sc_lv 32 signal 2 } 
 	{ channels sc_in sc_lv 32 signal 3 } 
-	{ image_r_TDATA sc_in sc_lv 8 signal 4 } 
+	{ image_r_TDATA sc_in sc_lv 32 signal 4 } 
 	{ image_r_TVALID sc_in sc_logic 1 invld 4 } 
 	{ image_r_TREADY sc_out sc_logic 1 inacc 4 } 
 	{ kernel_load sc_in sc_lv 32 signal 5 } 
@@ -72,7 +72,7 @@ set NewPortList {[
  	{ "name": "sum_1_5", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "sum_1_5", "role": "default" }} , 
  	{ "name": "sum_0_5", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "sum_0_5", "role": "default" }} , 
  	{ "name": "channels", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "channels", "role": "default" }} , 
- 	{ "name": "image_r_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "image_r", "role": "TDATA" }} , 
+ 	{ "name": "image_r_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "image_r", "role": "TDATA" }} , 
  	{ "name": "image_r_TVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "image_r", "role": "TVALID" }} , 
  	{ "name": "image_r_TREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "image_r", "role": "TREADY" }} , 
  	{ "name": "kernel_load", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "kernel_load", "role": "default" }} , 
@@ -148,7 +148,7 @@ set Spec2ImplPortList {
 	sum_1_5 { ap_none {  { sum_1_5 in_data 0 32 } } }
 	sum_0_5 { ap_none {  { sum_0_5 in_data 0 32 } } }
 	channels { ap_none {  { channels in_data 0 32 } } }
-	image_r { axis {  { image_r_TDATA in_data 0 8 }  { image_r_TVALID in_vld 0 1 }  { image_r_TREADY in_acc 1 1 } } }
+	image_r { axis {  { image_r_TDATA in_data 0 32 }  { image_r_TVALID in_vld 0 1 }  { image_r_TREADY in_acc 1 1 } } }
 	kernel_load { ap_none {  { kernel_load in_data 0 32 } } }
 	sum_2_6_out { ap_vld {  { sum_2_6_out out_data 1 32 }  { sum_2_6_out_ap_vld out_vld 1 1 } } }
 	sum_1_6_out { ap_vld {  { sum_1_6_out out_data 1 32 }  { sum_1_6_out_ap_vld out_vld 1 1 } } }

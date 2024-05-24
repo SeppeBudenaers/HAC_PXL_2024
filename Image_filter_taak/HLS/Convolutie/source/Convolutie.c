@@ -3,7 +3,7 @@
 #include <stdint.h>
 //#include "hls_stream.h"
 
-void applyConvolution( unsigned char image[256*256*4],  unsigned char output[254*254*4],int height,int width,int channels) {
+void applyConvolution( int image[256*256*4],  int output[254*254*4],int height,int width,int channels) {
 	//DMA
 	#pragma HLS INTERFACE axis port = image
 	#pragma HLS INTERFACE axis port = output

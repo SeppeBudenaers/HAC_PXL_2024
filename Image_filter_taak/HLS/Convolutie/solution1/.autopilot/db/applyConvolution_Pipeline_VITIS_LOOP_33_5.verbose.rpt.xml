@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'applyConvolution_Pipeline_VITIS_LOOP_33_5'" level="0">
-<item name = "Date">Fri May 24 10:34:45 2024
+<item name = "Date">Fri May 24 11:24:39 2024
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">Convolutie</item>
@@ -53,7 +53,7 @@
 <column name="Instance">-, 5, 439, 773, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 179, -</column>
-<column name="Register">-, -, 475, 32, -</column>
+<column name="Register">-, -, 499, 32, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
 <specialColumn name="Utilization (%)">0, 2, ~0, 2, 0</specialColumn>
 </table>
@@ -82,18 +82,18 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln33_fu_185_p2">+, 0, 0, 38, 31, 1</column>
+<column name="add_ln33_fu_181_p2">+, 0, 0, 38, 31, 1</column>
 <column name="ap_block_pp0_stage1_11001">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state2_pp0_stage1_iter0">and, 0, 0, 2, 1, 1</column>
 <column name="ap_predicate_op48_read_state2">and, 0, 0, 2, 1, 1</column>
 <column name="icmp_ln33_fu_169_p2">icmp, 0, 0, 39, 32, 32</column>
 <column name="icmp_ln34_fu_175_p2">icmp, 0, 0, 38, 31, 2</column>
-<column name="icmp_ln35_1_fu_223_p2">icmp, 0, 0, 10, 2, 1</column>
-<column name="icmp_ln35_fu_218_p2">icmp, 0, 0, 10, 2, 1</column>
-<column name="or_ln35_fu_228_p2">or, 0, 0, 2, 1, 1</column>
-<column name="sum_2_2_fu_240_p3">select, 0, 0, 32, 1, 32</column>
-<column name="sum_2_3_fu_246_p3">select, 0, 0, 32, 1, 32</column>
-<column name="sum_2_fu_234_p3">select, 0, 0, 32, 1, 32</column>
+<column name="icmp_ln35_1_fu_219_p2">icmp, 0, 0, 10, 2, 1</column>
+<column name="icmp_ln35_fu_214_p2">icmp, 0, 0, 10, 2, 1</column>
+<column name="or_ln35_fu_224_p2">or, 0, 0, 2, 1, 1</column>
+<column name="sum_2_2_fu_236_p3">select, 0, 0, 32, 1, 32</column>
+<column name="sum_2_3_fu_242_p3">select, 0, 0, 32, 1, 32</column>
+<column name="sum_2_fu_230_p3">select, 0, 0, 32, 1, 32</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -125,24 +125,24 @@
 <column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
 <column name="ap_loop_exit_ready_pp0_iter1_reg">1, 0, 1, 0</column>
 <column name="ch_1_fu_58">31, 0, 31, 0</column>
-<column name="ch_reg_315">31, 0, 31, 0</column>
-<column name="conv_reg_339">32, 0, 32, 0</column>
-<column name="icmp_ln33_reg_321">1, 0, 1, 0</column>
-<column name="icmp_ln33_reg_321_pp0_iter1_reg">1, 0, 1, 0</column>
-<column name="icmp_ln34_reg_325">1, 0, 1, 0</column>
-<column name="image_r_read_reg_329">8, 0, 8, 0</column>
-<column name="mul_reg_366">32, 0, 32, 0</column>
+<column name="ch_reg_311">31, 0, 31, 0</column>
+<column name="conv_reg_330">32, 0, 32, 0</column>
+<column name="icmp_ln33_reg_317">1, 0, 1, 0</column>
+<column name="icmp_ln33_reg_317_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="icmp_ln34_reg_321">1, 0, 1, 0</column>
+<column name="image_r_read_reg_325">32, 0, 32, 0</column>
+<column name="mul_reg_357">32, 0, 32, 0</column>
 <column name="sum_0_6_fu_62">32, 0, 32, 0</column>
-<column name="sum_0_6_load_1_reg_351">32, 0, 32, 0</column>
+<column name="sum_0_6_load_1_reg_342">32, 0, 32, 0</column>
 <column name="sum_1_6_fu_66">32, 0, 32, 0</column>
-<column name="sum_1_6_load_1_reg_356">32, 0, 32, 0</column>
-<column name="sum_2_4_reg_376">32, 0, 32, 0</column>
+<column name="sum_1_6_load_1_reg_347">32, 0, 32, 0</column>
+<column name="sum_2_4_reg_367">32, 0, 32, 0</column>
 <column name="sum_2_6_fu_70">32, 0, 32, 0</column>
-<column name="sum_2_6_load_1_reg_361">32, 0, 32, 0</column>
-<column name="tmp_2_reg_371">32, 0, 32, 0</column>
-<column name="trunc_ln35_reg_344">2, 0, 2, 0</column>
-<column name="trunc_ln35_reg_344_pp0_iter1_reg">2, 0, 2, 0</column>
-<column name="icmp_ln34_reg_325">64, 32, 1, 0</column>
+<column name="sum_2_6_load_1_reg_352">32, 0, 32, 0</column>
+<column name="tmp_2_reg_362">32, 0, 32, 0</column>
+<column name="trunc_ln35_reg_335">2, 0, 2, 0</column>
+<column name="trunc_ln35_reg_335_pp0_iter1_reg">2, 0, 2, 0</column>
+<column name="icmp_ln34_reg_321">64, 32, 1, 0</column>
 </table>
 </item>
 </section>
@@ -162,7 +162,7 @@
 <column name="sum_1_5">in, 32, ap_none, sum_1_5, scalar</column>
 <column name="sum_0_5">in, 32, ap_none, sum_0_5, scalar</column>
 <column name="channels">in, 32, ap_none, channels, scalar</column>
-<column name="image_r_TDATA">in, 8, axis, image_r, pointer</column>
+<column name="image_r_TDATA">in, 32, axis, image_r, pointer</column>
 <column name="image_r_TVALID">in, 1, axis, image_r, pointer</column>
 <column name="image_r_TREADY">out, 1, axis, image_r, pointer</column>
 <column name="kernel_load">in, 32, ap_none, kernel_load, scalar</column>

@@ -70,7 +70,7 @@
         <Resources>
             <BRAM_18K>0</BRAM_18K>
             <DSP>9</DSP>
-            <FF>2668</FF>
+            <FF>2716</FF>
             <LUT>3525</LUT>
             <URAM>0</URAM>
         </Resources>
@@ -498,7 +498,7 @@
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
             <Dir>in</Dir>
-            <Bits>8</Bits>
+            <Bits>32</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -534,7 +534,7 @@
             <IOProtocol>axis</IOProtocol>
             <IOConfig>register, both mode</IOConfig>
             <Dir>out</Dir>
-            <Bits>8</Bits>
+            <Bits>32</Bits>
             <Attribute>data</Attribute>
             <CType>int</CType>
         </RtlPorts>
@@ -579,7 +579,7 @@
                     <ModuleName>applyConvolution_Pipeline_VITIS_LOOP_33_5</ModuleName>
                     <IsCompInst>true</IsCompInst>
                     <ID>285</ID>
-                    <BindInstances>add_ln33_fu_185_p2 fmul_32ns_32ns_32_4_max_dsp_1_U8 fadd_32ns_32ns_32_8_full_dsp_1_U7</BindInstances>
+                    <BindInstances>add_ln33_fu_181_p2 fmul_32ns_32ns_32_4_max_dsp_1_U8 fadd_32ns_32ns_32_8_full_dsp_1_U7</BindInstances>
                 </Instance>
                 <Instance>
                     <InstName>grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303</InstName>
@@ -718,7 +718,7 @@
                     <DSP>5</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>2</UTIL_DSP>
-                    <FF>914</FF>
+                    <FF>938</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
                     <LUT>1225</LUT>
@@ -733,7 +733,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_33_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln33_fu_185_p2" SOURCE="Convolutie/source/Convolutie.c:33" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln33"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_33_5" OPTYPE="add" PRAGMA="" RTLNAME="add_ln33_fu_181_p2" SOURCE="Convolutie/source/Convolutie.c:33" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln33"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="VITIS_LOOP_33_5" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U8" SOURCE="Convolutie/source/Convolutie.c:35" STORAGESUBTYPE="" URAM="0" VARIABLE="mul"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="7" LOOP="VITIS_LOOP_33_5" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_8_full_dsp_1_U7" SOURCE="Convolutie/source/Convolutie.c:35" STORAGESUBTYPE="" URAM="0" VARIABLE="sum_2_4"/>
             </BindNodes>
@@ -788,7 +788,7 @@
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>369</FF>
+                    <FF>393</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
                     <LUT>973</LUT>
@@ -892,7 +892,7 @@
                     <DSP>9</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>4</UTIL_DSP>
-                    <FF>2668</FF>
+                    <FF>2716</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>2</UTIL_FF>
                     <LUT>3525</LUT>
@@ -924,12 +924,12 @@
     <FIFOInformation/>
     <UserConfigCommands/>
     <Args>
-        <Arg ArgName="image" index="0" direction="in" srcType="unsigned char*" srcSize="8">
+        <Arg ArgName="image" index="0" direction="in" srcType="int*" srcSize="32">
             <hwRefs>
                 <hwRef type="interface" interface="image_r" name="" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="output" index="1" direction="out" srcType="unsigned char*" srcSize="8">
+        <Arg ArgName="output" index="1" direction="out" srcType="int*" srcSize="32">
             <hwRefs>
                 <hwRef type="interface" interface="output_r" name="" usage="data" direction="out"/>
             </hwRefs>
@@ -1084,7 +1084,7 @@
                 <port>interrupt</port>
             </ports>
         </Interface>
-        <Interface InterfaceName="image_r" type="axi4stream" busTypeName="axis" mode="slave" dataWidth="8" portPrefix="image_r_">
+        <Interface InterfaceName="image_r" type="axi4stream" busTypeName="axis" mode="slave" dataWidth="32" portPrefix="image_r_">
             <ports>
                 <port>image_r_TDATA</port>
                 <port>image_r_TREADY</port>
@@ -1094,7 +1094,7 @@
                 <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both" argName="image"/>
             </constraints>
         </Interface>
-        <Interface InterfaceName="output_r" type="axi4stream" busTypeName="axis" mode="master" dataWidth="8" portPrefix="output_r_">
+        <Interface InterfaceName="output_r" type="axi4stream" busTypeName="axis" mode="master" dataWidth="32" portPrefix="output_r_">
             <ports>
                 <port>output_r_TDATA</port>
                 <port>output_r_TREADY</port>
@@ -1129,8 +1129,8 @@
             <item name="AXIS">
                 <table>
                     <keys size="6">Interface, Direction, Register Mode, TDATA, TREADY, TVALID</keys>
-                    <column name="image_r">in, both, 8, 1, 1</column>
-                    <column name="output_r">out, both, 8, 1, 1</column>
+                    <column name="image_r">in, both, 32, 1, 1</column>
+                    <column name="output_r">out, both, 32, 1, 1</column>
                 </table>
             </item>
             <item name="TOP LEVEL CONTROL">
@@ -1149,8 +1149,8 @@
             <item name="Top Function Arguments">
                 <table>
                     <keys size="3">Argument, Direction, Datatype</keys>
-                    <column name="image">in, unsigned char*</column>
-                    <column name="output">out, unsigned char*</column>
+                    <column name="image">in, int*</column>
+                    <column name="output">out, int*</column>
                     <column name="height">in, int</column>
                     <column name="width">in, int</column>
                     <column name="channels">in, int</column>

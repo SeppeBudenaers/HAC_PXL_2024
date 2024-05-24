@@ -4,17 +4,17 @@ target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:20
 target triple = "fpga64-xilinx-none"
 
 ; Function Attrs: noinline
-define void @apatb_applyConvolution_ir(i8* noalias nonnull "fpga.decayed.dim.hint"="262144" %image, i8* noalias nonnull "fpga.decayed.dim.hint"="258064" %output, i32 %height, i32 %width, i32 %channels) local_unnamed_addr #0 {
+define void @apatb_applyConvolution_ir(i32* noalias nonnull "fpga.decayed.dim.hint"="262144" %image, i32* noalias nonnull "fpga.decayed.dim.hint"="258064" %output, i32 %height, i32 %width, i32 %channels) local_unnamed_addr #0 {
 entry:
-  %malloccall = tail call i8* @malloc(i64 262144)
-  %image_copy = bitcast i8* %malloccall to [262144 x i8]*
-  %malloccall1 = tail call i8* @malloc(i64 258064)
-  %output_copy = bitcast i8* %malloccall1 to [258064 x i8]*
-  %0 = bitcast i8* %image to [262144 x i8]*
-  %1 = bitcast i8* %output to [258064 x i8]*
-  call fastcc void @copy_in([262144 x i8]* nonnull %0, [262144 x i8]* %image_copy, [258064 x i8]* nonnull %1, [258064 x i8]* %output_copy)
-  call void @apatb_applyConvolution_hw([262144 x i8]* %image_copy, [258064 x i8]* %output_copy, i32 %height, i32 %width, i32 %channels)
-  call void @copy_back([262144 x i8]* %0, [262144 x i8]* %image_copy, [258064 x i8]* %1, [258064 x i8]* %output_copy)
+  %malloccall = tail call i8* @malloc(i64 1048576)
+  %image_copy = bitcast i8* %malloccall to [262144 x i32]*
+  %malloccall1 = tail call i8* @malloc(i64 1032256)
+  %output_copy = bitcast i8* %malloccall1 to [258064 x i32]*
+  %0 = bitcast i32* %image to [262144 x i32]*
+  %1 = bitcast i32* %output to [258064 x i32]*
+  call fastcc void @copy_in([262144 x i32]* nonnull %0, [262144 x i32]* %image_copy, [258064 x i32]* nonnull %1, [258064 x i32]* %output_copy)
+  call void @apatb_applyConvolution_hw([262144 x i32]* %image_copy, [258064 x i32]* %output_copy, i32 %height, i32 %width, i32 %channels)
+  call void @copy_back([262144 x i32]* %0, [262144 x i32]* %image_copy, [258064 x i32]* %1, [258064 x i32]* %output_copy)
   tail call void @free(i8* %malloccall)
   tail call void @free(i8* %malloccall1)
   ret void
@@ -23,23 +23,23 @@ entry:
 declare noalias i8* @malloc(i64) local_unnamed_addr
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_in([262144 x i8]* noalias readonly, [262144 x i8]* noalias, [258064 x i8]* noalias readonly, [258064 x i8]* noalias) unnamed_addr #1 {
+define internal fastcc void @copy_in([262144 x i32]* noalias readonly, [262144 x i32]* noalias, [258064 x i32]* noalias readonly, [258064 x i32]* noalias) unnamed_addr #1 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a262144i8([262144 x i8]* %1, [262144 x i8]* %0)
-  call fastcc void @onebyonecpy_hls.p0a258064i8([258064 x i8]* %3, [258064 x i8]* %2)
+  call fastcc void @onebyonecpy_hls.p0a262144i32([262144 x i32]* %1, [262144 x i32]* %0)
+  call fastcc void @onebyonecpy_hls.p0a258064i32([258064 x i32]* %3, [258064 x i32]* %2)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @onebyonecpy_hls.p0a262144i8([262144 x i8]* noalias %dst, [262144 x i8]* noalias readonly %src) unnamed_addr #2 {
+define internal fastcc void @onebyonecpy_hls.p0a262144i32([262144 x i32]* noalias %dst, [262144 x i32]* noalias readonly %src) unnamed_addr #2 {
 entry:
-  %0 = icmp eq [262144 x i8]* %dst, null
-  %1 = icmp eq [262144 x i8]* %src, null
+  %0 = icmp eq [262144 x i32]* %dst, null
+  %1 = icmp eq [262144 x i32]* %src, null
   %2 = or i1 %0, %1
   br i1 %2, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  call void @arraycpy_hls.p0a262144i8([262144 x i8]* nonnull %dst, [262144 x i8]* nonnull %src, i64 262144)
+  call void @arraycpy_hls.p0a262144i32([262144 x i32]* nonnull %dst, [262144 x i32]* nonnull %src, i64 262144)
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -47,10 +47,10 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @arraycpy_hls.p0a262144i8([262144 x i8]* %dst, [262144 x i8]* readonly %src, i64 %num) local_unnamed_addr #3 {
+define void @arraycpy_hls.p0a262144i32([262144 x i32]* %dst, [262144 x i32]* readonly %src, i64 %num) local_unnamed_addr #3 {
 entry:
-  %0 = icmp eq [262144 x i8]* %src, null
-  %1 = icmp eq [262144 x i8]* %dst, null
+  %0 = icmp eq [262144 x i32]* %src, null
+  %1 = icmp eq [262144 x i32]* %dst, null
   %2 = or i1 %1, %0
   br i1 %2, label %ret, label %copy
 
@@ -63,10 +63,10 @@ for.loop.lr.ph:                                   ; preds = %copy
 
 for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
   %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %dst.addr = getelementptr [262144 x i8], [262144 x i8]* %dst, i64 0, i64 %for.loop.idx2
-  %src.addr = getelementptr [262144 x i8], [262144 x i8]* %src, i64 0, i64 %for.loop.idx2
-  %3 = load i8, i8* %src.addr, align 1
-  store i8 %3, i8* %dst.addr, align 1
+  %dst.addr = getelementptr [262144 x i32], [262144 x i32]* %dst, i64 0, i64 %for.loop.idx2
+  %src.addr = getelementptr [262144 x i32], [262144 x i32]* %src, i64 0, i64 %for.loop.idx2
+  %3 = load i32, i32* %src.addr, align 4
+  store i32 %3, i32* %dst.addr, align 4
   %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
   %exitcond = icmp ne i64 %for.loop.idx.next, %num
   br i1 %exitcond, label %for.loop, label %copy.split
@@ -79,15 +79,15 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @onebyonecpy_hls.p0a258064i8([258064 x i8]* noalias %dst, [258064 x i8]* noalias readonly %src) unnamed_addr #2 {
+define internal fastcc void @onebyonecpy_hls.p0a258064i32([258064 x i32]* noalias %dst, [258064 x i32]* noalias readonly %src) unnamed_addr #2 {
 entry:
-  %0 = icmp eq [258064 x i8]* %dst, null
-  %1 = icmp eq [258064 x i8]* %src, null
+  %0 = icmp eq [258064 x i32]* %dst, null
+  %1 = icmp eq [258064 x i32]* %src, null
   %2 = or i1 %0, %1
   br i1 %2, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  call void @arraycpy_hls.p0a258064i8([258064 x i8]* nonnull %dst, [258064 x i8]* nonnull %src, i64 258064)
+  call void @arraycpy_hls.p0a258064i32([258064 x i32]* nonnull %dst, [258064 x i32]* nonnull %src, i64 258064)
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -95,10 +95,10 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @arraycpy_hls.p0a258064i8([258064 x i8]* %dst, [258064 x i8]* readonly %src, i64 %num) local_unnamed_addr #3 {
+define void @arraycpy_hls.p0a258064i32([258064 x i32]* %dst, [258064 x i32]* readonly %src, i64 %num) local_unnamed_addr #3 {
 entry:
-  %0 = icmp eq [258064 x i8]* %src, null
-  %1 = icmp eq [258064 x i8]* %dst, null
+  %0 = icmp eq [258064 x i32]* %src, null
+  %1 = icmp eq [258064 x i32]* %dst, null
   %2 = or i1 %1, %0
   br i1 %2, label %ret, label %copy
 
@@ -111,10 +111,10 @@ for.loop.lr.ph:                                   ; preds = %copy
 
 for.loop:                                         ; preds = %for.loop, %for.loop.lr.ph
   %for.loop.idx2 = phi i64 [ 0, %for.loop.lr.ph ], [ %for.loop.idx.next, %for.loop ]
-  %dst.addr = getelementptr [258064 x i8], [258064 x i8]* %dst, i64 0, i64 %for.loop.idx2
-  %src.addr = getelementptr [258064 x i8], [258064 x i8]* %src, i64 0, i64 %for.loop.idx2
-  %3 = load i8, i8* %src.addr, align 1
-  store i8 %3, i8* %dst.addr, align 1
+  %dst.addr = getelementptr [258064 x i32], [258064 x i32]* %dst, i64 0, i64 %for.loop.idx2
+  %src.addr = getelementptr [258064 x i32], [258064 x i32]* %src, i64 0, i64 %for.loop.idx2
+  %3 = load i32, i32* %src.addr, align 4
+  store i32 %3, i32* %dst.addr, align 4
   %for.loop.idx.next = add nuw nsw i64 %for.loop.idx2, 1
   %exitcond = icmp ne i64 %for.loop.idx.next, %num
   br i1 %exitcond, label %for.loop, label %copy.split
@@ -127,36 +127,36 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_out([262144 x i8]* noalias, [262144 x i8]* noalias readonly, [258064 x i8]* noalias, [258064 x i8]* noalias readonly) unnamed_addr #4 {
+define internal fastcc void @copy_out([262144 x i32]* noalias, [262144 x i32]* noalias readonly, [258064 x i32]* noalias, [258064 x i32]* noalias readonly) unnamed_addr #4 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a262144i8([262144 x i8]* %0, [262144 x i8]* %1)
-  call fastcc void @onebyonecpy_hls.p0a258064i8([258064 x i8]* %2, [258064 x i8]* %3)
+  call fastcc void @onebyonecpy_hls.p0a262144i32([262144 x i32]* %0, [262144 x i32]* %1)
+  call fastcc void @onebyonecpy_hls.p0a258064i32([258064 x i32]* %2, [258064 x i32]* %3)
   ret void
 }
 
 declare void @free(i8*) local_unnamed_addr
 
-declare void @apatb_applyConvolution_hw([262144 x i8]*, [258064 x i8]*, i32, i32, i32)
+declare void @apatb_applyConvolution_hw([262144 x i32]*, [258064 x i32]*, i32, i32, i32)
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_back([262144 x i8]* noalias, [262144 x i8]* noalias readonly, [258064 x i8]* noalias, [258064 x i8]* noalias readonly) unnamed_addr #4 {
+define internal fastcc void @copy_back([262144 x i32]* noalias, [262144 x i32]* noalias readonly, [258064 x i32]* noalias, [258064 x i32]* noalias readonly) unnamed_addr #4 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a262144i8([262144 x i8]* %0, [262144 x i8]* %1)
-  call fastcc void @onebyonecpy_hls.p0a258064i8([258064 x i8]* %2, [258064 x i8]* %3)
+  call fastcc void @onebyonecpy_hls.p0a262144i32([262144 x i32]* %0, [262144 x i32]* %1)
+  call fastcc void @onebyonecpy_hls.p0a258064i32([258064 x i32]* %2, [258064 x i32]* %3)
   ret void
 }
 
-define void @applyConvolution_hw_stub_wrapper([262144 x i8]*, [258064 x i8]*, i32, i32, i32) #5 {
+define void @applyConvolution_hw_stub_wrapper([262144 x i32]*, [258064 x i32]*, i32, i32, i32) #5 {
 entry:
-  call void @copy_out([262144 x i8]* null, [262144 x i8]* %0, [258064 x i8]* null, [258064 x i8]* %1)
-  %5 = bitcast [262144 x i8]* %0 to i8*
-  %6 = bitcast [258064 x i8]* %1 to i8*
-  call void @applyConvolution_hw_stub(i8* %5, i8* %6, i32 %2, i32 %3, i32 %4)
-  call void @copy_in([262144 x i8]* null, [262144 x i8]* %0, [258064 x i8]* null, [258064 x i8]* %1)
+  call void @copy_out([262144 x i32]* null, [262144 x i32]* %0, [258064 x i32]* null, [258064 x i32]* %1)
+  %5 = bitcast [262144 x i32]* %0 to i32*
+  %6 = bitcast [258064 x i32]* %1 to i32*
+  call void @applyConvolution_hw_stub(i32* %5, i32* %6, i32 %2, i32 %3, i32 %4)
+  call void @copy_in([262144 x i32]* null, [262144 x i32]* %0, [258064 x i32]* null, [258064 x i32]* %1)
   ret void
 }
 
-declare void @applyConvolution_hw_stub(i8*, i8*, i32, i32, i32)
+declare void @applyConvolution_hw_stub(i32*, i32*, i32, i32, i32)
 
 attributes #0 = { noinline "fpga.wrapper.func"="wrapper" }
 attributes #1 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="copyin" }

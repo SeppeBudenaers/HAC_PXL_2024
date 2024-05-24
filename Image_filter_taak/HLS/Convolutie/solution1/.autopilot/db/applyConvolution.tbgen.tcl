@@ -15,8 +15,8 @@ set DLRegItemOffset 0
 set C_modelName {applyConvolution}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ image_r int 8 regular {axi_s 0 volatile  { image_r Data } }  }
-	{ output_r int 8 regular {axi_s 1 volatile  { output_r Data } }  }
+	{ image_r int 32 regular {axi_s 0 volatile  { image_r Data } }  }
+	{ output_r int 32 regular {axi_s 1 volatile  { output_r Data } }  }
 	{ height int 32 regular {axi_slave 0}  }
 	{ width int 32 regular {axi_slave 0}  }
 	{ channels int 32 regular {axi_slave 0}  }
@@ -24,8 +24,8 @@ set C_modelArgList {
 set hasAXIMCache 0
 set AXIMCacheInstList { }
 set C_modelArgMapList {[ 
-	{ "Name" : "image_r", "interface" : "axis", "bitwidth" : 8, "direction" : "READONLY"} , 
- 	{ "Name" : "output_r", "interface" : "axis", "bitwidth" : 8, "direction" : "WRITEONLY"} , 
+	{ "Name" : "image_r", "interface" : "axis", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "output_r", "interface" : "axis", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "height", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":23}} , 
  	{ "Name" : "width", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":24}, "offset_end" : {"in":31}} , 
  	{ "Name" : "channels", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":32}, "offset_end" : {"in":39}} ]}
@@ -34,10 +34,10 @@ set portNum 43
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
-	{ image_r_TDATA sc_in sc_lv 8 signal 0 } 
+	{ image_r_TDATA sc_in sc_lv 32 signal 0 } 
 	{ image_r_TVALID sc_in sc_logic 1 invld 0 } 
 	{ image_r_TREADY sc_out sc_logic 1 inacc 0 } 
-	{ output_r_TDATA sc_out sc_lv 8 signal 1 } 
+	{ output_r_TDATA sc_out sc_lv 32 signal 1 } 
 	{ output_r_TVALID sc_out sc_logic 1 outvld 1 } 
 	{ output_r_TREADY sc_in sc_logic 1 outacc 1 } 
 	{ s_axi_control_AWVALID sc_in sc_logic 1 signal -1 } 
@@ -114,10 +114,10 @@ set NewPortList {[
 	{ "name": "interrupt", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "interrupt" } }, 
  	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
  	{ "name": "ap_rst_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst_n", "role": "default" }} , 
- 	{ "name": "image_r_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "image_r", "role": "TDATA" }} , 
+ 	{ "name": "image_r_TDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "image_r", "role": "TDATA" }} , 
  	{ "name": "image_r_TVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "invld", "bundle":{"name": "image_r", "role": "TVALID" }} , 
  	{ "name": "image_r_TREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "inacc", "bundle":{"name": "image_r", "role": "TREADY" }} , 
- 	{ "name": "output_r_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "output_r", "role": "TDATA" }} , 
+ 	{ "name": "output_r_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "output_r", "role": "TDATA" }} , 
  	{ "name": "output_r_TVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "output_r", "role": "TVALID" }} , 
  	{ "name": "output_r_TREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "output_r", "role": "TREADY" }}  ]}
 
@@ -294,8 +294,8 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	image_r { axis {  { image_r_TDATA in_data 0 8 }  { image_r_TVALID in_vld 0 1 }  { image_r_TREADY in_acc 1 1 } } }
-	output_r { axis {  { output_r_TDATA out_data 1 8 }  { output_r_TVALID out_vld 1 1 }  { output_r_TREADY out_acc 0 1 } } }
+	image_r { axis {  { image_r_TDATA in_data 0 32 }  { image_r_TVALID in_vld 0 1 }  { image_r_TREADY in_acc 1 1 } } }
+	output_r { axis {  { output_r_TDATA out_data 1 32 }  { output_r_TVALID out_vld 1 1 }  { output_r_TREADY out_acc 0 1 } } }
 }
 
 set maxi_interface_dict [dict create]

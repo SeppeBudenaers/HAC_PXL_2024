@@ -17,10 +17,10 @@ generic (
 port (
     ap_clk : IN STD_LOGIC;
     ap_rst_n : IN STD_LOGIC;
-    image_r_TDATA : IN STD_LOGIC_VECTOR (7 downto 0);
+    image_r_TDATA : IN STD_LOGIC_VECTOR (31 downto 0);
     image_r_TVALID : IN STD_LOGIC;
     image_r_TREADY : OUT STD_LOGIC;
-    output_r_TDATA : OUT STD_LOGIC_VECTOR (7 downto 0);
+    output_r_TDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_r_TVALID : OUT STD_LOGIC;
     output_r_TREADY : IN STD_LOGIC;
     s_axi_control_AWVALID : IN STD_LOGIC;
@@ -64,7 +64,7 @@ end;
 architecture behav of applyConvolution is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "applyConvolution_applyConvolution,hls_ip_2023_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=8.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.312000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=2668,HLS_SYN_LUT=3525,HLS_VERSION=2023_2}";
+    "applyConvolution_applyConvolution,hls_ip_2023_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=8.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.312000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=2716,HLS_SYN_LUT=3525,HLS_VERSION=2023_2}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000001";
@@ -211,7 +211,7 @@ architecture behav of applyConvolution is
     signal grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_ap_idle : STD_LOGIC;
     signal grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_ap_ready : STD_LOGIC;
     signal grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_output_r_TREADY : STD_LOGIC;
-    signal grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_output_r_TDATA : STD_LOGIC_VECTOR (7 downto 0);
+    signal grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_output_r_TDATA : STD_LOGIC_VECTOR (31 downto 0);
     signal grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_output_r_TVALID : STD_LOGIC;
     signal grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_image_r_TREADY : STD_LOGIC;
     signal ky_reg_175 : STD_LOGIC_VECTOR (2 downto 0);
@@ -299,7 +299,7 @@ architecture behav of applyConvolution is
     signal ap_ST_fsm_state15_blk : STD_LOGIC;
     signal ap_ST_fsm_state16_blk : STD_LOGIC;
     signal regslice_both_image_r_U_apdone_blk : STD_LOGIC;
-    signal image_r_TDATA_int_regslice : STD_LOGIC_VECTOR (7 downto 0);
+    signal image_r_TDATA_int_regslice : STD_LOGIC_VECTOR (31 downto 0);
     signal image_r_TVALID_int_regslice : STD_LOGIC;
     signal image_r_TREADY_int_regslice : STD_LOGIC;
     signal regslice_both_image_r_U_ack_in : STD_LOGIC;
@@ -341,7 +341,7 @@ architecture behav of applyConvolution is
         sum_1_5 : IN STD_LOGIC_VECTOR (31 downto 0);
         sum_0_5 : IN STD_LOGIC_VECTOR (31 downto 0);
         channels : IN STD_LOGIC_VECTOR (31 downto 0);
-        image_r_TDATA : IN STD_LOGIC_VECTOR (7 downto 0);
+        image_r_TDATA : IN STD_LOGIC_VECTOR (31 downto 0);
         image_r_TVALID : IN STD_LOGIC;
         image_r_TREADY : OUT STD_LOGIC;
         kernel_load : IN STD_LOGIC_VECTOR (31 downto 0);
@@ -368,9 +368,9 @@ architecture behav of applyConvolution is
         sum_0_5 : IN STD_LOGIC_VECTOR (31 downto 0);
         sum_1_5 : IN STD_LOGIC_VECTOR (31 downto 0);
         sum_2_5 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_r_TDATA : OUT STD_LOGIC_VECTOR (7 downto 0);
+        output_r_TDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
         output_r_TVALID : OUT STD_LOGIC;
-        image_r_TDATA : IN STD_LOGIC_VECTOR (7 downto 0);
+        image_r_TDATA : IN STD_LOGIC_VECTOR (31 downto 0);
         image_r_TREADY : OUT STD_LOGIC );
     end component;
 
@@ -637,7 +637,7 @@ begin
 
     regslice_both_image_r_U : component applyConvolution_regslice_both
     generic map (
-        DataWidth => 8)
+        DataWidth => 32)
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,
@@ -651,7 +651,7 @@ begin
 
     regslice_both_output_r_U : component applyConvolution_regslice_both
     generic map (
-        DataWidth => 8)
+        DataWidth => 32)
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst_n_inv,

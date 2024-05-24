@@ -62,7 +62,7 @@
 <AreaEstimates>
 <Resources>
 <DSP>5</DSP>
-<FF>914</FF>
+<FF>938</FF>
 <LUT>1225</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
@@ -195,7 +195,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>8</Bits>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>

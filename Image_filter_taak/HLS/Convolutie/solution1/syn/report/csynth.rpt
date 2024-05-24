@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'applyConvolution'
 ================================================================
 + General Information: 
-    * Date:           Fri May 24 10:34:46 2024
+    * Date:           Fri May 24 11:24:40 2024
     * Version:        2023.2 (Build 4023990 on Oct 11 2023)
     * Project:        Convolutie
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -19,14 +19,14 @@
     |                     Modules                    |  Issue |       | Latency | Latency| Iteration|         | Trip |          |      |        |           |           |     |
     |                     & Loops                    |  Type  | Slack | (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP  |     FF    |    LUT    | URAM|
     +------------------------------------------------+--------+-------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
-    |+ applyConvolution                              |  Timing|  -0.47|        -|       -|         -|        -|     -|        no|     -|  9 (4%)|  2668 (2%)|  3525 (6%)|    -|
+    |+ applyConvolution                              |  Timing|  -0.47|        -|       -|         -|        -|     -|        no|     -|  9 (4%)|  2716 (2%)|  3525 (6%)|    -|
     | o VITIS_LOOP_24_1_VITIS_LOOP_25_2              |       -|   5.84|        -|       -|         -|        -|     -|        no|     -|       -|          -|          -|    -|
     |  + applyConvolution_Pipeline_1                 |       -|   0.80|        5|  40.000|         -|        5|     -|        no|     -|       -|  100 (~0%)|   76 (~0%)|    -|
     |   o Loop 1                                     |       -|   5.84|        3|  24.000|         1|        1|     3|       yes|     -|       -|          -|          -|    -|
-    |  + applyConvolution_Pipeline_VITIS_LOOP_41_6   |  Timing|  -0.34|        -|       -|         -|        -|     -|        no|     -|       -|  369 (~0%)|   973 (1%)|    -|
+    |  + applyConvolution_Pipeline_VITIS_LOOP_41_6   |  Timing|  -0.34|        -|       -|         -|        -|     -|        no|     -|       -|  393 (~0%)|   973 (1%)|    -|
     |   o VITIS_LOOP_41_6                            |       -|   5.84|        -|       -|         4|        1|     -|       yes|     -|       -|          -|          -|    -|
     |  o VITIS_LOOP_27_3_VITIS_LOOP_28_4             |       -|   5.84|        -|       -|         -|        -|     -|        no|     -|       -|          -|          -|    -|
-    |   + applyConvolution_Pipeline_VITIS_LOOP_33_5  |  Timing|  -0.47|        -|       -|         -|        -|     -|        no|     -|  5 (2%)|  914 (~0%)|  1225 (2%)|    -|
+    |   + applyConvolution_Pipeline_VITIS_LOOP_33_5  |  Timing|  -0.47|        -|       -|         -|        -|     -|        no|     -|  5 (2%)|  938 (~0%)|  1225 (2%)|    -|
     |    o VITIS_LOOP_33_5                           |      II|   5.84|        -|       -|        22|        9|     -|       yes|     -|       -|          -|          -|    -|
     +------------------------------------------------+--------+-------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
 
@@ -59,8 +59,8 @@
 +-----------+-----------+---------------+-------+--------+--------+
 | Interface | Direction | Register Mode | TDATA | TREADY | TVALID |
 +-----------+-----------+---------------+-------+--------+--------+
-| image_r   | in        | both          | 8     | 1      | 1      |
-| output_r  | out       | both          | 8     | 1      | 1      |
+| image_r   | in        | both          | 32    | 1      | 1      |
+| output_r  | out       | both          | 32    | 1      | 1      |
 +-----------+-----------+---------------+-------+--------+--------+
 
 * TOP LEVEL CONTROL
@@ -78,15 +78,15 @@
 == SW I/O Information
 ================================================================
 * Top Function Arguments
-+----------+-----------+----------------+
-| Argument | Direction | Datatype       |
-+----------+-----------+----------------+
-| image    | in        | unsigned char* |
-| output   | out       | unsigned char* |
-| height   | in        | int            |
-| width    | in        | int            |
-| channels | in        | int            |
-+----------+-----------+----------------+
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| image    | in        | int*     |
+| output   | out       | int*     |
+| height   | in        | int      |
+| width    | in        | int      |
+| channels | in        | int      |
++----------+-----------+----------+
 
 * SW-to-HW Mapping
 +----------+---------------+-----------+------------------------------------+
@@ -121,7 +121,7 @@
 |  + applyConvolution_Pipeline_1               | 0   |        |                        |      |         |         |
 |    empty_fu_122_p2                           |     |        | empty                  | add  | fabric  | 0       |
 |  + applyConvolution_Pipeline_VITIS_LOOP_33_5 | 5   |        |                        |      |         |         |
-|    add_ln33_fu_185_p2                        |     |        | add_ln33               | add  | fabric  | 0       |
+|    add_ln33_fu_181_p2                        |     |        | add_ln33               | add  | fabric  | 0       |
 |    fmul_32ns_32ns_32_4_max_dsp_1_U8          | 3   |        | mul                    | fmul | maxdsp  | 3       |
 |    fadd_32ns_32ns_32_8_full_dsp_1_U7         | 2   |        | sum_2_4                | fadd | fulldsp | 7       |
 |  + applyConvolution_Pipeline_VITIS_LOOP_41_6 | 0   |        |                        |      |         |         |

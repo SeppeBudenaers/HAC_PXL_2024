@@ -1038,8 +1038,8 @@ extern "C"
 void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_param_output_r, hls::sim::Byte<4> __xlx_apatb_param_height, hls::sim::Byte<4> __xlx_apatb_param_width, hls::sim::Byte<4> __xlx_apatb_param_channels)
 {
   static hls::sim::A2Stream port0 {
-    .width = 8,
-    .asize = 1,
+    .width = 32,
+    .asize = 4,
     .name = "image_r",
 #ifdef POST_CHECK
 #else
@@ -1048,12 +1048,12 @@ void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apat
 #endif
   };
   port0.param = __xlx_apatb_param_image_r;
-  port0.nbytes = 262144;
+  port0.nbytes = 1048576;
   port0.hasWrite = false;
 
   static hls::sim::A2Stream port1 {
-    .width = 8,
-    .asize = 1,
+    .width = 32,
+    .asize = 4,
     .name = "output_r",
 #ifdef POST_CHECK
     .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_output_r),
@@ -1063,7 +1063,7 @@ void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apat
 #endif
   };
   port1.param = __xlx_apatb_param_output_r;
-  port1.nbytes = 258064;
+  port1.nbytes = 1032256;
   port1.hasWrite = true;
 
   static hls::sim::Register port2 {

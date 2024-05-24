@@ -245,8 +245,8 @@ using hls::sim::Byte;
 extern "C" void applyConvolution(volatile void *, volatile void *, int, int, int);
 extern "C" void apatb_applyConvolution_hw(volatile void * __xlx_apatb_param_image_r, volatile void * __xlx_apatb_param_output_r, int __xlx_apatb_param_height, int __xlx_apatb_param_width, int __xlx_apatb_param_channels) {
 using hls::sim::createStream;
-auto* simage_r = createStream(__xlx_apatb_param_image_r, 1);
-auto* soutput_r = createStream(__xlx_apatb_param_output_r, 1);
+auto* simage_r = createStream(__xlx_apatb_param_image_r, 4);
+auto* soutput_r = createStream(__xlx_apatb_param_output_r, 4);
   // DUT call
   applyConvolution(__xlx_apatb_param_image_r, __xlx_apatb_param_output_r, __xlx_apatb_param_height, __xlx_apatb_param_width, __xlx_apatb_param_channels);
 }

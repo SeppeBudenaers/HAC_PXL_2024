@@ -148,7 +148,7 @@
 
 
 
-__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution( unsigned char image[256*256*4], unsigned char output[254*254*4],int height,int width,int channels);
+__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution( int image[256*256*4], int output[254*254*4],int height,int width,int channels);
 # 2 "Convolutie/source/Convolutie.c" 2
 # 1 "C:\\Xilinx\\Vitis_HLS\\2023.2\\win64\\tools\\clang-3.9-csynth\\lib\\clang\\7.0.0\\include\\stdbool.h" 1 3
 # 3 "Convolutie/source/Convolutie.c" 2
@@ -369,8 +369,8 @@ __extension__ typedef unsigned long long uintmax_t;
 # 4 "Convolutie/source/Convolutie.c" 2
 
 
-__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution( unsigned char image[256*256*4], unsigned char output[254*254*4],int height,int width,int channels) {
-#line 22 "C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/csynth.tcl"
+__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution( int image[256*256*4], int output[254*254*4],int height,int width,int channels) {
+#line 23 "C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=applyConvolution
 # 6 "Convolutie/source/Convolutie.c"
 

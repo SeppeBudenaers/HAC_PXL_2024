@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="applyConvolution_applyConvolution,hls_ip_2023_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=8.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.312000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=2668,HLS_SYN_LUT=3525,HLS_VERSION=2023_2}" *)
+(* CORE_GENERATION_INFO="applyConvolution_applyConvolution,hls_ip_2023_2,{HLS_INPUT_TYPE=c,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=8.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.312000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=2716,HLS_SYN_LUT=3525,HLS_VERSION=2023_2}" *)
 
 module applyConvolution (
         ap_clk,
@@ -82,10 +82,10 @@ parameter C_S_AXI_CONTROL_R_WSTRB_WIDTH = (32 / 8);
 
 input   ap_clk;
 input   ap_rst_n;
-input  [7:0] image_r_TDATA;
+input  [31:0] image_r_TDATA;
 input   image_r_TVALID;
 output   image_r_TREADY;
-output  [7:0] output_r_TDATA;
+output  [31:0] output_r_TDATA;
 output   output_r_TVALID;
 input   output_r_TREADY;
 input   s_axi_control_AWVALID;
@@ -209,7 +209,7 @@ wire    grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_ap_done;
 wire    grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_ap_idle;
 wire    grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_ap_ready;
 wire    grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_output_r_TREADY;
-wire   [7:0] grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_output_r_TDATA;
+wire   [31:0] grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_output_r_TDATA;
 wire    grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_output_r_TVALID;
 wire    grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303_image_r_TREADY;
 reg  signed [2:0] ky_reg_175;
@@ -291,7 +291,7 @@ wire    ap_ST_fsm_state14_blk;
 reg    ap_ST_fsm_state15_blk;
 reg    ap_ST_fsm_state16_blk;
 wire    regslice_both_image_r_U_apdone_blk;
-wire   [7:0] image_r_TDATA_int_regslice;
+wire   [31:0] image_r_TDATA_int_regslice;
 wire    image_r_TVALID_int_regslice;
 reg    image_r_TREADY_int_regslice;
 wire    regslice_both_image_r_U_ack_in;
@@ -463,7 +463,7 @@ mul_32ns_32ns_64_3_1_U31(
 );
 
 applyConvolution_regslice_both #(
-    .DataWidth( 8 ))
+    .DataWidth( 32 ))
 regslice_both_image_r_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
@@ -477,7 +477,7 @@ regslice_both_image_r_U(
 );
 
 applyConvolution_regslice_both #(
-    .DataWidth( 8 ))
+    .DataWidth( 32 ))
 regslice_both_output_r_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),

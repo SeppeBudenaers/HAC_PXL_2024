@@ -3,32 +3,32 @@
   <CTypeInfo>
       <RtlPort>
         <name>image_r_TDATA</name>
-        <type>Unsigned</type>
+        <type>Signed</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
         <name>image_r_TREADY</name>
-        <type>Unsigned</type>
+        <type>Signed</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
         <name>image_r_TVALID</name>
-        <type>Unsigned</type>
+        <type>Signed</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
         <name>output_r_TDATA</name>
-        <type>Unsigned</type>
+        <type>Signed</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
         <name>output_r_TREADY</name>
-        <type>Unsigned</type>
+        <type>Signed</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
       <RtlPort>
         <name>output_r_TVALID</name>
-        <type>Unsigned</type>
+        <type>Signed</type>
         <fractionWidth>0</fractionWidth>
       </RtlPort>
   </CTypeInfo>

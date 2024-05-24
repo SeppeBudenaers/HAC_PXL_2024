@@ -1,17 +1,17 @@
 {
     "1": {
-        "name": "applyConvolution_Pipeline_VITIS_LOOP_33_5",
+        "name": "applyConvolution_Pipeline_VITIS_LOOP_41_6",
         "file": "Convolutie\/source\/Convolutie.c",
-        "fileloc": "33",
-        "instructions": "53",
-        "total_instructions": "53",
+        "fileloc": "41",
+        "instructions": "57",
+        "total_instructions": "57",
         "calls": "",
-        "basicblocks": "6",
+        "basicblocks": "7",
         "loads": {
-            "L": "7"
+            "L": "1"
         },
         "stores": {
-            "L": "8"
+            "L": "2"
         },
         "loops": {
             "L": "1"
@@ -36,18 +36,18 @@
         }
     },
     "3": {
-        "name": "applyConvolution_Pipeline_VITIS_LOOP_41_6",
+        "name": "applyConvolution_Pipeline_VITIS_LOOP_33_5",
         "file": "Convolutie\/source\/Convolutie.c",
-        "fileloc": "41",
-        "instructions": "56",
-        "total_instructions": "56",
+        "fileloc": "33",
+        "instructions": "52",
+        "total_instructions": "52",
         "calls": "",
-        "basicblocks": "7",
+        "basicblocks": "6",
         "loads": {
-            "L": "1"
+            "L": "7"
         },
         "stores": {
-            "L": "2"
+            "L": "8"
         },
         "loops": {
             "L": "1"
@@ -59,7 +59,7 @@
         "fileloc": "6",
         "instructions": "129",
         "total_instructions": "272",
-        "calls": "3 1 2",
+        "calls": "1 3 2",
         "basicblocks": "9",
         "loads": {
             "G": "1",

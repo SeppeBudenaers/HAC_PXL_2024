@@ -18,6 +18,7 @@ add_files -tb Convolutie/source/stb_image_write.h -cflags "-Wno-unknown-pragmas"
 open_solution "solution1" -flow_target vivado
 set_part {xc7z020-clg400-1}
 create_clock -period 8 -name default
+config_export -format ip_catalog -rtl verilog
 source "./Convolutie/solution1/directives.tcl"
 csim_design -argv {input.png}
 csynth_design

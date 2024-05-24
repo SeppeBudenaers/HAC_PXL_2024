@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Fri May 24 10:36:25 2024
-# Process ID: 20540
+# Start of session at: Fri May 24 11:25:24 2024
+# Process ID: 22728
 # Current directory: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/impl/ip
 # Command line: vivado.exe -notrace -mode batch -source run_ippack.tcl
 # Log file: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/impl/ip/vivado.log
@@ -12,7 +12,7 @@
 # Running On: Wheatley, OS: Windows, CPU Frequency: 2419 MHz, CPU Physical cores: 4, Host memory: 16969 MB
 #-----------------------------------------------------------
 source run_ippack.tcl -notrace
-create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 451.746 ; gain = 184.457
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 450.758 ; gain = 183.312
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
@@ -28,4 +28,4 @@ INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'applyConvolution_
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Fri May 24 10:36:55 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri May 24 11:25:55 2024...

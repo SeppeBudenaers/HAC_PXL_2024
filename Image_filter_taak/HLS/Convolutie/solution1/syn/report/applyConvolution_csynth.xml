@@ -76,7 +76,7 @@
 <Resources>
 <BRAM_18K>0</BRAM_18K>
 <DSP>9</DSP>
-<FF>2668</FF>
+<FF>2716</FF>
 <LUT>3525</LUT>
 <URAM>0</URAM>
 </Resources>
@@ -505,7 +505,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
-<Bits>8</Bits>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -541,7 +541,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
 <Dir>out</Dir>
-<Bits>8</Bits>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>

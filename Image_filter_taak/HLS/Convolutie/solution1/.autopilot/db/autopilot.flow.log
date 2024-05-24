@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1 opened at Fri May 24 10:34:33 +0200 2024
+INFO-FLOW: Workspace C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1 opened at Fri May 24 11:24:24 +0200 2024
 Execute     ap_set_clock -name default -period 8 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
 Execute     set_part xc7z020-clg400-1 
@@ -7,7 +7,7 @@ DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis_HLS/2023.2\lib\win
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2023.2/data/parts/arch.xml
 DBG:HLSDevice: init success
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
-Command       create_platform done; 0.376 sec.
+Command       create_platform done; 0.463 sec.
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
@@ -18,15 +18,22 @@ Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/inter
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.104 sec.
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.105 sec.
+Command       ap_source done; 0.36 sec.
 Execute       ap_part_info -name xc7z020-clg400-1 -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 0.503 sec.
+Command     set_part done; 0.847 sec.
 Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
 INFO: [HLS 200-1505] Using flow_target 'vivado'
-Command   open_solution done; 0.648 sec.
+Execute     send_msg_by_id INFO @200-1464@%s config_export -format=ip_catalog 
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+Execute     config_export -format=ip_catalog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 1.043 sec.
 Execute   set_part xc7z020-clg400-1 
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
 Execute     create_platform xc7z020-clg400-1 -board  
@@ -42,11 +49,14 @@ Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.101 sec.
 Execute     ap_part_info -name xc7z020-clg400-1 -data info 
 Execute     config_compile -quiet -complex-mul-dsp=0 
-Command   set_part done; 0.173 sec.
+Command   set_part done; 0.193 sec.
 Execute   create_clock -period 8 -name default 
 INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+Execute   config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
 Execute   source ./Convolutie/solution1/directives.tcl 
 INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
 Execute     set_directive_interface -mode s_axilite applyConvolution 
@@ -55,7 +65,7 @@ Execute   csynth_design
 INFO: [HLS 200-1510] Running: csynth_design 
 INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
 Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.113 seconds; current allocated memory: 110.047 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.161 seconds; current allocated memory: 109.707 MB.
 Execute       set_directive_top applyConvolution -name=applyConvolution 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
@@ -67,11 +77,12 @@ Execute       ap_part_info -name xc7z020-clg400-1 -data info
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang Convolutie/source/Convolutie.c -foptimization-record-file=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=8 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-mingw32 -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.c.clang.out.log 2> C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.c.clang.err.log
-INFO-FLOW: Done: GCC PP 39 time: 0.2 seconds per iteration
+INFO-FLOW: Done: GCC PP 39 time: 0.3 seconds per iteration
 INFO-FLOW: Source syntax check for synthesis
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/clang.out.log 2> C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/clang.err.log
 Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c std=gnu99 -target fpga  -directive=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/.systemc_flag -fix-errors C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.113 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c std=gnu99 -target fpga  -directive=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/all.directive.json -fix-errors C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
@@ -81,11 +92,12 @@ INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ...
 Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c std=gnu99 -target fpga  
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c.clang-tidy.loop-label.out.log 2> C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c.clang-tidy.loop-label.err.log
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Command       clang_tidy done; 0.134 sec.
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c.xilinx-dataflow-lawyer.diag.yml C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c.xilinx-dataflow-lawyer.out.log 2> C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c.xilinx-dataflow-lawyer.err.log
 Execute       ap_part_info -name xc7z020-clg400-1 -data info 
 INFO-FLOW: compiling source code to llvm bc
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=8 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.bc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c.clang.out.log 2> C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.pp.0.c.clang.err.log
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.861 seconds; current allocated memory: 111.992 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.33 seconds; current allocated memory: 111.980 MB.
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
 Execute       run_link_or_opt -out C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.0.bc -args  "C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/Convolutie.g.bc"  
@@ -100,13 +112,13 @@ INFO-FLOW: Linking math bc lib
 Execute       run_link_or_opt -out C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.2.m1.bc -args C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsmc++_39.bc 
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsmc++_39.bc -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.2.m1.bc > C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
 INFO-FLOW: 
-Command       run_link_or_opt done; 1.818 sec.
+Command       run_link_or_opt done; 2.033 sec.
 Execute       run_link_or_opt -opt -out C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=applyConvolution -reflow-float-conversion 
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=applyConvolution -reflow-float-conversion -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.3.fpc.bc > C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
 INFO-FLOW: 
 INFO-FLOW: Running: gen_design_size_report post-opt
 INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
-Command       run_link_or_opt done; 0.719 sec.
+Command       run_link_or_opt done; 0.921 sec.
 Execute       run_link_or_opt -out C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.4.m2.bc -args C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libfloatconversion_39.bc 
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libfloatconversion_39.bc -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.4.m2.bc > C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
 INFO-FLOW: 
@@ -165,46 +177,45 @@ INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at
 WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'image_r' (Convolutie/source/Convolutie.c:6:0)
 WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'output_r' (Convolutie/source/Convolutie.c:6:0)
 INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/kernel.internal.xml
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 8.335 seconds; current allocated memory: 114.102 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.002 seconds; current allocated memory: 114.102 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 8.941 seconds; current allocated memory: 114.055 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.004 seconds; current allocated memory: 114.055 MB.
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top applyConvolution -deadargelim -mem2reg -instcombine -dce -presyn-prepare -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.0.bc -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-Command         transform done; 0.223 sec.
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 120.512 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.084 seconds; current allocated memory: 120.238 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.1.bc -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.2.prechk.bc -f 
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 122.828 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 122.785 MB.
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.g.1.bc to C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
 Execute         transform -hls -tmp C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -scalar-stream -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -clean-array-spec -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.o.1.bc -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.o.1.tmp.bc -f 
 INFO: [XFORM 203-102] Automatically partitioning small array 'sum' (Convolutie/source/Convolutie.c:26) completely based on array size.
 INFO: [XFORM 203-101] Partitioning array 'sum' (Convolutie/source/Convolutie.c:26) in dimension 1 completely.
-Command         transform done; 0.116 sec.
+Command         transform done; 0.119 sec.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Convolutie/source/Convolutie.c:35:75) to (Convolutie/source/Convolutie.c:36:29) in function 'applyConvolution'... converting 5 basic blocks.
 INFO: [XFORM 203-11] Balancing expressions in function 'applyConvolution' (Convolutie/source/Convolutie.c:6:38)...3 expression(s) balanced.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.193 seconds; current allocated memory: 146.660 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.206 seconds; current allocated memory: 146.320 MB.
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -inst-simplify -inst-rectify -instcombine -adce -deadargelim -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -mem2reg -instcombine -gvn -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dce -dump-loop-dep-to-ir -check-all-ssdm -dump-complexity-metric -cdfg-build C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.o.2.bc -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
 WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_28_4' (Convolutie/source/Convolutie.c:28:34) in function 'applyConvolution' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_27_3' (Convolutie/source/Convolutie.c:27:30) in function 'applyConvolution'.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_24_1' (Convolutie/source/Convolutie.c:24:22) in function 'applyConvolution'.
 Execute           auto_get_db
-Command         transform done; 0.199 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.201 seconds; current allocated memory: 167.496 MB.
+Command         transform done; 0.215 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.216 seconds; current allocated memory: 167.773 MB.
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 0.738 sec.
-Command     elaborate done; 9.978 sec.
+Command       opt_and_import_c done; 0.575 sec.
+Command     elaborate done; 10.928 sec.
 Execute     ap_eval exec zip -j C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
-Command     ap_eval done; 0.131 sec.
+Command     ap_eval done; 0.197 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -256,8 +267,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'Loop 1'
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.161 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.363 seconds; current allocated memory: 171.934 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.346 seconds; current allocated memory: 172.098 MB.
 Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution_Pipeline_1.verbose.sched.rpt 
 Execute         list_part -family xc7z020-clg400-1 
 Execute           ap_family_info -name xc7z020-clg400-1 -data names 
@@ -271,7 +281,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.098 seconds; current allocated memory: 173.121 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.094 seconds; current allocated memory: 173.328 MB.
 Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution_Pipeline_1.verbose.bind.rpt 
 Execute         list_part -family xc7z020-clg400-1 
 Execute           ap_family_info -name xc7z020-clg400-1 -data names 
@@ -294,11 +304,11 @@ WARNING: [HLS 200-880] The II Violation in module 'applyConvolution_Pipeline_VIT
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 9, Depth = 22, loop 'VITIS_LOOP_33_5'
 WARNING: [HLS 200-871] Estimated clock period (6.312 ns) exceeds the target (target clock period: 8.000 ns, clock uncertainty: 2.160 ns, effective delay budget: 5.840 ns).
 WARNING: [HLS 200-1016] The critical path in module 'applyConvolution_Pipeline_VITIS_LOOP_33_5' consists of the following:
-	'sitofp' operation 32 bit ('conv', Convolutie/source/Convolutie.c:35) [42]  (6.312 ns)
+	'sitofp' operation 32 bit ('conv', Convolutie/source/Convolutie.c:35) [41]  (6.312 ns)
 
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.232 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.285 seconds; current allocated memory: 173.922 MB.
+Command       schedule done; 0.311 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.368 seconds; current allocated memory: 174.035 MB.
 Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution_Pipeline_VITIS_LOOP_33_5.verbose.sched.rpt 
 Execute         list_part -family xc7z020-clg400-1 
 Execute           ap_family_info -name xc7z020-clg400-1 -data names 
@@ -312,7 +322,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.085 seconds; current allocated memory: 174.027 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 174.180 MB.
 Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution_Pipeline_VITIS_LOOP_33_5.verbose.bind.rpt 
 Execute         list_part -family xc7z020-clg400-1 
 Execute           ap_family_info -name xc7z020-clg400-1 -data names 
@@ -332,12 +342,12 @@ WARNING: [HLS 200-1016] The critical path in module 'applyConvolution_Pipeline_V
 	'store' operation 0 bit ('ch_write_ln41', Convolutie/source/Convolutie.c:41) of constant 0 on local variable 'ch', Convolutie/source/Convolutie.c:41 [14]  (1.588 ns)
 	'load' operation 31 bit ('ch', Convolutie/source/Convolutie.c:43) on local variable 'ch', Convolutie/source/Convolutie.c:41 [17]  (0.000 ns)
 	'mux' operation 32 bit ('x', Convolutie/source/Convolutie.c:43) [33]  (1.707 ns)
-	'add' operation 9 bit ('add_ln317', C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:317->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51->Convolutie/source/Convolutie.c:43) [41]  (1.915 ns)
+	'sub' operation 8 bit ('sub_ln18', C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51->Convolutie/source/Convolutie.c:43) [43]  (1.915 ns)
 	'select' operation 9 bit ('select_ln18', C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:117->C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51->Convolutie/source/Convolutie.c:43) [45]  (0.968 ns)
 
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.119 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.175 seconds; current allocated memory: 174.859 MB.
+Command       schedule done; 0.166 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.253 seconds; current allocated memory: 174.895 MB.
 Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution_Pipeline_VITIS_LOOP_41_6.verbose.sched.rpt 
 Execute         list_part -family xc7z020-clg400-1 
 Execute           ap_family_info -name xc7z020-clg400-1 -data names 
@@ -351,7 +361,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.091 seconds; current allocated memory: 175.156 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.121 seconds; current allocated memory: 175.047 MB.
 Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution_Pipeline_VITIS_LOOP_41_6.verbose.bind.rpt 
 Execute         list_part -family xc7z020-clg400-1 
 Execute           ap_family_info -name xc7z020-clg400-1 -data names 
@@ -365,8 +375,8 @@ Execute       set_default_model applyConvolution
 Execute       schedule -model applyConvolution 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.115 sec.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.176 seconds; current allocated memory: 176.164 MB.
+Command       schedule done; 0.113 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.194 seconds; current allocated memory: 176.395 MB.
 Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution.verbose.sched.rpt 
 Execute         list_part -family xc7z020-clg400-1 
 Execute           ap_family_info -name xc7z020-clg400-1 -data names 
@@ -380,7 +390,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.112 seconds; current allocated memory: 176.582 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.125 seconds; current allocated memory: 176.734 MB.
 Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution.verbose.bind.rpt 
 Execute         list_part -family xc7z020-clg400-1 
 Execute           ap_family_info -name xc7z020-clg400-1 -data names 
@@ -399,7 +409,7 @@ INFO: [HLS 200-10] -- Generating RTL for module 'applyConvolution_Pipeline_1'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       create_rtl_model applyConvolution_Pipeline_1 -top_prefix applyConvolution_ -sub_prefix applyConvolution_ -mg_file C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution_Pipeline_1.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'applyConvolution_Pipeline_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.144 seconds; current allocated memory: 178.191 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.118 seconds; current allocated memory: 178.285 MB.
 Execute       source C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution.rtl_wrap.cfg.tcl 
 Execute       gen_rtl applyConvolution_Pipeline_1 -style xilinx -f -lang vhdl -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/vhdl/applyConvolution_applyConvolution_Pipeline_1 
 Execute       gen_rtl applyConvolution_Pipeline_1 -style xilinx -f -lang vlog -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/verilog/applyConvolution_applyConvolution_Pipeline_1 
@@ -428,8 +438,8 @@ INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 
 INFO: [RTGEN 206-100] Generating core module 'mux_3_2_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sitofp_32ns_32_7_no_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'applyConvolution_Pipeline_VITIS_LOOP_33_5'.
-Command       create_rtl_model done; 0.179 sec.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.293 seconds; current allocated memory: 180.875 MB.
+Command       create_rtl_model done; 0.213 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.332 seconds; current allocated memory: 181.125 MB.
 Execute       source C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution.rtl_wrap.cfg.tcl 
 Execute       gen_rtl applyConvolution_Pipeline_VITIS_LOOP_33_5 -style xilinx -f -lang vhdl -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/vhdl/applyConvolution_applyConvolution_Pipeline_VITIS_LOOP_33_5 
 Execute       gen_rtl applyConvolution_Pipeline_VITIS_LOOP_33_5 -style xilinx -f -lang vlog -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/verilog/applyConvolution_applyConvolution_Pipeline_VITIS_LOOP_33_5 
@@ -455,7 +465,7 @@ Execute       create_rtl_model applyConvolution_Pipeline_VITIS_LOOP_41_6 -top_pr
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'applyConvolution_Pipeline_VITIS_LOOP_41_6' pipeline 'VITIS_LOOP_41_6' pipeline type 'loop pipeline'
 INFO: [RTGEN 206-100] Generating core module 'mux_3_2_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'applyConvolution_Pipeline_VITIS_LOOP_41_6'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 182.492 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.236 seconds; current allocated memory: 182.414 MB.
 Execute       source C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution.rtl_wrap.cfg.tcl 
 Execute       gen_rtl applyConvolution_Pipeline_VITIS_LOOP_41_6 -style xilinx -f -lang vhdl -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/vhdl/applyConvolution_applyConvolution_Pipeline_VITIS_LOOP_41_6 
 Execute       gen_rtl applyConvolution_Pipeline_VITIS_LOOP_41_6 -style xilinx -f -lang vlog -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/verilog/applyConvolution_applyConvolution_Pipeline_VITIS_LOOP_41_6 
@@ -490,8 +500,8 @@ INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port control_r.
 INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_3_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'applyConvolution'.
 INFO: [RTMG 210-279] Implementing memory 'applyConvolution_kernel_ROM_AUTO_1R' using auto ROMs.
-Command       create_rtl_model done; 0.225 sec.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.385 seconds; current allocated memory: 185.488 MB.
+Command       create_rtl_model done; 0.29 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.483 seconds; current allocated memory: 185.574 MB.
 Execute       source C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution.rtl_wrap.cfg.tcl 
 Execute       gen_rtl applyConvolution -istop -style xilinx -f -lang vhdl -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/vhdl/applyConvolution 
 Execute       gen_rtl applyConvolution -istop -style xilinx -f -lang vlog -o C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/verilog/applyConvolution 
@@ -606,7 +616,7 @@ Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/ut
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.106 sec.
+Command       ap_source done; 0.109 sec.
 INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=8.000 (was NA)
 INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/vhdl' dstVlogDir='C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/vlog' tclDir='C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db' modelList='applyConvolution_flow_control_loop_pipe_sequential_init
 applyConvolution_fadd_32ns_32ns_32_8_full_dsp_1
@@ -640,15 +650,15 @@ Execute       source C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/sol
 Execute         source ./control.slave.tcl 
 Execute         source ./control.slave.tcl 
 Execute         source ./control_r.slave.tcl 
-Command       ap_source done; 0.116 sec.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.868 seconds; current allocated memory: 190.805 MB.
+Command       ap_source done; 0.126 sec.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.964 seconds; current allocated memory: 191.258 MB.
 INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='applyConvolution_' outfile=''
 INFO-FLOW: Running: create_csynth_xml read xml data
 INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
 INFO-FLOW: Running: create_csynth_xml bind info
 INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
 INFO-FLOW: Running: create_csynth_xml config info
-INFO-FLOW: Done: create_csynth_xml config info time: 0.3 seconds per iteration
+INFO-FLOW: Done: create_csynth_xml config info time: 0.2 seconds per iteration
 INFO-FLOW: Running: create_csynth_xml write xml
 INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
 INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/syn/report/csynth.xml
@@ -693,24 +703,24 @@ Execute       source C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/sol
 Execute       source C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/impl/misc/applyConvolution_fadd_32ns_32ns_32_8_full_dsp_1_ip.tcl 
 Execute       source C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/impl/misc/applyConvolution_fmul_32ns_32ns_32_4_max_dsp_1_ip.tcl 
 Execute       source C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/impl/misc/applyConvolution_sitofp_32ns_32_7_no_dsp_1_ip.tcl 
-INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_r_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control_r DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }}} report_dict {TOPINST applyConvolution MODULE2INSTS {applyConvolution applyConvolution applyConvolution_Pipeline_1 grp_applyConvolution_Pipeline_1_fu_275 applyConvolution_Pipeline_VITIS_LOOP_33_5 grp_applyConvolution_Pipeline_VITIS_LOOP_33_5_fu_285 applyConvolution_Pipeline_VITIS_LOOP_41_6 grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303} INST2MODULE {applyConvolution applyConvolution grp_applyConvolution_Pipeline_1_fu_275 applyConvolution_Pipeline_1 grp_applyConvolution_Pipeline_VITIS_LOOP_33_5_fu_285 applyConvolution_Pipeline_VITIS_LOOP_33_5 grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303 applyConvolution_Pipeline_VITIS_LOOP_41_6} INSTDATA {applyConvolution {DEPTH 1 CHILDREN {grp_applyConvolution_Pipeline_1_fu_275 grp_applyConvolution_Pipeline_VITIS_LOOP_33_5_fu_285 grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303}} grp_applyConvolution_Pipeline_1_fu_275 {DEPTH 2 CHILDREN {}} grp_applyConvolution_Pipeline_VITIS_LOOP_33_5_fu_285 {DEPTH 2 CHILDREN {}} grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303 {DEPTH 2 CHILDREN {}}} MODULEDATA {applyConvolution_Pipeline_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_fu_122_p2 SOURCE {} VARIABLE empty LOOP {Loop 1} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} applyConvolution_Pipeline_VITIS_LOOP_33_5 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln33_fu_185_p2 SOURCE Convolutie/source/Convolutie.c:33 VARIABLE add_ln33 LOOP VITIS_LOOP_33_5 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U8 SOURCE Convolutie/source/Convolutie.c:35 VARIABLE mul LOOP VITIS_LOOP_33_5 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 7 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_8_full_dsp_1_U7 SOURCE Convolutie/source/Convolutie.c:35 VARIABLE sum_2_4 LOOP VITIS_LOOP_33_5 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}}} AREA {DSP 5 BRAM 0 URAM 0}} applyConvolution_Pipeline_VITIS_LOOP_41_6 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln41_fu_145_p2 SOURCE Convolutie/source/Convolutie.c:41 VARIABLE add_ln41 LOOP VITIS_LOOP_41_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln317_fu_203_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:317} VARIABLE add_ln317 LOOP VITIS_LOOP_41_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln18_fu_217_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18} VARIABLE sub_ln18 LOOP VITIS_LOOP_41_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME result_2_fu_299_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59} VARIABLE result_2 LOOP VITIS_LOOP_41_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}}} AREA {DSP 0 BRAM 0 URAM 0}} applyConvolution {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_32ns_32ns_64_3_1_U31 SOURCE Convolutie/source/Convolutie.c:6 VARIABLE mul_ln6 LOOP {} BUNDLEDNAME {} DSP 4 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln24_1_fu_365_p2 SOURCE Convolutie/source/Convolutie.c:24 VARIABLE add_ln24_1 LOOP VITIS_LOOP_24_1_VITIS_LOOP_25_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln24_fu_386_p2 SOURCE Convolutie/source/Convolutie.c:24 VARIABLE add_ln24 LOOP VITIS_LOOP_24_1_VITIS_LOOP_25_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_fu_426_p2 SOURCE Convolutie/source/Convolutie.c:27 VARIABLE empty LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln27_fu_460_p2 SOURCE Convolutie/source/Convolutie.c:27 VARIABLE add_ln27 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next2514_fu_480_p2 SOURCE Convolutie/source/Convolutie.c:27 VARIABLE indvars_iv_next2514 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME p_mid1_fu_490_p2 SOURCE Convolutie/source/Convolutie.c:27 VARIABLE p_mid1 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next25_mid1_fu_495_p2 SOURCE Convolutie/source/Convolutie.c:27 VARIABLE indvars_iv_next25_mid1 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln29_fu_525_p2 SOURCE Convolutie/source/Convolutie.c:29 VARIABLE add_ln29 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln28_fu_530_p2 SOURCE Convolutie/source/Convolutie.c:28 VARIABLE add_ln28 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln25_fu_536_p2 SOURCE Convolutie/source/Convolutie.c:25 VARIABLE add_ln25 LOOP VITIS_LOOP_24_1_VITIS_LOOP_25_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME kernel_U SOURCE {} VARIABLE kernel LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 9 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}}} AREA {DSP 9 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_r_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control_r DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }}} report_dict {TOPINST applyConvolution MODULE2INSTS {applyConvolution applyConvolution applyConvolution_Pipeline_1 grp_applyConvolution_Pipeline_1_fu_275 applyConvolution_Pipeline_VITIS_LOOP_33_5 grp_applyConvolution_Pipeline_VITIS_LOOP_33_5_fu_285 applyConvolution_Pipeline_VITIS_LOOP_41_6 grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303} INST2MODULE {applyConvolution applyConvolution grp_applyConvolution_Pipeline_1_fu_275 applyConvolution_Pipeline_1 grp_applyConvolution_Pipeline_VITIS_LOOP_33_5_fu_285 applyConvolution_Pipeline_VITIS_LOOP_33_5 grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303 applyConvolution_Pipeline_VITIS_LOOP_41_6} INSTDATA {applyConvolution {DEPTH 1 CHILDREN {grp_applyConvolution_Pipeline_1_fu_275 grp_applyConvolution_Pipeline_VITIS_LOOP_33_5_fu_285 grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303}} grp_applyConvolution_Pipeline_1_fu_275 {DEPTH 2 CHILDREN {}} grp_applyConvolution_Pipeline_VITIS_LOOP_33_5_fu_285 {DEPTH 2 CHILDREN {}} grp_applyConvolution_Pipeline_VITIS_LOOP_41_6_fu_303 {DEPTH 2 CHILDREN {}}} MODULEDATA {applyConvolution_Pipeline_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_fu_122_p2 SOURCE {} VARIABLE empty LOOP {Loop 1} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} applyConvolution_Pipeline_VITIS_LOOP_33_5 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln33_fu_181_p2 SOURCE Convolutie/source/Convolutie.c:33 VARIABLE add_ln33 LOOP VITIS_LOOP_33_5 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 3 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_4_max_dsp_1_U8 SOURCE Convolutie/source/Convolutie.c:35 VARIABLE mul LOOP VITIS_LOOP_33_5 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 7 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_8_full_dsp_1_U7 SOURCE Convolutie/source/Convolutie.c:35 VARIABLE sum_2_4 LOOP VITIS_LOOP_33_5 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}}} AREA {DSP 5 BRAM 0 URAM 0}} applyConvolution_Pipeline_VITIS_LOOP_41_6 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln41_fu_145_p2 SOURCE Convolutie/source/Convolutie.c:41 VARIABLE add_ln41 LOOP VITIS_LOOP_41_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln317_fu_203_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:317} VARIABLE add_ln317 LOOP VITIS_LOOP_41_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln18_fu_217_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18} VARIABLE sub_ln18 LOOP VITIS_LOOP_41_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME result_2_fu_299_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59} VARIABLE result_2 LOOP VITIS_LOOP_41_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}}} AREA {DSP 0 BRAM 0 URAM 0}} applyConvolution {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_32ns_32ns_64_3_1_U31 SOURCE Convolutie/source/Convolutie.c:6 VARIABLE mul_ln6 LOOP {} BUNDLEDNAME {} DSP 4 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln24_1_fu_365_p2 SOURCE Convolutie/source/Convolutie.c:24 VARIABLE add_ln24_1 LOOP VITIS_LOOP_24_1_VITIS_LOOP_25_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln24_fu_386_p2 SOURCE Convolutie/source/Convolutie.c:24 VARIABLE add_ln24 LOOP VITIS_LOOP_24_1_VITIS_LOOP_25_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME empty_fu_426_p2 SOURCE Convolutie/source/Convolutie.c:27 VARIABLE empty LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln27_fu_460_p2 SOURCE Convolutie/source/Convolutie.c:27 VARIABLE add_ln27 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next2514_fu_480_p2 SOURCE Convolutie/source/Convolutie.c:27 VARIABLE indvars_iv_next2514 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME p_mid1_fu_490_p2 SOURCE Convolutie/source/Convolutie.c:27 VARIABLE p_mid1 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME indvars_iv_next25_mid1_fu_495_p2 SOURCE Convolutie/source/Convolutie.c:27 VARIABLE indvars_iv_next25_mid1 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln29_fu_525_p2 SOURCE Convolutie/source/Convolutie.c:29 VARIABLE add_ln29 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln28_fu_530_p2 SOURCE Convolutie/source/Convolutie.c:28 VARIABLE add_ln28 LOOP VITIS_LOOP_27_3_VITIS_LOOP_28_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln25_fu_536_p2 SOURCE Convolutie/source/Convolutie.c:25 VARIABLE add_ln25 LOOP VITIS_LOOP_24_1_VITIS_LOOP_25_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME kernel_U SOURCE {} VARIABLE kernel LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 9 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}}} AREA {DSP 9 BRAM 0 URAM 0}}}}'
 INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
 INFO-FLOW: Running: gen_csynth_sec_pragma
 INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
 INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
 INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.969 seconds; current allocated memory: 198.160 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.972 seconds; current allocated memory: 198.539 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for applyConvolution.
 INFO: [VLOG 209-307] Generating Verilog RTL for applyConvolution.
 Execute       syn_report -model applyConvolution -printsummary 
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 158.43 MHz
-Command     autosyn done; 4.371 sec.
-Command   csynth_design done; 14.575 sec.
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 14.575 seconds; current allocated memory: 88.938 MB.
-Command ap_source done; 15.597 sec.
+Command     autosyn done; 4.854 sec.
+Command   csynth_design done; 16.108 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 16.108 seconds; current allocated memory: 89.305 MB.
+Command ap_source done; 17.585 sec.
 Execute cleanup_all 
-INFO-FLOW: Workspace C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1 opened at Fri May 24 10:36:20 +0200 2024
+INFO-FLOW: Workspace C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1 opened at Fri May 24 11:25:18 +0200 2024
 Execute     ap_set_clock -name default -period 8 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
 Execute     set_part xc7z020-clg400-1 
@@ -719,7 +729,7 @@ DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis_HLS/2023.2\lib\win
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2023.2/data/parts/arch.xml
 DBG:HLSDevice: init success
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
-Command       create_platform done; 0.495 sec.
+Command       create_platform done; 0.412 sec.
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
@@ -730,20 +740,24 @@ Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/inter
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
-Command         ap_source done; 0.117 sec.
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.155 sec.
+Command       ap_source done; 0.119 sec.
 Execute       ap_part_info -name xc7z020-clg400-1 -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 0.67 sec.
+Command     set_part done; 0.558 sec.
 Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
 INFO: [HLS 200-1505] Using flow_target 'vivado'
-Command   open_solution done; 0.807 sec.
+Execute     send_msg_by_id INFO @200-1464@%s config_export -format=ip_catalog 
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+Execute     config_export -format=ip_catalog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 0.719 sec.
 Execute   set_part xc7z020-clg400-1 
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
 Execute     create_platform xc7z020-clg400-1 -board  
-Command     create_platform done; 0.121 sec.
 Execute     source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
@@ -756,12 +770,14 @@ Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
-Command     ap_source done; 0.12 sec.
+Command     ap_source done; 0.114 sec.
 Execute     ap_part_info -name xc7z020-clg400-1 -data info 
 Execute     config_compile -quiet -complex-mul-dsp=0 
-Command   set_part done; 0.26 sec.
+Command   set_part done; 0.211 sec.
 Execute   create_clock -period 8 -name default 
 INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+Execute   config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
 Execute   source ./Convolutie/solution1/directives.tcl 
 INFO: [HLS 200-1510] Running: source ./Convolutie/solution1/directives.tcl
 Execute     set_directive_interface -mode s_axilite applyConvolution 
@@ -798,7 +814,7 @@ Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
-Command     ap_source done; 0.117 sec.
+Command     ap_source done; 0.105 sec.
 INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=8.000 (was NA)
 INFO-FLOW: DBG:PUTS:       initCTypeInfo top_module=applyConvolution xml_exists=0
 Execute     source C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/.autopilot/db/applyConvolution.rtl_wrap.cfg.tcl 
@@ -919,11 +935,12 @@ Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
 Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.102 sec.
 INFO-FLOW: DBG:PUTS:     IP package: exec C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/impl/ip/pack.bat
 INFO-FLOW: DBG:PUTS:     IP package: success C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/impl/ip/pack.bat
 Execute     send_msg_by_id INFO @200-802@%s Convolutie/solution1/impl/export.zip 
 INFO: [HLS 200-802] Generated output file Convolutie/solution1/impl/export.zip
-Command   export_design done; 34.207 sec.
-INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 34.207 seconds; current allocated memory: 8.391 MB.
-Command ap_source done; 35.371 sec.
+Command   export_design done; 35.685 sec.
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 35.685 seconds; current allocated memory: 8.070 MB.
+Command ap_source done; 36.758 sec.
 Execute cleanup_all 

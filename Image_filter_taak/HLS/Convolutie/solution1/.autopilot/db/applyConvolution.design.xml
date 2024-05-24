@@ -318,7 +318,7 @@
 <DSP>5</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
 <UTIL_DSP>2</UTIL_DSP>
-<FF>914</FF>
+<FF>938</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
 <LUT>1225</LUT>
@@ -451,7 +451,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>8</Bits>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -606,7 +606,7 @@
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<FF>369</FF>
+<FF>393</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>~0</UTIL_FF>
 <LUT>973</LUT>
@@ -709,7 +709,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>8</Bits>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -742,7 +742,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>8</Bits>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -882,7 +882,7 @@
 <DSP>9</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
 <UTIL_DSP>4</UTIL_DSP>
-<FF>2668</FF>
+<FF>2716</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>2</UTIL_FF>
 <LUT>3525</LUT>
@@ -1309,7 +1309,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
 <Dir>in</Dir>
-<Bits>8</Bits>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -1345,7 +1345,7 @@
 <IOProtocol>axis</IOProtocol>
 <IOConfig>register, both mode</IOConfig>
 <Dir>out</Dir>
-<Bits>8</Bits>
+<Bits>32</Bits>
 <Attribute>data</Attribute>
 <CType>int</CType>
 </RtlPorts>

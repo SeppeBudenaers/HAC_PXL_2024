@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'applyConvolution_Pipeline_VITIS_LOOP_41_6'
 ================================================================
-* Date:           Fri May 24 10:34:46 2024
+* Date:           Fri May 24 11:24:39 2024
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        Convolutie
@@ -59,9 +59,9 @@
 |Instance         |        -|    -|       0|     14|    -|
 |Memory           |        -|    -|       -|      -|    -|
 |Multiplexer      |        -|    -|       -|     68|    -|
-|Register         |        -|    -|     369|     96|    -|
+|Register         |        -|    -|     393|     96|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        0|    0|     369|    973|    0|
+|Total            |        0|    0|     393|    973|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
@@ -107,8 +107,8 @@
     |or_ln44_fu_345_p2                 |        or|   0|  0|    2|           1|           1|
     |result_fu_304_p3                  |    select|   0|  0|   32|           1|          32|
     |select_ln18_fu_227_p3             |    select|   0|  0|    9|           1|           9|
-    |select_ln44_1_fu_351_p3           |    select|   0|  0|    8|           1|           8|
-    |select_ln44_fu_337_p3             |    select|   0|  0|    2|           1|           2|
+    |select_ln44_1_fu_337_p3           |    select|   0|  0|    2|           1|           2|
+    |select_ln44_fu_351_p3             |    select|   0|  0|    8|           1|           8|
     |val_1_fu_292_p3                   |    select|   0|  0|   32|           1|          32|
     |shl_ln18_fu_266_p2                |       shl|   0|  0|  242|          79|          79|
     |ap_enable_pp0                     |       xor|   0|  0|    2|           1|           2|
@@ -125,10 +125,10 @@
     |ap_sig_allocacmp_ch_1    |   9|          2|   31|         62|
     |ch_fu_86                 |   9|          2|   31|         62|
     |image_r_TDATA_blk_n      |   9|          2|    1|          2|
-    |output_r_TDATA           |  14|          3|    8|         24|
+    |output_r_TDATA           |  14|          3|   32|         96|
     |output_r_TDATA_blk_n     |   9|          2|    1|          2|
     +-------------------------+----+-----------+-----+-----------+
-    |Total                    |  68|         15|   74|        156|
+    |Total                    |  68|         15|   98|        228|
     +-------------------------+----+-----------+-----+-----------+
 
     * Register: 
@@ -143,20 +143,20 @@
     |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
     |ap_loop_exit_ready_pp0_iter2_reg  |   1|   0|    1|          0|
     |ch_fu_86                          |  31|   0|   31|          0|
-    |icmp_ln42_reg_371                 |   1|   0|    1|          0|
-    |image_r_read_reg_375              |   8|   0|    8|          0|
-    |result_2_reg_406                  |  32|   0|   32|          0|
-    |select_ln18_reg_395               |   9|   0|    9|          0|
-    |tmp_reg_390                       |   1|   0|    1|          0|
-    |trunc_ln342_reg_385               |  23|   0|   23|          0|
-    |val_1_reg_400                     |  32|   0|   32|          0|
-    |val_1_reg_400_pp0_iter2_reg       |  32|   0|   32|          0|
-    |xs_sign_reg_380                   |   1|   0|    1|          0|
-    |icmp_ln42_reg_371                 |  64|  32|    1|          0|
-    |image_r_read_reg_375              |  64|  32|    8|          0|
-    |xs_sign_reg_380                   |  64|  32|    1|          0|
+    |icmp_ln42_reg_375                 |   1|   0|    1|          0|
+    |image_r_read_reg_379              |  32|   0|   32|          0|
+    |result_2_reg_410                  |  32|   0|   32|          0|
+    |select_ln18_reg_399               |   9|   0|    9|          0|
+    |tmp_reg_394                       |   1|   0|    1|          0|
+    |trunc_ln342_reg_389               |  23|   0|   23|          0|
+    |val_1_reg_404                     |  32|   0|   32|          0|
+    |val_1_reg_404_pp0_iter2_reg       |  32|   0|   32|          0|
+    |xs_sign_reg_384                   |   1|   0|    1|          0|
+    |icmp_ln42_reg_375                 |  64|  32|    1|          0|
+    |image_r_read_reg_379              |  64|  32|   32|          0|
+    |xs_sign_reg_384                   |  64|  32|    1|          0|
     +----------------------------------+----+----+-----+-----------+
-    |Total                             | 369|  96|  187|          0|
+    |Total                             | 393|  96|  235|          0|
     +----------------------------------+----+----+-----+-----------+
 
 
@@ -175,10 +175,10 @@
 |ap_idle          |  out|    1|  ap_ctrl_hs|  applyConvolution_Pipeline_VITIS_LOOP_41_6|  return value|
 |ap_ready         |  out|    1|  ap_ctrl_hs|  applyConvolution_Pipeline_VITIS_LOOP_41_6|  return value|
 |image_r_TVALID   |   in|    1|        axis|                                    image_r|       pointer|
-|image_r_TDATA    |   in|    8|        axis|                                    image_r|       pointer|
+|image_r_TDATA    |   in|   32|        axis|                                    image_r|       pointer|
 |image_r_TREADY   |  out|    1|        axis|                                    image_r|       pointer|
 |output_r_TREADY  |   in|    1|        axis|                                   output_r|       pointer|
-|output_r_TDATA   |  out|    8|        axis|                                   output_r|       pointer|
+|output_r_TDATA   |  out|   32|        axis|                                   output_r|       pointer|
 |output_r_TVALID  |  out|    1|        axis|                                   output_r|       pointer|
 |channels         |   in|   32|     ap_none|                                   channels|        scalar|
 |sum_0_5          |   in|   32|     ap_none|                                    sum_0_5|        scalar|

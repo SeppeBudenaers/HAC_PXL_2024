@@ -175,7 +175,7 @@ Args:
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
     DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 48, 
-                       Column: 63 }
+                       Column: 60 }
   - OrigDirection:   read
   - OrigID:          if.else.load.2
 ...
@@ -192,8 +192,8 @@ Args:
   - String:          ' length'
   - String:          ' has been inferred'
   - String:          ' _XLX_SEP_ '
-  - AccessID:        output9seq
-  - ArrayName:       output
+  - AccessID:        out9seq
+  - ArrayName:       out
   - String:          ' '
   - BundleName:      output
   - String:          ' '
@@ -280,8 +280,8 @@ Args:
     DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 25, 
                        Column: 22 }
   - OrigDirection:   write
-  - OrigID:          output9seq
-  - ArrayName:       output
+  - OrigID:          out9seq
+  - ArrayName:       out
   - String:          ' '
   - BundleName:      output
   - String:          ' '

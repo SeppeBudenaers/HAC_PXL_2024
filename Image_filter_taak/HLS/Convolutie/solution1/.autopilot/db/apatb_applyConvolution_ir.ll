@@ -4,17 +4,17 @@ target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:20
 target triple = "fpga64-xilinx-none"
 
 ; Function Attrs: noinline
-define void @apatb_applyConvolution_ir(i8* noalias nocapture nonnull readonly "maxi" %image, i8* noalias nocapture nonnull "maxi" %output, i32 %width, i32 %height, i32 %channels) local_unnamed_addr #0 {
+define void @apatb_applyConvolution_ir(i8* noalias nocapture nonnull readonly "maxi" %image, i8* noalias nocapture nonnull "maxi" %out, i32 %width, i32 %height, i32 %channels) local_unnamed_addr #0 {
 entry:
   %malloccall = tail call i8* @malloc(i64 65536)
   %image_copy = bitcast i8* %malloccall to [65536 x i8]*
   %malloccall1 = tail call i8* @malloc(i64 65536)
-  %output_copy = bitcast i8* %malloccall1 to [65536 x i8]*
+  %out_copy = bitcast i8* %malloccall1 to [65536 x i8]*
   %0 = bitcast i8* %image to [65536 x i8]*
-  %1 = bitcast i8* %output to [65536 x i8]*
-  call fastcc void @copy_in([65536 x i8]* nonnull %0, [65536 x i8]* %image_copy, [65536 x i8]* nonnull %1, [65536 x i8]* %output_copy)
-  call void @apatb_applyConvolution_hw([65536 x i8]* %image_copy, [65536 x i8]* %output_copy, i32 %width, i32 %height, i32 %channels)
-  call void @copy_back([65536 x i8]* %0, [65536 x i8]* %image_copy, [65536 x i8]* %1, [65536 x i8]* %output_copy)
+  %1 = bitcast i8* %out to [65536 x i8]*
+  call fastcc void @copy_in([65536 x i8]* nonnull %0, [65536 x i8]* %image_copy, [65536 x i8]* nonnull %1, [65536 x i8]* %out_copy)
+  call void @apatb_applyConvolution_hw([65536 x i8]* %image_copy, [65536 x i8]* %out_copy, i32 %width, i32 %height, i32 %channels)
+  call void @copy_back([65536 x i8]* %0, [65536 x i8]* %image_copy, [65536 x i8]* %1, [65536 x i8]* %out_copy)
   tail call void @free(i8* %malloccall)
   tail call void @free(i8* %malloccall1)
   ret void

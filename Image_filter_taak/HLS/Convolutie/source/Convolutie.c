@@ -3,18 +3,18 @@
 #include <stdint.h>
 //#include "hls_stream.h"
 
-void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
+void applyConvolution(unsigned char* image, unsigned char* out, int width, int height, int channels) {
 
 
-#pragma HLS INTERFACE s_axilite port=return bundle=control
-#pragma HLS INTERFACE s_axilite port=image bundle=control
-#pragma HLS INTERFACE s_axilite port=output bundle=control
-#pragma HLS INTERFACE s_axilite port=width bundle=control
-#pragma HLS INTERFACE s_axilite port=height bundle=control
-#pragma HLS INTERFACE s_axilite port=channels bundle=control
+#pragma HLS INTERFACE s_axilite port=return bundle=conv
+#pragma HLS INTERFACE s_axilite port=image
+#pragma HLS INTERFACE s_axilite port=out
+#pragma HLS INTERFACE s_axilite port=width bundle=conv
+#pragma HLS INTERFACE s_axilite port=height bundle=conv
+#pragma HLS INTERFACE s_axilite port=channels bundle=conv
 
 #pragma HLS INTERFACE m_axi depth=65536 port=image offset=slave bundle=input //gmem
-#pragma HLS INTERFACE m_axi depth=65536 port=output offset=slave bundle=output //gmem
+#pragma HLS INTERFACE m_axi depth=65536 port=out offset=slave bundle=output //gmem
 	float kernel[3][3] = {
 	        {1, 0, -1},
 	        {1, 0, -1},
@@ -42,10 +42,10 @@ int edge = 1; // Since kernel size is 3x3
             for (int ch = 0; ch < channels; ch++) {
                 if (ch < 3) {
                     int val = (int)sum[ch];
-                    output[(y * width + x) * channels + ch] = (unsigned char)(val > 255 ? 255 : (val < 0 ? 0 : val));
+                    out[(y * width + x) * channels + ch] = (unsigned char)(val > 255 ? 255 : (val < 0 ? 0 : val));
                 } else {
                     // Preserve the alpha channel if present
-                    output[(y * width + x) * channels + ch] = image[(y * width + x) * channels + ch];
+                    out[(y * width + x) * channels + ch] = image[(y * width + x) * channels + ch];
                 }
             }
         }

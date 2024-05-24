@@ -1,43 +1,5 @@
 {
     "1": {
-        "name": "applyConvolution_Pipeline_VITIS_LOOP_42_6",
-        "file": "Convolutie\/source\/Convolutie.c",
-        "fileloc": "25",
-        "instructions": "62",
-        "total_instructions": "62",
-        "calls": "",
-        "basicblocks": "7",
-        "loads": {
-            "L": "1"
-        },
-        "stores": {
-            "L": "2"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "0": {
-        "name": "applyConvolution",
-        "file": "Convolutie.c",
-        "fileloc": "6",
-        "instructions": "188",
-        "total_instructions": "340",
-        "calls": "2 1 3",
-        "basicblocks": "9",
-        "loads": {
-            "G": "1",
-            "L": "12"
-        },
-        "stores": {
-            "L": "9"
-        },
-        "loops": {
-            "L": "1",
-            "N": "1"
-        }
-    },
-    "2": {
         "name": "applyConvolution_Pipeline_VITIS_LOOP_34_5",
         "file": "Convolutie\/source\/Convolutie.c",
         "fileloc": "34",
@@ -55,7 +17,27 @@
             "L": "1"
         }
     },
-    "3": {
+    "0": {
+        "name": "applyConvolution",
+        "file": "Convolutie.c",
+        "fileloc": "6",
+        "instructions": "188",
+        "total_instructions": "340",
+        "calls": "1 3 2",
+        "basicblocks": "9",
+        "loads": {
+            "G": "1",
+            "L": "12"
+        },
+        "stores": {
+            "L": "9"
+        },
+        "loops": {
+            "L": "1",
+            "N": "1"
+        }
+    },
+    "2": {
         "name": "applyConvolution_Pipeline_1",
         "file": "Convolutie.c",
         "fileloc": "0",
@@ -68,6 +50,24 @@
         },
         "stores": {
             "L": "8"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "applyConvolution_Pipeline_VITIS_LOOP_42_6",
+        "file": "Convolutie\/source\/Convolutie.c",
+        "fileloc": "25",
+        "instructions": "62",
+        "total_instructions": "62",
+        "calls": "",
+        "basicblocks": "7",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
         },
         "loops": {
             "L": "1"

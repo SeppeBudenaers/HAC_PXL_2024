@@ -101,14 +101,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 32 \
-    name output_r_offset \
+    name out_r \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_output_r_offset \
+    corename dc_out_r \
     op interface \
-    ports { output_r_offset { I 64 vector } } \
+    ports { out_r { I 64 vector } } \
 } "
 }
 

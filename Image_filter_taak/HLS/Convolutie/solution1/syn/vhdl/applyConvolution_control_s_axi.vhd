@@ -34,40 +34,48 @@ port (
     RRESP                 :out  STD_LOGIC_VECTOR(1 downto 0);
     RVALID                :out  STD_LOGIC;
     RREADY                :in   STD_LOGIC;
+    interrupt             :out  STD_LOGIC;
     image_r               :out  STD_LOGIC_VECTOR(63 downto 0);
-    output_r_offset       :out  STD_LOGIC_VECTOR(63 downto 0);
-    width                 :out  STD_LOGIC_VECTOR(31 downto 0);
-    height                :out  STD_LOGIC_VECTOR(31 downto 0);
-    channels              :out  STD_LOGIC_VECTOR(31 downto 0)
+    out_r                 :out  STD_LOGIC_VECTOR(63 downto 0);
+    ap_start              :out  STD_LOGIC;
+    ap_done               :in   STD_LOGIC;
+    ap_ready              :in   STD_LOGIC;
+    ap_idle               :in   STD_LOGIC
 );
 end entity applyConvolution_control_s_axi;
 
 -- ------------------------Address Info-------------------
--- Protocol Used: ap_ctrl_none
+-- Protocol Used: ap_ctrl_hs
 --
--- 0x00 : reserved
--- 0x04 : reserved
--- 0x08 : reserved
--- 0x0c : reserved
+-- 0x00 : Control signals
+--        bit 0  - ap_start (Read/Write/COH)
+--        bit 1  - ap_done (Read/COR)
+--        bit 2  - ap_idle (Read)
+--        bit 3  - ap_ready (Read/COR)
+--        bit 7  - auto_restart (Read/Write)
+--        bit 9  - interrupt (Read)
+--        others - reserved
+-- 0x04 : Global Interrupt Enable Register
+--        bit 0  - Global Interrupt Enable (Read/Write)
+--        others - reserved
+-- 0x08 : IP Interrupt Enable Register (Read/Write)
+--        bit 0 - enable ap_done interrupt (Read/Write)
+--        bit 1 - enable ap_ready interrupt (Read/Write)
+--        others - reserved
+-- 0x0c : IP Interrupt Status Register (Read/TOW)
+--        bit 0 - ap_done (Read/TOW)
+--        bit 1 - ap_ready (Read/TOW)
+--        others - reserved
 -- 0x10 : Data signal of image_r
 --        bit 31~0 - image_r[31:0] (Read/Write)
 -- 0x14 : Data signal of image_r
 --        bit 31~0 - image_r[63:32] (Read/Write)
 -- 0x18 : reserved
--- 0x1c : Data signal of output_r_offset
---        bit 31~0 - output_r_offset[31:0] (Read/Write)
--- 0x20 : Data signal of output_r_offset
---        bit 31~0 - output_r_offset[63:32] (Read/Write)
+-- 0x1c : Data signal of out_r
+--        bit 31~0 - out_r[31:0] (Read/Write)
+-- 0x20 : Data signal of out_r
+--        bit 31~0 - out_r[63:32] (Read/Write)
 -- 0x24 : reserved
--- 0x28 : Data signal of width
---        bit 31~0 - width[31:0] (Read/Write)
--- 0x2c : reserved
--- 0x30 : Data signal of height
---        bit 31~0 - height[31:0] (Read/Write)
--- 0x34 : reserved
--- 0x38 : Data signal of channels
---        bit 31~0 - channels[31:0] (Read/Write)
--- 0x3c : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of applyConvolution_control_s_axi is
@@ -75,18 +83,16 @@ architecture behave of applyConvolution_control_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_IMAGE_R_DATA_0         : INTEGER := 16#10#;
-    constant ADDR_IMAGE_R_DATA_1         : INTEGER := 16#14#;
-    constant ADDR_IMAGE_R_CTRL           : INTEGER := 16#18#;
-    constant ADDR_OUTPUT_R_OFFSET_DATA_0 : INTEGER := 16#1c#;
-    constant ADDR_OUTPUT_R_OFFSET_DATA_1 : INTEGER := 16#20#;
-    constant ADDR_OUTPUT_R_OFFSET_CTRL   : INTEGER := 16#24#;
-    constant ADDR_WIDTH_DATA_0           : INTEGER := 16#28#;
-    constant ADDR_WIDTH_CTRL             : INTEGER := 16#2c#;
-    constant ADDR_HEIGHT_DATA_0          : INTEGER := 16#30#;
-    constant ADDR_HEIGHT_CTRL            : INTEGER := 16#34#;
-    constant ADDR_CHANNELS_DATA_0        : INTEGER := 16#38#;
-    constant ADDR_CHANNELS_CTRL          : INTEGER := 16#3c#;
+    constant ADDR_AP_CTRL        : INTEGER := 16#00#;
+    constant ADDR_GIE            : INTEGER := 16#04#;
+    constant ADDR_IER            : INTEGER := 16#08#;
+    constant ADDR_ISR            : INTEGER := 16#0c#;
+    constant ADDR_IMAGE_R_DATA_0 : INTEGER := 16#10#;
+    constant ADDR_IMAGE_R_DATA_1 : INTEGER := 16#14#;
+    constant ADDR_IMAGE_R_CTRL   : INTEGER := 16#18#;
+    constant ADDR_OUT_R_DATA_0   : INTEGER := 16#1c#;
+    constant ADDR_OUT_R_DATA_1   : INTEGER := 16#20#;
+    constant ADDR_OUT_R_CTRL     : INTEGER := 16#24#;
     constant ADDR_BITS         : INTEGER := 6;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -101,11 +107,22 @@ architecture behave of applyConvolution_control_s_axi is
     signal ARREADY_t           : STD_LOGIC;
     signal RVALID_t            : STD_LOGIC;
     -- internal registers
+    signal int_ap_idle         : STD_LOGIC := '0';
+    signal int_ap_ready        : STD_LOGIC := '0';
+    signal task_ap_ready       : STD_LOGIC;
+    signal int_ap_done         : STD_LOGIC := '0';
+    signal task_ap_done        : STD_LOGIC;
+    signal int_task_ap_done    : STD_LOGIC := '0';
+    signal int_ap_start        : STD_LOGIC := '0';
+    signal int_interrupt       : STD_LOGIC := '0';
+    signal int_auto_restart    : STD_LOGIC := '0';
+    signal auto_restart_status : STD_LOGIC := '0';
+    signal auto_restart_done   : STD_LOGIC;
+    signal int_gie             : STD_LOGIC := '0';
+    signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
+    signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_image_r         : UNSIGNED(63 downto 0) := (others => '0');
-    signal int_output_r_offset : UNSIGNED(63 downto 0) := (others => '0');
-    signal int_width           : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_height          : UNSIGNED(31 downto 0) := (others => '0');
-    signal int_channels        : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_out_r           : UNSIGNED(63 downto 0) := (others => '0');
 
 
 begin
@@ -221,20 +238,27 @@ begin
                 if (ar_hs = '1') then
                     rdata_data <= (others => '0');
                     case (TO_INTEGER(raddr)) is
+                    when ADDR_AP_CTRL =>
+                        rdata_data(9) <= int_interrupt;
+                        rdata_data(7) <= int_auto_restart;
+                        rdata_data(3) <= int_ap_ready;
+                        rdata_data(2) <= int_ap_idle;
+                        rdata_data(1) <= int_task_ap_done;
+                        rdata_data(0) <= int_ap_start;
+                    when ADDR_GIE =>
+                        rdata_data(0) <= int_gie;
+                    when ADDR_IER =>
+                        rdata_data(1 downto 0) <= int_ier;
+                    when ADDR_ISR =>
+                        rdata_data(1 downto 0) <= int_isr;
                     when ADDR_IMAGE_R_DATA_0 =>
                         rdata_data <= RESIZE(int_image_r(31 downto 0), 32);
                     when ADDR_IMAGE_R_DATA_1 =>
                         rdata_data <= RESIZE(int_image_r(63 downto 32), 32);
-                    when ADDR_OUTPUT_R_OFFSET_DATA_0 =>
-                        rdata_data <= RESIZE(int_output_r_offset(31 downto 0), 32);
-                    when ADDR_OUTPUT_R_OFFSET_DATA_1 =>
-                        rdata_data <= RESIZE(int_output_r_offset(63 downto 32), 32);
-                    when ADDR_WIDTH_DATA_0 =>
-                        rdata_data <= RESIZE(int_width(31 downto 0), 32);
-                    when ADDR_HEIGHT_DATA_0 =>
-                        rdata_data <= RESIZE(int_height(31 downto 0), 32);
-                    when ADDR_CHANNELS_DATA_0 =>
-                        rdata_data <= RESIZE(int_channels(31 downto 0), 32);
+                    when ADDR_OUT_R_DATA_0 =>
+                        rdata_data <= RESIZE(int_out_r(31 downto 0), 32);
+                    when ADDR_OUT_R_DATA_1 =>
+                        rdata_data <= RESIZE(int_out_r(63 downto 32), 32);
                     when others =>
                         NULL;
                     end case;
@@ -244,11 +268,183 @@ begin
     end process;
 
 -- ----------------------- Register logic ----------------
+    interrupt            <= int_interrupt;
+    ap_start             <= int_ap_start;
+    task_ap_done         <= (ap_done and not auto_restart_status) or auto_restart_done;
+    task_ap_ready        <= ap_ready and not int_auto_restart;
+    auto_restart_done    <= auto_restart_status and (ap_idle and not int_ap_idle);
     image_r              <= STD_LOGIC_VECTOR(int_image_r);
-    output_r_offset      <= STD_LOGIC_VECTOR(int_output_r_offset);
-    width                <= STD_LOGIC_VECTOR(int_width);
-    height               <= STD_LOGIC_VECTOR(int_height);
-    channels             <= STD_LOGIC_VECTOR(int_channels);
+    out_r                <= STD_LOGIC_VECTOR(int_out_r);
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_interrupt <= '0';
+            elsif (ACLK_EN = '1') then
+                if (int_gie = '1' and (int_isr(0) or int_isr(1)) = '1') then
+                    int_interrupt <= '1';
+                else
+                    int_interrupt <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_ap_start <= '0';
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_AP_CTRL and WSTRB(0) = '1' and WDATA(0) = '1') then
+                    int_ap_start <= '1';
+                elsif (ap_ready = '1') then
+                    int_ap_start <= int_auto_restart; -- clear on handshake/auto restart
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_ap_done <= '0';
+            elsif (ACLK_EN = '1') then
+                if (true) then
+                    int_ap_done <= ap_done;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_task_ap_done <= '0';
+            elsif (ACLK_EN = '1') then
+                if (task_ap_done = '1') then
+                    int_task_ap_done <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_AP_CTRL) then
+                    int_task_ap_done <= '0'; -- clear on read
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_ap_idle <= '0';
+            elsif (ACLK_EN = '1') then
+                if (true) then
+                    int_ap_idle <= ap_idle;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_ap_ready <= '0';
+            elsif (ACLK_EN = '1') then
+                if (task_ap_ready = '1') then
+                    int_ap_ready <= '1';
+                elsif (ar_hs = '1' and raddr = ADDR_AP_CTRL) then
+                    int_ap_ready <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_auto_restart <= '0';
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_AP_CTRL and WSTRB(0) = '1') then
+                    int_auto_restart <= WDATA(7);
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                auto_restart_status <= '0';
+            elsif (ACLK_EN = '1') then
+                if (int_auto_restart = '1') then
+                    auto_restart_status <= '1';
+                elsif (ap_idle = '1') then
+                    auto_restart_status <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_gie <= '0';
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_GIE and WSTRB(0) = '1') then
+                    int_gie <= WDATA(0);
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_ier <= (others=>'0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_IER and WSTRB(0) = '1') then
+                    int_ier <= UNSIGNED(WDATA(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_isr(0) <= '0';
+            elsif (ACLK_EN = '1') then
+                if (int_ier(0) = '1' and ap_done = '1') then
+                    int_isr(0) <= '1';
+                elsif (w_hs = '1' and waddr = ADDR_ISR and WSTRB(0) = '1') then
+                    int_isr(0) <= int_isr(0) xor WDATA(0); -- toggle on write
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_isr(1) <= '0';
+            elsif (ACLK_EN = '1') then
+                if (int_ier(1) = '1' and ap_ready = '1') then
+                    int_isr(1) <= '1';
+                elsif (w_hs = '1' and waddr = ADDR_ISR and WSTRB(0) = '1') then
+                    int_isr(1) <= int_isr(1) xor WDATA(1); -- toggle on write
+                end if;
+            end if;
+        end if;
+    end process;
 
     process (ACLK)
     begin
@@ -276,8 +472,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_OUTPUT_R_OFFSET_DATA_0) then
-                    int_output_r_offset(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_output_r_offset(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_OUT_R_DATA_0) then
+                    int_out_r(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_out_r(31 downto 0));
                 end if;
             end if;
         end if;
@@ -287,41 +483,8 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_OUTPUT_R_OFFSET_DATA_1) then
-                    int_output_r_offset(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_output_r_offset(63 downto 32));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_WIDTH_DATA_0) then
-                    int_width(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_width(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_HEIGHT_DATA_0) then
-                    int_height(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_height(31 downto 0));
-                end if;
-            end if;
-        end if;
-    end process;
-
-    process (ACLK)
-    begin
-        if (ACLK'event and ACLK = '1') then
-            if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_CHANNELS_DATA_0) then
-                    int_channels(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_channels(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_OUT_R_DATA_1) then
+                    int_out_r(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_out_r(63 downto 32));
                 end if;
             end if;
         end if;

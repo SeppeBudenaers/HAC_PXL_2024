@@ -6,28 +6,28 @@
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:9:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=conv" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:10:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=image bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=image" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:11:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=output bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:12:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=width bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=width bundle=conv" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:13:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=height bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=height bundle=conv" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:14:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=channels bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=channels bundle=conv" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:16:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=65536 port=image offset=slave bundle=input" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="Convolutie/source/Convolutie.c:17:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=65536 port=output offset=slave bundle=output" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+        <args ARG_PragmaFunction="applyConvolution" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi depth=65536 port=out offset=slave bundle=output" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0" msg_body="Inlining function 'fp_struct&lt;float&gt;::fp_struct(float)' into 'int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)'">
         <args Callee="fp_struct&lt;float&gt;::fp_struct(float)" Callee-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 283 Column 0" Caller="int generic_cast_IEEE754&lt;int, (ap_q_mode)6, float&gt;(float, bool, hls::enable_if&lt;std::numeric_limits&lt;int&gt;::is_signed, bool&gt;::type)" Caller-DebugLoc="File {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h} Line 12 Column 0"/>

@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'applyConvolution'
 ================================================================
 + General Information: 
-    * Date:           Fri May 24 13:18:19 2024
+    * Date:           Fri May 24 15:44:13 2024
     * Version:        2023.2 (Build 4023990 on Oct 11 2023)
     * Project:        Convolutie
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -44,29 +44,29 @@
 +----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
 
 * S_AXILITE Interfaces
-+-----------------+------------+---------------+--------+----------+
-| Interface       | Data Width | Address Width | Offset | Register |
-+-----------------+------------+---------------+--------+----------+
-| s_axi_control   | 32         | 6             | 16     | 0        |
-| s_axi_control_r | 32         | 4             |        |          |
-+-----------------+------------+---------------+--------+----------+
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
+| s_axi_conv    | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
 
 * S_AXILITE Registers
-+-----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
-| Interface       | Register          | Offset | Width | Access | Description                      | Bit Fields                                                           |
-+-----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
-| s_axi_control   | image_r_1         | 0x10   | 32    | W      | Data signal of image_r           |                                                                      |
-| s_axi_control   | image_r_2         | 0x14   | 32    | W      | Data signal of image_r           |                                                                      |
-| s_axi_control   | output_r_offset_1 | 0x1c   | 32    | W      | Data signal of output_r_offset   |                                                                      |
-| s_axi_control   | output_r_offset_2 | 0x20   | 32    | W      | Data signal of output_r_offset   |                                                                      |
-| s_axi_control   | width             | 0x28   | 32    | W      | Data signal of width             |                                                                      |
-| s_axi_control   | height            | 0x30   | 32    | W      | Data signal of height            |                                                                      |
-| s_axi_control   | channels          | 0x38   | 32    | W      | Data signal of channels          |                                                                      |
-| s_axi_control_r | CTRL              | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
-| s_axi_control_r | GIER              | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
-| s_axi_control_r | IP_IER            | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
-| s_axi_control_r | IP_ISR            | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
-+-----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register  | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL      | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER      | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER    | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR    | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | image_r_1 | 0x10   | 32    | W      | Data signal of image_r           |                                                                      |
+| s_axi_control | image_r_2 | 0x14   | 32    | W      | Data signal of image_r           |                                                                      |
+| s_axi_control | out_r_1   | 0x1c   | 32    | W      | Data signal of out_r             |                                                                      |
+| s_axi_control | out_r_2   | 0x20   | 32    | W      | Data signal of out_r             |                                                                      |
+| s_axi_conv    | width     | 0x10   | 32    | W      | Data signal of width             |                                                                      |
+| s_axi_conv    | height    | 0x18   | 32    | W      | Data signal of height            |                                                                      |
+| s_axi_conv    | channels  | 0x20   | 32    | W      | Data signal of channels          |                                                                      |
++---------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
 
 * TOP LEVEL CONTROL
 +-----------+------------+-----------+
@@ -87,7 +87,7 @@
 | Argument | Direction | Datatype       |
 +----------+-----------+----------------+
 | image    | in        | unsigned char* |
-| output   | out       | unsigned char* |
+| out      | out       | unsigned char* |
 | width    | in        | int            |
 | height   | in        | int            |
 | channels | in        | int            |
@@ -99,11 +99,11 @@
 +----------+----------------+-----------+----------+------------------------------------+
 | image    | m_axi_input_r  | interface |          |                                    |
 | image    | s_axi_control  | interface | offset   |                                    |
-| output   | m_axi_output_r | interface |          |                                    |
-| output   | s_axi_control  | interface | offset   |                                    |
-| width    | s_axi_control  | register  |          | name=width offset=0x28 range=32    |
-| height   | s_axi_control  | register  |          | name=height offset=0x30 range=32   |
-| channels | s_axi_control  | register  |          | name=channels offset=0x38 range=32 |
+| out      | m_axi_output_r | interface |          |                                    |
+| out      | s_axi_control  | interface | offset   |                                    |
+| width    | s_axi_conv     | register  |          | name=width offset=0x10 range=32    |
+| height   | s_axi_conv     | register  |          | name=height offset=0x18 range=32   |
+| channels | s_axi_conv     | register  |          | name=channels offset=0x20 range=32 |
 +----------+----------------+-----------+----------+------------------------------------+
 
 
@@ -127,10 +127,10 @@
 +--------------+----------+--------------------------------------+-----------+--------------+----------+-----------------+--------------------------------------+------------+------------------------------------------------------------------------------------------------------+
 | m_axi_input  | image    | Convolutie/source/Convolutie.c:36:75 | read      | Fail         |          | VITIS_LOOP_29_4 | Convolutie/source/Convolutie.c:29:34 | 214-232    | Access call is in the conditional branch                                                             |
 | m_axi_input  | image    | Convolutie/source/Convolutie.c:36:75 | read      | Inferred     | variable | VITIS_LOOP_34_5 | Convolutie/source/Convolutie.c:34:38 |            |                                                                                                      |
-| m_axi_input  | image    | Convolutie/source/Convolutie.c:48:63 | read      | Fail         |          | VITIS_LOOP_26_2 | Convolutie/source/Convolutie.c:26:26 | 214-230    | Stride is incompatible                                                                               |
-| m_axi_input  | image    | Convolutie/source/Convolutie.c:48:63 | read      | Inferred     | variable | VITIS_LOOP_42_6 | Convolutie/source/Convolutie.c:42:30 |            |                                                                                                      |
-| m_axi_output | output   | Convolutie/source/Convolutie.c:42:64 | write     | Widen Fail   |          | VITIS_LOOP_42_6 | Convolutie/source/Convolutie.c:42:30 | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
-| m_axi_output | output   | Convolutie/source/Convolutie.c:42:64 | write     | Inferred     | variable | VITIS_LOOP_25_1 | Convolutie/source/Convolutie.c:25:22 |            |                                                                                                      |
+| m_axi_input  | image    | Convolutie/source/Convolutie.c:48:60 | read      | Fail         |          | VITIS_LOOP_26_2 | Convolutie/source/Convolutie.c:26:26 | 214-230    | Stride is incompatible                                                                               |
+| m_axi_input  | image    | Convolutie/source/Convolutie.c:48:60 | read      | Inferred     | variable | VITIS_LOOP_42_6 | Convolutie/source/Convolutie.c:42:30 |            |                                                                                                      |
+| m_axi_output | out      | Convolutie/source/Convolutie.c:42:64 | write     | Widen Fail   |          | VITIS_LOOP_42_6 | Convolutie/source/Convolutie.c:42:30 | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_output | out      | Convolutie/source/Convolutie.c:42:64 | write     | Inferred     | variable | VITIS_LOOP_25_1 | Convolutie/source/Convolutie.c:25:22 |            |                                                                                                      |
 +--------------+----------+--------------------------------------+-----------+--------------+----------+-----------------+--------------------------------------+------------+------------------------------------------------------------------------------------------------------+
 
     * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
@@ -143,31 +143,31 @@
 +----------------------------------------------+-----+--------+------------------------+------+---------+---------+
 | + applyConvolution                           | 34  |        |                        |      |         |         |
 |   mul_32ns_32ns_64_3_1_U36                   | 4   |        | mul_ln25               | mul  | auto    | 2       |
-|   add_ln25_fu_513_p2                         |     |        | add_ln25               | add  | fabric  | 0       |
+|   add_ln25_fu_511_p2                         |     |        | add_ln25               | add  | fabric  | 0       |
 |   mul_32s_32s_32_3_1_U38                     | 3   |        | mul_ln25_1             | mul  | auto    | 2       |
 |   mul_32s_32s_32_3_1_U37                     | 3   |        | mul_ln25_2             | mul  | auto    | 2       |
 |   mul_32ns_32ns_64_3_1_U35                   | 4   |        | mul_ln6                | mul  | auto    | 2       |
-|   add_ln25_3_fu_606_p2                       |     |        | add_ln25_3             | add  | fabric  | 0       |
-|   add_ln25_1_fu_627_p2                       |     |        | add_ln25_1             | add  | fabric  | 0       |
+|   add_ln25_3_fu_604_p2                       |     |        | add_ln25_3             | add  | fabric  | 0       |
+|   add_ln25_1_fu_625_p2                       |     |        | add_ln25_1             | add  | fabric  | 0       |
 |   mul_31ns_64s_64_3_1_U40                    | 7   |        | mul_ln25_3             | mul  | dsp     | 2       |
-|   add_ln25_2_fu_660_p2                       |     |        | add_ln25_2             | add  | fabric  | 0       |
+|   add_ln25_2_fu_658_p2                       |     |        | add_ln25_2             | add  | fabric  | 0       |
 |   mul_31ns_32ns_63_3_1_U34                   | 4   |        | mul_ln26               | mul  | auto    | 2       |
-|   empty_27_fu_684_p2                         |     |        | empty_27               | add  | fabric  | 0       |
-|   add_ln28_1_fu_718_p2                       |     |        | add_ln28_1             | add  | fabric  | 0       |
-|   add_ln28_fu_724_p2                         |     |        | add_ln28               | add  | fabric  | 0       |
-|   indvars_iv_next2317_fu_752_p2              |     |        | indvars_iv_next2317    | add  | fabric  | 0       |
+|   empty_26_fu_682_p2                         |     |        | empty_26               | add  | fabric  | 0       |
+|   add_ln28_1_fu_716_p2                       |     |        | add_ln28_1             | add  | fabric  | 0       |
+|   add_ln28_fu_722_p2                         |     |        | add_ln28               | add  | fabric  | 0       |
+|   indvars_iv_next2317_fu_750_p2              |     |        | indvars_iv_next2317    | add  | fabric  | 0       |
 |   mul_2ns_64s_64_3_1_U41                     |     |        | mul_ln28               | mul  | dsp     | 2       |
-|   p_mid13_fu_770_p2                          |     |        | p_mid13                | add  | fabric  | 0       |
-|   indvars_iv_next23_mid1_fu_775_p2           |     |        | indvars_iv_next23_mid1 | add  | fabric  | 0       |
-|   tmp_fu_809_p2                              |     |        | tmp                    | add  | fabric  | 0       |
+|   p_mid13_fu_768_p2                          |     |        | p_mid13                | add  | fabric  | 0       |
+|   indvars_iv_next23_mid1_fu_773_p2           |     |        | indvars_iv_next23_mid1 | add  | fabric  | 0       |
+|   tmp_fu_807_p2                              |     |        | tmp                    | add  | fabric  | 0       |
 |   mul_34s_32ns_64_3_1_U39                    | 4   |        | tmp1                   | mul  | auto    | 2       |
-|   add_ln30_fu_958_p2                         |     |        | add_ln30               | add  | fabric  | 0       |
-|   add_ln30_2_fu_814_p2                       |     |        | add_ln30_2             | add  | fabric  | 0       |
-|   add_ln29_fu_943_p2                         |     |        | add_ln29               | add  | fabric  | 0       |
-|   add_ln29_1_fu_993_p2                       |     |        | add_ln29_1             | add  | fabric  | 0       |
-|   add_ln26_fu_819_p2                         |     |        | add_ln26               | add  | fabric  | 0       |
-|   add_ln26_1_fu_1001_p2                      |     |        | add_ln26_1             | add  | fabric  | 0       |
-|   add_ln26_2_fu_824_p2                       |     |        | add_ln26_2             | add  | fabric  | 0       |
+|   add_ln30_fu_956_p2                         |     |        | add_ln30               | add  | fabric  | 0       |
+|   add_ln30_2_fu_812_p2                       |     |        | add_ln30_2             | add  | fabric  | 0       |
+|   add_ln29_fu_941_p2                         |     |        | add_ln29               | add  | fabric  | 0       |
+|   add_ln29_1_fu_991_p2                       |     |        | add_ln29_1             | add  | fabric  | 0       |
+|   add_ln26_fu_817_p2                         |     |        | add_ln26               | add  | fabric  | 0       |
+|   add_ln26_1_fu_999_p2                       |     |        | add_ln26_1             | add  | fabric  | 0       |
+|   add_ln26_2_fu_822_p2                       |     |        | add_ln26_2             | add  | fabric  | 0       |
 |  + applyConvolution_Pipeline_1               | 0   |        |                        |      |         |         |
 |    empty_fu_122_p2                           |     |        | empty                  | add  | fabric  | 0       |
 |  + applyConvolution_Pipeline_VITIS_LOOP_34_5 | 5   |        |                        |      |         |         |
@@ -185,35 +185,35 @@
 ================================================================
 == Storage Report
 ================================================================
-+---------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
-| Name                | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
-|                     |           |           |      |      |        |          |      |         | Banks            |
-+---------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
-| + applyConvolution  |           |           | 4    | 0    |        |          |      |         |                  |
-|   control_s_axi_U   | interface | s_axilite |      |      |        |          |      |         |                  |
-|   control_r_s_axi_U | interface | s_axilite |      |      |        |          |      |         |                  |
-|   input_r_m_axi_U   | interface | m_axi     | 2    |      |        |          |      |         |                  |
-|   output_r_m_axi_U  | interface | m_axi     | 2    |      |        |          |      |         |                  |
-|   kernel_U          | rom_1p    |           |      |      |        | kernel   | auto | 1       | 32, 9, 1         |
-+---------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
++--------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name               | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                    |           |           |      |      |        |          |      |         | Banks            |
++--------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + applyConvolution |           |           | 4    | 0    |        |          |      |         |                  |
+|   control_s_axi_U  | interface | s_axilite |      |      |        |          |      |         |                  |
+|   conv_s_axi_U     | interface | s_axilite |      |      |        |          |      |         |                  |
+|   input_r_m_axi_U  | interface | m_axi     | 2    |      |        |          |      |         |                  |
+|   output_r_m_axi_U | interface | m_axi     | 2    |      |        |          |      |         |                  |
+|   kernel_U         | rom_1p    |           |      |      |        | kernel   | auto | 1       | 32, 9, 1         |
++--------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
 
 
 ================================================================
 == Pragma Report
 ================================================================
 * Valid Pragma Syntax
-+-----------+----------------------------------------------------------+-------------------------------------------------------------------+
-| Type      | Options                                                  | Location                                                          |
-+-----------+----------------------------------------------------------+-------------------------------------------------------------------+
-| interface | s_axilite port=return bundle=control                     | Convolutie/source/Convolutie.c:9 in applyconvolution, return      |
-| interface | s_axilite port=image bundle=control                      | Convolutie/source/Convolutie.c:10 in applyconvolution, image      |
-| interface | s_axilite port=output bundle=control                     | Convolutie/source/Convolutie.c:11 in applyconvolution, output     |
-| interface | s_axilite port=width bundle=control                      | Convolutie/source/Convolutie.c:12 in applyconvolution, width      |
-| interface | s_axilite port=height bundle=control                     | Convolutie/source/Convolutie.c:13 in applyconvolution, height     |
-| interface | s_axilite port=channels bundle=control                   | Convolutie/source/Convolutie.c:14 in applyconvolution, channels   |
-| interface | m_axi depth=65536 port=image offset=slave bundle=input   | Convolutie/source/Convolutie.c:16 in applyconvolution, image      |
-| interface | m_axi depth=65536 port=output offset=slave bundle=output | Convolutie/source/Convolutie.c:17 in applyconvolution, output     |
-| interface | s_axilite port=return                                    | Convolutie/solution1/directives.tcl:7 in applyconvolution, return |
-+-----------+----------------------------------------------------------+-------------------------------------------------------------------+
++-----------+--------------------------------------------------------+-------------------------------------------------------------------+
+| Type      | Options                                                | Location                                                          |
++-----------+--------------------------------------------------------+-------------------------------------------------------------------+
+| interface | s_axilite port=return bundle=conv                      | Convolutie/source/Convolutie.c:9 in applyconvolution, return      |
+| interface | s_axilite port=image                                   | Convolutie/source/Convolutie.c:10 in applyconvolution, image      |
+| interface | s_axilite port=out                                     | Convolutie/source/Convolutie.c:11 in applyconvolution, out        |
+| interface | s_axilite port=width bundle=conv                       | Convolutie/source/Convolutie.c:12 in applyconvolution, width      |
+| interface | s_axilite port=height bundle=conv                      | Convolutie/source/Convolutie.c:13 in applyconvolution, height     |
+| interface | s_axilite port=channels bundle=conv                    | Convolutie/source/Convolutie.c:14 in applyconvolution, channels   |
+| interface | m_axi depth=65536 port=image offset=slave bundle=input | Convolutie/source/Convolutie.c:16 in applyconvolution, image      |
+| interface | m_axi depth=65536 port=out offset=slave bundle=output  | Convolutie/source/Convolutie.c:17 in applyconvolution, out        |
+| interface | s_axilite port=return                                  | Convolutie/solution1/directives.tcl:7 in applyconvolution, return |
++-----------+--------------------------------------------------------+-------------------------------------------------------------------+
 
 

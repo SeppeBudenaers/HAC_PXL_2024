@@ -20,8 +20,8 @@ using namespace std;
 // wrapc file define:
 #define AUTOTB_TVIN_image_r "../tv/cdatafile/c.applyConvolution.autotvin_image_r.dat"
 #define AUTOTB_TVOUT_image_r "../tv/cdatafile/c.applyConvolution.autotvout_image_r.dat"
-#define AUTOTB_TVIN_output_r_offset "../tv/cdatafile/c.applyConvolution.autotvin_output_r_offset.dat"
-#define AUTOTB_TVOUT_output_r_offset "../tv/cdatafile/c.applyConvolution.autotvout_output_r_offset.dat"
+#define AUTOTB_TVIN_out_r "../tv/cdatafile/c.applyConvolution.autotvin_out_r.dat"
+#define AUTOTB_TVOUT_out_r "../tv/cdatafile/c.applyConvolution.autotvout_out_r.dat"
 #define AUTOTB_TVIN_width "../tv/cdatafile/c.applyConvolution.autotvin_width.dat"
 #define AUTOTB_TVOUT_width "../tv/cdatafile/c.applyConvolution.autotvout_width.dat"
 #define AUTOTB_TVIN_height "../tv/cdatafile/c.applyConvolution.autotvin_height.dat"
@@ -1040,7 +1040,7 @@ extern "C"
 void applyConvolution_hw_stub_wrapper(void*, void*, hls::sim::Byte<4>, hls::sim::Byte<4>, hls::sim::Byte<4>);
 
 extern "C"
-void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_param_output_r, hls::sim::Byte<4> __xlx_apatb_param_width, hls::sim::Byte<4> __xlx_apatb_param_height, hls::sim::Byte<4> __xlx_apatb_param_channels)
+void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_param_out_r, hls::sim::Byte<4> __xlx_apatb_param_width, hls::sim::Byte<4> __xlx_apatb_param_height, hls::sim::Byte<4> __xlx_apatb_param_channels)
 {
   hls::sim::Byte<4> __xlx_offset_byte_param_image_r;
   static hls::sim::Register port0 {
@@ -1054,17 +1054,17 @@ void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apat
   };
   port0.param = &__xlx_offset_byte_param_image_r;
 
-  hls::sim::Byte<4> __xlx_offset_byte_param_output_r;
+  hls::sim::Byte<4> __xlx_offset_byte_param_out_r;
   static hls::sim::Register port1 {
-    .name = "output_r_offset",
+    .name = "out_r",
     .width = 32,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_output_r_offset),
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_out_r),
 #endif
   };
-  port1.param = &__xlx_offset_byte_param_output_r;
+  port1.param = &__xlx_offset_byte_param_out_r;
 
   static hls::sim::Register port2 {
     .name = "width",
@@ -1151,7 +1151,7 @@ void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apat
 #endif
 #endif
   };
-  port6.param = { __xlx_apatb_param_output_r };
+  port6.param = { __xlx_apatb_param_out_r };
   port6.nbytes = { 65536 };
   port6.offset = {  };
   port6.hasWrite = { true };
@@ -1178,7 +1178,7 @@ void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apat
     port5.doTCL(tcl);
     port6.doTCL(tcl);
     CodeState = CALL_C_DUT;
-    applyConvolution_hw_stub_wrapper(__xlx_apatb_param_image_r, __xlx_apatb_param_output_r, __xlx_apatb_param_width, __xlx_apatb_param_height, __xlx_apatb_param_channels);
+    applyConvolution_hw_stub_wrapper(__xlx_apatb_param_image_r, __xlx_apatb_param_out_r, __xlx_apatb_param_width, __xlx_apatb_param_height, __xlx_apatb_param_channels);
     CodeState = DUMP_OUTPUTS;
     dump(port6, port6.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;

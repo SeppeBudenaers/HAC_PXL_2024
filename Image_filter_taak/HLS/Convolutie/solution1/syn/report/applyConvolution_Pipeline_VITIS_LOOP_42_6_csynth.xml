@@ -1199,8 +1199,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>output_r_offset</name>
-<Object>output_r_offset</Object>
+<name>out_r</name>
+<Object>out_r</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>

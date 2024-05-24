@@ -190,15 +190,15 @@
             },
             "V3": {
                 "VT": "AC",
-                "BA": "0x00000000",
-                "HA": "0x1FFFFFFF",
+                "BA": "0x0000000000000000",
+                "HA": "0x000000001FFFFFFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
-                "MA": "Data_MM2S",
-                "MX": "/axi_dma_0",
-                "MI": "M_AXI_MM2S",
+                "MA": "Data_m_axi_input_r",
+                "MX": "/applyConvolution_0",
+                "MI": "m_axi_input_r",
                 "MS": "SEG_processing_system7_0_HP0_DDR_LOWOCM",
-                "MV": "xilinx.com:ip:axi_dma:7.1",
+                "MV": "xilinx.com:hls:applyConvolution:1.0",
                 "SX": "/processing_system7_0",
                 "SI": "S_AXI_HP0",
                 "SS": "HP0_DDR_LOWOCM",
@@ -208,15 +208,15 @@
             },
             "V4": {
                 "VT": "AC",
-                "BA": "0x00000000",
-                "HA": "0x1FFFFFFF",
+                "BA": "0x0000000000000000",
+                "HA": "0x000000001FFFFFFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
-                "MA": "Data_S2MM",
-                "MX": "/axi_dma_0",
-                "MI": "M_AXI_S2MM",
+                "MA": "Data_m_axi_output_r",
+                "MX": "/applyConvolution_0",
+                "MI": "m_axi_output_r",
                 "MS": "SEG_processing_system7_0_HP0_DDR_LOWOCM",
-                "MV": "xilinx.com:ip:axi_dma:7.1",
+                "MV": "xilinx.com:hls:applyConvolution:1.0",
                 "SX": "/processing_system7_0",
                 "SI": "S_AXI_HP0",
                 "SS": "HP0_DDR_LOWOCM",
@@ -259,24 +259,6 @@
                 "SV": "xilinx.com:hls:applyConvolution:1.0",
                 "TM": "both",
                 "TU": "register"
-            },
-            "V7": {
-                "VT": "AC",
-                "BA": "0x41E00000",
-                "HA": "0x41E0FFFF",
-                "BP": "C_BASEADDR",
-                "HP": "C_HIGHADDR",
-                "MA": "Data",
-                "MX": "/processing_system7_0",
-                "MI": "M_AXI_GP0",
-                "MS": "SEG_axi_dma_0_Reg",
-                "MV": "xilinx.com:ip:processing_system7:5.5",
-                "SX": "/axi_dma_0",
-                "SI": "S_AXI_LITE",
-                "SS": "Reg",
-                "SV": "xilinx.com:ip:axi_dma:7.1",
-                "TM": "both",
-                "TU": "register"
             }
         },
         "edges": [
@@ -305,11 +287,6 @@
             },
             {
                 "src": "V6",
-                "trg": "V2",
-                "EH": "2"
-            },
-            {
-                "src": "V7",
                 "trg": "V2",
                 "EH": "2"
             }

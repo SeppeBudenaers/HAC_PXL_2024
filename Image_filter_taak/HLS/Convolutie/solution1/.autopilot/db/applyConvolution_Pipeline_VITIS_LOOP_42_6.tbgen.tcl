@@ -21,19 +21,19 @@ set C_modelArgList {
 	{ sum_0_5 float 32 regular  }
 	{ sum_1_5 float 32 regular  }
 	{ sum_2_5 float 32 regular  }
-	{ output_r_offset int 64 regular  }
+	{ out_r int 64 regular  }
 	{ add_ln26_1 int 64 regular  }
 }
 set hasAXIMCache 0
 set AXIMCacheInstList { }
 set C_modelArgMapList {[ 
-	{ "Name" : "output_r", "interface" : "axi_master", "bitwidth" : 8, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "output_r_offset","offset": { "type": "dynamic","port_name": "output_r_offset"},"direction": "WRITEONLY"}]}]} , 
+	{ "Name" : "output_r", "interface" : "axi_master", "bitwidth" : 8, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "out_r","offset": { "type": "dynamic","port_name": "out_r","bundle": "control"},"direction": "WRITEONLY"}]}]} , 
  	{ "Name" : "input_r", "interface" : "axi_master", "bitwidth" : 8, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "image_r","offset": { "type": "dynamic","port_name": "image_r","bundle": "control"},"direction": "READONLY"}]}]} , 
  	{ "Name" : "channels", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "sum_0_5", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "sum_1_5", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "sum_2_5", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "output_r_offset", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
+ 	{ "Name" : "out_r", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} , 
  	{ "Name" : "add_ln26_1", "interface" : "wire", "bitwidth" : 64, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
 set portNum 104
@@ -140,7 +140,7 @@ set portList {
 	{ sum_0_5 sc_in sc_lv 32 signal 3 } 
 	{ sum_1_5 sc_in sc_lv 32 signal 4 } 
 	{ sum_2_5 sc_in sc_lv 32 signal 5 } 
-	{ output_r_offset sc_in sc_lv 64 signal 6 } 
+	{ out_r sc_in sc_lv 64 signal 6 } 
 	{ add_ln26_1 sc_in sc_lv 64 signal 7 } 
 }
 set NewPortList {[ 
@@ -246,7 +246,7 @@ set NewPortList {[
  	{ "name": "sum_0_5", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "sum_0_5", "role": "default" }} , 
  	{ "name": "sum_1_5", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "sum_1_5", "role": "default" }} , 
  	{ "name": "sum_2_5", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "sum_2_5", "role": "default" }} , 
- 	{ "name": "output_r_offset", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "output_r_offset", "role": "default" }} , 
+ 	{ "name": "out_r", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "out_r", "role": "default" }} , 
  	{ "name": "add_ln26_1", "direction": "in", "datatype": "sc_lv", "bitwidth":64, "type": "signal", "bundle":{"name": "add_ln26_1", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
@@ -275,7 +275,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "sum_0_5", "Type" : "None", "Direction" : "I"},
 			{"Name" : "sum_1_5", "Type" : "None", "Direction" : "I"},
 			{"Name" : "sum_2_5", "Type" : "None", "Direction" : "I"},
-			{"Name" : "output_r_offset", "Type" : "None", "Direction" : "I"},
+			{"Name" : "out_r", "Type" : "None", "Direction" : "I"},
 			{"Name" : "add_ln26_1", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_42_6", "PipelineType" : "UPC",
@@ -292,7 +292,7 @@ set ArgLastReadFirstWriteLatency {
 		sum_0_5 {Type I LastRead 0 FirstWrite -1}
 		sum_1_5 {Type I LastRead 0 FirstWrite -1}
 		sum_2_5 {Type I LastRead 0 FirstWrite -1}
-		output_r_offset {Type I LastRead 0 FirstWrite -1}
+		out_r {Type I LastRead 0 FirstWrite -1}
 		add_ln26_1 {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
@@ -313,6 +313,6 @@ set Spec2ImplPortList {
 	sum_0_5 { ap_none {  { sum_0_5 in_data 0 32 } } }
 	sum_1_5 { ap_none {  { sum_1_5 in_data 0 32 } } }
 	sum_2_5 { ap_none {  { sum_2_5 in_data 0 32 } } }
-	output_r_offset { ap_none {  { output_r_offset in_data 0 64 } } }
+	out_r { ap_none {  { out_r in_data 0 64 } } }
 	add_ln26_1 { ap_none {  { add_ln26_1 in_data 0 64 } } }
 }

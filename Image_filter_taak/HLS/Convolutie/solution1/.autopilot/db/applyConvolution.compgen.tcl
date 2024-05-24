@@ -68,7 +68,7 @@ image_r {
 	offset 16
 	offset_end 27
 }
-output_r_offset { 
+out_r { 
 	dir I
 	width 64
 	depth 1
@@ -76,29 +76,11 @@ output_r_offset {
 	offset 28
 	offset_end 39
 }
-width { 
-	dir I
-	width 32
-	depth 1
-	mode ap_none
-	offset 40
-	offset_end 47
-}
-height { 
-	dir I
-	width 32
-	depth 1
-	mode ap_none
-	offset 48
-	offset_end 55
-}
-channels { 
-	dir I
-	width 32
-	depth 1
-	mode ap_none
-	offset 56
-	offset_end 63
+ap_start { }
+ap_done { }
+ap_ready { }
+ap_idle { }
+interrupt {
 }
 }
 dict set axilite_register_dict control $port_control
@@ -128,15 +110,33 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler applyConvolution_control_s_axi BINDTYPE interface TYPE interface_s_axilite
 }
 
-set port_control_r {
-ap_start { }
-ap_done { }
-ap_ready { }
-ap_idle { }
-interrupt {
+set port_conv {
+width { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 16
+	offset_end 23
+}
+height { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 24
+	offset_end 31
+}
+channels { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 32
+	offset_end 39
 }
 }
-dict set axilite_register_dict control_r $port_control_r
+dict set axilite_register_dict conv $port_conv
 
 
 # Native S_AXILite:
@@ -144,9 +144,9 @@ if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
 			id 50 \
-			corename applyConvolution_control_r_axilite \
-			name applyConvolution_control_r_s_axi \
-			ports {$port_control_r} \
+			corename applyConvolution_conv_axilite \
+			name applyConvolution_conv_s_axi \
+			ports {$port_conv} \
 			op interface \
 			interrupt_clear_mode TOW \
 			interrupt_trigger_type default \
@@ -155,12 +155,12 @@ if {${::AESL::PGuard_simmodel_gen}} {
 			is_addrwidth64 1 \
 		} "
 	} else {
-		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'control_r'"
+		puts "@W \[IMPL-110\] Cannot find AXI Lite interface model in the library. Ignored generation of AXI Lite  interface for 'conv'"
 	}
 }
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler applyConvolution_control_r_s_axi BINDTYPE interface TYPE interface_s_axilite
+	::AP::rtl_comp_handler applyConvolution_conv_s_axi BINDTYPE interface TYPE interface_s_axilite
 }
 
 

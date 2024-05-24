@@ -129,9 +129,9 @@ int XApplyconvolution_Initialize(XApplyconvolution *InstancePtr, const char* Ins
     InstancePtr->Control_BaseAddress = (u64)mmap(NULL, InfoPtr->maps[0].size, PROT_READ|PROT_WRITE, MAP_SHARED, InfoPtr->uio_fd, 0 * getpagesize());
     assert(InstancePtr->Control_BaseAddress);
 
-    // NOTE: slave interface 'Control_r' should be mapped to uioX/map1
-    InstancePtr->Control_r_BaseAddress = (u64)mmap(NULL, InfoPtr->maps[1].size, PROT_READ|PROT_WRITE, MAP_SHARED, InfoPtr->uio_fd, 1 * getpagesize());
-    assert(InstancePtr->Control_r_BaseAddress);
+    // NOTE: slave interface 'Conv' should be mapped to uioX/map1
+    InstancePtr->Conv_BaseAddress = (u64)mmap(NULL, InfoPtr->maps[1].size, PROT_READ|PROT_WRITE, MAP_SHARED, InfoPtr->uio_fd, 1 * getpagesize());
+    assert(InstancePtr->Conv_BaseAddress);
 
     InstancePtr->IsReady = XIL_COMPONENT_IS_READY;
 
@@ -145,7 +145,7 @@ int XApplyconvolution_Release(XApplyconvolution *InstancePtr) {
     assert(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     munmap((void*)InstancePtr->Control_BaseAddress, InfoPtr->maps[0].size);
-    munmap((void*)InstancePtr->Control_r_BaseAddress, InfoPtr->maps[1].size);
+    munmap((void*)InstancePtr->Conv_BaseAddress, InfoPtr->maps[1].size);
 
     close(InfoPtr->uio_fd);
 

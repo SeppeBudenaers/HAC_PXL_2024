@@ -148,7 +148,7 @@
 
 
 
-__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels);
+__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution(unsigned char* image, unsigned char* out, int width, int height, int channels);
 # 2 "Convolutie/source/Convolutie.c" 2
 # 1 "C:\\Xilinx\\Vitis_HLS\\2023.2\\win64\\tools\\clang-3.9-csynth\\lib\\clang\\7.0.0\\include\\stdbool.h" 1 3
 # 3 "Convolutie/source/Convolutie.c" 2
@@ -369,7 +369,7 @@ __extension__ typedef unsigned long long uintmax_t;
 # 4 "Convolutie/source/Convolutie.c" 2
 
 
-__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
+__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution(unsigned char* image, unsigned char* out, int width, int height, int channels) {
 #line 23 "C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=applyConvolution
 # 6 "Convolutie/source/Convolutie.c"
@@ -380,15 +380,15 @@ __attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution(unsigne
 
 
 
-#pragma HLS INTERFACE s_axilite port=return bundle=control
-#pragma HLS INTERFACE s_axilite port=image bundle=control
-#pragma HLS INTERFACE s_axilite port=output bundle=control
-#pragma HLS INTERFACE s_axilite port=width bundle=control
-#pragma HLS INTERFACE s_axilite port=height bundle=control
-#pragma HLS INTERFACE s_axilite port=channels bundle=control
+#pragma HLS INTERFACE s_axilite port=return bundle=conv
+#pragma HLS INTERFACE s_axilite port=image
+#pragma HLS INTERFACE s_axilite port=out
+#pragma HLS INTERFACE s_axilite port=width bundle=conv
+#pragma HLS INTERFACE s_axilite port=height bundle=conv
+#pragma HLS INTERFACE s_axilite port=channels bundle=conv
 
 #pragma HLS INTERFACE m_axi depth=65536 port=image offset=slave bundle=input
-#pragma HLS INTERFACE m_axi depth=65536 port=output offset=slave bundle=output
+#pragma HLS INTERFACE m_axi depth=65536 port=out offset=slave bundle=output
  float kernel[3][3] = {
          {1, 0, -1},
          {1, 0, -1},
@@ -416,10 +416,10 @@ int edge = 1;
             VITIS_LOOP_42_6: for (int ch = 0; ch < channels; ch++) {
                 if (ch < 3) {
                     int val = (int)sum[ch];
-                    output[(y * width + x) * channels + ch] = (unsigned char)(val > 255 ? 255 : (val < 0 ? 0 : val));
+                    out[(y * width + x) * channels + ch] = (unsigned char)(val > 255 ? 255 : (val < 0 ? 0 : val));
                 } else {
 
-                    output[(y * width + x) * channels + ch] = image[(y * width + x) * channels + ch];
+                    out[(y * width + x) * channels + ch] = image[(y * width + x) * channels + ch];
                 }
             }
         }

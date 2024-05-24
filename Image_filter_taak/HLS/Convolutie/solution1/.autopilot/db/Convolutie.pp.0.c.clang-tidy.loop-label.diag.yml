@@ -7,7 +7,7 @@ Diagnostics:
     FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.c'
     Replacements:    
       - FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c'
-        Offset:          15315
+        Offset:          15261
         Length:          0
         ReplacementText: 'VITIS_LOOP_25_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -16,7 +16,7 @@ Diagnostics:
     FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.c'
     Replacements:    
       - FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c'
-        Offset:          15358
+        Offset:          15304
         Length:          0
         ReplacementText: 'VITIS_LOOP_26_2: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -25,7 +25,7 @@ Diagnostics:
     FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.c'
     Replacements:    
       - FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c'
-        Offset:          15448
+        Offset:          15394
         Length:          0
         ReplacementText: 'VITIS_LOOP_28_3: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -34,7 +34,7 @@ Diagnostics:
     FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.c'
     Replacements:    
       - FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c'
-        Offset:          15505
+        Offset:          15451
         Length:          0
         ReplacementText: 'VITIS_LOOP_29_4: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -43,7 +43,7 @@ Diagnostics:
     FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.c'
     Replacements:    
       - FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c'
-        Offset:          15716
+        Offset:          15662
         Length:          0
         ReplacementText: 'VITIS_LOOP_34_5: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -52,7 +52,7 @@ Diagnostics:
     FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\source\Convolutie.c'
     Replacements:    
       - FilePath:        'C:\02_PXL\HAC_PXL_2024\Image_filter_taak\HLS\Convolutie\solution1\.autopilot\db\Convolutie.pp.0.c'
-        Offset:          16028
+        Offset:          15974
         Length:          0
         ReplacementText: 'VITIS_LOOP_42_6: '
 ...

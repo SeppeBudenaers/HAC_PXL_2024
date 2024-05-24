@@ -25,7 +25,7 @@ set SynModuleInfo {
       {MODELNAME applyConvolution_input_r_m_axi RTLNAME applyConvolution_input_r_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
       {MODELNAME applyConvolution_output_r_m_axi RTLNAME applyConvolution_output_r_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
       {MODELNAME applyConvolution_control_s_axi RTLNAME applyConvolution_control_s_axi BINDTYPE interface TYPE interface_s_axilite}
-      {MODELNAME applyConvolution_control_r_s_axi RTLNAME applyConvolution_control_r_s_axi BINDTYPE interface TYPE interface_s_axilite}
+      {MODELNAME applyConvolution_conv_s_axi RTLNAME applyConvolution_conv_s_axi BINDTYPE interface TYPE interface_s_axilite}
     }
   }
 }

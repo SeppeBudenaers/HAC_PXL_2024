@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'applyConvolution_Pipeline_VITIS_LOOP_42_6'
 ================================================================
-* Date:           Fri May 24 13:18:18 2024
+* Date:           Fri May 24 15:44:13 2024
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        Convolutie
@@ -276,7 +276,7 @@
 |sum_0_5                  |   in|   32|     ap_none|                                    sum_0_5|        scalar|
 |sum_1_5                  |   in|   32|     ap_none|                                    sum_1_5|        scalar|
 |sum_2_5                  |   in|   32|     ap_none|                                    sum_2_5|        scalar|
-|output_r_offset          |   in|   64|     ap_none|                            output_r_offset|        scalar|
+|out_r                    |   in|   64|     ap_none|                                      out_r|        scalar|
 |add_ln26_1               |   in|   64|     ap_none|                                 add_ln26_1|        scalar|
 +-------------------------+-----+-----+------------+-------------------------------------------+--------------+
 

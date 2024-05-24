@@ -103,10 +103,10 @@ newFuncRoot:3 %add_ln26_1_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %add_l
 
 <Node id="13" bw="64" op_0_bw="64" op_1_bw="64">
 <![CDATA[
-newFuncRoot:4 %output_r_offset_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %output_r_offset
+newFuncRoot:4 %out_r_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %out_r
 
 ]]></Node>
-<StgValue><ssdm name="output_r_offset_read"/></StgValue>
+<StgValue><ssdm name="out_r_read"/></StgValue>
 </operation>
 
 <operation id="13" st_id="1" stage="1" lat="1">
@@ -314,7 +314,7 @@ for.body52:6 %br_ln42 = br i1 %icmp_ln42, void %for.inc89.loopexit.exitStub, voi
 
 <Node id="29" bw="8" op_0_bw="8" op_1_bw="64">
 <![CDATA[
-for.body52.split:0 %output_r_addr = getelementptr i8 %output_r, i64 %output_r_offset_read
+for.body52.split:0 %output_r_addr = getelementptr i8 %output_r, i64 %out_r_read
 
 ]]></Node>
 <StgValue><ssdm name="output_r_addr"/></StgValue>
@@ -362,7 +362,7 @@ for.body52.split:2 %specpipeline_ln42 = specpipeline void @_ssdm_op_SpecPipeline
 
 <Node id="32" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body52.split:3 %specloopname_ln42 = specloopname void @_ssdm_op_SpecLoopName, void @empty_16
+for.body52.split:3 %specloopname_ln42 = specloopname void @_ssdm_op_SpecLoopName, void @empty_15
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln42"/></StgValue>
@@ -1077,8 +1077,8 @@ for.inc86:3 %br_ln42 = br void %for.body52
 <port id="97" name="sum_2_5" dir="0" iftype="0">
 <core>NULL</core><StgValue><ssdm name="sum_2_5"/></StgValue>
 </port>
-<port id="98" name="output_r_offset" dir="0" iftype="0">
-<core>NULL</core><StgValue><ssdm name="output_r_offset"/></StgValue>
+<port id="98" name="out_r" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="out_r"/></StgValue>
 </port>
 <port id="99" name="add_ln26_1" dir="0" iftype="0">
 <core>NULL</core><StgValue><ssdm name="add_ln26_1"/></StgValue>
@@ -1169,9 +1169,9 @@ for.inc86:3 %br_ln42 = br void %for.body52
 </dataflow>
 <dataflow id="152" from="add_ln26_1" to="add_ln26_1_read" fromId="99" toId="11">
 </dataflow>
-<dataflow id="153" from="_ssdm_op_Read.ap_auto.i64" to="output_r_offset_read" fromId="150" toId="12">
+<dataflow id="153" from="_ssdm_op_Read.ap_auto.i64" to="out_r_read" fromId="150" toId="12">
 </dataflow>
-<dataflow id="154" from="output_r_offset" to="output_r_offset_read" fromId="98" toId="12">
+<dataflow id="154" from="out_r" to="out_r_read" fromId="98" toId="12">
 </dataflow>
 <dataflow id="156" from="_ssdm_op_Read.ap_auto.float" to="sum_2_5_read" fromId="155" toId="13">
 </dataflow>
@@ -1217,7 +1217,7 @@ for.inc86:3 %br_ln42 = br void %for.body52
 </dataflow>
 <dataflow id="181" from="output_r" to="output_r_addr" fromId="92" toId="26">
 </dataflow>
-<dataflow id="182" from="output_r_offset_read" to="output_r_addr" fromId="12" toId="26">
+<dataflow id="182" from="out_r_read" to="output_r_addr" fromId="12" toId="26">
 </dataflow>
 <dataflow id="183" from="input_r" to="input_r_addr" fromId="93" toId="27">
 </dataflow>
@@ -1237,7 +1237,7 @@ for.inc86:3 %br_ln42 = br void %for.body52
 </dataflow>
 <dataflow id="193" from="_ssdm_op_SpecLoopName" to="specloopname_ln42" fromId="192" toId="29">
 </dataflow>
-<dataflow id="195" from="empty_16" to="specloopname_ln42" fromId="194" toId="29">
+<dataflow id="195" from="empty_15" to="specloopname_ln42" fromId="194" toId="29">
 </dataflow>
 <dataflow id="196" from="ch_1" to="icmp_ln43" fromId="19" toId="30">
 </dataflow>

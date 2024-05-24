@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 53,
-    "calls": "4",
+    "calls": "6",
     "file": "Convolutie.c",
     "fileloc": 6,
     "instructions": 172,
@@ -20,39 +20,12 @@
     "basicblocks": 1,
     "calls": "",
     "file": "x_hls_utils.h",
-    "fileloc": 340,
-    "instructions": 24,
-    "name": "mantissa",
-    "total_instructions": 174
+    "fileloc": 316,
+    "instructions": 8,
+    "name": "expv",
+    "total_instructions": 109
   },
   "2": {
-    "basicblocks": 1,
-    "calls": "7",
-    "file": "hls_case_IEEE754.h",
-    "fileloc": 116,
-    "instructions": 2,
-    "name": "generic_cast_IEEE754<int, float>",
-    "total_instructions": 2092
-  },
-  "3": {
-    "basicblocks": 1,
-    "calls": "",
-    "file": "x_hls_utils.h",
-    "fileloc": 349,
-    "instructions": 4,
-    "name": "__signbit",
-    "total_instructions": 9
-  },
-  "4": {
-    "basicblocks": 1,
-    "calls": "2",
-    "file": "lib_floatconversion.cpp",
-    "fileloc": 51,
-    "instructions": 2,
-    "name": "__hls_fptosi_float_i32",
-    "total_instructions": 2094
-  },
-  "5": {
     "basicblocks": 1,
     "calls": "",
     "file": "x_hls_utils.h",
@@ -67,18 +40,9 @@
     },
     "total_instructions": 311
   },
-  "6": {
-    "basicblocks": 1,
-    "calls": "",
-    "file": "x_hls_utils.h",
-    "fileloc": 316,
-    "instructions": 8,
-    "name": "expv",
-    "total_instructions": 109
-  },
-  "7": {
+  "3": {
     "basicblocks": 16,
-    "calls": "5 1 6 6 3 3",
+    "calls": "2 4 1 1 7 7",
     "file": "hls_case_IEEE754.h",
     "fileloc": 12,
     "instructions": 133,
@@ -90,5 +54,41 @@
       "L": 1
     },
     "total_instructions": 2090
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 340,
+    "instructions": 24,
+    "name": "mantissa",
+    "total_instructions": 174
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "3",
+    "file": "hls_case_IEEE754.h",
+    "fileloc": 116,
+    "instructions": 2,
+    "name": "generic_cast_IEEE754<int, float>",
+    "total_instructions": 2092
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "5",
+    "file": "lib_floatconversion.cpp",
+    "fileloc": 51,
+    "instructions": 2,
+    "name": "__hls_fptosi_float_i32",
+    "total_instructions": 2094
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 349,
+    "instructions": 4,
+    "name": "__signbit",
+    "total_instructions": 9
   }
 }

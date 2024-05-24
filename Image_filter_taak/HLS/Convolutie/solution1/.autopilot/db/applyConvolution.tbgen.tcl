@@ -18,7 +18,7 @@ set C_modelArgList {
 	{ input_r int 8 regular {axi_master 0}  }
 	{ output_r int 8 regular {axi_master 1}  }
 	{ image_r int 64 regular {axi_slave 0}  }
-	{ output_r_offset int 64 regular {axi_slave 0}  }
+	{ out_r int 64 regular {axi_slave 0}  }
 	{ width int 32 regular {axi_slave 0}  }
 	{ height int 32 regular {axi_slave 0}  }
 	{ channels int 32 regular {axi_slave 0}  }
@@ -27,12 +27,12 @@ set hasAXIMCache 0
 set AXIMCacheInstList { }
 set C_modelArgMapList {[ 
 	{ "Name" : "input_r", "interface" : "axi_master", "bitwidth" : 8, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "image_r","offset": { "type": "dynamic","port_name": "image_r","bundle": "control"},"direction": "READONLY"}]}]} , 
- 	{ "Name" : "output_r", "interface" : "axi_master", "bitwidth" : 8, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "output_r_offset","offset": { "type": "dynamic","port_name": "output_r_offset"},"direction": "WRITEONLY"}]}]} , 
+ 	{ "Name" : "output_r", "interface" : "axi_master", "bitwidth" : 8, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "out_r","offset": { "type": "dynamic","port_name": "out_r","bundle": "control"},"direction": "WRITEONLY"}]}]} , 
  	{ "Name" : "image_r", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 64, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":27}} , 
- 	{ "Name" : "output_r_offset", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 64, "direction" : "READONLY", "offset" : {"in":28}, "offset_end" : {"in":39}} , 
- 	{ "Name" : "width", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":40}, "offset_end" : {"in":47}} , 
- 	{ "Name" : "height", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":48}, "offset_end" : {"in":55}} , 
- 	{ "Name" : "channels", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":56}, "offset_end" : {"in":63}} ]}
+ 	{ "Name" : "out_r", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 64, "direction" : "READONLY", "offset" : {"in":28}, "offset_end" : {"in":39}} , 
+ 	{ "Name" : "width", "interface" : "axi_slave", "bundle":"conv","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":23}} , 
+ 	{ "Name" : "height", "interface" : "axi_slave", "bundle":"conv","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":24}, "offset_end" : {"in":31}} , 
+ 	{ "Name" : "channels", "interface" : "axi_slave", "bundle":"conv","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":32}, "offset_end" : {"in":39}} ]}
 # RTL Port declarations: 
 set portNum 127
 set portList { 
@@ -145,34 +145,34 @@ set portList {
 	{ s_axi_control_BVALID sc_out sc_logic 1 signal -1 } 
 	{ s_axi_control_BREADY sc_in sc_logic 1 signal -1 } 
 	{ s_axi_control_BRESP sc_out sc_lv 2 signal -1 } 
-	{ s_axi_control_r_AWVALID sc_in sc_logic 1 signal -1 } 
-	{ s_axi_control_r_AWREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_r_AWADDR sc_in sc_lv 4 signal -1 } 
-	{ s_axi_control_r_WVALID sc_in sc_logic 1 signal -1 } 
-	{ s_axi_control_r_WREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_r_WDATA sc_in sc_lv 32 signal -1 } 
-	{ s_axi_control_r_WSTRB sc_in sc_lv 4 signal -1 } 
-	{ s_axi_control_r_ARVALID sc_in sc_logic 1 signal -1 } 
-	{ s_axi_control_r_ARREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_r_ARADDR sc_in sc_lv 4 signal -1 } 
-	{ s_axi_control_r_RVALID sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_r_RREADY sc_in sc_logic 1 signal -1 } 
-	{ s_axi_control_r_RDATA sc_out sc_lv 32 signal -1 } 
-	{ s_axi_control_r_RRESP sc_out sc_lv 2 signal -1 } 
-	{ s_axi_control_r_BVALID sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_r_BREADY sc_in sc_logic 1 signal -1 } 
-	{ s_axi_control_r_BRESP sc_out sc_lv 2 signal -1 } 
 	{ interrupt sc_out sc_logic 1 signal -1 } 
+	{ s_axi_conv_AWVALID sc_in sc_logic 1 signal -1 } 
+	{ s_axi_conv_AWREADY sc_out sc_logic 1 signal -1 } 
+	{ s_axi_conv_AWADDR sc_in sc_lv 6 signal -1 } 
+	{ s_axi_conv_WVALID sc_in sc_logic 1 signal -1 } 
+	{ s_axi_conv_WREADY sc_out sc_logic 1 signal -1 } 
+	{ s_axi_conv_WDATA sc_in sc_lv 32 signal -1 } 
+	{ s_axi_conv_WSTRB sc_in sc_lv 4 signal -1 } 
+	{ s_axi_conv_ARVALID sc_in sc_logic 1 signal -1 } 
+	{ s_axi_conv_ARREADY sc_out sc_logic 1 signal -1 } 
+	{ s_axi_conv_ARADDR sc_in sc_lv 6 signal -1 } 
+	{ s_axi_conv_RVALID sc_out sc_logic 1 signal -1 } 
+	{ s_axi_conv_RREADY sc_in sc_logic 1 signal -1 } 
+	{ s_axi_conv_RDATA sc_out sc_lv 32 signal -1 } 
+	{ s_axi_conv_RRESP sc_out sc_lv 2 signal -1 } 
+	{ s_axi_conv_BVALID sc_out sc_logic 1 signal -1 } 
+	{ s_axi_conv_BREADY sc_in sc_logic 1 signal -1 } 
+	{ s_axi_conv_BRESP sc_out sc_lv 2 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_control_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "control", "role": "AWADDR" },"address":[{"name":"image_r","role":"data","value":"16"},{"name":"output_r_offset","role":"data","value":"28"},{"name":"width","role":"data","value":"40"},{"name":"height","role":"data","value":"48"},{"name":"channels","role":"data","value":"56"}] },
+	{ "name": "s_axi_control_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "control", "role": "AWADDR" },"address":[{"name":"applyConvolution","role":"start","value":"0","valid_bit":"0"},{"name":"applyConvolution","role":"continue","value":"0","valid_bit":"4"},{"name":"applyConvolution","role":"auto_start","value":"0","valid_bit":"7"},{"name":"image_r","role":"data","value":"16"},{"name":"out_r","role":"data","value":"28"}] },
 	{ "name": "s_axi_control_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "AWVALID" } },
 	{ "name": "s_axi_control_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "AWREADY" } },
 	{ "name": "s_axi_control_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "WVALID" } },
 	{ "name": "s_axi_control_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "WREADY" } },
 	{ "name": "s_axi_control_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "control", "role": "WDATA" } },
 	{ "name": "s_axi_control_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "control", "role": "WSTRB" } },
-	{ "name": "s_axi_control_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "control", "role": "ARADDR" },"address":[] },
+	{ "name": "s_axi_control_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "control", "role": "ARADDR" },"address":[{"name":"applyConvolution","role":"start","value":"0","valid_bit":"0"},{"name":"applyConvolution","role":"done","value":"0","valid_bit":"1"},{"name":"applyConvolution","role":"idle","value":"0","valid_bit":"2"},{"name":"applyConvolution","role":"ready","value":"0","valid_bit":"3"},{"name":"applyConvolution","role":"auto_start","value":"0","valid_bit":"7"}] },
 	{ "name": "s_axi_control_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "ARVALID" } },
 	{ "name": "s_axi_control_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "ARREADY" } },
 	{ "name": "s_axi_control_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "RVALID" } },
@@ -182,24 +182,24 @@ set NewPortList {[
 	{ "name": "s_axi_control_BVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "BVALID" } },
 	{ "name": "s_axi_control_BREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "BREADY" } },
 	{ "name": "s_axi_control_BRESP", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "control", "role": "BRESP" } },
-	{ "name": "s_axi_control_r_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "control_r", "role": "AWADDR" },"address":[{"name":"applyConvolution","role":"start","value":"0","valid_bit":"0"},{"name":"applyConvolution","role":"continue","value":"0","valid_bit":"4"},{"name":"applyConvolution","role":"auto_start","value":"0","valid_bit":"7"}] },
-	{ "name": "s_axi_control_r_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "AWVALID" } },
-	{ "name": "s_axi_control_r_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "AWREADY" } },
-	{ "name": "s_axi_control_r_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "WVALID" } },
-	{ "name": "s_axi_control_r_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "WREADY" } },
-	{ "name": "s_axi_control_r_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "control_r", "role": "WDATA" } },
-	{ "name": "s_axi_control_r_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "control_r", "role": "WSTRB" } },
-	{ "name": "s_axi_control_r_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "control_r", "role": "ARADDR" },"address":[{"name":"applyConvolution","role":"start","value":"0","valid_bit":"0"},{"name":"applyConvolution","role":"done","value":"0","valid_bit":"1"},{"name":"applyConvolution","role":"idle","value":"0","valid_bit":"2"},{"name":"applyConvolution","role":"ready","value":"0","valid_bit":"3"},{"name":"applyConvolution","role":"auto_start","value":"0","valid_bit":"7"}] },
-	{ "name": "s_axi_control_r_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "ARVALID" } },
-	{ "name": "s_axi_control_r_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "ARREADY" } },
-	{ "name": "s_axi_control_r_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "RVALID" } },
-	{ "name": "s_axi_control_r_RREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "RREADY" } },
-	{ "name": "s_axi_control_r_RDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "control_r", "role": "RDATA" } },
-	{ "name": "s_axi_control_r_RRESP", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "control_r", "role": "RRESP" } },
-	{ "name": "s_axi_control_r_BVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "BVALID" } },
-	{ "name": "s_axi_control_r_BREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "BREADY" } },
-	{ "name": "s_axi_control_r_BRESP", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "control_r", "role": "BRESP" } },
-	{ "name": "interrupt", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control_r", "role": "interrupt" } }, 
+	{ "name": "interrupt", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "interrupt" } },
+	{ "name": "s_axi_conv_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "conv", "role": "AWADDR" },"address":[{"name":"width","role":"data","value":"16"},{"name":"height","role":"data","value":"24"},{"name":"channels","role":"data","value":"32"}] },
+	{ "name": "s_axi_conv_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv", "role": "AWVALID" } },
+	{ "name": "s_axi_conv_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv", "role": "AWREADY" } },
+	{ "name": "s_axi_conv_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv", "role": "WVALID" } },
+	{ "name": "s_axi_conv_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv", "role": "WREADY" } },
+	{ "name": "s_axi_conv_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "conv", "role": "WDATA" } },
+	{ "name": "s_axi_conv_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "conv", "role": "WSTRB" } },
+	{ "name": "s_axi_conv_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "conv", "role": "ARADDR" },"address":[] },
+	{ "name": "s_axi_conv_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv", "role": "ARVALID" } },
+	{ "name": "s_axi_conv_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv", "role": "ARREADY" } },
+	{ "name": "s_axi_conv_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv", "role": "RVALID" } },
+	{ "name": "s_axi_conv_RREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv", "role": "RREADY" } },
+	{ "name": "s_axi_conv_RDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "conv", "role": "RDATA" } },
+	{ "name": "s_axi_conv_RRESP", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "conv", "role": "RRESP" } },
+	{ "name": "s_axi_conv_BVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv", "role": "BVALID" } },
+	{ "name": "s_axi_conv_BREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv", "role": "BREADY" } },
+	{ "name": "s_axi_conv_BRESP", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "conv", "role": "BRESP" } }, 
  	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
  	{ "name": "ap_rst_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst_n", "role": "default" }} , 
  	{ "name": "m_axi_input_r_AWVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "input_r", "role": "AWVALID" }} , 
@@ -313,16 +313,16 @@ set RtlHierarchyInfo {[
 				"BlockSignal" : [
 					{"Name" : "input_r_blk_n_AR", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "4", "SubInstance" : "grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_375", "Port" : "input_r", "Inst_start_state" : "30", "Inst_end_state" : "31"},
-					{"ID" : "10", "SubInstance" : "grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_394", "Port" : "input_r", "Inst_start_state" : "42", "Inst_end_state" : "43"}]},
+					{"ID" : "10", "SubInstance" : "grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_392", "Port" : "input_r", "Inst_start_state" : "42", "Inst_end_state" : "43"},
+					{"ID" : "4", "SubInstance" : "grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_373", "Port" : "input_r", "Inst_start_state" : "30", "Inst_end_state" : "31"}]},
 			{"Name" : "output_r", "Type" : "MAXI", "Direction" : "O",
 				"BlockSignal" : [
 					{"Name" : "output_r_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "output_r_blk_n_B", "Type" : "RtlSignal"}],
 				"SubConnect" : [
-					{"ID" : "10", "SubInstance" : "grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_394", "Port" : "output_r", "Inst_start_state" : "42", "Inst_end_state" : "43"}]},
+					{"ID" : "10", "SubInstance" : "grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_392", "Port" : "output_r", "Inst_start_state" : "42", "Inst_end_state" : "43"}]},
 			{"Name" : "image_r", "Type" : "None", "Direction" : "I"},
-			{"Name" : "output_r_offset", "Type" : "None", "Direction" : "I"},
+			{"Name" : "out_r", "Type" : "None", "Direction" : "I"},
 			{"Name" : "width", "Type" : "None", "Direction" : "I"},
 			{"Name" : "height", "Type" : "None", "Direction" : "I"},
 			{"Name" : "channels", "Type" : "None", "Direction" : "I"},
@@ -333,7 +333,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "VITIS_LOOP_25_1_VITIS_LOOP_26_2", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "48", "FirstState" : "ap_ST_fsm_state10", "LastState" : ["ap_ST_fsm_state43"], "QuitState" : ["ap_ST_fsm_state10"], "PreState" : ["ap_ST_fsm_state9"], "PostState" : ["ap_ST_fsm_state44"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.kernel_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_1_fu_365", "Parent" : "0", "Child" : ["3"],
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_1_fu_363", "Parent" : "0", "Child" : ["3"],
 		"CDFG" : "applyConvolution_Pipeline_1",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -357,8 +357,8 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "Loop 1", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_1_fu_365.flow_control_loop_pipe_sequential_init_U", "Parent" : "2"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_375", "Parent" : "0", "Child" : ["5", "6", "7", "8", "9"],
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_1_fu_363.flow_control_loop_pipe_sequential_init_U", "Parent" : "2"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_373", "Parent" : "0", "Child" : ["5", "6", "7", "8", "9"],
 		"CDFG" : "applyConvolution_Pipeline_VITIS_LOOP_34_5",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -388,12 +388,12 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_34_5", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "9", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage3", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage3_subdone", "QuitState" : "ap_ST_fsm_pp0_stage3", "QuitStateIter" : "ap_enable_reg_pp0_iter2", "QuitStateBlock" : "ap_block_pp0_stage3_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_375.fadd_32ns_32ns_32_8_full_dsp_1_U7", "Parent" : "4"},
-	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_375.fmul_32ns_32ns_32_4_max_dsp_1_U8", "Parent" : "4"},
-	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_375.sitofp_32ns_32_7_no_dsp_1_U9", "Parent" : "4"},
-	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_375.mux_3_2_32_1_1_U10", "Parent" : "4"},
-	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_375.flow_control_loop_pipe_sequential_init_U", "Parent" : "4"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_394", "Parent" : "0", "Child" : ["11", "12"],
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_373.fadd_32ns_32ns_32_8_full_dsp_1_U7", "Parent" : "4"},
+	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_373.fmul_32ns_32ns_32_4_max_dsp_1_U8", "Parent" : "4"},
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_373.sitofp_32ns_32_7_no_dsp_1_U9", "Parent" : "4"},
+	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_373.mux_3_2_32_1_1_U10", "Parent" : "4"},
+	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_373.flow_control_loop_pipe_sequential_init_U", "Parent" : "4"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_392", "Parent" : "0", "Child" : ["11", "12"],
 		"CDFG" : "applyConvolution_Pipeline_VITIS_LOOP_42_6",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -418,15 +418,15 @@ set RtlHierarchyInfo {[
 			{"Name" : "sum_0_5", "Type" : "None", "Direction" : "I"},
 			{"Name" : "sum_1_5", "Type" : "None", "Direction" : "I"},
 			{"Name" : "sum_2_5", "Type" : "None", "Direction" : "I"},
-			{"Name" : "output_r_offset", "Type" : "None", "Direction" : "I"},
+			{"Name" : "out_r", "Type" : "None", "Direction" : "I"},
 			{"Name" : "add_ln26_1", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_42_6", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter4", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter4", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_394.mux_3_2_32_1_1_U25", "Parent" : "10"},
-	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_394.flow_control_loop_pipe_sequential_init_U", "Parent" : "10"},
+	{"ID" : "11", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_392.mux_3_2_32_1_1_U25", "Parent" : "10"},
+	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_392.flow_control_loop_pipe_sequential_init_U", "Parent" : "10"},
 	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"},
-	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_r_s_axi_U", "Parent" : "0"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.conv_s_axi_U", "Parent" : "0"},
 	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.input_r_m_axi_U", "Parent" : "0"},
 	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.output_r_m_axi_U", "Parent" : "0"},
 	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_31ns_32ns_63_3_1_U34", "Parent" : "0"},
@@ -444,7 +444,7 @@ set ArgLastReadFirstWriteLatency {
 		input_r {Type I LastRead 22 FirstWrite -1}
 		output_r {Type O LastRead 10 FirstWrite 4}
 		image_r {Type I LastRead 0 FirstWrite -1}
-		output_r_offset {Type I LastRead 0 FirstWrite -1}
+		out_r {Type I LastRead 0 FirstWrite -1}
 		width {Type I LastRead 0 FirstWrite -1}
 		height {Type I LastRead 0 FirstWrite -1}
 		channels {Type I LastRead 0 FirstWrite -1}
@@ -474,7 +474,7 @@ set ArgLastReadFirstWriteLatency {
 		sum_0_5 {Type I LastRead 0 FirstWrite -1}
 		sum_1_5 {Type I LastRead 0 FirstWrite -1}
 		sum_2_5 {Type I LastRead 0 FirstWrite -1}
-		output_r_offset {Type I LastRead 0 FirstWrite -1}
+		out_r {Type I LastRead 0 FirstWrite -1}
 		add_ln26_1 {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0

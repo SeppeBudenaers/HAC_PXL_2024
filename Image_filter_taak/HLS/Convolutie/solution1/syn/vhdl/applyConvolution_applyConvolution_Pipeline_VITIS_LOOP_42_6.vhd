@@ -112,7 +112,7 @@ port (
     sum_0_5 : IN STD_LOGIC_VECTOR (31 downto 0);
     sum_1_5 : IN STD_LOGIC_VECTOR (31 downto 0);
     sum_2_5 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_r_offset : IN STD_LOGIC_VECTOR (63 downto 0);
+    out_r : IN STD_LOGIC_VECTOR (63 downto 0);
     add_ln26_1 : IN STD_LOGIC_VECTOR (63 downto 0) );
 end;
 

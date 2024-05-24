@@ -92,7 +92,7 @@
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_AWREADY</name>
@@ -103,7 +103,7 @@
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_AWADDR</name>
@@ -114,7 +114,7 @@
             <Bits>6</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_WVALID</name>
@@ -125,7 +125,7 @@
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_WREADY</name>
@@ -136,7 +136,7 @@
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_WDATA</name>
@@ -147,7 +147,7 @@
             <Bits>32</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_WSTRB</name>
@@ -158,7 +158,7 @@
             <Bits>4</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_ARVALID</name>
@@ -169,7 +169,7 @@
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_ARREADY</name>
@@ -180,7 +180,7 @@
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_ARADDR</name>
@@ -191,7 +191,7 @@
             <Bits>6</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_RVALID</name>
@@ -202,7 +202,7 @@
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_RREADY</name>
@@ -213,7 +213,7 @@
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_RDATA</name>
@@ -224,7 +224,7 @@
             <Bits>32</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_RRESP</name>
@@ -235,7 +235,7 @@
             <Bits>2</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_BVALID</name>
@@ -246,7 +246,7 @@
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_BREADY</name>
@@ -257,7 +257,7 @@
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_control_BRESP</name>
@@ -268,194 +268,194 @@
             <Bits>2</Bits>
             <Attribute>unknown</Attribute>
             <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_conv_AWVALID</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
             <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_AWVALID</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
-            <IOProtocol>s_axi</IOProtocol>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_r_AWREADY</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_AWREADY</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_AWADDR</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_AWADDR</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
-            <Bits>4</Bits>
+            <Bits>6</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_WVALID</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_WVALID</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_WREADY</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_WREADY</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_WDATA</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_WDATA</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
             <Bits>32</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_WSTRB</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_WSTRB</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
             <Bits>4</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_ARVALID</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_ARVALID</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_ARREADY</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_ARREADY</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_ARADDR</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_ARADDR</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
-            <Bits>4</Bits>
+            <Bits>6</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_RVALID</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_RVALID</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_RREADY</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_RREADY</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_RDATA</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_RDATA</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
             <Bits>32</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_RRESP</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_RRESP</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
             <Bits>2</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_BVALID</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_BVALID</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_BREADY</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_BREADY</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
-            <name>s_axi_control_r_BRESP</name>
-            <Object>control_r</Object>
-            <Type>return void</Type>
+            <name>s_axi_conv_BRESP</name>
+            <Object>conv</Object>
+            <Type>scalar</Type>
             <IOProtocol>s_axi</IOProtocol>
             <Dir>out</Dir>
             <Bits>2</Bits>
             <Attribute>unknown</Attribute>
-            <CType>unknown</CType>
-            <HasCtrl>1</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>ap_clk</name>
@@ -1576,28 +1576,28 @@
             <ModuleName>applyConvolution</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_applyConvolution_Pipeline_1_fu_365</InstName>
+                    <InstName>grp_applyConvolution_Pipeline_1_fu_363</InstName>
                     <ModuleName>applyConvolution_Pipeline_1</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>365</ID>
+                    <ID>363</ID>
                     <BindInstances>empty_fu_122_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_375</InstName>
+                    <InstName>grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_373</InstName>
                     <ModuleName>applyConvolution_Pipeline_VITIS_LOOP_34_5</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>375</ID>
+                    <ID>373</ID>
                     <BindInstances>add_ln34_fu_208_p2 fmul_32ns_32ns_32_4_max_dsp_1_U8 fadd_32ns_32ns_32_8_full_dsp_1_U7</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_394</InstName>
+                    <InstName>grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_392</InstName>
                     <ModuleName>applyConvolution_Pipeline_VITIS_LOOP_42_6</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>394</ID>
+                    <ID>392</ID>
                     <BindInstances>add_ln42_fu_183_p2 add_ln317_fu_253_p2 sub_ln18_fu_267_p2 result_2_fu_290_p2</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>mul_32ns_32ns_64_3_1_U36 add_ln25_fu_513_p2 mul_32s_32s_32_3_1_U38 mul_32s_32s_32_3_1_U37 mul_32ns_32ns_64_3_1_U35 add_ln25_3_fu_606_p2 add_ln25_1_fu_627_p2 mul_31ns_64s_64_3_1_U40 add_ln25_2_fu_660_p2 mul_31ns_32ns_63_3_1_U34 empty_27_fu_684_p2 add_ln28_1_fu_718_p2 add_ln28_fu_724_p2 indvars_iv_next2317_fu_752_p2 mul_2ns_64s_64_3_1_U41 p_mid13_fu_770_p2 indvars_iv_next23_mid1_fu_775_p2 tmp_fu_809_p2 mul_34s_32ns_64_3_1_U39 add_ln30_fu_958_p2 add_ln30_2_fu_814_p2 add_ln29_fu_943_p2 add_ln29_1_fu_993_p2 add_ln26_fu_819_p2 add_ln26_1_fu_1001_p2 add_ln26_2_fu_824_p2 kernel_U control_s_axi_U control_r_s_axi_U input_r_m_axi_U output_r_m_axi_U</BindInstances>
+            <BindInstances>mul_32ns_32ns_64_3_1_U36 add_ln25_fu_511_p2 mul_32s_32s_32_3_1_U38 mul_32s_32s_32_3_1_U37 mul_32ns_32ns_64_3_1_U35 add_ln25_3_fu_604_p2 add_ln25_1_fu_625_p2 mul_31ns_64s_64_3_1_U40 add_ln25_2_fu_658_p2 mul_31ns_32ns_63_3_1_U34 empty_26_fu_682_p2 add_ln28_1_fu_716_p2 add_ln28_fu_722_p2 indvars_iv_next2317_fu_750_p2 mul_2ns_64s_64_3_1_U41 p_mid13_fu_768_p2 indvars_iv_next23_mid1_fu_773_p2 tmp_fu_807_p2 mul_34s_32ns_64_3_1_U39 add_ln30_fu_956_p2 add_ln30_2_fu_812_p2 add_ln29_fu_941_p2 add_ln29_1_fu_991_p2 add_ln26_fu_817_p2 add_ln26_1_fu_999_p2 add_ln26_2_fu_822_p2 kernel_U control_s_axi_U conv_s_axi_U input_r_m_axi_U output_r_m_axi_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
@@ -1854,8 +1854,8 @@
                         <PipelineDepth>undef</PipelineDepth>
                         <PipelineType>no</PipelineType>
                         <InstanceList>
-                            <Instance>grp_applyConvolution_Pipeline_1_fu_365</Instance>
-                            <Instance>grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_394</Instance>
+                            <Instance>grp_applyConvolution_Pipeline_1_fu_363</Instance>
+                            <Instance>grp_applyConvolution_Pipeline_VITIS_LOOP_42_6_fu_392</Instance>
                         </InstanceList>
                         <VITIS_LOOP_28_3_VITIS_LOOP_29_4>
                             <Name>VITIS_LOOP_28_3_VITIS_LOOP_29_4</Name>
@@ -1867,7 +1867,7 @@
                             <PipelineDepth>undef</PipelineDepth>
                             <PipelineType>no</PipelineType>
                             <InstanceList>
-                                <Instance>grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_375</Instance>
+                                <Instance>grp_applyConvolution_Pipeline_VITIS_LOOP_34_5_fu_373</Instance>
                             </InstanceList>
                         </VITIS_LOOP_28_3_VITIS_LOOP_29_4>
                     </VITIS_LOOP_25_1_VITIS_LOOP_26_2>
@@ -1913,34 +1913,34 @@
             </AreaEstimates>
             <BindNodes>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32ns_32ns_64_3_1_U36" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln25"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln25_fu_513_p2" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln25"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln25_fu_511_p2" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln25"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_3_1_U38" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln25_1"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_3_1_U37" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln25_2"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="auto" LATENCY="2" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32ns_32ns_64_3_1_U35" SOURCE="Convolutie/source/Convolutie.c:6" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln6"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln25_3_fu_606_p2" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln25_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln25_1_fu_627_p2" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln25_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln25_3_fu_604_p2" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln25_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln25_1_fu_625_p2" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln25_1"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="7" ID="" IMPL="dsp" LATENCY="2" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_31ns_64s_64_3_1_U40" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln25_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln25_2_fu_660_p2" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln25_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln25_2_fu_658_p2" SOURCE="Convolutie/source/Convolutie.c:25" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln25_2"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="auto" LATENCY="2" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="mul" PRAGMA="" RTLNAME="mul_31ns_32ns_63_3_1_U34" SOURCE="Convolutie/source/Convolutie.c:26" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln26"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="empty_27_fu_684_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_27"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln28_1_fu_718_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln28_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln28_fu_724_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln28"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="indvars_iv_next2317_fu_752_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="indvars_iv_next2317"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="empty_26_fu_682_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="empty_26"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln28_1_fu_716_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln28_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln28_fu_722_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln28"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="indvars_iv_next2317_fu_750_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="indvars_iv_next2317"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="dsp" LATENCY="2" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="mul" PRAGMA="" RTLNAME="mul_2ns_64s_64_3_1_U41" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln28"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="p_mid13_fu_770_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="p_mid13"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="indvars_iv_next23_mid1_fu_775_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="indvars_iv_next23_mid1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="tmp_fu_809_p2" SOURCE="Convolutie/source/Convolutie.c:29" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="p_mid13_fu_768_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="p_mid13"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="indvars_iv_next23_mid1_fu_773_p2" SOURCE="Convolutie/source/Convolutie.c:28" STORAGESUBTYPE="" URAM="0" VARIABLE="indvars_iv_next23_mid1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="tmp_fu_807_p2" SOURCE="Convolutie/source/Convolutie.c:29" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="auto" LATENCY="2" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="mul" PRAGMA="" RTLNAME="mul_34s_32ns_64_3_1_U39" SOURCE="Convolutie/source/Convolutie.c:29" STORAGESUBTYPE="" URAM="0" VARIABLE="tmp1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln30_fu_958_p2" SOURCE="Convolutie/source/Convolutie.c:30" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln30"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln30_2_fu_814_p2" SOURCE="Convolutie/source/Convolutie.c:30" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln30_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln29_fu_943_p2" SOURCE="Convolutie/source/Convolutie.c:29" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln29"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln29_1_fu_993_p2" SOURCE="Convolutie/source/Convolutie.c:29" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln29_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_fu_819_p2" SOURCE="Convolutie/source/Convolutie.c:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_1_fu_1001_p2" SOURCE="Convolutie/source/Convolutie.c:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_2_fu_824_p2" SOURCE="Convolutie/source/Convolutie.c:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln30_fu_956_p2" SOURCE="Convolutie/source/Convolutie.c:30" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln30"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln30_2_fu_812_p2" SOURCE="Convolutie/source/Convolutie.c:30" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln30_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln29_fu_941_p2" SOURCE="Convolutie/source/Convolutie.c:29" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln29"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_28_3_VITIS_LOOP_29_4" OPTYPE="add" PRAGMA="" RTLNAME="add_ln29_1_fu_991_p2" SOURCE="Convolutie/source/Convolutie.c:29" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln29_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_fu_817_p2" SOURCE="Convolutie/source/Convolutie.c:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_1_fu_999_p2" SOURCE="Convolutie/source/Convolutie.c:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_25_1_VITIS_LOOP_26_2" OPTYPE="add" PRAGMA="" RTLNAME="add_ln26_2_fu_822_p2" SOURCE="Convolutie/source/Convolutie.c:26" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln26_2"/>
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="kernel_U" SOURCE="" STORAGESIZE="32 9 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="kernel"/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
-                <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control_r" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_r_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+                <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="conv" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="conv_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="2" BUNDLEDNAME="input_r" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="input_r_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="2" BUNDLEDNAME="output_r" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="output_r_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
             </BindNodes>
@@ -1955,7 +1955,7 @@
                 <hwRef type="interface" interface="s_axi_control" name="" usage="address" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="output" index="1" direction="out" srcType="unsigned char*" srcSize="8">
+        <Arg ArgName="out" index="1" direction="out" srcType="unsigned char*" srcSize="8">
             <hwRefs>
                 <hwRef type="interface" interface="m_axi_output_r" name="" usage="data" direction="out"/>
                 <hwRef type="interface" interface="s_axi_control" name="" usage="address" direction="out"/>
@@ -1963,17 +1963,17 @@
         </Arg>
         <Arg ArgName="width" index="2" direction="in" srcType="int" srcSize="32">
             <hwRefs>
-                <hwRef type="register" interface="s_axi_control" name="width" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_conv" name="width" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
         <Arg ArgName="height" index="3" direction="in" srcType="int" srcSize="32">
             <hwRefs>
-                <hwRef type="register" interface="s_axi_control" name="height" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_conv" name="height" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
         <Arg ArgName="channels" index="4" direction="in" srcType="int" srcSize="32">
             <hwRefs>
-                <hwRef type="register" interface="s_axi_control" name="channels" usage="data" direction="in"/>
+                <hwRef type="register" interface="s_axi_conv" name="channels" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
     </Args>
@@ -1997,71 +1997,6 @@
                 <port>s_axi_control_WREADY</port>
                 <port>s_axi_control_WSTRB</port>
                 <port>s_axi_control_WVALID</port>
-            </ports>
-            <registers>
-                <register offset="0x10" name="image_r_1" access="W" description="Data signal of image_r" range="32">
-                    <fields>
-                        <field offset="0" width="32" name="image_r" access="W" description="Bit 31 to 0 of image_r"/>
-                    </fields>
-                </register>
-                <register offset="0x14" name="image_r_2" access="W" description="Data signal of image_r" range="32">
-                    <fields>
-                        <field offset="0" width="32" name="image_r" access="W" description="Bit 63 to 32 of image_r"/>
-                    </fields>
-                </register>
-                <register offset="0x1c" name="output_r_offset_1" access="W" description="Data signal of output_r_offset" range="32">
-                    <fields>
-                        <field offset="0" width="32" name="output_r_offset" access="W" description="Bit 31 to 0 of output_r_offset"/>
-                    </fields>
-                </register>
-                <register offset="0x20" name="output_r_offset_2" access="W" description="Data signal of output_r_offset" range="32">
-                    <fields>
-                        <field offset="0" width="32" name="output_r_offset" access="W" description="Bit 63 to 32 of output_r_offset"/>
-                    </fields>
-                </register>
-                <register offset="0x28" name="width" access="W" description="Data signal of width" range="32">
-                    <fields>
-                        <field offset="0" width="32" name="width" access="W" description="Bit 31 to 0 of width"/>
-                    </fields>
-                </register>
-                <register offset="0x30" name="height" access="W" description="Data signal of height" range="32">
-                    <fields>
-                        <field offset="0" width="32" name="height" access="W" description="Bit 31 to 0 of height"/>
-                    </fields>
-                </register>
-                <register offset="0x38" name="channels" access="W" description="Data signal of channels" range="32">
-                    <fields>
-                        <field offset="0" width="32" name="channels" access="W" description="Bit 31 to 0 of channels"/>
-                    </fields>
-                </register>
-            </registers>
-            <constraints>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="image"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="28" argName="output"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="40" argName="width"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="48" argName="height"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="56" argName="channels"/>
-            </constraints>
-        </Interface>
-        <Interface InterfaceName="s_axi_control_r" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="4" portPrefix="s_axi_control_r_" paramPrefix="C_S_AXI_CONTROL_R_">
-            <ports>
-                <port>s_axi_control_r_ARADDR</port>
-                <port>s_axi_control_r_ARREADY</port>
-                <port>s_axi_control_r_ARVALID</port>
-                <port>s_axi_control_r_AWADDR</port>
-                <port>s_axi_control_r_AWREADY</port>
-                <port>s_axi_control_r_AWVALID</port>
-                <port>s_axi_control_r_BREADY</port>
-                <port>s_axi_control_r_BRESP</port>
-                <port>s_axi_control_r_BVALID</port>
-                <port>s_axi_control_r_RDATA</port>
-                <port>s_axi_control_r_RREADY</port>
-                <port>s_axi_control_r_RRESP</port>
-                <port>s_axi_control_r_RVALID</port>
-                <port>s_axi_control_r_WDATA</port>
-                <port>s_axi_control_r_WREADY</port>
-                <port>s_axi_control_r_WSTRB</port>
-                <port>s_axi_control_r_WVALID</port>
             </ports>
             <registers>
                 <register offset="0x00" name="CTRL" access="RW" description="Control signals" range="32">
@@ -2097,11 +2032,78 @@
                         <field offset="2" width="30" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
                     </fields>
                 </register>
+                <register offset="0x10" name="image_r_1" access="W" description="Data signal of image_r" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="image_r" access="W" description="Bit 31 to 0 of image_r"/>
+                    </fields>
+                </register>
+                <register offset="0x14" name="image_r_2" access="W" description="Data signal of image_r" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="image_r" access="W" description="Bit 63 to 32 of image_r"/>
+                    </fields>
+                </register>
+                <register offset="0x1c" name="out_r_1" access="W" description="Data signal of out_r" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="out_r" access="W" description="Bit 31 to 0 of out_r"/>
+                    </fields>
+                </register>
+                <register offset="0x20" name="out_r_2" access="W" description="Data signal of out_r" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="out_r" access="W" description="Bit 63 to 32 of out_r"/>
+                    </fields>
+                </register>
             </registers>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="image"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="28" argName="out"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="s_axi_conv" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="6" portPrefix="s_axi_conv_" paramPrefix="C_S_AXI_CONV_">
+            <ports>
+                <port>s_axi_conv_ARADDR</port>
+                <port>s_axi_conv_ARREADY</port>
+                <port>s_axi_conv_ARVALID</port>
+                <port>s_axi_conv_AWADDR</port>
+                <port>s_axi_conv_AWREADY</port>
+                <port>s_axi_conv_AWVALID</port>
+                <port>s_axi_conv_BREADY</port>
+                <port>s_axi_conv_BRESP</port>
+                <port>s_axi_conv_BVALID</port>
+                <port>s_axi_conv_RDATA</port>
+                <port>s_axi_conv_RREADY</port>
+                <port>s_axi_conv_RRESP</port>
+                <port>s_axi_conv_RVALID</port>
+                <port>s_axi_conv_WDATA</port>
+                <port>s_axi_conv_WREADY</port>
+                <port>s_axi_conv_WSTRB</port>
+                <port>s_axi_conv_WVALID</port>
+            </ports>
+            <registers>
+                <register offset="0x10" name="width" access="W" description="Data signal of width" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="width" access="W" description="Bit 31 to 0 of width"/>
+                    </fields>
+                </register>
+                <register offset="0x18" name="height" access="W" description="Data signal of height" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="height" access="W" description="Bit 31 to 0 of height"/>
+                    </fields>
+                </register>
+                <register offset="0x20" name="channels" access="W" description="Data signal of channels" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="channels" access="W" description="Bit 31 to 0 of channels"/>
+                    </fields>
+                </register>
+            </registers>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="width"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="24" argName="height"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="32" argName="channels"/>
+            </constraints>
         </Interface>
         <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
             <busParams>
-                <busParam busParamName="ASSOCIATED_BUSIF">s_axi_control:s_axi_control_r:m_axi_input_r:m_axi_output_r</busParam>
+                <busParam busParamName="ASSOCIATED_BUSIF">s_axi_control:s_axi_conv:m_axi_input_r:m_axi_output_r</busParam>
                 <busParam busParamName="ASSOCIATED_RESET">ap_rst_n</busParam>
             </busParams>
             <portMaps>
@@ -2257,8 +2259,8 @@
                 <port>m_axi_output_r_WVALID</port>
             </ports>
             <constraints>
-                <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="0" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="0" argName="output"/>
-                <constraint constraint_type="bitwidth" orig_bitwidth="8" final_bitwidth="8" argName="output"/>
+                <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="0" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="0" argName="out"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="8" final_bitwidth="8" argName="out"/>
             </constraints>
         </Interface>
     </Interfaces>
@@ -2275,23 +2277,23 @@
                 <table>
                     <keys size="5">Interface, Data Width, Address Width, Offset, Register</keys>
                     <column name="s_axi_control">32, 6, 16, 0</column>
-                    <column name="s_axi_control_r">32, 4, , </column>
+                    <column name="s_axi_conv">32, 6, 16, 0</column>
                 </table>
             </item>
             <item name="S_AXILITE Registers">
                 <table>
                     <keys size="7">Interface, Register, Offset, Width, Access, Description, Bit Fields</keys>
+                    <column name="s_axi_control">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT</column>
+                    <column name="s_axi_control">GIER, 0x04, 32, RW, Global Interrupt Enable Register, 0=Enable</column>
+                    <column name="s_axi_control">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN</column>
+                    <column name="s_axi_control">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST</column>
                     <column name="s_axi_control">image_r_1, 0x10, 32, W, Data signal of image_r, </column>
                     <column name="s_axi_control">image_r_2, 0x14, 32, W, Data signal of image_r, </column>
-                    <column name="s_axi_control">output_r_offset_1, 0x1c, 32, W, Data signal of output_r_offset, </column>
-                    <column name="s_axi_control">output_r_offset_2, 0x20, 32, W, Data signal of output_r_offset, </column>
-                    <column name="s_axi_control">width, 0x28, 32, W, Data signal of width, </column>
-                    <column name="s_axi_control">height, 0x30, 32, W, Data signal of height, </column>
-                    <column name="s_axi_control">channels, 0x38, 32, W, Data signal of channels, </column>
-                    <column name="s_axi_control_r">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT</column>
-                    <column name="s_axi_control_r">GIER, 0x04, 32, RW, Global Interrupt Enable Register, 0=Enable</column>
-                    <column name="s_axi_control_r">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN</column>
-                    <column name="s_axi_control_r">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST</column>
+                    <column name="s_axi_control">out_r_1, 0x1c, 32, W, Data signal of out_r, </column>
+                    <column name="s_axi_control">out_r_2, 0x20, 32, W, Data signal of out_r, </column>
+                    <column name="s_axi_conv">width, 0x10, 32, W, Data signal of width, </column>
+                    <column name="s_axi_conv">height, 0x18, 32, W, Data signal of height, </column>
+                    <column name="s_axi_conv">channels, 0x20, 32, W, Data signal of channels, </column>
                 </table>
             </item>
             <item name="TOP LEVEL CONTROL">
@@ -2311,7 +2313,7 @@
                 <table>
                     <keys size="3">Argument, Direction, Datatype</keys>
                     <column name="image">in, unsigned char*</column>
-                    <column name="output">out, unsigned char*</column>
+                    <column name="out">out, unsigned char*</column>
                     <column name="width">in, int</column>
                     <column name="height">in, int</column>
                     <column name="channels">in, int</column>
@@ -2322,11 +2324,11 @@
                     <keys size="5">Argument, HW Interface, HW Type, HW Usage, HW Info</keys>
                     <column name="image">m_axi_input_r, interface, , </column>
                     <column name="image">s_axi_control, interface, offset, </column>
-                    <column name="output">m_axi_output_r, interface, , </column>
-                    <column name="output">s_axi_control, interface, offset, </column>
-                    <column name="width">s_axi_control, register, , name=width offset=0x28 range=32</column>
-                    <column name="height">s_axi_control, register, , name=height offset=0x30 range=32</column>
-                    <column name="channels">s_axi_control, register, , name=channels offset=0x38 range=32</column>
+                    <column name="out">m_axi_output_r, interface, , </column>
+                    <column name="out">s_axi_control, interface, offset, </column>
+                    <column name="width">s_axi_conv, register, , name=width offset=0x10 range=32</column>
+                    <column name="height">s_axi_conv, register, , name=height offset=0x18 range=32</column>
+                    <column name="channels">s_axi_conv, register, , name=channels offset=0x20 range=32</column>
                 </table>
             </item>
         </section>
@@ -2347,23 +2349,23 @@
                     <keys size="10">HW Interface, Variable, Access Location, Direction, Burst Status, Length, Loop, Loop Location, Resolution, Problem</keys>
                     <column name="m_axi_input">image, Convolutie/source/Convolutie.c:36:75, read, Fail, , VITIS_LOOP_29_4, Convolutie/source/Convolutie.c:29:34, 214-232, Access call is in the conditional branch</column>
                     <column name="m_axi_input">image, Convolutie/source/Convolutie.c:36:75, read, Inferred, variable, VITIS_LOOP_34_5, Convolutie/source/Convolutie.c:34:38, , </column>
-                    <column name="m_axi_input">image, Convolutie/source/Convolutie.c:48:63, read, Fail, , VITIS_LOOP_26_2, Convolutie/source/Convolutie.c:26:26, 214-230, Stride is incompatible</column>
-                    <column name="m_axi_input">image, Convolutie/source/Convolutie.c:48:63, read, Inferred, variable, VITIS_LOOP_42_6, Convolutie/source/Convolutie.c:42:30, , </column>
-                    <column name="m_axi_output">output, Convolutie/source/Convolutie.c:42:64, write, Widen Fail, , VITIS_LOOP_42_6, Convolutie/source/Convolutie.c:42:30, 214-353, Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
-                    <column name="m_axi_output">output, Convolutie/source/Convolutie.c:42:64, write, Inferred, variable, VITIS_LOOP_25_1, Convolutie/source/Convolutie.c:25:22, , </column>
+                    <column name="m_axi_input">image, Convolutie/source/Convolutie.c:48:60, read, Fail, , VITIS_LOOP_26_2, Convolutie/source/Convolutie.c:26:26, 214-230, Stride is incompatible</column>
+                    <column name="m_axi_input">image, Convolutie/source/Convolutie.c:48:60, read, Inferred, variable, VITIS_LOOP_42_6, Convolutie/source/Convolutie.c:42:30, , </column>
+                    <column name="m_axi_output">out, Convolutie/source/Convolutie.c:42:64, write, Widen Fail, , VITIS_LOOP_42_6, Convolutie/source/Convolutie.c:42:30, 214-353, Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_output">out, Convolutie/source/Convolutie.c:42:64, write, Inferred, variable, VITIS_LOOP_25_1, Convolutie/source/Convolutie.c:25:22, , </column>
                 </table>
             </item>
         </section>
     </ReportBurst>
     <PragmaReport>
-        <Pragma type="interface" location="Convolutie/source/Convolutie.c:9" status="valid" parentFunction="applyconvolution" variable="return" isDirective="0" options="s_axilite port=return bundle=control"/>
-        <Pragma type="interface" location="Convolutie/source/Convolutie.c:10" status="valid" parentFunction="applyconvolution" variable="image" isDirective="0" options="s_axilite port=image bundle=control"/>
-        <Pragma type="interface" location="Convolutie/source/Convolutie.c:11" status="valid" parentFunction="applyconvolution" variable="output" isDirective="0" options="s_axilite port=output bundle=control"/>
-        <Pragma type="interface" location="Convolutie/source/Convolutie.c:12" status="valid" parentFunction="applyconvolution" variable="width" isDirective="0" options="s_axilite port=width bundle=control"/>
-        <Pragma type="interface" location="Convolutie/source/Convolutie.c:13" status="valid" parentFunction="applyconvolution" variable="height" isDirective="0" options="s_axilite port=height bundle=control"/>
-        <Pragma type="interface" location="Convolutie/source/Convolutie.c:14" status="valid" parentFunction="applyconvolution" variable="channels" isDirective="0" options="s_axilite port=channels bundle=control"/>
+        <Pragma type="interface" location="Convolutie/source/Convolutie.c:9" status="valid" parentFunction="applyconvolution" variable="return" isDirective="0" options="s_axilite port=return bundle=conv"/>
+        <Pragma type="interface" location="Convolutie/source/Convolutie.c:10" status="valid" parentFunction="applyconvolution" variable="image" isDirective="0" options="s_axilite port=image"/>
+        <Pragma type="interface" location="Convolutie/source/Convolutie.c:11" status="valid" parentFunction="applyconvolution" variable="out" isDirective="0" options="s_axilite port=out"/>
+        <Pragma type="interface" location="Convolutie/source/Convolutie.c:12" status="valid" parentFunction="applyconvolution" variable="width" isDirective="0" options="s_axilite port=width bundle=conv"/>
+        <Pragma type="interface" location="Convolutie/source/Convolutie.c:13" status="valid" parentFunction="applyconvolution" variable="height" isDirective="0" options="s_axilite port=height bundle=conv"/>
+        <Pragma type="interface" location="Convolutie/source/Convolutie.c:14" status="valid" parentFunction="applyconvolution" variable="channels" isDirective="0" options="s_axilite port=channels bundle=conv"/>
         <Pragma type="interface" location="Convolutie/source/Convolutie.c:16" status="valid" parentFunction="applyconvolution" variable="image" isDirective="0" options="m_axi depth=65536 port=image offset=slave bundle=input"/>
-        <Pragma type="interface" location="Convolutie/source/Convolutie.c:17" status="valid" parentFunction="applyconvolution" variable="output" isDirective="0" options="m_axi depth=65536 port=output offset=slave bundle=output"/>
+        <Pragma type="interface" location="Convolutie/source/Convolutie.c:17" status="valid" parentFunction="applyconvolution" variable="out" isDirective="0" options="m_axi depth=65536 port=out offset=slave bundle=output"/>
         <Pragma type="interface" location="Convolutie/solution1/directives.tcl:7" status="valid" parentFunction="applyconvolution" variable="return" isDirective="1" options="s_axilite port=return"/>
     </PragmaReport>
 </profile>

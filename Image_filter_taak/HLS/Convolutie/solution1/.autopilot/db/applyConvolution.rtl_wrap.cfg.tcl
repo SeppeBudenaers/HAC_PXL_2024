@@ -16,7 +16,7 @@ set Interface "wire"
 set DataType "void"
 set Port [list $PortName $Interface $DataType $Pointer $Dims $Const    $Volatile $ArrayOpt]
 lappend PortList $Port
-set PortName "output_r"
+set PortName "out_r"
 set BitWidth "64"
 set ArrayOpt ""
 set Const "0"

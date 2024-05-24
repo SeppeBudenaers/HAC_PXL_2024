@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'applyConvolution_Pipeline_VITIS_LOOP_34_5'
 ================================================================
-* Date:           Fri May 24 13:18:16 2024
+* Date:           Fri May 24 15:44:11 2024
 
 * Version:        2023.2 (Build 4023990 on Oct 11 2023)
 * Project:        Convolutie
@@ -127,7 +127,7 @@ ST_1 : Operation 43 [1/1] (2.55ns)   --->   "%icmp_ln34 = icmp_slt  i32 %zext_ln
 ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%br_ln34 = br i1 %icmp_ln34, void %for.inc42.loopexit.exitStub, void %for.body24.split" [Convolutie/source/Convolutie.c:34]   --->   Operation 44 'br' 'br_ln34' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%input_r_addr = getelementptr i8 %input_r, i64 %add_ln30_1_read" [Convolutie/source/Convolutie.c:34]   --->   Operation 45 'getelementptr' 'input_r_addr' <Predicate = (icmp_ln34)> <Delay = 0.00>
 ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%specpipeline_ln34 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_0" [Convolutie/source/Convolutie.c:34]   --->   Operation 46 'specpipeline' 'specpipeline_ln34' <Predicate = (icmp_ln34)> <Delay = 0.00>
-ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%specloopname_ln34 = specloopname void @_ssdm_op_SpecLoopName, void @empty_15" [Convolutie/source/Convolutie.c:34]   --->   Operation 47 'specloopname' 'specloopname_ln34' <Predicate = (icmp_ln34)> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%specloopname_ln34 = specloopname void @_ssdm_op_SpecLoopName, void @empty_14" [Convolutie/source/Convolutie.c:34]   --->   Operation 47 'specloopname' 'specloopname_ln34' <Predicate = (icmp_ln34)> <Delay = 0.00>
 ST_1 : Operation 48 [1/1] (2.52ns)   --->   "%icmp_ln35 = icmp_ult  i31 %ch, i31 3" [Convolutie/source/Convolutie.c:35]   --->   Operation 48 'icmp' 'icmp_ln35' <Predicate = (icmp_ln34)> <Delay = 2.52> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.52> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%br_ln35 = br i1 %icmp_ln35, void %for.inc, void %if.then26_ifconv" [Convolutie/source/Convolutie.c:35]   --->   Operation 49 'br' 'br_ln35' <Predicate = (icmp_ln34)> <Delay = 0.00>
 

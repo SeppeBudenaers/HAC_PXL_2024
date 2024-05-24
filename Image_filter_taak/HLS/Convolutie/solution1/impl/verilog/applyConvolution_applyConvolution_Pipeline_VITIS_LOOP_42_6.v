@@ -109,7 +109,7 @@ module applyConvolution_applyConvolution_Pipeline_VITIS_LOOP_42_6 (
         sum_0_5,
         sum_1_5,
         sum_2_5,
-        output_r_offset,
+        out_r,
         add_ln26_1
 );
 
@@ -217,7 +217,7 @@ input  [31:0] channels;
 input  [31:0] sum_0_5;
 input  [31:0] sum_1_5;
 input  [31:0] sum_2_5;
-input  [63:0] output_r_offset;
+input  [63:0] out_r;
 input  [63:0] add_ln26_1;
 
 reg ap_idle;

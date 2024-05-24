@@ -4,15 +4,17 @@
     "calls": "",
     "file": "Convolutie.c",
     "fileloc": 6,
-    "instructions": 175,
+    "instructions": 178,
     "loads": {
       "G": 1,
-      "L": 6
+      "L": 6,
+      "T": 2
     },
     "name": "applyConvolution",
     "stores": {
-      "L": 6
+      "L": 6,
+      "T": 2
     },
-    "total_instructions": 175
+    "total_instructions": 178
   }
 }

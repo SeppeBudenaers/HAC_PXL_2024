@@ -1,13 +1,53 @@
 # This script segment is generated automatically by AutoPilot
 
+set name applyConvolution_mul_31ns_32ns_63_3_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
 set name applyConvolution_mul_32ns_32ns_64_3_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
 }
 
 
+set name applyConvolution_mul_32s_32s_32_3_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
+set name applyConvolution_mul_34s_32ns_64_3_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
+set name applyConvolution_mul_31ns_64s_64_3_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {dsp} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
+set name applyConvolution_mul_2ns_64s_64_3_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {dsp} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler applyConvolution_kernel_ROM_AUTO_1R BINDTYPE {storage} TYPE {rom} IMPL {auto} LATENCY 2 ALLOW_PRAGMA 1
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler applyConvolution_input_r_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler applyConvolution_output_r_m_axi BINDTYPE {interface} TYPE {adapter} IMPL {m_axi}
 }
 
 
@@ -20,29 +60,45 @@ if {${::AESL::PGuard_autoexp_gen}} {
 
 set axilite_register_dict [dict create]
 set port_control {
-height { 
+image_r { 
 	dir I
-	width 32
+	width 64
 	depth 1
 	mode ap_none
 	offset 16
-	offset_end 23
+	offset_end 27
+}
+output_r_offset { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 28
+	offset_end 39
 }
 width { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 24
-	offset_end 31
+	offset 40
+	offset_end 47
+}
+height { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 48
+	offset_end 55
 }
 channels { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 32
-	offset_end 39
+	offset 56
+	offset_end 63
 }
 }
 dict set axilite_register_dict control $port_control
@@ -52,7 +108,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 34 \
+			id 49 \
 			corename applyConvolution_control_axilite \
 			name applyConvolution_control_s_axi \
 			ports {$port_control} \
@@ -87,7 +143,7 @@ dict set axilite_register_dict control_r $port_control_r
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 35 \
+			id 50 \
 			corename applyConvolution_control_r_axilite \
 			name applyConvolution_control_r_s_axi \
 			ports {$port_control_r} \
@@ -106,44 +162,6 @@ if {${::AESL::PGuard_simmodel_gen}} {
 if {${::AESL::PGuard_rtl_comp_handler}} {
 	::AP::rtl_comp_handler applyConvolution_control_r_s_axi BINDTYPE interface TYPE interface_s_axilite
 }
-
-# Native AXIS:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
-eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 36 \
-    name image_r \
-    reset_level 0 \
-    sync_rst true \
-    corename {} \
-    metadata {  } \
-    op interface \
-    ports { image_r_TDATA { I 32 vector } image_r_TVALID { I 1 bit } image_r_TREADY { O 1 bit } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'image_r'"
-}
-}
-
-
-# Native AXIS:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
-eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 37 \
-    name output_r \
-    reset_level 0 \
-    sync_rst true \
-    corename {} \
-    metadata {  } \
-    op interface \
-    ports { output_r_TDATA { O 32 vector } output_r_TVALID { O 1 bit } output_r_TREADY { I 1 bit } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'output_r'"
-}
-}
-
 
 
 # Adapter definition:
@@ -192,52 +210,6 @@ if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_end
     cg_default_interface_gen_bundle_end
     AESL_LIB_XILADAPTER::native_axis_end
-}
-
-
-# RegSlice definition:
-set ID 38
-set RegSliceName applyConvolution_regslice_both
-set RegSliceInstName applyConvolution_regslice_both_U
-set CoreName ap_simcore_applyConvolution_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix applyConvolution_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
-}
-
-
-# RegSlice definition:
-set ID 39
-set RegSliceName applyConvolution_regslice_both
-set RegSliceInstName applyConvolution_regslice_both_U
-set CoreName ap_simcore_applyConvolution_regslice_both
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $RegSliceName BINDTYPE interface TYPE interface_regslice INSTNAME $RegSliceInstName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_regSlice] == "::AESL_LIB_VIRTEX::xil_gen_regSlice"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_regSlice { \
-    name ${RegSliceName} \
-    prefix applyConvolution_ \
-    sliceTypeList 0\
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_regSlice, check your platform lib"
-}
 }
 
 

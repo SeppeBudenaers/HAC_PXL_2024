@@ -2,29 +2,45 @@
 
 set axilite_register_dict [dict create]
 set port_control {
-height { 
+image_r { 
 	dir I
-	width 32
+	width 64
 	depth 1
 	mode ap_none
 	offset 16
-	offset_end 23
+	offset_end 27
+}
+output_r_offset { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 28
+	offset_end 39
 }
 width { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 24
-	offset_end 31
+	offset 40
+	offset_end 47
+}
+height { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 48
+	offset_end 55
 }
 channels { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 32
-	offset_end 39
+	offset 56
+	offset_end 63
 }
 }
 dict set axilite_register_dict control $port_control

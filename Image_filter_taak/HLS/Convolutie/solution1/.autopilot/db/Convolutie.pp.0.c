@@ -148,7 +148,7 @@
 
 
 
-__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution( int image[256*256*4], int output[254*254*4],int height,int width,int channels);
+__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels);
 # 2 "Convolutie/source/Convolutie.c" 2
 # 1 "C:\\Xilinx\\Vitis_HLS\\2023.2\\win64\\tools\\clang-3.9-csynth\\lib\\clang\\7.0.0\\include\\stdbool.h" 1 3
 # 3 "Convolutie/source/Convolutie.c" 2
@@ -369,7 +369,7 @@ __extension__ typedef unsigned long long uintmax_t;
 # 4 "Convolutie/source/Convolutie.c" 2
 
 
-__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution( int image[256*256*4], int output[254*254*4],int height,int width,int channels) {
+__attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
 #line 23 "C:/02_PXL/HAC_PXL_2024/Image_filter_taak/HLS/Convolutie/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=applyConvolution
 # 6 "Convolutie/source/Convolutie.c"
@@ -379,32 +379,33 @@ __attribute__((sdx_kernel("applyConvolution", 0))) void applyConvolution( int im
 # 6 "Convolutie/source/Convolutie.c"
 
 
-#pragma HLS INTERFACE axis port = image
-#pragma HLS INTERFACE axis port = output
 
-
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+#pragma HLS INTERFACE s_axilite port=image bundle=control
+#pragma HLS INTERFACE s_axilite port=output bundle=control
 #pragma HLS INTERFACE s_axilite port=width bundle=control
 #pragma HLS INTERFACE s_axilite port=height bundle=control
 #pragma HLS INTERFACE s_axilite port=channels bundle=control
 
+#pragma HLS INTERFACE m_axi depth=65536 port=image offset=slave bundle=input
+#pragma HLS INTERFACE m_axi depth=65536 port=output offset=slave bundle=output
  float kernel[3][3] = {
-          {1, 0, -1},
-          {1, 0, -1},
-          {1, 0, -1}
-      };
-
+         {1, 0, -1},
+         {1, 0, -1},
+         {1, 0, -1}
+ };
 int edge = 1;
 
-    VITIS_LOOP_24_1: for (int y = 0; y < height; y++) {
-        VITIS_LOOP_25_2: for (int x = 0; x < width; x++) {
+    VITIS_LOOP_25_1: for (int y = 0; y < height; y++) {
+        VITIS_LOOP_26_2: for (int x = 0; x < width; x++) {
             float sum[3] = {0.0, 0.0, 0.0};
-            VITIS_LOOP_27_3: for (int ky = -edge; ky <= edge; ky++) {
-                VITIS_LOOP_28_4: for (int kx = -edge; kx <= edge; kx++) {
+            VITIS_LOOP_28_3: for (int ky = -edge; ky <= edge; ky++) {
+                VITIS_LOOP_29_4: for (int kx = -edge; kx <= edge; kx++) {
                     int ix = x + kx;
                     int iy = y + ky;
                     if (ix >= 0 && ix < width && iy >= 0 && iy < height) {
 
-                    VITIS_LOOP_33_5: for (int ch = 0; ch < channels; ch++) {
+                    VITIS_LOOP_34_5: for (int ch = 0; ch < channels; ch++) {
                     if (ch < 3) {
                                 sum[ch] += kernel[ky + edge][kx + edge] * image[(iy * width + ix) * channels + ch];
                             }
@@ -412,7 +413,7 @@ int edge = 1;
                     }
                 }
             }
-            VITIS_LOOP_41_6: for (int ch = 0; ch < channels; ch++) {
+            VITIS_LOOP_42_6: for (int ch = 0; ch < channels; ch++) {
                 if (ch < 3) {
                     int val = (int)sum[ch];
                     output[(y * width + x) * channels + ch] = (unsigned char)(val > 255 ? 255 : (val < 0 ? 0 : val));

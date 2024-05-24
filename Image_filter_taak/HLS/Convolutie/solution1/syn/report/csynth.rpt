@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'applyConvolution'
 ================================================================
 + General Information: 
-    * Date:           Fri May 24 11:24:40 2024
+    * Date:           Fri May 24 13:18:19 2024
     * Version:        2023.2 (Build 4023990 on Oct 11 2023)
     * Project:        Convolutie
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -15,25 +15,34 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +------------------------------------------------+--------+-------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
-    |                     Modules                    |  Issue |       | Latency | Latency| Iteration|         | Trip |          |      |        |           |           |     |
-    |                     & Loops                    |  Type  | Slack | (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP  |     FF    |    LUT    | URAM|
-    +------------------------------------------------+--------+-------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
-    |+ applyConvolution                              |  Timing|  -0.47|        -|       -|         -|        -|     -|        no|     -|  9 (4%)|  2716 (2%)|  3525 (6%)|    -|
-    | o VITIS_LOOP_24_1_VITIS_LOOP_25_2              |       -|   5.84|        -|       -|         -|        -|     -|        no|     -|       -|          -|          -|    -|
-    |  + applyConvolution_Pipeline_1                 |       -|   0.80|        5|  40.000|         -|        5|     -|        no|     -|       -|  100 (~0%)|   76 (~0%)|    -|
-    |   o Loop 1                                     |       -|   5.84|        3|  24.000|         1|        1|     3|       yes|     -|       -|          -|          -|    -|
-    |  + applyConvolution_Pipeline_VITIS_LOOP_41_6   |  Timing|  -0.34|        -|       -|         -|        -|     -|        no|     -|       -|  393 (~0%)|   973 (1%)|    -|
-    |   o VITIS_LOOP_41_6                            |       -|   5.84|        -|       -|         4|        1|     -|       yes|     -|       -|          -|          -|    -|
-    |  o VITIS_LOOP_27_3_VITIS_LOOP_28_4             |       -|   5.84|        -|       -|         -|        -|     -|        no|     -|       -|          -|          -|    -|
-    |   + applyConvolution_Pipeline_VITIS_LOOP_33_5  |  Timing|  -0.47|        -|       -|         -|        -|     -|        no|     -|  5 (2%)|  938 (~0%)|  1225 (2%)|    -|
-    |    o VITIS_LOOP_33_5                           |      II|   5.84|        -|       -|        22|        9|     -|       yes|     -|       -|          -|          -|    -|
-    +------------------------------------------------+--------+-------+---------+--------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+    +------------------------------------------------+--------+-------+---------+--------+----------+---------+------+----------+--------+----------+-----------+------------+-----+
+    |                     Modules                    |  Issue |       | Latency | Latency| Iteration|         | Trip |          |        |          |           |            |     |
+    |                     & Loops                    |  Type  | Slack | (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined|  BRAM  |    DSP   |     FF    |     LUT    | URAM|
+    +------------------------------------------------+--------+-------+---------+--------+----------+---------+------+----------+--------+----------+-----------+------------+-----+
+    |+ applyConvolution                              |  Timing|  -0.47|        -|       -|         -|        -|     -|        no|  4 (1%)|  34 (15%)|  6596 (6%)|  6956 (13%)|    -|
+    | o VITIS_LOOP_25_1_VITIS_LOOP_26_2              |       -|   5.84|        -|       -|         -|        -|     -|        no|       -|         -|          -|           -|    -|
+    |  + applyConvolution_Pipeline_1                 |       -|   0.80|        5|  40.000|         -|        5|     -|        no|       -|         -|  100 (~0%)|    76 (~0%)|    -|
+    |   o Loop 1                                     |       -|   5.84|        3|  24.000|         1|        1|     3|       yes|       -|         -|          -|           -|    -|
+    |  + applyConvolution_Pipeline_VITIS_LOOP_42_6   |  Timing|  -0.34|        -|       -|         -|        -|     -|        no|       -|         -|  310 (~0%)|    939 (1%)|    -|
+    |   o VITIS_LOOP_42_6                            |       -|   5.84|        -|       -|         5|        1|     -|       yes|       -|         -|          -|           -|    -|
+    |  o VITIS_LOOP_28_3_VITIS_LOOP_29_4             |       -|   5.84|        -|       -|         -|        -|     -|        no|       -|         -|          -|           -|    -|
+    |   + applyConvolution_Pipeline_VITIS_LOOP_34_5  |  Timing|  -0.47|        -|       -|         -|        -|     -|        no|       -|    5 (2%)|  914 (~0%)|   1225 (2%)|    -|
+    |    o VITIS_LOOP_34_5                           |      II|   5.84|        -|       -|        22|        9|     -|       yes|       -|         -|          -|           -|    -|
+    +------------------------------------------------+--------+-------+---------+--------+----------+---------+------+----------+--------+----------+-----------+------------+-----+
 
 
 ================================================================
 == HW Interfaces
 ================================================================
+* M_AXI
++----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface      | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|                | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_input_r  | 8 -> 8     | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=2            |
+| m_axi_output_r | 8 -> 8     | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=2            |
++----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
 * S_AXILITE Interfaces
 +-----------------+------------+---------------+--------+----------+
 | Interface       | Data Width | Address Width | Offset | Register |
@@ -43,25 +52,21 @@
 +-----------------+------------+---------------+--------+----------+
 
 * S_AXILITE Registers
-+-----------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
-| Interface       | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
-+-----------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
-| s_axi_control   | height   | 0x10   | 32    | W      | Data signal of height            |                                                                      |
-| s_axi_control   | width    | 0x18   | 32    | W      | Data signal of width             |                                                                      |
-| s_axi_control   | channels | 0x20   | 32    | W      | Data signal of channels          |                                                                      |
-| s_axi_control_r | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
-| s_axi_control_r | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
-| s_axi_control_r | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
-| s_axi_control_r | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
-+-----------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
-
-* AXIS
-+-----------+-----------+---------------+-------+--------+--------+
-| Interface | Direction | Register Mode | TDATA | TREADY | TVALID |
-+-----------+-----------+---------------+-------+--------+--------+
-| image_r   | in        | both          | 32    | 1      | 1      |
-| output_r  | out       | both          | 32    | 1      | 1      |
-+-----------+-----------+---------------+-------+--------+--------+
++-----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface       | Register          | Offset | Width | Access | Description                      | Bit Fields                                                           |
++-----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control   | image_r_1         | 0x10   | 32    | W      | Data signal of image_r           |                                                                      |
+| s_axi_control   | image_r_2         | 0x14   | 32    | W      | Data signal of image_r           |                                                                      |
+| s_axi_control   | output_r_offset_1 | 0x1c   | 32    | W      | Data signal of output_r_offset   |                                                                      |
+| s_axi_control   | output_r_offset_2 | 0x20   | 32    | W      | Data signal of output_r_offset   |                                                                      |
+| s_axi_control   | width             | 0x28   | 32    | W      | Data signal of width             |                                                                      |
+| s_axi_control   | height            | 0x30   | 32    | W      | Data signal of height            |                                                                      |
+| s_axi_control   | channels          | 0x38   | 32    | W      | Data signal of channels          |                                                                      |
+| s_axi_control_r | CTRL              | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control_r | GIER              | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control_r | IP_IER            | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control_r | IP_ISR            | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
++-----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
 
 * TOP LEVEL CONTROL
 +-----------+------------+-----------+
@@ -78,27 +83,57 @@
 == SW I/O Information
 ================================================================
 * Top Function Arguments
-+----------+-----------+----------+
-| Argument | Direction | Datatype |
-+----------+-----------+----------+
-| image    | in        | int*     |
-| output   | out       | int*     |
-| height   | in        | int      |
-| width    | in        | int      |
-| channels | in        | int      |
-+----------+-----------+----------+
++----------+-----------+----------------+
+| Argument | Direction | Datatype       |
++----------+-----------+----------------+
+| image    | in        | unsigned char* |
+| output   | out       | unsigned char* |
+| width    | in        | int            |
+| height   | in        | int            |
+| channels | in        | int            |
++----------+-----------+----------------+
 
 * SW-to-HW Mapping
-+----------+---------------+-----------+------------------------------------+
-| Argument | HW Interface  | HW Type   | HW Info                            |
-+----------+---------------+-----------+------------------------------------+
-| image    | image_r       | interface |                                    |
-| output   | output_r      | interface |                                    |
-| height   | s_axi_control | register  | name=height offset=0x10 range=32   |
-| width    | s_axi_control | register  | name=width offset=0x18 range=32    |
-| channels | s_axi_control | register  | name=channels offset=0x20 range=32 |
-+----------+---------------+-----------+------------------------------------+
++----------+----------------+-----------+----------+------------------------------------+
+| Argument | HW Interface   | HW Type   | HW Usage | HW Info                            |
++----------+----------------+-----------+----------+------------------------------------+
+| image    | m_axi_input_r  | interface |          |                                    |
+| image    | s_axi_control  | interface | offset   |                                    |
+| output   | m_axi_output_r | interface |          |                                    |
+| output   | s_axi_control  | interface | offset   |                                    |
+| width    | s_axi_control  | register  |          | name=width offset=0x28 range=32    |
+| height   | s_axi_control  | register  |          | name=height offset=0x30 range=32   |
+| channels | s_axi_control  | register  |          | name=channels offset=0x38 range=32 |
++----------+----------------+-----------+----------+------------------------------------+
 
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++----------------+-----------+----------+-------+-----------------+--------------------------------------+
+| HW Interface   | Direction | Length   | Width | Loop            | Loop Location                        |
++----------------+-----------+----------+-------+-----------------+--------------------------------------+
+| m_axi_input_r  | read      | variable | 8     | VITIS_LOOP_34_5 | Convolutie/source/Convolutie.c:34:38 |
+| m_axi_input_r  | read      | variable | 8     | VITIS_LOOP_42_6 | Convolutie/source/Convolutie.c:42:30 |
+| m_axi_output_r | write     | variable | 8     | VITIS_LOOP_25_1 | Convolutie/source/Convolutie.c:25:22 |
++----------------+-----------+----------+-------+-----------------+--------------------------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+--------------------------------------+-----------+--------------+----------+-----------------+--------------------------------------+------------+------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location                      | Direction | Burst Status | Length   | Loop            | Loop Location                        | Resolution | Problem                                                                                              |
++--------------+----------+--------------------------------------+-----------+--------------+----------+-----------------+--------------------------------------+------------+------------------------------------------------------------------------------------------------------+
+| m_axi_input  | image    | Convolutie/source/Convolutie.c:36:75 | read      | Fail         |          | VITIS_LOOP_29_4 | Convolutie/source/Convolutie.c:29:34 | 214-232    | Access call is in the conditional branch                                                             |
+| m_axi_input  | image    | Convolutie/source/Convolutie.c:36:75 | read      | Inferred     | variable | VITIS_LOOP_34_5 | Convolutie/source/Convolutie.c:34:38 |            |                                                                                                      |
+| m_axi_input  | image    | Convolutie/source/Convolutie.c:48:63 | read      | Fail         |          | VITIS_LOOP_26_2 | Convolutie/source/Convolutie.c:26:26 | 214-230    | Stride is incompatible                                                                               |
+| m_axi_input  | image    | Convolutie/source/Convolutie.c:48:63 | read      | Inferred     | variable | VITIS_LOOP_42_6 | Convolutie/source/Convolutie.c:42:30 |            |                                                                                                      |
+| m_axi_output | output   | Convolutie/source/Convolutie.c:42:64 | write     | Widen Fail   |          | VITIS_LOOP_42_6 | Convolutie/source/Convolutie.c:42:30 | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_output | output   | Convolutie/source/Convolutie.c:42:64 | write     | Inferred     | variable | VITIS_LOOP_25_1 | Convolutie/source/Convolutie.c:25:22 |            |                                                                                                      |
++--------------+----------+--------------------------------------+-----------+--------------+----------+-----------------+--------------------------------------+------------+------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
 
 ================================================================
 == Bind Op Report
@@ -106,29 +141,44 @@
 +----------------------------------------------+-----+--------+------------------------+------+---------+---------+
 | Name                                         | DSP | Pragma | Variable               | Op   | Impl    | Latency |
 +----------------------------------------------+-----+--------+------------------------+------+---------+---------+
-| + applyConvolution                           | 9   |        |                        |      |         |         |
-|   mul_32ns_32ns_64_3_1_U31                   | 4   |        | mul_ln6                | mul  | auto    | 2       |
-|   add_ln24_1_fu_365_p2                       |     |        | add_ln24_1             | add  | fabric  | 0       |
-|   add_ln24_fu_386_p2                         |     |        | add_ln24               | add  | fabric  | 0       |
-|   empty_fu_426_p2                            |     |        | empty                  | add  | fabric  | 0       |
-|   add_ln27_fu_460_p2                         |     |        | add_ln27               | add  | fabric  | 0       |
-|   indvars_iv_next2514_fu_480_p2              |     |        | indvars_iv_next2514    | add  | fabric  | 0       |
-|   p_mid1_fu_490_p2                           |     |        | p_mid1                 | add  | fabric  | 0       |
-|   indvars_iv_next25_mid1_fu_495_p2           |     |        | indvars_iv_next25_mid1 | add  | fabric  | 0       |
-|   add_ln29_fu_525_p2                         |     |        | add_ln29               | add  | fabric  | 0       |
-|   add_ln28_fu_530_p2                         |     |        | add_ln28               | add  | fabric  | 0       |
-|   add_ln25_fu_536_p2                         |     |        | add_ln25               | add  | fabric  | 0       |
+| + applyConvolution                           | 34  |        |                        |      |         |         |
+|   mul_32ns_32ns_64_3_1_U36                   | 4   |        | mul_ln25               | mul  | auto    | 2       |
+|   add_ln25_fu_513_p2                         |     |        | add_ln25               | add  | fabric  | 0       |
+|   mul_32s_32s_32_3_1_U38                     | 3   |        | mul_ln25_1             | mul  | auto    | 2       |
+|   mul_32s_32s_32_3_1_U37                     | 3   |        | mul_ln25_2             | mul  | auto    | 2       |
+|   mul_32ns_32ns_64_3_1_U35                   | 4   |        | mul_ln6                | mul  | auto    | 2       |
+|   add_ln25_3_fu_606_p2                       |     |        | add_ln25_3             | add  | fabric  | 0       |
+|   add_ln25_1_fu_627_p2                       |     |        | add_ln25_1             | add  | fabric  | 0       |
+|   mul_31ns_64s_64_3_1_U40                    | 7   |        | mul_ln25_3             | mul  | dsp     | 2       |
+|   add_ln25_2_fu_660_p2                       |     |        | add_ln25_2             | add  | fabric  | 0       |
+|   mul_31ns_32ns_63_3_1_U34                   | 4   |        | mul_ln26               | mul  | auto    | 2       |
+|   empty_27_fu_684_p2                         |     |        | empty_27               | add  | fabric  | 0       |
+|   add_ln28_1_fu_718_p2                       |     |        | add_ln28_1             | add  | fabric  | 0       |
+|   add_ln28_fu_724_p2                         |     |        | add_ln28               | add  | fabric  | 0       |
+|   indvars_iv_next2317_fu_752_p2              |     |        | indvars_iv_next2317    | add  | fabric  | 0       |
+|   mul_2ns_64s_64_3_1_U41                     |     |        | mul_ln28               | mul  | dsp     | 2       |
+|   p_mid13_fu_770_p2                          |     |        | p_mid13                | add  | fabric  | 0       |
+|   indvars_iv_next23_mid1_fu_775_p2           |     |        | indvars_iv_next23_mid1 | add  | fabric  | 0       |
+|   tmp_fu_809_p2                              |     |        | tmp                    | add  | fabric  | 0       |
+|   mul_34s_32ns_64_3_1_U39                    | 4   |        | tmp1                   | mul  | auto    | 2       |
+|   add_ln30_fu_958_p2                         |     |        | add_ln30               | add  | fabric  | 0       |
+|   add_ln30_2_fu_814_p2                       |     |        | add_ln30_2             | add  | fabric  | 0       |
+|   add_ln29_fu_943_p2                         |     |        | add_ln29               | add  | fabric  | 0       |
+|   add_ln29_1_fu_993_p2                       |     |        | add_ln29_1             | add  | fabric  | 0       |
+|   add_ln26_fu_819_p2                         |     |        | add_ln26               | add  | fabric  | 0       |
+|   add_ln26_1_fu_1001_p2                      |     |        | add_ln26_1             | add  | fabric  | 0       |
+|   add_ln26_2_fu_824_p2                       |     |        | add_ln26_2             | add  | fabric  | 0       |
 |  + applyConvolution_Pipeline_1               | 0   |        |                        |      |         |         |
 |    empty_fu_122_p2                           |     |        | empty                  | add  | fabric  | 0       |
-|  + applyConvolution_Pipeline_VITIS_LOOP_33_5 | 5   |        |                        |      |         |         |
-|    add_ln33_fu_181_p2                        |     |        | add_ln33               | add  | fabric  | 0       |
+|  + applyConvolution_Pipeline_VITIS_LOOP_34_5 | 5   |        |                        |      |         |         |
+|    add_ln34_fu_208_p2                        |     |        | add_ln34               | add  | fabric  | 0       |
 |    fmul_32ns_32ns_32_4_max_dsp_1_U8          | 3   |        | mul                    | fmul | maxdsp  | 3       |
 |    fadd_32ns_32ns_32_8_full_dsp_1_U7         | 2   |        | sum_2_4                | fadd | fulldsp | 7       |
-|  + applyConvolution_Pipeline_VITIS_LOOP_41_6 | 0   |        |                        |      |         |         |
-|    add_ln41_fu_145_p2                        |     |        | add_ln41               | add  | fabric  | 0       |
-|    add_ln317_fu_203_p2                       |     |        | add_ln317              | add  | fabric  | 0       |
-|    sub_ln18_fu_217_p2                        |     |        | sub_ln18               | sub  | fabric  | 0       |
-|    result_2_fu_299_p2                        |     |        | result_2               | sub  | fabric  | 0       |
+|  + applyConvolution_Pipeline_VITIS_LOOP_42_6 | 0   |        |                        |      |         |         |
+|    add_ln42_fu_183_p2                        |     |        | add_ln42               | add  | fabric  | 0       |
+|    add_ln317_fu_253_p2                       |     |        | add_ln317              | add  | fabric  | 0       |
+|    sub_ln18_fu_267_p2                        |     |        | sub_ln18               | sub  | fabric  | 0       |
+|    result_2_fu_290_p2                        |     |        | result_2               | sub  | fabric  | 0       |
 +----------------------------------------------+-----+--------+------------------------+------+---------+---------+
 
 
@@ -139,9 +189,11 @@
 | Name                | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
 |                     |           |           |      |      |        |          |      |         | Banks            |
 +---------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
-| + applyConvolution  |           |           | 0    | 0    |        |          |      |         |                  |
+| + applyConvolution  |           |           | 4    | 0    |        |          |      |         |                  |
 |   control_s_axi_U   | interface | s_axilite |      |      |        |          |      |         |                  |
 |   control_r_s_axi_U | interface | s_axilite |      |      |        |          |      |         |                  |
+|   input_r_m_axi_U   | interface | m_axi     | 2    |      |        |          |      |         |                  |
+|   output_r_m_axi_U  | interface | m_axi     | 2    |      |        |          |      |         |                  |
 |   kernel_U          | rom_1p    |           |      |      |        | kernel   | auto | 1       | 32, 9, 1         |
 +---------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
 
@@ -150,15 +202,18 @@
 == Pragma Report
 ================================================================
 * Valid Pragma Syntax
-+-----------+----------------------------------------+-------------------------------------------------------------------+
-| Type      | Options                                | Location                                                          |
-+-----------+----------------------------------------+-------------------------------------------------------------------+
-| interface | axis port = image                      | Convolutie/source/Convolutie.c:8 in applyconvolution              |
-| interface | axis port = output                     | Convolutie/source/Convolutie.c:9 in applyconvolution              |
-| interface | s_axilite port=width bundle=control    | Convolutie/source/Convolutie.c:12 in applyconvolution, width      |
-| interface | s_axilite port=height bundle=control   | Convolutie/source/Convolutie.c:13 in applyconvolution, height     |
-| interface | s_axilite port=channels bundle=control | Convolutie/source/Convolutie.c:14 in applyconvolution, channels   |
-| interface | s_axilite port=return                  | Convolutie/solution1/directives.tcl:7 in applyconvolution, return |
-+-----------+----------------------------------------+-------------------------------------------------------------------+
++-----------+----------------------------------------------------------+-------------------------------------------------------------------+
+| Type      | Options                                                  | Location                                                          |
++-----------+----------------------------------------------------------+-------------------------------------------------------------------+
+| interface | s_axilite port=return bundle=control                     | Convolutie/source/Convolutie.c:9 in applyconvolution, return      |
+| interface | s_axilite port=image bundle=control                      | Convolutie/source/Convolutie.c:10 in applyconvolution, image      |
+| interface | s_axilite port=output bundle=control                     | Convolutie/source/Convolutie.c:11 in applyconvolution, output     |
+| interface | s_axilite port=width bundle=control                      | Convolutie/source/Convolutie.c:12 in applyconvolution, width      |
+| interface | s_axilite port=height bundle=control                     | Convolutie/source/Convolutie.c:13 in applyconvolution, height     |
+| interface | s_axilite port=channels bundle=control                   | Convolutie/source/Convolutie.c:14 in applyconvolution, channels   |
+| interface | m_axi depth=65536 port=image offset=slave bundle=input   | Convolutie/source/Convolutie.c:16 in applyconvolution, image      |
+| interface | m_axi depth=65536 port=output offset=slave bundle=output | Convolutie/source/Convolutie.c:17 in applyconvolution, output     |
+| interface | s_axilite port=return                                    | Convolutie/solution1/directives.tcl:7 in applyconvolution, return |
++-----------+----------------------------------------------------------+-------------------------------------------------------------------+
 
 

@@ -20,17 +20,22 @@ using namespace std;
 // wrapc file define:
 #define AUTOTB_TVIN_image_r "../tv/cdatafile/c.applyConvolution.autotvin_image_r.dat"
 #define AUTOTB_TVOUT_image_r "../tv/cdatafile/c.applyConvolution.autotvout_image_r.dat"
-#define AUTOTB_TVIN_output_r "../tv/cdatafile/c.applyConvolution.autotvin_output_r.dat"
-#define AUTOTB_TVOUT_output_r "../tv/cdatafile/c.applyConvolution.autotvout_output_r.dat"
-#define AUTOTB_TVIN_height "../tv/cdatafile/c.applyConvolution.autotvin_height.dat"
-#define AUTOTB_TVOUT_height "../tv/cdatafile/c.applyConvolution.autotvout_height.dat"
+#define AUTOTB_TVIN_output_r_offset "../tv/cdatafile/c.applyConvolution.autotvin_output_r_offset.dat"
+#define AUTOTB_TVOUT_output_r_offset "../tv/cdatafile/c.applyConvolution.autotvout_output_r_offset.dat"
 #define AUTOTB_TVIN_width "../tv/cdatafile/c.applyConvolution.autotvin_width.dat"
 #define AUTOTB_TVOUT_width "../tv/cdatafile/c.applyConvolution.autotvout_width.dat"
+#define AUTOTB_TVIN_height "../tv/cdatafile/c.applyConvolution.autotvin_height.dat"
+#define AUTOTB_TVOUT_height "../tv/cdatafile/c.applyConvolution.autotvout_height.dat"
 #define AUTOTB_TVIN_channels "../tv/cdatafile/c.applyConvolution.autotvin_channels.dat"
 #define AUTOTB_TVOUT_channels "../tv/cdatafile/c.applyConvolution.autotvout_channels.dat"
+#define AUTOTB_TVIN_input_r "../tv/cdatafile/c.applyConvolution.autotvin_input_r.dat"
+#define AUTOTB_TVOUT_input_r "../tv/cdatafile/c.applyConvolution.autotvout_input_r.dat"
+#define AUTOTB_TVIN_output_r "../tv/cdatafile/c.applyConvolution.autotvin_output_r.dat"
+#define AUTOTB_TVOUT_output_r "../tv/cdatafile/c.applyConvolution.autotvout_output_r.dat"
 
 
 // tvout file define:
+#define AUTOTB_TVOUT_PC_input_r "../tv/rtldatafile/rtl.applyConvolution.autotvout_input_r.dat"
 #define AUTOTB_TVOUT_PC_output_r "../tv/rtldatafile/rtl.applyConvolution.autotvout_output_r.dat"
 
 
@@ -1035,49 +1040,33 @@ extern "C"
 void applyConvolution_hw_stub_wrapper(void*, void*, hls::sim::Byte<4>, hls::sim::Byte<4>, hls::sim::Byte<4>);
 
 extern "C"
-void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_param_output_r, hls::sim::Byte<4> __xlx_apatb_param_height, hls::sim::Byte<4> __xlx_apatb_param_width, hls::sim::Byte<4> __xlx_apatb_param_channels)
+void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apatb_param_output_r, hls::sim::Byte<4> __xlx_apatb_param_width, hls::sim::Byte<4> __xlx_apatb_param_height, hls::sim::Byte<4> __xlx_apatb_param_channels)
 {
-  static hls::sim::A2Stream port0 {
-    .width = 32,
-    .asize = 4,
+  hls::sim::Byte<4> __xlx_offset_byte_param_image_r;
+  static hls::sim::Register port0 {
     .name = "image_r",
+    .width = 32,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_image_r),
 #endif
   };
-  port0.param = __xlx_apatb_param_image_r;
-  port0.nbytes = 1048576;
-  port0.hasWrite = false;
+  port0.param = &__xlx_offset_byte_param_image_r;
 
-  static hls::sim::A2Stream port1 {
-    .width = 32,
-    .asize = 4,
-    .name = "output_r",
-#ifdef POST_CHECK
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_output_r),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_output_r),
-    .iwriter = nullptr,
-#endif
-  };
-  port1.param = __xlx_apatb_param_output_r;
-  port1.nbytes = 1032256;
-  port1.hasWrite = true;
-
-  static hls::sim::Register port2 {
-    .name = "height",
+  hls::sim::Byte<4> __xlx_offset_byte_param_output_r;
+  static hls::sim::Register port1 {
+    .name = "output_r_offset",
     .width = 32,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_height),
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_output_r_offset),
 #endif
   };
-  port2.param = &__xlx_apatb_param_height;
+  port1.param = &__xlx_offset_byte_param_output_r;
 
-  static hls::sim::Register port3 {
+  static hls::sim::Register port2 {
     .name = "width",
     .width = 32,
 #ifdef POST_CHECK
@@ -1086,7 +1075,18 @@ void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apat
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_width),
 #endif
   };
-  port3.param = &__xlx_apatb_param_width;
+  port2.param = &__xlx_apatb_param_width;
+
+  static hls::sim::Register port3 {
+    .name = "height",
+    .width = 32,
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_height),
+#endif
+  };
+  port3.param = &__xlx_apatb_param_height;
 
   static hls::sim::Register port4 {
     .name = "channels",
@@ -1099,26 +1099,88 @@ void apatb_applyConvolution_hw(void* __xlx_apatb_param_image_r, void* __xlx_apat
   };
   port4.param = &__xlx_apatb_param_channels;
 
+#ifdef USE_BINARY_TV_FILE
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port5 {
+#else
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port5 {
+#endif
+    .width = 8,
+    .asize = 1,
+    .hbm = false,
+    .name = { "input_r" },
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+#ifdef USE_BINARY_TV_FILE
+    .iwriter = new hls::sim::Output(AUTOTB_TVIN_input_r),
+#else
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_input_r),
+#endif
+#endif
+  };
+  port5.param = { __xlx_apatb_param_image_r };
+  port5.nbytes = { 65536 };
+  port5.offset = {  };
+  port5.hasWrite = { false };
+
+#ifdef USE_BINARY_TV_FILE
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port6 {
+#else
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port6 {
+#endif
+    .width = 8,
+    .asize = 1,
+    .hbm = false,
+    .name = { "output_r" },
+#ifdef POST_CHECK
+#ifdef USE_BINARY_TV_FILE
+    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_output_r),
+#else
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_output_r),
+#endif
+#else
+#ifdef USE_BINARY_TV_FILE
+    .owriter = new hls::sim::Output(AUTOTB_TVOUT_output_r),
+#else
+    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_output_r),
+#endif
+#ifdef USE_BINARY_TV_FILE
+    .iwriter = new hls::sim::Output(AUTOTB_TVIN_output_r),
+#else
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_output_r),
+#endif
+#endif
+  };
+  port6.param = { __xlx_apatb_param_output_r };
+  port6.nbytes = { 65536 };
+  port6.offset = {  };
+  port6.hasWrite = { true };
+
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
-    check(port1);
+    check(port6);
 #else
     static hls::sim::RefTCL tcl("../tv/cdatafile/ref.tcl");
     CodeState = DUMP_INPUTS;
     dump(port0, port0.iwriter, tcl.AESL_transaction);
+    dump(port1, port1.iwriter, tcl.AESL_transaction);
     dump(port2, port2.iwriter, tcl.AESL_transaction);
     dump(port3, port3.iwriter, tcl.AESL_transaction);
     dump(port4, port4.iwriter, tcl.AESL_transaction);
+    dump(port5, port5.iwriter, tcl.AESL_transaction);
+    dump(port6, port6.iwriter, tcl.AESL_transaction);
     port0.doTCL(tcl);
+    port1.doTCL(tcl);
     port2.doTCL(tcl);
     port3.doTCL(tcl);
     port4.doTCL(tcl);
+    port5.doTCL(tcl);
+    port6.doTCL(tcl);
     CodeState = CALL_C_DUT;
-    applyConvolution_hw_stub_wrapper(__xlx_apatb_param_image_r, __xlx_apatb_param_output_r, __xlx_apatb_param_height, __xlx_apatb_param_width, __xlx_apatb_param_channels);
+    applyConvolution_hw_stub_wrapper(__xlx_apatb_param_image_r, __xlx_apatb_param_output_r, __xlx_apatb_param_width, __xlx_apatb_param_height, __xlx_apatb_param_channels);
     CodeState = DUMP_OUTPUTS;
-    dump(port1, port1.owriter, tcl.AESL_transaction);
-    port1.doTCL(tcl);
+    dump(port6, port6.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
   } catch (const hls::sim::SimException &e) {

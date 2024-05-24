@@ -4,7 +4,7 @@
     "calls": "",
     "file": "Convolutie.c",
     "fileloc": 6,
-    "instructions": 149,
+    "instructions": 148,
     "loads": {
       "G": 1,
       "L": 2,
@@ -15,6 +15,6 @@
       "L": 2,
       "T": 2
     },
-    "total_instructions": 149
+    "total_instructions": 148
   }
 }

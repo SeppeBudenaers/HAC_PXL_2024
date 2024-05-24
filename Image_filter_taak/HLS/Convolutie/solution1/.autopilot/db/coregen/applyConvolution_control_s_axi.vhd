@@ -34,8 +34,10 @@ port (
     RRESP                 :out  STD_LOGIC_VECTOR(1 downto 0);
     RVALID                :out  STD_LOGIC;
     RREADY                :in   STD_LOGIC;
-    height                :out  STD_LOGIC_VECTOR(31 downto 0);
+    image_r               :out  STD_LOGIC_VECTOR(63 downto 0);
+    output_r_offset       :out  STD_LOGIC_VECTOR(63 downto 0);
     width                 :out  STD_LOGIC_VECTOR(31 downto 0);
+    height                :out  STD_LOGIC_VECTOR(31 downto 0);
     channels              :out  STD_LOGIC_VECTOR(31 downto 0)
 );
 end entity applyConvolution_control_s_axi;
@@ -47,15 +49,25 @@ end entity applyConvolution_control_s_axi;
 -- 0x04 : reserved
 -- 0x08 : reserved
 -- 0x0c : reserved
--- 0x10 : Data signal of height
---        bit 31~0 - height[31:0] (Read/Write)
--- 0x14 : reserved
--- 0x18 : Data signal of width
---        bit 31~0 - width[31:0] (Read/Write)
--- 0x1c : reserved
--- 0x20 : Data signal of channels
---        bit 31~0 - channels[31:0] (Read/Write)
+-- 0x10 : Data signal of image_r
+--        bit 31~0 - image_r[31:0] (Read/Write)
+-- 0x14 : Data signal of image_r
+--        bit 31~0 - image_r[63:32] (Read/Write)
+-- 0x18 : reserved
+-- 0x1c : Data signal of output_r_offset
+--        bit 31~0 - output_r_offset[31:0] (Read/Write)
+-- 0x20 : Data signal of output_r_offset
+--        bit 31~0 - output_r_offset[63:32] (Read/Write)
 -- 0x24 : reserved
+-- 0x28 : Data signal of width
+--        bit 31~0 - width[31:0] (Read/Write)
+-- 0x2c : reserved
+-- 0x30 : Data signal of height
+--        bit 31~0 - height[31:0] (Read/Write)
+-- 0x34 : reserved
+-- 0x38 : Data signal of channels
+--        bit 31~0 - channels[31:0] (Read/Write)
+-- 0x3c : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of applyConvolution_control_s_axi is
@@ -63,12 +75,18 @@ architecture behave of applyConvolution_control_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_HEIGHT_DATA_0   : INTEGER := 16#10#;
-    constant ADDR_HEIGHT_CTRL     : INTEGER := 16#14#;
-    constant ADDR_WIDTH_DATA_0    : INTEGER := 16#18#;
-    constant ADDR_WIDTH_CTRL      : INTEGER := 16#1c#;
-    constant ADDR_CHANNELS_DATA_0 : INTEGER := 16#20#;
-    constant ADDR_CHANNELS_CTRL   : INTEGER := 16#24#;
+    constant ADDR_IMAGE_R_DATA_0         : INTEGER := 16#10#;
+    constant ADDR_IMAGE_R_DATA_1         : INTEGER := 16#14#;
+    constant ADDR_IMAGE_R_CTRL           : INTEGER := 16#18#;
+    constant ADDR_OUTPUT_R_OFFSET_DATA_0 : INTEGER := 16#1c#;
+    constant ADDR_OUTPUT_R_OFFSET_DATA_1 : INTEGER := 16#20#;
+    constant ADDR_OUTPUT_R_OFFSET_CTRL   : INTEGER := 16#24#;
+    constant ADDR_WIDTH_DATA_0           : INTEGER := 16#28#;
+    constant ADDR_WIDTH_CTRL             : INTEGER := 16#2c#;
+    constant ADDR_HEIGHT_DATA_0          : INTEGER := 16#30#;
+    constant ADDR_HEIGHT_CTRL            : INTEGER := 16#34#;
+    constant ADDR_CHANNELS_DATA_0        : INTEGER := 16#38#;
+    constant ADDR_CHANNELS_CTRL          : INTEGER := 16#3c#;
     constant ADDR_BITS         : INTEGER := 6;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
@@ -83,8 +101,10 @@ architecture behave of applyConvolution_control_s_axi is
     signal ARREADY_t           : STD_LOGIC;
     signal RVALID_t            : STD_LOGIC;
     -- internal registers
-    signal int_height          : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_image_r         : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_output_r_offset : UNSIGNED(63 downto 0) := (others => '0');
     signal int_width           : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_height          : UNSIGNED(31 downto 0) := (others => '0');
     signal int_channels        : UNSIGNED(31 downto 0) := (others => '0');
 
 
@@ -201,10 +221,18 @@ begin
                 if (ar_hs = '1') then
                     rdata_data <= (others => '0');
                     case (TO_INTEGER(raddr)) is
-                    when ADDR_HEIGHT_DATA_0 =>
-                        rdata_data <= RESIZE(int_height(31 downto 0), 32);
+                    when ADDR_IMAGE_R_DATA_0 =>
+                        rdata_data <= RESIZE(int_image_r(31 downto 0), 32);
+                    when ADDR_IMAGE_R_DATA_1 =>
+                        rdata_data <= RESIZE(int_image_r(63 downto 32), 32);
+                    when ADDR_OUTPUT_R_OFFSET_DATA_0 =>
+                        rdata_data <= RESIZE(int_output_r_offset(31 downto 0), 32);
+                    when ADDR_OUTPUT_R_OFFSET_DATA_1 =>
+                        rdata_data <= RESIZE(int_output_r_offset(63 downto 32), 32);
                     when ADDR_WIDTH_DATA_0 =>
                         rdata_data <= RESIZE(int_width(31 downto 0), 32);
+                    when ADDR_HEIGHT_DATA_0 =>
+                        rdata_data <= RESIZE(int_height(31 downto 0), 32);
                     when ADDR_CHANNELS_DATA_0 =>
                         rdata_data <= RESIZE(int_channels(31 downto 0), 32);
                     when others =>
@@ -216,16 +244,51 @@ begin
     end process;
 
 -- ----------------------- Register logic ----------------
-    height               <= STD_LOGIC_VECTOR(int_height);
+    image_r              <= STD_LOGIC_VECTOR(int_image_r);
+    output_r_offset      <= STD_LOGIC_VECTOR(int_output_r_offset);
     width                <= STD_LOGIC_VECTOR(int_width);
+    height               <= STD_LOGIC_VECTOR(int_height);
     channels             <= STD_LOGIC_VECTOR(int_channels);
 
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_HEIGHT_DATA_0) then
-                    int_height(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_height(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_IMAGE_R_DATA_0) then
+                    int_image_r(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_image_r(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_IMAGE_R_DATA_1) then
+                    int_image_r(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_image_r(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_OUTPUT_R_OFFSET_DATA_0) then
+                    int_output_r_offset(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_output_r_offset(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_OUTPUT_R_OFFSET_DATA_1) then
+                    int_output_r_offset(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_output_r_offset(63 downto 32));
                 end if;
             end if;
         end if;
@@ -237,6 +300,17 @@ begin
             if (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_WIDTH_DATA_0) then
                     int_width(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_width(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_HEIGHT_DATA_0) then
+                    int_height(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_height(31 downto 0));
                 end if;
             end if;
         end if;

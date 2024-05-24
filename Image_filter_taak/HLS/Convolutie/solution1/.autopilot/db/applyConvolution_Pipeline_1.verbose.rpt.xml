@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'applyConvolution_Pipeline_1'" level="0">
-<item name = "Date">Fri May 24 11:24:39 2024
+<item name = "Date">Fri May 24 13:18:17 2024
 </item>
 <item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
 <item name = "Project">Convolutie</item>
@@ -80,7 +80,7 @@
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
 <column name="empty_fu_122_p2">+, 0, 0, 10, 2, 1</column>
 <column name="ap_condition_76">and, 0, 0, 2, 1, 1</column>
-<column name="exitcond1_fu_116_p2">icmp, 0, 0, 10, 2, 2</column>
+<column name="exitcond5_fu_116_p2">icmp, 0, 0, 10, 2, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">

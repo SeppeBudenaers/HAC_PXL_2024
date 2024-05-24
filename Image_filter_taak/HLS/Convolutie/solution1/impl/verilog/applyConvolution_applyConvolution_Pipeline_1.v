@@ -50,7 +50,7 @@ reg sum_0_21_out_ap_vld;
 (* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 reg    ap_block_state1_pp0_stage0_iter0;
-wire   [0:0] exitcond1_fu_116_p2;
+wire   [0:0] exitcond5_fu_116_p2;
 reg    ap_condition_exit_pp0_iter0_stage0;
 wire    ap_loop_exit_ready;
 reg    ap_ready_int;
@@ -118,7 +118,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
-        if ((exitcond1_fu_116_p2 == 1'd0)) begin
+        if ((exitcond5_fu_116_p2 == 1'd0)) begin
             p_t_fu_38 <= empty_fu_122_p2;
         end else if ((ap_loop_init == 1'b1)) begin
             p_t_fu_38 <= 2'd0;
@@ -128,7 +128,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
-        if (((p_t_load_load_fu_113_p1 == 2'd0) & (exitcond1_fu_116_p2 == 1'd0))) begin
+        if (((p_t_load_load_fu_113_p1 == 2'd0) & (exitcond5_fu_116_p2 == 1'd0))) begin
             sum_0_21_fu_42 <= 32'd0;
         end else if ((ap_loop_init == 1'b1)) begin
             sum_0_21_fu_42 <= sum_0_1;
@@ -138,7 +138,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
-        if (((p_t_load_load_fu_113_p1 == 2'd1) & (exitcond1_fu_116_p2 == 1'd0))) begin
+        if (((p_t_load_load_fu_113_p1 == 2'd1) & (exitcond5_fu_116_p2 == 1'd0))) begin
             sum_1_2_fu_46 <= 32'd0;
         end else if ((ap_loop_init == 1'b1)) begin
             sum_1_2_fu_46 <= sum_1_1;
@@ -165,7 +165,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((exitcond1_fu_116_p2 == 1'd1) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((exitcond5_fu_116_p2 == 1'd1) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b1;
     end else begin
         ap_condition_exit_pp0_iter0_stage0 = 1'b0;
@@ -205,7 +205,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((exitcond1_fu_116_p2 == 1'd1) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((exitcond5_fu_116_p2 == 1'd1) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         sum_0_21_out_ap_vld = 1'b1;
     end else begin
         sum_0_21_out_ap_vld = 1'b0;
@@ -213,7 +213,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((exitcond1_fu_116_p2 == 1'd1) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((exitcond5_fu_116_p2 == 1'd1) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         sum_1_2_out_ap_vld = 1'b1;
     end else begin
         sum_1_2_out_ap_vld = 1'b0;
@@ -221,7 +221,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((exitcond1_fu_116_p2 == 1'd1) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
+    if (((exitcond5_fu_116_p2 == 1'd1) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         sum_2_2_out_ap_vld = 1'b1;
     end else begin
         sum_2_2_out_ap_vld = 1'b0;
@@ -246,14 +246,14 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    ap_condition_76 = (~(p_t_load_load_fu_113_p1 == 2'd1) & ~(p_t_load_load_fu_113_p1 == 2'd0) & (exitcond1_fu_116_p2 == 1'd0));
+    ap_condition_76 = (~(p_t_load_load_fu_113_p1 == 2'd1) & ~(p_t_load_load_fu_113_p1 == 2'd0) & (exitcond5_fu_116_p2 == 1'd0));
 end
 
 assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
 assign empty_fu_122_p2 = (ap_sig_allocacmp_p_t_load + 2'd1);
 
-assign exitcond1_fu_116_p2 = ((ap_sig_allocacmp_p_t_load == 2'd3) ? 1'b1 : 1'b0);
+assign exitcond5_fu_116_p2 = ((ap_sig_allocacmp_p_t_load == 2'd3) ? 1'b1 : 1'b0);
 
 assign p_t_load_load_fu_113_p1 = ap_sig_allocacmp_p_t_load;
 

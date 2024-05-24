@@ -3,22 +3,23 @@
 #include <stdint.h>
 //#include "hls_stream.h"
 
-void applyConvolution( int image[256*256*4],  int output[254*254*4],int height,int width,int channels) {
-	//DMA
-	#pragma HLS INTERFACE axis port = image
-	#pragma HLS INTERFACE axis port = output
+void applyConvolution(unsigned char* image, unsigned char* output, int width, int height, int channels) {
 
-	//AXI bus
-	#pragma HLS INTERFACE s_axilite port=width bundle=control
-	#pragma HLS INTERFACE s_axilite port=height bundle=control
-	#pragma HLS INTERFACE s_axilite port=channels bundle=control
 
+#pragma HLS INTERFACE s_axilite port=return bundle=control
+#pragma HLS INTERFACE s_axilite port=image bundle=control
+#pragma HLS INTERFACE s_axilite port=output bundle=control
+#pragma HLS INTERFACE s_axilite port=width bundle=control
+#pragma HLS INTERFACE s_axilite port=height bundle=control
+#pragma HLS INTERFACE s_axilite port=channels bundle=control
+
+#pragma HLS INTERFACE m_axi depth=65536 port=image offset=slave bundle=input //gmem
+#pragma HLS INTERFACE m_axi depth=65536 port=output offset=slave bundle=output //gmem
 	float kernel[3][3] = {
-		        {1, 0, -1},
-		        {1, 0, -1},
-		        {1, 0, -1}
-		    };
-
+	        {1, 0, -1},
+	        {1, 0, -1},
+	        {1, 0, -1}
+	};
 int edge = 1; // Since kernel size is 3x3
 
     for (int y = 0; y < height; y++) {

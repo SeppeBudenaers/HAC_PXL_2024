@@ -115,14 +115,182 @@ Args:
     DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
   - String:          ''''
 ...
---- !HLSReportInfo
-Pass:            auto-loop-pipeline
-Name:            AutoLoopPipeline
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 34, Column: 38 }
+Function:        applyConvolution
 Args:            
-  - String:          'automatically set the pipeline for Loop< '
-  - LoopName:        VITIS_LOOP_41_6
-  - String:          '> at '
-  - LoopLoc:         'Convolutie/source/Convolutie.c:41:30'
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep6seq
+  - ArrayName:       image
+  - String:          ' '
+  - BundleName:      input
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_34_5
+  - String:          ' '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:34:38'
+  - String:          ' '
+  - Function:        applyConvolution
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 36, 
+                       Column: 75 }
+  - OrigDirection:   read
+  - OrigID:          if.then26.load.4
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 42, Column: 30 }
+Function:        applyConvolution
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep8seq
+  - ArrayName:       image
+  - String:          ' '
+  - BundleName:      input
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_42_6
+  - String:          ' '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:42:30'
+  - String:          ' '
+  - Function:        applyConvolution
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 48, 
+                       Column: 63 }
+  - OrigDirection:   read
+  - OrigID:          if.else.load.2
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 25, Column: 22 }
+Function:        applyConvolution
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        output9seq
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      output
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_25_1
+  - String:          ' '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:25:22'
+  - String:          ' '
+  - Function:        applyConvolution
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 42, 
+                       Column: 64 }
+  - OrigDirection:   write
+  - OrigID:          for.inc86.store.2
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 34, Column: 38 }
+Function:        applyConvolution
+Args:            
+  - String:          'Access '
+  - Access:          call
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 34, 
+                       Column: 38 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 34, 
+                       Column: 38 }
+  - OrigDirection:   read
+  - OrigID:          scevgep6seq
+  - ArrayName:       image
+  - String:          ' '
+  - BundleName:      input
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_29_4
+  - String:          ' '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:29:34'
+  - String:          ' '
+  - Function:        applyConvolution
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 42, Column: 30 }
+Function:        applyConvolution
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 42, 
+                       Column: 30 }
+  - OrigDirection:   read
+  - OrigID:          scevgep8seq
+  - ArrayName:       image
+  - String:          ' '
+  - BundleName:      input
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_26_2
+  - String:          ' '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:26:26'
+  - String:          ' '
+  - Function:        applyConvolution
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 25, Column: 22 }
+Function:        applyConvolution
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 25, 
+                       Column: 22 }
+  - OrigDirection:   write
+  - OrigID:          output9seq
+  - ArrayName:       output
+  - String:          ' '
+  - BundleName:      output
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_42_6
+  - String:          ' '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:42:30'
+  - String:          ' '
+  - Function:        applyConvolution
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
   - String:          ' '
 ...
 --- !HLSReportInfo
@@ -130,9 +298,19 @@ Pass:            auto-loop-pipeline
 Name:            AutoLoopPipeline
 Args:            
   - String:          'automatically set the pipeline for Loop< '
-  - LoopName:        VITIS_LOOP_33_5
+  - LoopName:        VITIS_LOOP_42_6
   - String:          '> at '
-  - LoopLoc:         'Convolutie/source/Convolutie.c:33:38'
+  - LoopLoc:         'Convolutie/source/Convolutie.c:42:30'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_34_5
+  - String:          '> at '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:34:38'
   - String:          ' '
 ...
 --- !HLSReportInfo
@@ -145,23 +323,153 @@ Args:
   - LoopLoc:         ''
   - String:          ' '
 ...
---- !Missed
-Pass:            pasta-interface-builder
-Name:            UnsupportArrayToStream
-DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 25, Column: 22 }
 Function:        applyConvolution
 Args:            
-  - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
-  - Name:            image_r
-  - String:          ''''
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      output_r
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_25_1
+  - String:          ' '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:25:22'
+  - String:          ' '
+  - Function:        applyConvolution
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+  - String:          ' '
 ...
---- !Missed
-Pass:            pasta-interface-builder
-Name:            UnsupportArrayToStream
-DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 25, Column: 22 }
 Function:        applyConvolution
 Args:            
-  - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
-  - Name:            output_r
-  - String:          ''''
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '8'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_25_1
+  - String:          '''('
+  - LoopLoc:         'Convolutie/source/Convolutie.c:25:22'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      output_r
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 34, Column: 38 }
+Function:        applyConvolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      input_r
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_34_5
+  - String:          ' '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:34:38'
+  - String:          ' '
+  - Function:        applyConvolution
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 34, Column: 38 }
+Function:        applyConvolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '8'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_34_5
+  - String:          '''('
+  - LoopLoc:         'Convolutie/source/Convolutie.c:34:38'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      input_r
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 42, Column: 30 }
+Function:        applyConvolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq2
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      input_r
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_42_6
+  - String:          ' '
+  - LoopLoc:         'Convolutie/source/Convolutie.c:42:30'
+  - String:          ' '
+  - Function:        applyConvolution
+    DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 6, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: Convolutie/source/Convolutie.c, Line: 42, Column: 30 }
+Function:        applyConvolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '8'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_42_6
+  - String:          '''('
+  - LoopLoc:         'Convolutie/source/Convolutie.c:42:30'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      input_r
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
 ...

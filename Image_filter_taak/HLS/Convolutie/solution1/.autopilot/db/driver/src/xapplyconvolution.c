@@ -77,20 +77,41 @@ void XApplyconvolution_DisableAutoRestart(XApplyconvolution *InstancePtr) {
     XApplyconvolution_WriteReg(InstancePtr->Control_r_BaseAddress, XAPPLYCONVOLUTION_CONTROL_R_ADDR_AP_CTRL, 0);
 }
 
-void XApplyconvolution_Set_height(XApplyconvolution *InstancePtr, u32 Data) {
+void XApplyconvolution_Set_image_r(XApplyconvolution *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XApplyconvolution_WriteReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_HEIGHT_DATA, Data);
+    XApplyconvolution_WriteReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_IMAGE_R_DATA, (u32)(Data));
+    XApplyconvolution_WriteReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_IMAGE_R_DATA + 4, (u32)(Data >> 32));
 }
 
-u32 XApplyconvolution_Get_height(XApplyconvolution *InstancePtr) {
-    u32 Data;
+u64 XApplyconvolution_Get_image_r(XApplyconvolution *InstancePtr) {
+    u64 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XApplyconvolution_ReadReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_HEIGHT_DATA);
+    Data = XApplyconvolution_ReadReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_IMAGE_R_DATA);
+    Data += (u64)XApplyconvolution_ReadReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_IMAGE_R_DATA + 4) << 32;
+    return Data;
+}
+
+void XApplyconvolution_Set_output_r_offset(XApplyconvolution *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XApplyconvolution_WriteReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_OUTPUT_R_OFFSET_DATA, (u32)(Data));
+    XApplyconvolution_WriteReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_OUTPUT_R_OFFSET_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XApplyconvolution_Get_output_r_offset(XApplyconvolution *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XApplyconvolution_ReadReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_OUTPUT_R_OFFSET_DATA);
+    Data += (u64)XApplyconvolution_ReadReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_OUTPUT_R_OFFSET_DATA + 4) << 32;
     return Data;
 }
 
@@ -108,6 +129,23 @@ u32 XApplyconvolution_Get_width(XApplyconvolution *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     Data = XApplyconvolution_ReadReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_WIDTH_DATA);
+    return Data;
+}
+
+void XApplyconvolution_Set_height(XApplyconvolution *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XApplyconvolution_WriteReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_HEIGHT_DATA, Data);
+}
+
+u32 XApplyconvolution_Get_height(XApplyconvolution *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XApplyconvolution_ReadReg(InstancePtr->Control_BaseAddress, XAPPLYCONVOLUTION_CONTROL_ADDR_HEIGHT_DATA);
     return Data;
 }
 

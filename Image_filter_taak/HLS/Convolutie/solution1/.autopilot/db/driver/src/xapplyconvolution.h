@@ -101,10 +101,14 @@ u32 XApplyconvolution_IsReady(XApplyconvolution *InstancePtr);
 void XApplyconvolution_EnableAutoRestart(XApplyconvolution *InstancePtr);
 void XApplyconvolution_DisableAutoRestart(XApplyconvolution *InstancePtr);
 
-void XApplyconvolution_Set_height(XApplyconvolution *InstancePtr, u32 Data);
-u32 XApplyconvolution_Get_height(XApplyconvolution *InstancePtr);
+void XApplyconvolution_Set_image_r(XApplyconvolution *InstancePtr, u64 Data);
+u64 XApplyconvolution_Get_image_r(XApplyconvolution *InstancePtr);
+void XApplyconvolution_Set_output_r_offset(XApplyconvolution *InstancePtr, u64 Data);
+u64 XApplyconvolution_Get_output_r_offset(XApplyconvolution *InstancePtr);
 void XApplyconvolution_Set_width(XApplyconvolution *InstancePtr, u32 Data);
 u32 XApplyconvolution_Get_width(XApplyconvolution *InstancePtr);
+void XApplyconvolution_Set_height(XApplyconvolution *InstancePtr, u32 Data);
+u32 XApplyconvolution_Get_height(XApplyconvolution *InstancePtr);
 void XApplyconvolution_Set_channels(XApplyconvolution *InstancePtr, u32 Data);
 u32 XApplyconvolution_Get_channels(XApplyconvolution *InstancePtr);
 

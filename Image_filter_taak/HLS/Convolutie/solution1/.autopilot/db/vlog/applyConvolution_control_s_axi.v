@@ -31,8 +31,10 @@ module applyConvolution_control_s_axi
     output wire [1:0]                    RRESP,
     output wire                          RVALID,
     input  wire                          RREADY,
-    output wire [31:0]                   height,
+    output wire [63:0]                   image_r,
+    output wire [63:0]                   output_r_offset,
     output wire [31:0]                   width,
+    output wire [31:0]                   height,
     output wire [31:0]                   channels
 );
 //------------------------Address Info-------------------
@@ -42,32 +44,48 @@ module applyConvolution_control_s_axi
 // 0x04 : reserved
 // 0x08 : reserved
 // 0x0c : reserved
-// 0x10 : Data signal of height
-//        bit 31~0 - height[31:0] (Read/Write)
-// 0x14 : reserved
-// 0x18 : Data signal of width
-//        bit 31~0 - width[31:0] (Read/Write)
-// 0x1c : reserved
-// 0x20 : Data signal of channels
-//        bit 31~0 - channels[31:0] (Read/Write)
+// 0x10 : Data signal of image_r
+//        bit 31~0 - image_r[31:0] (Read/Write)
+// 0x14 : Data signal of image_r
+//        bit 31~0 - image_r[63:32] (Read/Write)
+// 0x18 : reserved
+// 0x1c : Data signal of output_r_offset
+//        bit 31~0 - output_r_offset[31:0] (Read/Write)
+// 0x20 : Data signal of output_r_offset
+//        bit 31~0 - output_r_offset[63:32] (Read/Write)
 // 0x24 : reserved
+// 0x28 : Data signal of width
+//        bit 31~0 - width[31:0] (Read/Write)
+// 0x2c : reserved
+// 0x30 : Data signal of height
+//        bit 31~0 - height[31:0] (Read/Write)
+// 0x34 : reserved
+// 0x38 : Data signal of channels
+//        bit 31~0 - channels[31:0] (Read/Write)
+// 0x3c : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_HEIGHT_DATA_0   = 6'h10,
-    ADDR_HEIGHT_CTRL     = 6'h14,
-    ADDR_WIDTH_DATA_0    = 6'h18,
-    ADDR_WIDTH_CTRL      = 6'h1c,
-    ADDR_CHANNELS_DATA_0 = 6'h20,
-    ADDR_CHANNELS_CTRL   = 6'h24,
-    WRIDLE               = 2'd0,
-    WRDATA               = 2'd1,
-    WRRESP               = 2'd2,
-    WRRESET              = 2'd3,
-    RDIDLE               = 2'd0,
-    RDDATA               = 2'd1,
-    RDRESET              = 2'd2,
+    ADDR_IMAGE_R_DATA_0         = 6'h10,
+    ADDR_IMAGE_R_DATA_1         = 6'h14,
+    ADDR_IMAGE_R_CTRL           = 6'h18,
+    ADDR_OUTPUT_R_OFFSET_DATA_0 = 6'h1c,
+    ADDR_OUTPUT_R_OFFSET_DATA_1 = 6'h20,
+    ADDR_OUTPUT_R_OFFSET_CTRL   = 6'h24,
+    ADDR_WIDTH_DATA_0           = 6'h28,
+    ADDR_WIDTH_CTRL             = 6'h2c,
+    ADDR_HEIGHT_DATA_0          = 6'h30,
+    ADDR_HEIGHT_CTRL            = 6'h34,
+    ADDR_CHANNELS_DATA_0        = 6'h38,
+    ADDR_CHANNELS_CTRL          = 6'h3c,
+    WRIDLE                      = 2'd0,
+    WRDATA                      = 2'd1,
+    WRRESP                      = 2'd2,
+    WRRESET                     = 2'd3,
+    RDIDLE                      = 2'd0,
+    RDDATA                      = 2'd1,
+    RDRESET                     = 2'd2,
     ADDR_BITS                = 6;
 
 //------------------------Local signal-------------------
@@ -83,8 +101,10 @@ localparam
     wire                          ar_hs;
     wire [ADDR_BITS-1:0]          raddr;
     // internal registers
-    reg  [31:0]                   int_height = 'b0;
+    reg  [63:0]                   int_image_r = 'b0;
+    reg  [63:0]                   int_output_r_offset = 'b0;
     reg  [31:0]                   int_width = 'b0;
+    reg  [31:0]                   int_height = 'b0;
     reg  [31:0]                   int_channels = 'b0;
 
 //------------------------Instantiation------------------
@@ -178,11 +198,23 @@ always @(posedge ACLK) begin
         if (ar_hs) begin
             rdata <= 'b0;
             case (raddr)
-                ADDR_HEIGHT_DATA_0: begin
-                    rdata <= int_height[31:0];
+                ADDR_IMAGE_R_DATA_0: begin
+                    rdata <= int_image_r[31:0];
+                end
+                ADDR_IMAGE_R_DATA_1: begin
+                    rdata <= int_image_r[63:32];
+                end
+                ADDR_OUTPUT_R_OFFSET_DATA_0: begin
+                    rdata <= int_output_r_offset[31:0];
+                end
+                ADDR_OUTPUT_R_OFFSET_DATA_1: begin
+                    rdata <= int_output_r_offset[63:32];
                 end
                 ADDR_WIDTH_DATA_0: begin
                     rdata <= int_width[31:0];
+                end
+                ADDR_HEIGHT_DATA_0: begin
+                    rdata <= int_height[31:0];
                 end
                 ADDR_CHANNELS_DATA_0: begin
                     rdata <= int_channels[31:0];
@@ -194,16 +226,48 @@ end
 
 
 //------------------------Register logic-----------------
-assign height   = int_height;
-assign width    = int_width;
-assign channels = int_channels;
-// int_height[31:0]
+assign image_r         = int_image_r;
+assign output_r_offset = int_output_r_offset;
+assign width           = int_width;
+assign height          = int_height;
+assign channels        = int_channels;
+// int_image_r[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_height[31:0] <= 0;
+        int_image_r[31:0] <= 0;
     else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_HEIGHT_DATA_0)
-            int_height[31:0] <= (WDATA[31:0] & wmask) | (int_height[31:0] & ~wmask);
+        if (w_hs && waddr == ADDR_IMAGE_R_DATA_0)
+            int_image_r[31:0] <= (WDATA[31:0] & wmask) | (int_image_r[31:0] & ~wmask);
+    end
+end
+
+// int_image_r[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_image_r[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_IMAGE_R_DATA_1)
+            int_image_r[63:32] <= (WDATA[31:0] & wmask) | (int_image_r[63:32] & ~wmask);
+    end
+end
+
+// int_output_r_offset[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_output_r_offset[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_OUTPUT_R_OFFSET_DATA_0)
+            int_output_r_offset[31:0] <= (WDATA[31:0] & wmask) | (int_output_r_offset[31:0] & ~wmask);
+    end
+end
+
+// int_output_r_offset[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_output_r_offset[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_OUTPUT_R_OFFSET_DATA_1)
+            int_output_r_offset[63:32] <= (WDATA[31:0] & wmask) | (int_output_r_offset[63:32] & ~wmask);
     end
 end
 
@@ -214,6 +278,16 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_WIDTH_DATA_0)
             int_width[31:0] <= (WDATA[31:0] & wmask) | (int_width[31:0] & ~wmask);
+    end
+end
+
+// int_height[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_height[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_HEIGHT_DATA_0)
+            int_height[31:0] <= (WDATA[31:0] & wmask) | (int_height[31:0] & ~wmask);
     end
 end
 

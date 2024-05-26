@@ -2,10 +2,10 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-// Date        : Fri May 24 13:43:10 2024
+// Date        : Fri May 24 13:43:06 2024
 // Host        : Beta running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/XilinxDev/HACPXL2024/Image_filter_taak/Vivado/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/design_1_smartconnect_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_smartconnect_0_0 -prefix
+//               design_1_smartconnect_0_0_ design_1_smartconnect_0_0_stub.v
 // Design      : design_1_smartconnect_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

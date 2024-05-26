@@ -121,28 +121,28 @@
 						"WVALID": { "actual": "s_axi_control_WVALID"}
 					}
 				},
-				"/applyConvolution_0/s_axi_control_r": {
+				"/applyConvolution_0/s_axi_conv": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
 						"ACLK": { "actual": "ap_clk"},
-						"ARADDR": { "actual": "s_axi_control_r_ARADDR[3:0]"},
+						"ARADDR": { "actual": "s_axi_conv_ARADDR[5:0]"},
 						"ARESETN": { "actual": "ap_rst_n"},
-						"ARREADY": { "actual": "s_axi_control_r_ARREADY"},
-						"ARVALID": { "actual": "s_axi_control_r_ARVALID"},
-						"AWADDR": { "actual": "s_axi_control_r_AWADDR[3:0]"},
-						"AWREADY": { "actual": "s_axi_control_r_AWREADY"},
-						"AWVALID": { "actual": "s_axi_control_r_AWVALID"},
-						"BREADY": { "actual": "s_axi_control_r_BREADY"},
-						"BRESP": { "actual": "s_axi_control_r_BRESP[1:0]"},
-						"BVALID": { "actual": "s_axi_control_r_BVALID"},
-						"RDATA": { "actual": "s_axi_control_r_RDATA[31:0]"},
-						"RREADY": { "actual": "s_axi_control_r_RREADY"},
-						"RRESP": { "actual": "s_axi_control_r_RRESP[1:0]"},
-						"RVALID": { "actual": "s_axi_control_r_RVALID"},
-						"WDATA": { "actual": "s_axi_control_r_WDATA[31:0]"},
-						"WREADY": { "actual": "s_axi_control_r_WREADY"},
-						"WSTRB": { "actual": "s_axi_control_r_WSTRB[3:0]"},
-						"WVALID": { "actual": "s_axi_control_r_WVALID"}
+						"ARREADY": { "actual": "s_axi_conv_ARREADY"},
+						"ARVALID": { "actual": "s_axi_conv_ARVALID"},
+						"AWADDR": { "actual": "s_axi_conv_AWADDR[5:0]"},
+						"AWREADY": { "actual": "s_axi_conv_AWREADY"},
+						"AWVALID": { "actual": "s_axi_conv_AWVALID"},
+						"BREADY": { "actual": "s_axi_conv_BREADY"},
+						"BRESP": { "actual": "s_axi_conv_BRESP[1:0]"},
+						"BVALID": { "actual": "s_axi_conv_BVALID"},
+						"RDATA": { "actual": "s_axi_conv_RDATA[31:0]"},
+						"RREADY": { "actual": "s_axi_conv_RREADY"},
+						"RRESP": { "actual": "s_axi_conv_RRESP[1:0]"},
+						"RVALID": { "actual": "s_axi_conv_RVALID"},
+						"WDATA": { "actual": "s_axi_conv_WDATA[31:0]"},
+						"WREADY": { "actual": "s_axi_conv_WREADY"},
+						"WSTRB": { "actual": "s_axi_conv_WSTRB[3:0]"},
+						"WVALID": { "actual": "s_axi_conv_WVALID"}
 					}
 				},
 				"/processing_system7_0/M_AXI_GP0": {

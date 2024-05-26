@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCC6CFA53F622E079",
+      "boundary_crc": "0xCC6CFA53B4580162",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../project_1.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -197,7 +197,7 @@
     "components": {
       "applyConvolution_0": {
         "vlnv": "xilinx.com:hls:applyConvolution:1.0",
-        "ip_revision": "2113571659",
+        "ip_revision": "2113571804",
         "xci_name": "design_1_applyConvolution_0_1",
         "xci_path": "ip\\design_1_applyConvolution_0_1\\design_1_applyConvolution_0_1.xci",
         "inst_hier_path": "applyConvolution_0",
@@ -2496,7 +2496,7 @@
       "ps7_0_axi_periph_M01_AXI": {
         "interface_ports": [
           "ps7_0_axi_periph/M01_AXI",
-          "applyConvolution_0/s_axi_control_r"
+          "applyConvolution_0/s_axi_conv"
         ]
       },
       "smartconnect_0_M00_AXI": {
@@ -2513,12 +2513,12 @@
           "processing_system7_0/M_AXI_GP0_ACLK",
           "ps7_0_axi_periph/S00_ACLK",
           "rst_ps7_0_100M/slowest_sync_clk",
-          "applyConvolution_0/ap_clk",
           "ps7_0_axi_periph/M00_ACLK",
           "ps7_0_axi_periph/ACLK",
           "ps7_0_axi_periph/M01_ACLK",
           "smartconnect_0/aclk",
-          "processing_system7_0/S_AXI_HP0_ACLK"
+          "processing_system7_0/S_AXI_HP0_ACLK",
+          "applyConvolution_0/ap_clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -2531,11 +2531,11 @@
         "ports": [
           "rst_ps7_0_100M/peripheral_aresetn",
           "ps7_0_axi_periph/S00_ARESETN",
-          "applyConvolution_0/ap_rst_n",
           "ps7_0_axi_periph/M00_ARESETN",
           "ps7_0_axi_periph/ARESETN",
           "ps7_0_axi_periph/M01_ARESETN",
-          "smartconnect_0/aresetn"
+          "smartconnect_0/aresetn",
+          "applyConvolution_0/ap_rst_n"
         ]
       }
     },
@@ -2574,11 +2574,11 @@
                 "offset_high_param": "C_S_AXI_CONTROL_HIGHADDR"
               },
               "SEG_applyConvolution_0_Reg_1": {
-                "address_block": "/applyConvolution_0/s_axi_control_r/Reg",
+                "address_block": "/applyConvolution_0/s_axi_conv/Reg",
                 "offset": "0x40010000",
                 "range": "64K",
-                "offset_base_param": "C_S_AXI_CONTROL_R_BASEADDR",
-                "offset_high_param": "C_S_AXI_CONTROL_R_HIGHADDR"
+                "offset_base_param": "C_S_AXI_CONV_BASEADDR",
+                "offset_high_param": "C_S_AXI_CONV_HIGHADDR"
               }
             }
           }

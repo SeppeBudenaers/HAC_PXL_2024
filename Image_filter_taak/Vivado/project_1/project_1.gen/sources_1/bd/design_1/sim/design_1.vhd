@@ -2,7 +2,7 @@
 --Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
---Date        : Fri May 24 13:39:54 2024
+--Date        : Fri May 24 15:57:55 2024
 --Host        : Beta running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -1100,7 +1100,7 @@ entity design_1 is
     FIXED_IO_ps_srstb : inout STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=10,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=1,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_ps7_cnt=2,synth_mode=Hierarchical}";
+  attribute CORE_GENERATION_INFO of design_1 : entity is "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=10,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=4,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=1,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=9,da_ps7_cnt=2,synth_mode=Hierarchical}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of design_1 : entity is "design_1.hwdef";
 end design_1;
@@ -1125,23 +1125,23 @@ architecture STRUCTURE of design_1 is
     s_axi_control_RRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_control_RVALID : out STD_LOGIC;
     s_axi_control_RREADY : in STD_LOGIC;
-    s_axi_control_r_AWADDR : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_control_r_AWVALID : in STD_LOGIC;
-    s_axi_control_r_AWREADY : out STD_LOGIC;
-    s_axi_control_r_WDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_control_r_WSTRB : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_control_r_WVALID : in STD_LOGIC;
-    s_axi_control_r_WREADY : out STD_LOGIC;
-    s_axi_control_r_BRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_control_r_BVALID : out STD_LOGIC;
-    s_axi_control_r_BREADY : in STD_LOGIC;
-    s_axi_control_r_ARADDR : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axi_control_r_ARVALID : in STD_LOGIC;
-    s_axi_control_r_ARREADY : out STD_LOGIC;
-    s_axi_control_r_RDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s_axi_control_r_RRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axi_control_r_RVALID : out STD_LOGIC;
-    s_axi_control_r_RREADY : in STD_LOGIC;
+    s_axi_conv_AWADDR : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    s_axi_conv_AWVALID : in STD_LOGIC;
+    s_axi_conv_AWREADY : out STD_LOGIC;
+    s_axi_conv_WDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_conv_WSTRB : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s_axi_conv_WVALID : in STD_LOGIC;
+    s_axi_conv_WREADY : out STD_LOGIC;
+    s_axi_conv_BRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_conv_BVALID : out STD_LOGIC;
+    s_axi_conv_BREADY : in STD_LOGIC;
+    s_axi_conv_ARADDR : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    s_axi_conv_ARVALID : in STD_LOGIC;
+    s_axi_conv_ARREADY : out STD_LOGIC;
+    s_axi_conv_RDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axi_conv_RRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axi_conv_RVALID : out STD_LOGIC;
+    s_axi_conv_RREADY : in STD_LOGIC;
     ap_clk : in STD_LOGIC;
     ap_rst_n : in STD_LOGIC;
     interrupt : out STD_LOGIC;
@@ -1770,23 +1770,23 @@ applyConvolution_0: component design_1_applyConvolution_0_1
       s_axi_control_WREADY => ps7_0_axi_periph_M00_AXI_WREADY,
       s_axi_control_WSTRB(3 downto 0) => ps7_0_axi_periph_M00_AXI_WSTRB(3 downto 0),
       s_axi_control_WVALID => ps7_0_axi_periph_M00_AXI_WVALID(0),
-      s_axi_control_r_ARADDR(3 downto 0) => ps7_0_axi_periph_M01_AXI_ARADDR(3 downto 0),
-      s_axi_control_r_ARREADY => ps7_0_axi_periph_M01_AXI_ARREADY,
-      s_axi_control_r_ARVALID => ps7_0_axi_periph_M01_AXI_ARVALID(0),
-      s_axi_control_r_AWADDR(3 downto 0) => ps7_0_axi_periph_M01_AXI_AWADDR(3 downto 0),
-      s_axi_control_r_AWREADY => ps7_0_axi_periph_M01_AXI_AWREADY,
-      s_axi_control_r_AWVALID => ps7_0_axi_periph_M01_AXI_AWVALID(0),
-      s_axi_control_r_BREADY => ps7_0_axi_periph_M01_AXI_BREADY(0),
-      s_axi_control_r_BRESP(1 downto 0) => ps7_0_axi_periph_M01_AXI_BRESP(1 downto 0),
-      s_axi_control_r_BVALID => ps7_0_axi_periph_M01_AXI_BVALID,
-      s_axi_control_r_RDATA(31 downto 0) => ps7_0_axi_periph_M01_AXI_RDATA(31 downto 0),
-      s_axi_control_r_RREADY => ps7_0_axi_periph_M01_AXI_RREADY(0),
-      s_axi_control_r_RRESP(1 downto 0) => ps7_0_axi_periph_M01_AXI_RRESP(1 downto 0),
-      s_axi_control_r_RVALID => ps7_0_axi_periph_M01_AXI_RVALID,
-      s_axi_control_r_WDATA(31 downto 0) => ps7_0_axi_periph_M01_AXI_WDATA(31 downto 0),
-      s_axi_control_r_WREADY => ps7_0_axi_periph_M01_AXI_WREADY,
-      s_axi_control_r_WSTRB(3 downto 0) => ps7_0_axi_periph_M01_AXI_WSTRB(3 downto 0),
-      s_axi_control_r_WVALID => ps7_0_axi_periph_M01_AXI_WVALID(0)
+      s_axi_conv_ARADDR(5 downto 0) => ps7_0_axi_periph_M01_AXI_ARADDR(5 downto 0),
+      s_axi_conv_ARREADY => ps7_0_axi_periph_M01_AXI_ARREADY,
+      s_axi_conv_ARVALID => ps7_0_axi_periph_M01_AXI_ARVALID(0),
+      s_axi_conv_AWADDR(5 downto 0) => ps7_0_axi_periph_M01_AXI_AWADDR(5 downto 0),
+      s_axi_conv_AWREADY => ps7_0_axi_periph_M01_AXI_AWREADY,
+      s_axi_conv_AWVALID => ps7_0_axi_periph_M01_AXI_AWVALID(0),
+      s_axi_conv_BREADY => ps7_0_axi_periph_M01_AXI_BREADY(0),
+      s_axi_conv_BRESP(1 downto 0) => ps7_0_axi_periph_M01_AXI_BRESP(1 downto 0),
+      s_axi_conv_BVALID => ps7_0_axi_periph_M01_AXI_BVALID,
+      s_axi_conv_RDATA(31 downto 0) => ps7_0_axi_periph_M01_AXI_RDATA(31 downto 0),
+      s_axi_conv_RREADY => ps7_0_axi_periph_M01_AXI_RREADY(0),
+      s_axi_conv_RRESP(1 downto 0) => ps7_0_axi_periph_M01_AXI_RRESP(1 downto 0),
+      s_axi_conv_RVALID => ps7_0_axi_periph_M01_AXI_RVALID,
+      s_axi_conv_WDATA(31 downto 0) => ps7_0_axi_periph_M01_AXI_WDATA(31 downto 0),
+      s_axi_conv_WREADY => ps7_0_axi_periph_M01_AXI_WREADY,
+      s_axi_conv_WSTRB(3 downto 0) => ps7_0_axi_periph_M01_AXI_WSTRB(3 downto 0),
+      s_axi_conv_WVALID => ps7_0_axi_periph_M01_AXI_WVALID(0)
     );
 processing_system7_0: component design_1_processing_system7_0_0
      port map (

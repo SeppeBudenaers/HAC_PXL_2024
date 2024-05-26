@@ -1,0 +1,54 @@
+vhdl xbip_utils_v3_0_11  \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/9836/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
+
+vhdl axi_utils_v2_0_7  \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/e392/hdl/axi_utils_v2_0_vh_rfs.vhd" \
+
+vhdl xbip_pipe_v3_0_7  \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/c4f2/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
+
+vhdl xbip_dsp48_wrapper_v3_0_5  \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/e5f6/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
+
+vhdl xbip_dsp48_addsub_v3_0_7  \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/9cc0/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
+
+vhdl xbip_dsp48_multadd_v3_0_7  \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/0fb3/hdl/xbip_dsp48_multadd_v3_0_vh_rfs.vhd" \
+
+vhdl xbip_bram18k_v3_0_7  \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/7a2e/hdl/xbip_bram18k_v3_0_vh_rfs.vhd" \
+
+vhdl mult_gen_v12_0_19  \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/e1b5/hdl/mult_gen_v12_0_vh_rfs.vhd" \
+
+vhdl floating_point_v7_1_16  \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/0994/hdl/floating_point_v7_1_rfs.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_applyConvolution_Pipeline_1.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_applyConvolution_Pipeline_VITIS_LOOP_34_5.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_applyConvolution_Pipeline_VITIS_LOOP_42_6.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_control_s_axi.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_conv_s_axi.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_fadd_32ns_32ns_32_8_full_dsp_1.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_flow_control_loop_pipe_sequential_init.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_fmul_32ns_32ns_32_4_max_dsp_1.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_input_r_m_axi.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_kernel_ROM_AUTO_1R.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_mul_2ns_64s_64_3_1.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_mul_31ns_32ns_63_3_1.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_mul_31ns_64s_64_3_1.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_mul_32ns_32ns_64_3_1.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_mul_32s_32s_32_3_1.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_mul_34s_32ns_64_3_1.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_mux_3_2_32_1_1.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_output_r_m_axi.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution_sitofp_32ns_32_7_no_dsp_1.vhd" \
+"../../../../project_1.gen/sources_1/bd/design_1/ipshared/dacd/hdl/vhdl/applyConvolution.vhd" \
+"../../../bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" \
+"../../../bd/design_1/ip/design_1_smartconnect_0_0/bd_0/ip/ip_1/sim/bd_48ac_psr_aclk_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+# Do not sort compile order
+nosort

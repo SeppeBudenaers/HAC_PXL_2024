@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:hls:applyConvolution:1.0
--- IP Revision: 2113571659
+-- IP Revision: 2113571804
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -72,23 +72,23 @@ ENTITY design_1_applyConvolution_0_1 IS
     s_axi_control_RRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s_axi_control_RVALID : OUT STD_LOGIC;
     s_axi_control_RREADY : IN STD_LOGIC;
-    s_axi_control_r_AWADDR : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s_axi_control_r_AWVALID : IN STD_LOGIC;
-    s_axi_control_r_AWREADY : OUT STD_LOGIC;
-    s_axi_control_r_WDATA : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    s_axi_control_r_WSTRB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s_axi_control_r_WVALID : IN STD_LOGIC;
-    s_axi_control_r_WREADY : OUT STD_LOGIC;
-    s_axi_control_r_BRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-    s_axi_control_r_BVALID : OUT STD_LOGIC;
-    s_axi_control_r_BREADY : IN STD_LOGIC;
-    s_axi_control_r_ARADDR : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s_axi_control_r_ARVALID : IN STD_LOGIC;
-    s_axi_control_r_ARREADY : OUT STD_LOGIC;
-    s_axi_control_r_RDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    s_axi_control_r_RRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-    s_axi_control_r_RVALID : OUT STD_LOGIC;
-    s_axi_control_r_RREADY : IN STD_LOGIC;
+    s_axi_conv_AWADDR : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    s_axi_conv_AWVALID : IN STD_LOGIC;
+    s_axi_conv_AWREADY : OUT STD_LOGIC;
+    s_axi_conv_WDATA : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    s_axi_conv_WSTRB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+    s_axi_conv_WVALID : IN STD_LOGIC;
+    s_axi_conv_WREADY : OUT STD_LOGIC;
+    s_axi_conv_BRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+    s_axi_conv_BVALID : OUT STD_LOGIC;
+    s_axi_conv_BREADY : IN STD_LOGIC;
+    s_axi_conv_ARADDR : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    s_axi_conv_ARVALID : IN STD_LOGIC;
+    s_axi_conv_ARREADY : OUT STD_LOGIC;
+    s_axi_conv_RDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    s_axi_conv_RRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+    s_axi_conv_RVALID : OUT STD_LOGIC;
+    s_axi_conv_RREADY : IN STD_LOGIC;
     ap_clk : IN STD_LOGIC;
     ap_rst_n : IN STD_LOGIC;
     interrupt : OUT STD_LOGIC;
@@ -182,8 +182,8 @@ ARCHITECTURE design_1_applyConvolution_0_1_arch OF design_1_applyConvolution_0_1
     GENERIC (
       C_S_AXI_CONTROL_ADDR_WIDTH : INTEGER;
       C_S_AXI_CONTROL_DATA_WIDTH : INTEGER;
-      C_S_AXI_CONTROL_R_ADDR_WIDTH : INTEGER;
-      C_S_AXI_CONTROL_R_DATA_WIDTH : INTEGER;
+      C_S_AXI_CONV_ADDR_WIDTH : INTEGER;
+      C_S_AXI_CONV_DATA_WIDTH : INTEGER;
       C_M_AXI_INPUT_R_ID_WIDTH : INTEGER;
       C_M_AXI_INPUT_R_ADDR_WIDTH : INTEGER;
       C_M_AXI_INPUT_R_DATA_WIDTH : INTEGER;
@@ -225,23 +225,23 @@ ARCHITECTURE design_1_applyConvolution_0_1_arch OF design_1_applyConvolution_0_1
       s_axi_control_RRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s_axi_control_RVALID : OUT STD_LOGIC;
       s_axi_control_RREADY : IN STD_LOGIC;
-      s_axi_control_r_AWADDR : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      s_axi_control_r_AWVALID : IN STD_LOGIC;
-      s_axi_control_r_AWREADY : OUT STD_LOGIC;
-      s_axi_control_r_WDATA : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      s_axi_control_r_WSTRB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      s_axi_control_r_WVALID : IN STD_LOGIC;
-      s_axi_control_r_WREADY : OUT STD_LOGIC;
-      s_axi_control_r_BRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-      s_axi_control_r_BVALID : OUT STD_LOGIC;
-      s_axi_control_r_BREADY : IN STD_LOGIC;
-      s_axi_control_r_ARADDR : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-      s_axi_control_r_ARVALID : IN STD_LOGIC;
-      s_axi_control_r_ARREADY : OUT STD_LOGIC;
-      s_axi_control_r_RDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      s_axi_control_r_RRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-      s_axi_control_r_RVALID : OUT STD_LOGIC;
-      s_axi_control_r_RREADY : IN STD_LOGIC;
+      s_axi_conv_AWADDR : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+      s_axi_conv_AWVALID : IN STD_LOGIC;
+      s_axi_conv_AWREADY : OUT STD_LOGIC;
+      s_axi_conv_WDATA : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      s_axi_conv_WSTRB : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+      s_axi_conv_WVALID : IN STD_LOGIC;
+      s_axi_conv_WREADY : OUT STD_LOGIC;
+      s_axi_conv_BRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+      s_axi_conv_BVALID : OUT STD_LOGIC;
+      s_axi_conv_BREADY : IN STD_LOGIC;
+      s_axi_conv_ARADDR : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+      s_axi_conv_ARVALID : IN STD_LOGIC;
+      s_axi_conv_ARREADY : OUT STD_LOGIC;
+      s_axi_conv_RDATA : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      s_axi_conv_RRESP : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+      s_axi_conv_RVALID : OUT STD_LOGIC;
+      s_axi_conv_RREADY : IN STD_LOGIC;
       ap_clk : IN STD_LOGIC;
       ap_rst_n : IN STD_LOGIC;
       interrupt : OUT STD_LOGIC;
@@ -342,9 +342,9 @@ ARCHITECTURE design_1_applyConvolution_0_1_arch OF design_1_applyConvolution_0_1
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_applyConvolution_0_1_arch : ARCHITECTURE IS "design_1_applyConvolution_0_1,applyConvolution,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF design_1_applyConvolution_0_1_arch: ARCHITECTURE IS "design_1_applyConvolution_0_1,applyConvolution,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=applyConvolution,x_ipVersion=1.0,x_ipCoreRevision=2113571659,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S_AXI_CONTROL_ADDR_WIDTH=6,C_S_AXI_CONTROL_DATA_WIDTH=32,C_S_AXI_CONTROL_R_ADDR_WIDTH=4,C_S_AXI_CONTROL_R_DATA_WIDTH=32,C_M_AXI_INPUT_R_ID_WIDTH=1,C_M_AXI_INPUT_R_ADDR_WIDTH=64,C_M_AXI_INPUT_R_DATA_WIDTH=32,C_M_AXI_INPUT_R_AWUSER_WIDTH=1,C_M_AXI_INPUT_R_ARUSER_WIDTH=1,C_M_AXI" & 
-"_INPUT_R_WUSER_WIDTH=1,C_M_AXI_INPUT_R_RUSER_WIDTH=1,C_M_AXI_INPUT_R_BUSER_WIDTH=1,C_M_AXI_INPUT_R_USER_VALUE=0x00000000,C_M_AXI_INPUT_R_PROT_VALUE=000,C_M_AXI_INPUT_R_CACHE_VALUE=0011,C_M_AXI_OUTPUT_R_ID_WIDTH=1,C_M_AXI_OUTPUT_R_ADDR_WIDTH=64,C_M_AXI_OUTPUT_R_DATA_WIDTH=32,C_M_AXI_OUTPUT_R_AWUSER_WIDTH=1,C_M_AXI_OUTPUT_R_ARUSER_WIDTH=1,C_M_AXI_OUTPUT_R_WUSER_WIDTH=1,C_M_AXI_OUTPUT_R_RUSER_WIDTH=1,C_M_AXI_OUTPUT_R_BUSER_WIDTH=1,C_M_AXI_OUTPUT_R_USER_VALUE=0x00000000,C_M_AXI_OUTPUT_R_PROT_VALUE=0" & 
-"00,C_M_AXI_OUTPUT_R_CACHE_VALUE=0011}";
+  ATTRIBUTE CORE_GENERATION_INFO OF design_1_applyConvolution_0_1_arch: ARCHITECTURE IS "design_1_applyConvolution_0_1,applyConvolution,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=applyConvolution,x_ipVersion=1.0,x_ipCoreRevision=2113571804,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S_AXI_CONTROL_ADDR_WIDTH=6,C_S_AXI_CONTROL_DATA_WIDTH=32,C_S_AXI_CONV_ADDR_WIDTH=6,C_S_AXI_CONV_DATA_WIDTH=32,C_M_AXI_INPUT_R_ID_WIDTH=1,C_M_AXI_INPUT_R_ADDR_WIDTH=64,C_M_AXI_INPUT_R_DATA_WIDTH=32,C_M_AXI_INPUT_R_AWUSER_WIDTH=1,C_M_AXI_INPUT_R_ARUSER_WIDTH=1,C_M_AXI_INPUT_R_W" & 
+"USER_WIDTH=1,C_M_AXI_INPUT_R_RUSER_WIDTH=1,C_M_AXI_INPUT_R_BUSER_WIDTH=1,C_M_AXI_INPUT_R_USER_VALUE=0x00000000,C_M_AXI_INPUT_R_PROT_VALUE=000,C_M_AXI_INPUT_R_CACHE_VALUE=0011,C_M_AXI_OUTPUT_R_ID_WIDTH=1,C_M_AXI_OUTPUT_R_ADDR_WIDTH=64,C_M_AXI_OUTPUT_R_DATA_WIDTH=32,C_M_AXI_OUTPUT_R_AWUSER_WIDTH=1,C_M_AXI_OUTPUT_R_ARUSER_WIDTH=1,C_M_AXI_OUTPUT_R_WUSER_WIDTH=1,C_M_AXI_OUTPUT_R_RUSER_WIDTH=1,C_M_AXI_OUTPUT_R_BUSER_WIDTH=1,C_M_AXI_OUTPUT_R_USER_VALUE=0x00000000,C_M_AXI_OUTPUT_R_PROT_VALUE=000,C_M_AXI" & 
+"_OUTPUT_R_CACHE_VALUE=0011}";
   ATTRIBUTE SDX_KERNEL : STRING;
   ATTRIBUTE SDX_KERNEL OF applyConvolution: COMPONENT IS "true";
   ATTRIBUTE SDX_KERNEL_TYPE : STRING;
@@ -355,7 +355,7 @@ ARCHITECTURE design_1_applyConvolution_0_1_arch OF design_1_applyConvolution_0_1
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_applyConvolution_0_1_arch: ARCHITECTURE IS "HLS";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF ap_clk: SIGNAL IS "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF s_axi_control:s_axi_control_r:m_axi_input_r:m_axi_output_r, ASSOCIATED_RESET ap_rst_n, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF ap_clk: SIGNAL IS "XIL_INTERFACENAME ap_clk, ASSOCIATED_BUSIF s_axi_control:s_axi_conv:m_axi_input_r:m_axi_output_r, ASSOCIATED_RESET ap_rst_n, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF ap_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 ap_clk CLK";
   ATTRIBUTE X_INTERFACE_PARAMETER OF ap_rst_n: SIGNAL IS "XIL_INTERFACENAME ap_rst_n, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF ap_rst_n: SIGNAL IS "xilinx.com:signal:reset:1.0 ap_rst_n RST";
@@ -464,32 +464,32 @@ ARCHITECTURE design_1_applyConvolution_0_1_arch OF design_1_applyConvolution_0_1
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_WREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control WREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_WSTRB: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control WSTRB";
   ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_WVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control WVALID";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_ARADDR: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r ARADDR";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_ARREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r ARREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_ARVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r ARVALID";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_control_r_AWADDR: SIGNAL IS "XIL_INTERFACENAME s_axi_control_r, ADDR_WIDTH 4, DATA_WIDTH 32, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, FREQ_HZ 100000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ" & 
-"_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_AWADDR: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r AWADDR";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_AWREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r AWREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_AWVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r AWVALID";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_BREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r BREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_BRESP: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r BRESP";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_BVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r BVALID";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_RDATA: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r RDATA";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_RREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r RREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_RRESP: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r RRESP";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_RVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r RVALID";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_WDATA: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r WDATA";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_WREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r WREADY";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_WSTRB: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r WSTRB";
-  ATTRIBUTE X_INTERFACE_INFO OF s_axi_control_r_WVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_control_r WVALID";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_ARADDR: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv ARADDR";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_ARREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv ARREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_ARVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv ARVALID";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s_axi_conv_AWADDR: SIGNAL IS "XIL_INTERFACENAME s_axi_conv, ADDR_WIDTH 6, DATA_WIDTH 32, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, FREQ_HZ 100000000, ID_WIDTH 0, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, NUM_READ_THRE" & 
+"ADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_AWADDR: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv AWADDR";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_AWREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv AWREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_AWVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv AWVALID";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_BREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv BREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_BRESP: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv BRESP";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_BVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv BVALID";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_RDATA: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv RDATA";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_RREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv RREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_RRESP: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv RRESP";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_RVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv RVALID";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_WDATA: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv WDATA";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_WREADY: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv WREADY";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_WSTRB: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv WSTRB";
+  ATTRIBUTE X_INTERFACE_INFO OF s_axi_conv_WVALID: SIGNAL IS "xilinx.com:interface:aximm:1.0 s_axi_conv WVALID";
 BEGIN
   U0 : applyConvolution
     GENERIC MAP (
       C_S_AXI_CONTROL_ADDR_WIDTH => 6,
       C_S_AXI_CONTROL_DATA_WIDTH => 32,
-      C_S_AXI_CONTROL_R_ADDR_WIDTH => 4,
-      C_S_AXI_CONTROL_R_DATA_WIDTH => 32,
+      C_S_AXI_CONV_ADDR_WIDTH => 6,
+      C_S_AXI_CONV_DATA_WIDTH => 32,
       C_M_AXI_INPUT_R_ID_WIDTH => 1,
       C_M_AXI_INPUT_R_ADDR_WIDTH => 64,
       C_M_AXI_INPUT_R_DATA_WIDTH => 32,
@@ -531,23 +531,23 @@ BEGIN
       s_axi_control_RRESP => s_axi_control_RRESP,
       s_axi_control_RVALID => s_axi_control_RVALID,
       s_axi_control_RREADY => s_axi_control_RREADY,
-      s_axi_control_r_AWADDR => s_axi_control_r_AWADDR,
-      s_axi_control_r_AWVALID => s_axi_control_r_AWVALID,
-      s_axi_control_r_AWREADY => s_axi_control_r_AWREADY,
-      s_axi_control_r_WDATA => s_axi_control_r_WDATA,
-      s_axi_control_r_WSTRB => s_axi_control_r_WSTRB,
-      s_axi_control_r_WVALID => s_axi_control_r_WVALID,
-      s_axi_control_r_WREADY => s_axi_control_r_WREADY,
-      s_axi_control_r_BRESP => s_axi_control_r_BRESP,
-      s_axi_control_r_BVALID => s_axi_control_r_BVALID,
-      s_axi_control_r_BREADY => s_axi_control_r_BREADY,
-      s_axi_control_r_ARADDR => s_axi_control_r_ARADDR,
-      s_axi_control_r_ARVALID => s_axi_control_r_ARVALID,
-      s_axi_control_r_ARREADY => s_axi_control_r_ARREADY,
-      s_axi_control_r_RDATA => s_axi_control_r_RDATA,
-      s_axi_control_r_RRESP => s_axi_control_r_RRESP,
-      s_axi_control_r_RVALID => s_axi_control_r_RVALID,
-      s_axi_control_r_RREADY => s_axi_control_r_RREADY,
+      s_axi_conv_AWADDR => s_axi_conv_AWADDR,
+      s_axi_conv_AWVALID => s_axi_conv_AWVALID,
+      s_axi_conv_AWREADY => s_axi_conv_AWREADY,
+      s_axi_conv_WDATA => s_axi_conv_WDATA,
+      s_axi_conv_WSTRB => s_axi_conv_WSTRB,
+      s_axi_conv_WVALID => s_axi_conv_WVALID,
+      s_axi_conv_WREADY => s_axi_conv_WREADY,
+      s_axi_conv_BRESP => s_axi_conv_BRESP,
+      s_axi_conv_BVALID => s_axi_conv_BVALID,
+      s_axi_conv_BREADY => s_axi_conv_BREADY,
+      s_axi_conv_ARADDR => s_axi_conv_ARADDR,
+      s_axi_conv_ARVALID => s_axi_conv_ARVALID,
+      s_axi_conv_ARREADY => s_axi_conv_ARREADY,
+      s_axi_conv_RDATA => s_axi_conv_RDATA,
+      s_axi_conv_RRESP => s_axi_conv_RRESP,
+      s_axi_conv_RVALID => s_axi_conv_RVALID,
+      s_axi_conv_RREADY => s_axi_conv_RREADY,
       ap_clk => ap_clk,
       ap_rst_n => ap_rst_n,
       interrupt => interrupt,

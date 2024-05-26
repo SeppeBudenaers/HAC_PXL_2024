@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May 24 13:40:19 2024" VIVADOVERSION="2023.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May 24 15:58:04 2024" VIVADOVERSION="2023.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -69,7 +69,7 @@
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_RAS_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="IO" NAME="DDR_reset_n" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_DDR_DRSTB">
+    <PORT DIR="IO" NAME="DDR_reset_n" SIGIS="rst" SIGNAME="processing_system7_0_DDR_DRSTB">
       <CONNECTIONS>
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_DRSTB"/>
       </CONNECTIONS>
@@ -159,156 +159,10 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="2113571659" FULLNAME="/applyConvolution_0" HWVERSION="1.0" INSTANCE="applyConvolution_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="applyConvolution" VLNV="xilinx.com:hls:applyConvolution:1.0">
+    <MODULE COREREVISION="2113571804" FULLNAME="/applyConvolution_0" HWVERSION="1.0" INSTANCE="applyConvolution_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="applyConvolution" VLNV="xilinx.com:hls:applyConvolution:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_control" NAME="Reg" RANGE="65536" USAGE="register">
-          <REGISTERS>
-            <REGISTER NAME="image_r_1">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of image_r"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="16"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="image_r">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of image_r"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
-            <REGISTER NAME="image_r_2">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of image_r"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="20"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="image_r">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 63 to 32 of image_r"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
-            <REGISTER NAME="output_r_offset_1">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of output_r_offset"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="28"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="output_r_offset">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of output_r_offset"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
-            <REGISTER NAME="output_r_offset_2">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of output_r_offset"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="32"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="output_r_offset">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 63 to 32 of output_r_offset"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
-            <REGISTER NAME="width">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of width"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="40"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="width">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of width"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
-            <REGISTER NAME="height">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of height"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="48"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="height">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of height"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
-            <REGISTER NAME="channels">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of channels"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="56"/>
-              <PROPERTY NAME="SIZE" VALUE="32"/>
-              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
-              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
-              <FIELDS>
-                <FIELD NAME="channels">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of channels"/>
-                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
-                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
-                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
-                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
-                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
-                </FIELD>
-              </FIELDS>
-            </REGISTER>
-          </REGISTERS>
-        </ADDRESSBLOCK>
-      </ADDRESSBLOCKS>
-      <ADDRESSBLOCKS>
-        <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_control_r" NAME="Reg" RANGE="65536" USAGE="register">
           <REGISTERS>
             <REGISTER NAME="CTRL">
               <PROPERTY NAME="DESCRIPTION" VALUE="Control signals"/>
@@ -520,6 +374,152 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
+            <REGISTER NAME="image_r_1">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of image_r"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="16"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="image_r">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of image_r"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="image_r_2">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of image_r"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="20"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="image_r">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 63 to 32 of image_r"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="out_r_1">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of out_r"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="28"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="out_r">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of out_r"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="out_r_2">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of out_r"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="32"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="out_r">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 63 to 32 of out_r"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+          </REGISTERS>
+        </ADDRESSBLOCK>
+      </ADDRESSBLOCKS>
+      <ADDRESSBLOCKS>
+        <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_conv" NAME="Reg" RANGE="65536" USAGE="register">
+          <REGISTERS>
+            <REGISTER NAME="width">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of width"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="16"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="width">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of width"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="height">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of height"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="24"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="height">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of height"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
+            <REGISTER NAME="channels">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of channels"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="32"/>
+              <PROPERTY NAME="SIZE" VALUE="32"/>
+              <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+              <FIELDS>
+                <FIELD NAME="channels">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 of channels"/>
+                  <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="ACCESS" VALUE="write-only"/>
+                  <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
+                  <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
+                  <PROPERTY NAME="READ_ACTION" VALUE=""/>
+                  <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="32"/>
+                </FIELD>
+              </FIELDS>
+            </REGISTER>
           </REGISTERS>
         </ADDRESSBLOCK>
       </ADDRESSBLOCKS>
@@ -548,8 +548,8 @@
         <PARAMETER NAME="C_M_AXI_OUTPUT_R_WUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_S_AXI_CONTROL_ADDR_WIDTH" VALUE="6"/>
         <PARAMETER NAME="C_S_AXI_CONTROL_DATA_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_S_AXI_CONTROL_R_ADDR_WIDTH" VALUE="4"/>
-        <PARAMETER NAME="C_S_AXI_CONTROL_R_DATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_S_AXI_CONV_ADDR_WIDTH" VALUE="6"/>
+        <PARAMETER NAME="C_S_AXI_CONV_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_M_AXI_INPUT_R_ENABLE_ID_PORTS" VALUE="true"/>
         <PARAMETER NAME="C_M_AXI_INPUT_R_ENABLE_USER_PORTS" VALUE="false"/>
         <PARAMETER NAME="C_M_AXI_OUTPUT_R_ENABLE_ID_PORTS" VALUE="true"/>
@@ -563,8 +563,8 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S_AXI_CONTROL_BASEADDR" VALUE="0x40000000"/>
         <PARAMETER NAME="C_S_AXI_CONTROL_HIGHADDR" VALUE="0x4000FFFF"/>
-        <PARAMETER NAME="C_S_AXI_CONTROL_R_BASEADDR" VALUE="0x40010000"/>
-        <PARAMETER NAME="C_S_AXI_CONTROL_R_HIGHADDR" VALUE="0x4001FFFF"/>
+        <PARAMETER NAME="C_S_AXI_CONV_BASEADDR" VALUE="0x40010000"/>
+        <PARAMETER NAME="C_S_AXI_CONV_HIGHADDR" VALUE="0x4001FFFF"/>
       </PARAMETERS>
       <PORTS>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="ap_clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
@@ -848,87 +848,87 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_AXI_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_control_r_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_ARADDR">
+        <PORT DIR="I" LEFT="5" NAME="s_axi_conv_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_ARADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_control_r_ARREADY" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_ARREADY">
+        <PORT DIR="O" NAME="s_axi_conv_ARREADY" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_ARREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_control_r_ARVALID" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_ARVALID">
+        <PORT DIR="I" NAME="s_axi_conv_ARVALID" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_ARVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_control_r_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_AWADDR">
+        <PORT DIR="I" LEFT="5" NAME="s_axi_conv_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_AWADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_control_r_AWREADY" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_AWREADY">
+        <PORT DIR="O" NAME="s_axi_conv_AWREADY" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_AWREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_control_r_AWVALID" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_AWVALID">
+        <PORT DIR="I" NAME="s_axi_conv_AWVALID" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_AWVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_control_r_BREADY" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_BREADY">
+        <PORT DIR="I" NAME="s_axi_conv_BREADY" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_BREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_control_r_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_BRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_conv_BRESP" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_BRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_control_r_BVALID" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_BVALID">
+        <PORT DIR="O" NAME="s_axi_conv_BVALID" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_BVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="s_axi_control_r_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_RDATA">
+        <PORT DIR="O" LEFT="31" NAME="s_axi_conv_RDATA" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_RDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_control_r_RREADY" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_RREADY">
+        <PORT DIR="I" NAME="s_axi_conv_RREADY" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_RREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="1" NAME="s_axi_control_r_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_RRESP">
+        <PORT DIR="O" LEFT="1" NAME="s_axi_conv_RRESP" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_RRESP">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_control_r_RVALID" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_RVALID">
+        <PORT DIR="O" NAME="s_axi_conv_RVALID" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_RVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="s_axi_control_r_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_WDATA">
+        <PORT DIR="I" LEFT="31" NAME="s_axi_conv_WDATA" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_WDATA">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s_axi_control_r_WREADY" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_WREADY">
+        <PORT DIR="O" NAME="s_axi_conv_WREADY" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_WREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="s_axi_control_r_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_WSTRB">
+        <PORT DIR="I" LEFT="3" NAME="s_axi_conv_WSTRB" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_WSTRB">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="s_axi_control_r_WVALID" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_WVALID">
+        <PORT DIR="I" NAME="s_axi_conv_WVALID" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_WVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_wvalid"/>
           </CONNECTIONS>
@@ -987,8 +987,8 @@
             <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_control_WVALID"/>
           </PORTMAPS>
         </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="ps7_0_axi_periph_M01_AXI" DATAWIDTH="32" NAME="s_axi_control_r" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
-          <PARAMETER NAME="ADDR_WIDTH" VALUE="4"/>
+        <BUSINTERFACE BUSNAME="ps7_0_axi_periph_M01_AXI" DATAWIDTH="32" NAME="s_axi_conv" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="6"/>
           <PARAMETER NAME="ARUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
           <PARAMETER NAME="BUSER_WIDTH" VALUE="0"/>
@@ -1020,23 +1020,23 @@
           <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="WUSER_WIDTH" VALUE="0"/>
           <PORTMAPS>
-            <PORTMAP LOGICAL="ARADDR" PHYSICAL="s_axi_control_r_ARADDR"/>
-            <PORTMAP LOGICAL="ARREADY" PHYSICAL="s_axi_control_r_ARREADY"/>
-            <PORTMAP LOGICAL="ARVALID" PHYSICAL="s_axi_control_r_ARVALID"/>
-            <PORTMAP LOGICAL="AWADDR" PHYSICAL="s_axi_control_r_AWADDR"/>
-            <PORTMAP LOGICAL="AWREADY" PHYSICAL="s_axi_control_r_AWREADY"/>
-            <PORTMAP LOGICAL="AWVALID" PHYSICAL="s_axi_control_r_AWVALID"/>
-            <PORTMAP LOGICAL="BREADY" PHYSICAL="s_axi_control_r_BREADY"/>
-            <PORTMAP LOGICAL="BRESP" PHYSICAL="s_axi_control_r_BRESP"/>
-            <PORTMAP LOGICAL="BVALID" PHYSICAL="s_axi_control_r_BVALID"/>
-            <PORTMAP LOGICAL="RDATA" PHYSICAL="s_axi_control_r_RDATA"/>
-            <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_control_r_RREADY"/>
-            <PORTMAP LOGICAL="RRESP" PHYSICAL="s_axi_control_r_RRESP"/>
-            <PORTMAP LOGICAL="RVALID" PHYSICAL="s_axi_control_r_RVALID"/>
-            <PORTMAP LOGICAL="WDATA" PHYSICAL="s_axi_control_r_WDATA"/>
-            <PORTMAP LOGICAL="WREADY" PHYSICAL="s_axi_control_r_WREADY"/>
-            <PORTMAP LOGICAL="WSTRB" PHYSICAL="s_axi_control_r_WSTRB"/>
-            <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_control_r_WVALID"/>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="s_axi_conv_ARADDR"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="s_axi_conv_ARREADY"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="s_axi_conv_ARVALID"/>
+            <PORTMAP LOGICAL="AWADDR" PHYSICAL="s_axi_conv_AWADDR"/>
+            <PORTMAP LOGICAL="AWREADY" PHYSICAL="s_axi_conv_AWREADY"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="s_axi_conv_AWVALID"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="s_axi_conv_BREADY"/>
+            <PORTMAP LOGICAL="BRESP" PHYSICAL="s_axi_conv_BRESP"/>
+            <PORTMAP LOGICAL="BVALID" PHYSICAL="s_axi_conv_BVALID"/>
+            <PORTMAP LOGICAL="RDATA" PHYSICAL="s_axi_conv_RDATA"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="s_axi_conv_RREADY"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="s_axi_conv_RRESP"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="s_axi_conv_RVALID"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="s_axi_conv_WDATA"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="s_axi_conv_WREADY"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="s_axi_conv_WSTRB"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_conv_WVALID"/>
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="applyConvolution_0_m_axi_input_r" DATAWIDTH="32" NAME="m_axi_input_r" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
@@ -2196,12 +2196,12 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="ap_clk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_ACLK"/>
             <CONNECTION INSTANCE="smartconnect_0" PORT="aclk"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="ap_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="processing_system7_0_FCLK_RESET0_N">
@@ -2810,7 +2810,7 @@
       </BUSINTERFACES>
       <MEMORYMAP>
         <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CONTROL_BASEADDR" BASEVALUE="0x40000000" HIGHNAME="C_S_AXI_CONTROL_HIGHADDR" HIGHVALUE="0x4000FFFF" INSTANCE="applyConvolution_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_control"/>
-        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CONTROL_R_BASEADDR" BASEVALUE="0x40010000" HIGHNAME="C_S_AXI_CONTROL_R_HIGHADDR" HIGHVALUE="0x4001FFFF" INSTANCE="applyConvolution_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_control_r"/>
+        <MEMRANGE ADDRESSBLOCK="Reg" BASENAME="C_S_AXI_CONV_BASEADDR" BASEVALUE="0x40010000" HIGHNAME="C_S_AXI_CONV_HIGHADDR" HIGHVALUE="0x4001FFFF" INSTANCE="applyConvolution_0" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_GP0" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="s_axi_conv"/>
       </MEMORYMAP>
       <PERIPHERALS>
         <PERIPHERAL INSTANCE="applyConvolution_0"/>
@@ -3254,89 +3254,89 @@
             <CONNECTION INSTANCE="rst_ps7_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_ARADDR">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_ARADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_ARADDR"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_ARADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_ARREADY">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_ARREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_ARREADY"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_ARREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_ARVALID">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_ARVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_ARVALID"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_ARVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_AWADDR">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_AWADDR">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_AWADDR"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_AWADDR"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_AWREADY">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_AWREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_AWREADY"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_AWREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_AWVALID">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_AWVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_AWVALID"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_AWVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_BREADY">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_BREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_BREADY"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_BREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_BRESP">
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_BRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_BRESP"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_BRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_BVALID">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_BVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_BVALID"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_BVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_RDATA">
+        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_RDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_RDATA"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_RDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_RREADY">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_RREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_RREADY"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_RRESP">
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_RRESP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_RRESP"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_RRESP"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_RVALID">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_RVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_RVALID"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_RVALID"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_WDATA">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_WDATA">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_WDATA"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_WDATA"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_WREADY">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_WREADY">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_WREADY"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_WREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_WSTRB">
+        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_WSTRB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_WSTRB"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_WSTRB"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_control_r_WVALID">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="applyConvolution_0_s_axi_conv_WVALID">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_control_r_WVALID"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="s_axi_conv_WVALID"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="S00_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
@@ -3661,11 +3661,11 @@
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="rst_ps7_0_100M_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ARESETN"/>
-            <CONNECTION INSTANCE="applyConvolution_0" PORT="ap_rst_n"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_ARESETN"/>
             <CONNECTION INSTANCE="smartconnect_0" PORT="aresetn"/>
+            <CONNECTION INSTANCE="applyConvolution_0" PORT="ap_rst_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>

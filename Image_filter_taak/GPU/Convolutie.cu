@@ -54,13 +54,13 @@ __global__ void applyConvolution(unsigned char* image, unsigned char* output, in
 }
 
 int main(int argc, char* argv[]) {
-    if (argc < 2) {
-        printf("Usage: %s <image_path>\n", argv[0]);
-        return 1;
-    }
-
+    // if (argc < 2) {
+    //     printf("Usage: %s <image_path>\n", argv[0]);
+    //     return 1;
+    // }
+    const char * imagelocation = "C:\\XilinxDev\\HACPXL2024\\Image_filter_taak\\Images\\polaris_mais.jpg";
     int width, height, channels;
-    unsigned char* img = stbi_load(argv[1], &width, &height, &channels, 0);
+    unsigned char* img = stbi_load(imagelocation, &width, &height, &channels, 0);
     if (img == NULL) {
         printf("Error in loading the image\n");
         exit(1);
@@ -78,34 +78,62 @@ int main(int argc, char* argv[]) {
     start =clock();
 
         unsigned char* d_img;
-        cudaMalloc(&d_img, width * height * channels);
-        cudaMemcpy(d_img, img, width * height * channels, cudaMemcpyHostToDevice);
+        cudaError_t cudaStatus;
+        cudaStatus = cudaMalloc(&d_img, width * height * channels);
+        if (cudaStatus != cudaSuccess) {
+            fprintf(stderr, "cudaMalloc failed: %s\n", cudaGetErrorString(cudaStatus));
+            exit(1);
+        }
+        cudaStatus = cudaMemcpy(d_img, img, width * height * channels, cudaMemcpyHostToDevice);
+        if (cudaStatus != cudaSuccess) {
+            fprintf(stderr, "cudaMemcpy failed: %s\n", cudaGetErrorString(cudaStatus));
+            exit(1);
+        }
 
         unsigned char* d_outputImg;
-        cudaMalloc(&d_outputImg, width * height * channels);
+        cudaStatus = cudaMalloc(&d_outputImg, width * height * channels);
+        if (cudaStatus != cudaSuccess) {
+            fprintf(stderr, "cudaMalloc failed: %s\n", cudaGetErrorString(cudaStatus));
+            exit(1);
+        }
 
         float* d_kernel;
-        cudaMalloc(&d_kernel, 3 * 3 * sizeof(float));
-        cudaMemcpy(d_kernel, kernel, 3 * 3 * sizeof(float), cudaMemcpyHostToDevice);
+        cudaStatus = cudaMalloc(&d_kernel, 3 * 3 * sizeof(float));
+        if (cudaStatus != cudaSuccess) {
+            fprintf(stderr, "cudaMalloc failed: %s\n", cudaGetErrorString(cudaStatus));
+            exit(1);
+        }
+        cudaStatus = cudaMemcpy(d_kernel, kernel, 3 * 3 * sizeof(float), cudaMemcpyHostToDevice);
+        if (cudaStatus != cudaSuccess) {
+            fprintf(stderr, "cudaMemcpy failed: %s\n", cudaGetErrorString(cudaStatus));
+            exit(1);
+        }
 
         dim3 blockSize(BLOCK_SIZE, BLOCK_SIZE);
         dim3 gridSize((width + BLOCK_SIZE - 1) / BLOCK_SIZE, (height + BLOCK_SIZE - 1) / BLOCK_SIZE);
     
         applyConvolution<<<1023, 256>>>(d_img, d_outputImg, width, height, channels, d_kernel);
     
-    
-        cudaDeviceSynchronize();
-        cudaMemcpy(outputImg, d_outputImg, width * height * channels, cudaMemcpyDeviceToHost);
+        cudaStatus = cudaDeviceSynchronize();
+        if (cudaStatus != cudaSuccess) {
+            fprintf(stderr, "cudaDeviceSynchronize failed: %s\n", cudaGetErrorString(cudaStatus));
+            exit(1);
+        }
+        cudaStatus = cudaMemcpy(outputImg, d_outputImg, width * height * channels, cudaMemcpyDeviceToHost);
+        if (cudaStatus != cudaSuccess) {
+            fprintf(stderr, "cudaMemcpy failed: %s\n", cudaGetErrorString(cudaStatus));
+            exit(1);
+        }
     
     stop =clock();
     cpu_time = ((double)(stop - start)) / CLOCKS_PER_SEC;
     printf("Time taken: %f\n", cpu_time);
 
-    if (strcmp(argv[2], "noOut") != 0) {
+    //if (strcmp(argv[2], "noOut") != 0) {
         char OutputPath[100];
         snprintf(OutputPath, sizeof(OutputPath), "%s-output.png", argv[1]);
         stbi_write_png(OutputPath, width, height, channels, outputImg, width * channels);
-    }
+    //}
 
     stbi_image_free(img);
     free(outputImg);

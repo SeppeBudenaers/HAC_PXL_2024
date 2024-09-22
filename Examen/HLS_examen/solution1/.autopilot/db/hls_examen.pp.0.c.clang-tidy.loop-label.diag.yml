@@ -1,0 +1,76 @@
+---
+MainSourceFile:  'C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_26_1:  '
+    FileOffset:      26
+    FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\hls_examen.c'
+    Replacements:    
+      - FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c'
+        Offset:          31201
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_26_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_27_2:  '
+    FileOffset:      27
+    FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\hls_examen.c'
+    Replacements:    
+      - FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c'
+        Offset:          31255
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_27_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_34_3:  '
+    FileOffset:      34
+    FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\hls_examen.c'
+    Replacements:    
+      - FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c'
+        Offset:          31502
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_34_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_35_4:  '
+    FileOffset:      35
+    FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\hls_examen.c'
+    Replacements:    
+      - FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c'
+        Offset:          31582
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_35_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_52_5:  '
+    FileOffset:      52
+    FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\hls_examen.c'
+    Replacements:    
+      - FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c'
+        Offset:          32126
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_52_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_53_6:  '
+    FileOffset:      53
+    FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\hls_examen.c'
+    Replacements:    
+      - FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c'
+        Offset:          32206
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_53_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_63_7:  '
+    FileOffset:      63
+    FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\hls_examen.c'
+    Replacements:    
+      - FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c'
+        Offset:          32569
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_63_7: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_64_8:  '
+    FileOffset:      64
+    FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\hls_examen.c'
+    Replacements:    
+      - FilePath:        'C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c'
+        Offset:          32649
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_64_8: '
+...

@@ -1,0 +1,368 @@
+
+
+================================================================
+== Synthesis Summary Report of 'ImageTransform'
+================================================================
++ General Information: 
+    * Date:           Fri Jun 14 11:19:44 2024
+    * Version:        2023.2 (Build 4023990 on Oct 11 2023)
+    * Project:        HLS_examen
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------------------------------+--------+-------+---------+---------+----------+---------+------+----------+----------+-----------+-------------+-------------+-----+
+    |                           Modules                           |  Issue |       | Latency | Latency | Iteration|         | Trip |          |          |           |             |             |     |
+    |                           & Loops                           |  Type  | Slack | (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP    |      FF     |     LUT     | URAM|
+    +-------------------------------------------------------------+--------+-------+---------+---------+----------+---------+------+----------+----------+-----------+-------------+-------------+-----+
+    |+ ImageTransform                                             |  Timing|  -0.60|        -|        -|         -|        -|     -|        no|  64 (22%)|  162 (73%)|  27965 (26%)|  23854 (44%)|    -|
+    | o VITIS_LOOP_26_1_VITIS_LOOP_27_2                           |       -|   5.84|        -|        -|         -|        -|     -|        no|         -|          -|            -|            -|    -|
+    |  + pow_generic_double_s                                     |      II|   0.01|       69|  552.000|         -|        1|     -|       yes|  30 (10%)|   70 (31%)|    9571 (8%)|   6349 (11%)|    -|
+    |  + pow_generic_double_s                                     |      II|   0.01|       69|  552.000|         -|        1|     -|       yes|  30 (10%)|   70 (31%)|    9571 (8%)|   6349 (11%)|    -|
+    |  + ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8  |       -|   0.00|        -|        -|         -|        -|     -|        no|         -|          -|    1194 (1%)|    1283 (2%)|    -|
+    |   o VITIS_LOOP_63_7_VITIS_LOOP_64_8                         |      II|   5.84|        -|        -|        21|        3|     -|       yes|         -|          -|            -|            -|    -|
+    |  + ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4  |       -|   0.00|        -|        -|         -|        -|     -|        no|         -|          -|    1094 (1%)|    1259 (2%)|    -|
+    |   o VITIS_LOOP_34_3_VITIS_LOOP_35_4                         |      II|   5.84|        -|        -|        16|        3|     -|       yes|         -|          -|            -|            -|    -|
+    |  + ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6  |       -|   0.00|        -|        -|         -|        -|     -|        no|         -|          -|    988 (~0%)|    1137 (2%)|    -|
+    |   o VITIS_LOOP_52_5_VITIS_LOOP_53_6                         |      II|   5.84|        -|        -|        13|        3|     -|       yes|         -|          -|            -|            -|    -|
+    +-------------------------------------------------------------+--------+-------+---------+---------+----------+---------+------+----------+----------+-----------+-------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface      | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|                | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_input_r  | 8 -> 8     | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=2            |
+| m_axi_output_r | 8 -> 8     | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=2            |
++----------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++-----------------+------------+---------------+--------+----------+
+| Interface       | Data Width | Address Width | Offset | Register |
++-----------------+------------+---------------+--------+----------+
+| s_axi_control   | 32         | 5             | 16     | 0        |
+| s_axi_control_r | 32         | 6             | 16     | 0        |
++-----------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++-----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface       | Register          | Offset | Width | Access | Description                      | Bit Fields                                                           |
++-----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control   | CTRL              | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control   | GIER              | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control   | IP_IER            | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control   | IP_ISR            | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control   | centerX           | 0x10   | 32    | W      | Data signal of centerX           |                                                                      |
+| s_axi_control   | centerY           | 0x18   | 32    | W      | Data signal of centerY           |                                                                      |
+| s_axi_control_r | imageRGBA_1       | 0x10   | 32    | W      | Data signal of imageRGBA         |                                                                      |
+| s_axi_control_r | imageRGBA_2       | 0x14   | 32    | W      | Data signal of imageRGBA         |                                                                      |
+| s_axi_control_r | output_r_offset_1 | 0x1c   | 32    | W      | Data signal of output_r_offset   |                                                                      |
+| s_axi_control_r | output_r_offset_2 | 0x20   | 32    | W      | Data signal of output_r_offset   |                                                                      |
++-----------------+-------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-----------+-----------+----------------+
+| Argument  | Direction | Datatype       |
++-----------+-----------+----------------+
+| imageRGBA | in        | unsigned char* |
+| output    | out       | unsigned char* |
+| centerX   | in        | int            |
+| centerY   | in        | int            |
++-----------+-----------+----------------+
+
+* SW-to-HW Mapping
++-----------+-----------------+-----------+----------+---------------------------------------+
+| Argument  | HW Interface    | HW Type   | HW Usage | HW Info                               |
++-----------+-----------------+-----------+----------+---------------------------------------+
+| imageRGBA | m_axi_input_r   | interface |          |                                       |
+| imageRGBA | s_axi_control_r | register  | offset   | name=imageRGBA_1 offset=0x10 range=32 |
+| imageRGBA | s_axi_control_r | register  | offset   | name=imageRGBA_2 offset=0x14 range=32 |
+| output    | m_axi_output_r  | interface |          |                                       |
+| output    | s_axi_control_r | interface | offset   |                                       |
+| centerX   | s_axi_control   | register  |          | name=centerX offset=0x10 range=32     |
+| centerY   | s_axi_control   | register  |          | name=centerY offset=0x18 range=32     |
++-----------+-----------------+-----------+----------+---------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++----------------+-----------+--------+-------+
+| HW Interface   | Direction | Length | Width |
++----------------+-----------+--------+-------+
+| m_axi_input_r  | read      | 3      | 8     |
+| m_axi_output_r | write     | 3      | 8     |
++----------------+-----------+--------+-------+
+
+* All M_AXI Variable Accesses
++--------------+-----------+---------------------------------------+-----------+--------------+--------+-----------------+---------------------------------------+------------+------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable  | Access Location                       | Direction | Burst Status | Length | Loop            | Loop Location                         | Resolution | Problem                                                                                              |
++--------------+-----------+---------------------------------------+-----------+--------------+--------+-----------------+---------------------------------------+------------+------------------------------------------------------------------------------------------------------+
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:37:33 | read      | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:37:33 | read      | Inferred     | 3      | VITIS_LOOP_35_4 | HLS_examen/sources/hls_examen.c:35:38 |            |                                                                                                      |
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:38:33 | read      | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:38:33 | read      | Inferred     | 3      | VITIS_LOOP_35_4 | HLS_examen/sources/hls_examen.c:35:38 |            |                                                                                                      |
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:39:33 | read      | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:39:33 | read      | Inferred     | 3      | VITIS_LOOP_35_4 | HLS_examen/sources/hls_examen.c:35:38 |            |                                                                                                      |
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:66:46 | read      | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:66:46 | read      | Inferred     | 3      | VITIS_LOOP_64_8 | HLS_examen/sources/hls_examen.c:64:38 |            |                                                                                                      |
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:67:50 | read      | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:67:50 | read      | Inferred     | 3      | VITIS_LOOP_64_8 | HLS_examen/sources/hls_examen.c:64:38 |            |                                                                                                      |
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:68:50 | read      | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_input  | imageRGBA | HLS_examen/sources/hls_examen.c:68:50 | read      | Inferred     | 3      | VITIS_LOOP_64_8 | HLS_examen/sources/hls_examen.c:64:38 |            |                                                                                                      |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:55:44 | write     | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:55:44 | write     | Inferred     | 3      | VITIS_LOOP_53_6 | HLS_examen/sources/hls_examen.c:53:38 |            |                                                                                                      |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:56:48 | write     | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:56:48 | write     | Inferred     | 3      | VITIS_LOOP_53_6 | HLS_examen/sources/hls_examen.c:53:38 |            |                                                                                                      |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:57:48 | write     | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:57:48 | write     | Inferred     | 3      | VITIS_LOOP_53_6 | HLS_examen/sources/hls_examen.c:53:38 |            |                                                                                                      |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:66:44 | write     | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:66:44 | write     | Inferred     | 3      | VITIS_LOOP_64_8 | HLS_examen/sources/hls_examen.c:64:38 |            |                                                                                                      |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:67:48 | write     | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:67:48 | write     | Inferred     | 3      | VITIS_LOOP_64_8 | HLS_examen/sources/hls_examen.c:64:38 |            |                                                                                                      |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:68:48 | write     | Widen Fail   |        |                 |                                       | 214-353    | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_output | output    | HLS_examen/sources/hls_examen.c:68:48 | write     | Inferred     | 3      | VITIS_LOOP_64_8 | HLS_examen/sources/hls_examen.c:64:38 |            |                                                                                                      |
++--------------+-----------+---------------------------------------+-----------+--------------+--------+-----------------+---------------------------------------+------------+------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------------------------------------+-----+--------+---------------+-------+-----------+---------+
+| Name                                                       | DSP | Pragma | Variable      | Op    | Impl      | Latency |
++------------------------------------------------------------+-----+--------+---------------+-------+-----------+---------+
+| + ImageTransform                                           | 162 |        |               |       |           |         |
+|   sub_ln26_fu_439_p2                                       |     |        | sub_ln26      | sub   | fabric    | 0       |
+|   sub_ln26_1_fu_461_p2                                     |     |        | sub_ln26_1    | sub   | fabric    | 0       |
+|   empty_fu_409_p2                                          |     |        | empty         | sub   | fabric    | 0       |
+|   add_ln26_fu_487_p2                                       |     |        | add_ln26      | add   | fabric    | 0       |
+|   add_ln26_1_fu_513_p2                                     |     |        | add_ln26_1    | add   | fabric    | 0       |
+|   add_ln26_2_fu_518_p2                                     |     |        | add_ln26_2    | add   | fabric    | 0       |
+|   add_ln26_3_fu_542_p2                                     |     |        | add_ln26_3    | add   | fabric    | 0       |
+|   sub_ln26_2_fu_548_p2                                     |     |        | sub_ln26_2    | sub   | fabric    | 0       |
+|   sub_ln26_3_fu_572_p2                                     |     |        | sub_ln26_3    | sub   | fabric    | 0       |
+|   add_ln26_4_fu_666_p2                                     |     |        | add_ln26_4    | add   | fabric    | 0       |
+|   mul_6ns_16ns_21_1_1_U72                                  | 1   |        | mul_ln63      | mul   | auto      | 0       |
+|   p_mid121_fu_582_p2                                       |     |        | p_mid121      | sub   | fabric    | 0       |
+|   sub_ln27_fu_721_p2                                       |     |        | sub_ln27      | sub   | fabric    | 0       |
+|   sub_ln27_1_fu_737_p2                                     |     |        | sub_ln27_1    | sub   | fabric    | 0       |
+|   mul_11s_11s_22_1_1_U73                                   | 1   |        | count         | mul   | auto      | 0       |
+|   mac_muladd_6ns_6ns_21ns_21_4_1_U77                       | 1   |        | mul_ln28      | mul   | dsp_slice | 3       |
+|   mac_muladd_6ns_6ns_21ns_21_4_1_U77                       | 1   |        | add_ln28      | add   | dsp_slice | 3       |
+|   sub_ln28_fu_614_p2                                       |     |        | sub_ln28      | sub   | fabric    | 0       |
+|   dadd_64ns_64ns_64_8_full_dsp_1_U67                       | 3   |        | add           | dadd  | fulldsp   | 7       |
+|   dsqrt_64ns_64ns_64_57_no_dsp_1_U70                       |     |        | dc            | dsqrt | fabric    | 56      |
+|   add_ln486_fu_784_p2                                      |     |        | add_ln486     | add   | fabric    | 0       |
+|   sub_ln18_fu_798_p2                                       |     |        | sub_ln18      | sub   | fabric    | 0       |
+|   result_2_fu_914_p2                                       |     |        | result_2      | sub   | fabric    | 0       |
+|   add_ln27_fu_932_p2                                       |     |        | add_ln27      | add   | fabric    | 0       |
+|   mul_64ns_64ns_128_3_1_U71                                | 16  |        | mul_ln31      | mul   | dsp       | 2       |
+|   add_ln27_1_fu_976_p2                                     |     |        | add_ln27_1    | add   | fabric    | 0       |
+|   add_ln27_2_fu_981_p2                                     |     |        | add_ln27_2    | add   | fabric    | 0       |
+|   add_ln27_3_fu_986_p2                                     |     |        | add_ln27_3    | add   | fabric    | 0       |
+|  + pow_generic_double_s (grp_pow_generic_double_s_fu_234)  | 70  |        |               |       |           |         |
+|    b_exp_fu_634_p2                                         |     |        | b_exp         | add   | fabric    | 0       |
+|    b_exp_1_fu_702_p2                                       |     |        | b_exp_1       | add   | fabric    | 0       |
+|    mul_12s_80ns_90_3_1_U5                                  | 5   |        | Elog2         | mul   | dsp       | 2       |
+|    mul_54s_6ns_54_5_1_U4                                   | 3   |        | mul_ln516     | mul   | auto      | 4       |
+|    mul_71ns_4ns_75_3_1_U14                                 |     |        | mul_ln44      | mul   | dsp       | 2       |
+|    mul_73ns_6ns_79_3_1_U8                                  | 4   |        | mul_ln44_1    | mul   | dsp       | 2       |
+|    add_ln44_2_fu_1016_p2                                   |     |        | add_ln44_2    | add   | fabric    | 0       |
+|    mul_83ns_6ns_89_3_1_U11                                 | 5   |        | mul_ln44_2    | mul   | dsp       | 2       |
+|    sub_ln44_2_fu_1042_p2                                   |     |        | sub_ln44_2    | sub   | fabric    | 0       |
+|    add_ln44_3_fu_1103_p2                                   |     |        | add_ln44_3    | add   | fabric    | 0       |
+|    mul_92ns_6ns_98_3_1_U13                                 | 5   |        | mul_ln44_3    | mul   | dsp       | 2       |
+|    sub_ln44_3_fu_1128_p2                                   |     |        | sub_ln44_3    | sub   | fabric    | 0       |
+|    add_ln44_4_fu_1185_p2                                   |     |        | add_ln44_4    | add   | fabric    | 0       |
+|    mul_87ns_6ns_93_3_1_U12                                 | 5   |        | mul_ln44_4    | mul   | dsp       | 2       |
+|    sub_ln44_4_fu_1210_p2                                   |     |        | sub_ln44_4    | sub   | fabric    | 0       |
+|    add_ln44_5_fu_1267_p2                                   |     |        | add_ln44_5    | add   | fabric    | 0       |
+|    mul_82ns_6ns_88_3_1_U10                                 | 5   |        | mul_ln44_5    | mul   | dsp       | 2       |
+|    sub_ln44_5_fu_1292_p2                                   |     |        | sub_ln44_5    | sub   | fabric    | 0       |
+|    add_ln44_6_fu_1349_p2                                   |     |        | add_ln44_6    | add   | fabric    | 0       |
+|    mul_77ns_6ns_83_3_1_U9                                  | 4   |        | mul_ln44_6    | mul   | dsp       | 2       |
+|    sub_ln44_6_fu_1402_p2                                   |     |        | sub_ln44_6    | sub   | fabric    | 0       |
+|    add_ln209_fu_1452_p2                                    |     |        | add_ln209     | add   | fabric    | 0       |
+|    add_ln209_1_fu_1457_p2                                  |     |        | add_ln209_1   | add   | fabric    | 0       |
+|    add_ln209_2_fu_1483_p2                                  |     |        | add_ln209_2   | add   | fabric    | 0       |
+|    add_ln209_3_fu_1463_p2                                  |     |        | add_ln209_3   | add   | fabric    | 0       |
+|    add_ln209_4_fu_1469_p2                                  |     |        | add_ln209_4   | add   | fabric    | 0       |
+|    add_ln209_5_fu_1491_p2                                  |     |        | add_ln209_5   | add   | fabric    | 0       |
+|    log_sum_1_fu_1499_p2                                    |     |        | log_sum_1     | add   | fabric    | 0       |
+|    mul_40ns_40ns_80_3_1_U1                                 | 5   |        | mul_ln522     | mul   | auto      | 2       |
+|    sub_ln522_fu_1528_p2                                    |     |        | sub_ln522     | sub   | fabric    | 0       |
+|    add_ln525_fu_1554_p2                                    |     |        | add_ln525     | add   | fabric    | 0       |
+|    add_ln525_1_fu_1563_p2                                  |     |        | add_ln525_1   | add   | fabric    | 0       |
+|    mac_muladd_16s_15ns_19s_31_4_1_U15                      | 1   |        | mul_ln563     | mul   | dsp_slice | 3       |
+|    mac_muladd_16s_15ns_19s_31_4_1_U15                      | 1   |        | add_ln563     | add   | dsp_slice | 3       |
+|    add_ln563_1_fu_1635_p2                                  |     |        | add_ln563_1   | add   | fabric    | 0       |
+|    mul_13s_71s_71_3_1_U6                                   | 4   |        | mul_ln568     | mul   | dsp       | 2       |
+|    m_diff_fu_1671_p2                                       |     |        | m_diff        | sub   | fabric    | 0       |
+|    exp_Z4_m_1_fu_1743_p2                                   |     |        | exp_Z4_m_1    | add   | fabric    | 0       |
+|    mul_43ns_36ns_79_3_1_U7                                 | 6   |        | mul_ln258     | mul   | dsp       | 2       |
+|    add_ln265_fu_1786_p2                                    |     |        | add_ln265     | add   | fabric    | 0       |
+|    exp_Z2P_m_1_fu_1795_p2                                  |     |        | exp_Z2P_m_1   | add   | fabric    | 0       |
+|    mul_49ns_44ns_93_5_1_U2                                 | 9   |        | mul_ln277     | mul   | auto      | 4       |
+|    add_ln280_fu_1845_p2                                    |     |        | add_ln280     | add   | fabric    | 0       |
+|    exp_Z1P_m_1_l_fu_1867_p2                                |     |        | exp_Z1P_m_1_l | add   | fabric    | 0       |
+|    add_ln616_fu_1901_p2                                    |     |        | add_ln616     | add   | fabric    | 0       |
+|    mul_50ns_50ns_100_5_1_U3                                | 9   |        | mul_ln616     | mul   | auto      | 4       |
+|    add_ln616_1_fu_1916_p2                                  |     |        | add_ln616_1   | add   | fabric    | 0       |
+|    r_exp_1_fu_1985_p2                                      |     |        | r_exp_1       | add   | fabric    | 0       |
+|    out_exp_fu_2047_p2                                      |     |        | out_exp       | add   | fabric    | 0       |
+|  + pow_generic_double_s (grp_pow_generic_double_s_fu_263)  | 70  |        |               |       |           |         |
+|    b_exp_fu_634_p2                                         |     |        | b_exp         | add   | fabric    | 0       |
+|    b_exp_1_fu_702_p2                                       |     |        | b_exp_1       | add   | fabric    | 0       |
+|    mul_12s_80ns_90_3_1_U5                                  | 5   |        | Elog2         | mul   | dsp       | 2       |
+|    mul_54s_6ns_54_5_1_U4                                   | 3   |        | mul_ln516     | mul   | auto      | 4       |
+|    mul_71ns_4ns_75_3_1_U14                                 |     |        | mul_ln44      | mul   | dsp       | 2       |
+|    mul_73ns_6ns_79_3_1_U8                                  | 4   |        | mul_ln44_1    | mul   | dsp       | 2       |
+|    add_ln44_2_fu_1016_p2                                   |     |        | add_ln44_2    | add   | fabric    | 0       |
+|    mul_83ns_6ns_89_3_1_U11                                 | 5   |        | mul_ln44_2    | mul   | dsp       | 2       |
+|    sub_ln44_2_fu_1042_p2                                   |     |        | sub_ln44_2    | sub   | fabric    | 0       |
+|    add_ln44_3_fu_1103_p2                                   |     |        | add_ln44_3    | add   | fabric    | 0       |
+|    mul_92ns_6ns_98_3_1_U13                                 | 5   |        | mul_ln44_3    | mul   | dsp       | 2       |
+|    sub_ln44_3_fu_1128_p2                                   |     |        | sub_ln44_3    | sub   | fabric    | 0       |
+|    add_ln44_4_fu_1185_p2                                   |     |        | add_ln44_4    | add   | fabric    | 0       |
+|    mul_87ns_6ns_93_3_1_U12                                 | 5   |        | mul_ln44_4    | mul   | dsp       | 2       |
+|    sub_ln44_4_fu_1210_p2                                   |     |        | sub_ln44_4    | sub   | fabric    | 0       |
+|    add_ln44_5_fu_1267_p2                                   |     |        | add_ln44_5    | add   | fabric    | 0       |
+|    mul_82ns_6ns_88_3_1_U10                                 | 5   |        | mul_ln44_5    | mul   | dsp       | 2       |
+|    sub_ln44_5_fu_1292_p2                                   |     |        | sub_ln44_5    | sub   | fabric    | 0       |
+|    add_ln44_6_fu_1349_p2                                   |     |        | add_ln44_6    | add   | fabric    | 0       |
+|    mul_77ns_6ns_83_3_1_U9                                  | 4   |        | mul_ln44_6    | mul   | dsp       | 2       |
+|    sub_ln44_6_fu_1402_p2                                   |     |        | sub_ln44_6    | sub   | fabric    | 0       |
+|    add_ln209_fu_1452_p2                                    |     |        | add_ln209     | add   | fabric    | 0       |
+|    add_ln209_1_fu_1457_p2                                  |     |        | add_ln209_1   | add   | fabric    | 0       |
+|    add_ln209_2_fu_1483_p2                                  |     |        | add_ln209_2   | add   | fabric    | 0       |
+|    add_ln209_3_fu_1463_p2                                  |     |        | add_ln209_3   | add   | fabric    | 0       |
+|    add_ln209_4_fu_1469_p2                                  |     |        | add_ln209_4   | add   | fabric    | 0       |
+|    add_ln209_5_fu_1491_p2                                  |     |        | add_ln209_5   | add   | fabric    | 0       |
+|    log_sum_1_fu_1499_p2                                    |     |        | log_sum_1     | add   | fabric    | 0       |
+|    mul_40ns_40ns_80_3_1_U1                                 | 5   |        | mul_ln522     | mul   | auto      | 2       |
+|    sub_ln522_fu_1528_p2                                    |     |        | sub_ln522     | sub   | fabric    | 0       |
+|    add_ln525_fu_1554_p2                                    |     |        | add_ln525     | add   | fabric    | 0       |
+|    add_ln525_1_fu_1563_p2                                  |     |        | add_ln525_1   | add   | fabric    | 0       |
+|    mac_muladd_16s_15ns_19s_31_4_1_U15                      | 1   |        | mul_ln563     | mul   | dsp_slice | 3       |
+|    mac_muladd_16s_15ns_19s_31_4_1_U15                      | 1   |        | add_ln563     | add   | dsp_slice | 3       |
+|    add_ln563_1_fu_1635_p2                                  |     |        | add_ln563_1   | add   | fabric    | 0       |
+|    mul_13s_71s_71_3_1_U6                                   | 4   |        | mul_ln568     | mul   | dsp       | 2       |
+|    m_diff_fu_1671_p2                                       |     |        | m_diff        | sub   | fabric    | 0       |
+|    exp_Z4_m_1_fu_1743_p2                                   |     |        | exp_Z4_m_1    | add   | fabric    | 0       |
+|    mul_43ns_36ns_79_3_1_U7                                 | 6   |        | mul_ln258     | mul   | dsp       | 2       |
+|    add_ln265_fu_1786_p2                                    |     |        | add_ln265     | add   | fabric    | 0       |
+|    exp_Z2P_m_1_fu_1795_p2                                  |     |        | exp_Z2P_m_1   | add   | fabric    | 0       |
+|    mul_49ns_44ns_93_5_1_U2                                 | 9   |        | mul_ln277     | mul   | auto      | 4       |
+|    add_ln280_fu_1845_p2                                    |     |        | add_ln280     | add   | fabric    | 0       |
+|    exp_Z1P_m_1_l_fu_1867_p2                                |     |        | exp_Z1P_m_1_l | add   | fabric    | 0       |
+|    add_ln616_fu_1901_p2                                    |     |        | add_ln616     | add   | fabric    | 0       |
+|    mul_50ns_50ns_100_5_1_U3                                | 9   |        | mul_ln616     | mul   | auto      | 4       |
+|    add_ln616_1_fu_1916_p2                                  |     |        | add_ln616_1   | add   | fabric    | 0       |
+|    r_exp_1_fu_1985_p2                                      |     |        | r_exp_1       | add   | fabric    | 0       |
+|    out_exp_fu_2047_p2                                      |     |        | out_exp       | add   | fabric    | 0       |
+|  + ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 | 0   |        |               |       |           |         |
+|    add_ln63_fu_204_p2                                      |     |        | add_ln63      | add   | fabric    | 0       |
+|    add_ln63_1_fu_221_p2                                    |     |        | add_ln63_1    | add   | fabric    | 0       |
+|    sub_ln63_fu_250_p2                                      |     |        | sub_ln63      | sub   | fabric    | 0       |
+|    sub_ln64_fu_262_p2                                      |     |        | sub_ln64      | sub   | fabric    | 0       |
+|    add_ln64_1_fu_296_p2                                    |     |        | add_ln64_1    | add   | fabric    | 0       |
+|    add_ln64_2_fu_300_p2                                    |     |        | add_ln64_2    | add   | fabric    | 0       |
+|    add_ln64_3_fu_286_p2                                    |     |        | add_ln64_3    | add   | fabric    | 0       |
+|  + ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 | 0   |        |               |       |           |         |
+|    add_ln34_fu_205_p2                                      |     |        | add_ln34      | add   | fabric    | 0       |
+|    add_ln34_1_fu_222_p2                                    |     |        | add_ln34_1    | add   | fabric    | 0       |
+|    sub_ln34_fu_251_p2                                      |     |        | sub_ln34      | sub   | fabric    | 0       |
+|    sumR_1_fu_313_p2                                        |     |        | sumR_1        | add   | fabric    | 0       |
+|    sumG_1_fu_331_p2                                        |     |        | sumG_1        | add   | fabric    | 0       |
+|    sumB_1_fu_349_p2                                        |     |        | sumB_1        | add   | fabric    | 0       |
+|    add_ln35_2_fu_281_p2                                    |     |        | add_ln35_2    | add   | fabric    | 0       |
+|  + ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 | 0   |        |               |       |           |         |
+|    add_ln52_fu_195_p2                                      |     |        | add_ln52      | add   | fabric    | 0       |
+|    add_ln52_1_fu_212_p2                                    |     |        | add_ln52_1    | add   | fabric    | 0       |
+|    sub_ln52_fu_241_p2                                      |     |        | sub_ln52      | sub   | fabric    | 0       |
+|    add_ln53_2_fu_271_p2                                    |     |        | add_ln53_2    | add   | fabric    | 0       |
++------------------------------------------------------------+-----+--------+---------------+-------+-----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++----------------------------------------------------------------------------+-----------+-----------+------+------+--------+-----------------------------------------------------------------------+------+---------+------------------+
+| Name                                                                       | Usage     | Type      | BRAM | URAM | Pragma | Variable                                                              | Impl | Latency | Bitwidth, Depth, |
+|                                                                            |           |           |      |      |        |                                                                       |      |         | Banks            |
++----------------------------------------------------------------------------+-----------+-----------+------+------+--------+-----------------------------------------------------------------------+------+---------+------------------+
+| + ImageTransform                                                           |           |           | 64   | 0    |        |                                                                       |      |         |                  |
+|   control_s_axi_U                                                          | interface | s_axilite |      |      |        |                                                                       |      |         |                  |
+|   control_r_s_axi_U                                                        | interface | s_axilite |      |      |        |                                                                       |      |         |                  |
+|   input_r_m_axi_U                                                          | interface | m_axi     | 2    |      |        |                                                                       |      |         |                  |
+|   output_r_m_axi_U                                                         | interface | m_axi     | 2    |      |        |                                                                       |      |         |                  |
+|  + pow_generic_double_s (grp_pow_generic_double_s_fu_234)                  |           |           | 30   | 0    |        |                                                                       |      |         |                  |
+|    pow_reduce_anonymous_namespace_log_inverse_lut_table_pow_0_5_64_array_U | rom_1p    |           |      |      |        | pow_reduce_anonymous_namespace_log_inverse_lut_table_pow_0_5_64_array | auto | 1       | 6, 64, 1         |
+|    pow_reduce_anonymous_namespace_log0_lut_table_array_U                   | rom_1p    |           | 4    |      |        | pow_reduce_anonymous_namespace_log0_lut_table_array                   | auto | 1       | 109, 64, 1       |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_4_16_array_U    | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_4_16_array    | auto | 1       | 105, 16, 1       |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_6_64_array_U    | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_6_64_array    | auto | 1       | 102, 64, 1       |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12_6_64_array_U   | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12_6_64_array   | auto | 1       | 97, 64, 1        |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17_6_64_array_U   | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17_6_64_array   | auto | 1       | 92, 64, 1        |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22_6_64_array_U   | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22_6_64_array   | auto | 1       | 87, 64, 1        |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27_6_64_array_U   | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27_6_64_array   | auto | 1       | 82, 64, 1        |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32_6_64_array_U   | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32_6_64_array   | auto | 1       | 77, 64, 1        |
+|    pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_U           | rom_1p    |           | 2    |      |        | pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array           | auto | 1       | 58, 256, 1       |
+|    pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_array_U             | rom_2p    |           | 1    |      |        | pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_array             | auto | 1       | 26, 256, 1       |
+|    pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_U             | rom_1p    |           | 2    |      |        | pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array             | auto | 1       | 42, 256, 1       |
+|  + pow_generic_double_s (grp_pow_generic_double_s_fu_263)                  |           |           | 30   | 0    |        |                                                                       |      |         |                  |
+|    pow_reduce_anonymous_namespace_log_inverse_lut_table_pow_0_5_64_array_U | rom_1p    |           |      |      |        | pow_reduce_anonymous_namespace_log_inverse_lut_table_pow_0_5_64_array | auto | 1       | 6, 64, 1         |
+|    pow_reduce_anonymous_namespace_log0_lut_table_array_U                   | rom_1p    |           | 4    |      |        | pow_reduce_anonymous_namespace_log0_lut_table_array                   | auto | 1       | 109, 64, 1       |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_4_16_array_U    | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_4_16_array    | auto | 1       | 105, 16, 1       |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_6_64_array_U    | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_6_64_array    | auto | 1       | 102, 64, 1       |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12_6_64_array_U   | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12_6_64_array   | auto | 1       | 97, 64, 1        |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17_6_64_array_U   | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17_6_64_array   | auto | 1       | 92, 64, 1        |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22_6_64_array_U   | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22_6_64_array   | auto | 1       | 87, 64, 1        |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27_6_64_array_U   | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27_6_64_array   | auto | 1       | 82, 64, 1        |
+|    pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32_6_64_array_U   | rom_1p    |           | 3    |      |        | pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32_6_64_array   | auto | 1       | 77, 64, 1        |
+|    pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_U           | rom_1p    |           | 2    |      |        | pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array           | auto | 1       | 58, 256, 1       |
+|    pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_array_U             | rom_2p    |           | 1    |      |        | pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_array             | auto | 1       | 26, 256, 1       |
+|    pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_U             | rom_1p    |           | 2    |      |        | pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array             | auto | 1       | 42, 256, 1       |
++----------------------------------------------------------------------------+-----------+-----------+------+------+--------+-----------------------------------------------------------------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+------------------------------------------------------------+-----------------------------------------------------------------+
+| Type      | Options                                                    | Location                                                        |
++-----------+------------------------------------------------------------+-----------------------------------------------------------------+
+| interface | m_axi depth=65536 port=imageRGBA offset=slave bundle=input | HLS_examen/sources/hls_examen.c:10 in imagetransform, imageRGBA |
+| interface | m_axi depth=65536 port=output offset=slave bundle=output   | HLS_examen/sources/hls_examen.c:11 in imagetransform, output    |
+| interface | s_axilite port=return bundle=control                       | HLS_examen/sources/hls_examen.c:13 in imagetransform, return    |
+| interface | s_axilite port=centerX bundle=control                      | HLS_examen/sources/hls_examen.c:17 in imagetransform, centerX   |
+| interface | s_axilite port=centerY bundle=control                      | HLS_examen/sources/hls_examen.c:18 in imagetransform, centerY   |
++-----------+------------------------------------------------------------+-----------------------------------------------------------------+
+
+

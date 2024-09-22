@@ -1,0 +1,278 @@
+
+
+================================================================
+== Vitis HLS Report for 'ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6'
+================================================================
+* Date:           Fri Jun 14 11:19:40 2024
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        HLS_examen
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  8.00 ns|  5.840 ns|     2.16 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name             |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_52_5_VITIS_LOOP_53_6  |        ?|        ?|        13|          3|          1|     ?|       yes|
+        +-----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 3, depth = 14
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 14
+* Pipeline : 1
+  Pipeline-0 : II = 3, D = 14, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%indvar23 = alloca i32 1"   --->   Operation 16 'alloca' 'indvar23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%indvar21 = alloca i32 1"   --->   Operation 17 'alloca' 'indvar21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%indvar_flatten6 = alloca i32 1"   --->   Operation 18 'alloca' 'indvar_flatten6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%tmp = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %empty"   --->   Operation 19 'read' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%tmp_26 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %empty_65"   --->   Operation 20 'read' 'tmp_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_27 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %empty_64"   --->   Operation 21 'read' 'tmp_27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%output_r_offset_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %output_r_offset"   --->   Operation 22 'read' 'output_r_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%zext_ln28_1_read = read i21 @_ssdm_op_Read.ap_auto.i21, i21 %zext_ln28_1"   --->   Operation 23 'read' 'zext_ln28_1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%sext_ln27_read = read i11 @_ssdm_op_Read.ap_auto.i11, i11 %sext_ln27"   --->   Operation 24 'read' 'sext_ln27_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%mul_ln31_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %mul_ln31"   --->   Operation 25 'read' 'mul_ln31_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%zext_ln28_1_cast = zext i21 %zext_ln28_1_read"   --->   Operation 26 'zext' 'zext_ln28_1_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%sext_ln27_cast = sext i11 %sext_ln27_read"   --->   Operation 27 'sext' 'sext_ln27_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %output_r, void @empty_11, i32 0, i32 0, void @empty_12, i32 0, i32 65536, void @empty_1, void @empty_0, void @empty_12, i32 16, i32 16, i32 16, i32 16, void @empty_12, void @empty_12, i32 4294967295, i32 0"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (1.58ns)   --->   "%store_ln0 = store i128 0, i128 %indvar_flatten6"   --->   Operation 29 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 30 [1/1] (1.58ns)   --->   "%store_ln0 = store i64 0, i64 %indvar21"   --->   Operation 30 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 31 [1/1] (1.58ns)   --->   "%store_ln0 = store i64 0, i64 %indvar23"   --->   Operation 31 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.cond62"   --->   Operation 32 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 5.35>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%indvar_flatten6_load = load i128 %indvar_flatten6" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 33 'load' 'indvar_flatten6_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %output_r"   --->   Operation 34 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (5.35ns)   --->   "%icmp_ln52 = icmp_eq  i128 %indvar_flatten6_load, i128 %mul_ln31_read" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 35 'icmp' 'icmp_ln52' <Predicate = true> <Delay = 5.35> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 5.35> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (5.35ns)   --->   "%add_ln52 = add i128 %indvar_flatten6_load, i128 1" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 36 'add' 'add_ln52' <Predicate = true> <Delay = 5.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 5.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%br_ln52 = br i1 %icmp_ln52, void %for.inc87, void %for.inc138.loopexit27.exitStub" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 37 'br' 'br_ln52' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%indvar23_load = load i64 %indvar23" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 38 'load' 'indvar23_load' <Predicate = (!icmp_ln52)> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%indvar21_load = load i64 %indvar21" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 39 'load' 'indvar21_load' <Predicate = (!icmp_ln52)> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (3.52ns)   --->   "%icmp_ln53 = icmp_eq  i64 %indvar23_load, i64 %sext_ln27_cast" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 40 'icmp' 'icmp_ln53' <Predicate = (!icmp_ln52)> <Delay = 3.52> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 41 [1/1] (3.52ns)   --->   "%add_ln52_1 = add i64 %indvar21_load, i64 1" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 41 'add' 'add_ln52_1' <Predicate = (!icmp_ln52)> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 5.00>
+ST_3 : Operation 42 [1/1] (1.48ns)   --->   "%select_ln53 = select i1 %icmp_ln53, i64 0, i64 %indvar23_load" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 42 'select' 'select_ln53' <Predicate = (!icmp_ln52)> <Delay = 1.48> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 43 [1/1] (1.48ns)   --->   "%select_ln52 = select i1 %icmp_ln53, i64 %add_ln52_1, i64 %indvar21_load" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 43 'select' 'select_ln52' <Predicate = (!icmp_ln52)> <Delay = 1.48> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 44 [1/1] (0.00ns) (grouped into LUT with out node sub_ln52)   --->   "%shl_ln52 = shl i64 %select_ln52, i64 11" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 44 'shl' 'shl_ln52' <Predicate = (!icmp_ln52)> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns) (grouped into LUT with out node sub_ln52)   --->   "%shl_ln52_1 = shl i64 %select_ln52, i64 7" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 45 'shl' 'shl_ln52_1' <Predicate = (!icmp_ln52)> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (3.52ns) (out node of the LUT)   --->   "%sub_ln52 = sub i64 %shl_ln52, i64 %shl_ln52_1" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 46 'sub' 'sub_ln52' <Predicate = (!icmp_ln52)> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (1.58ns)   --->   "%store_ln52 = store i128 %add_ln52, i128 %indvar_flatten6" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 47 'store' 'store_ln52' <Predicate = (!icmp_ln52)> <Delay = 1.58>
+ST_3 : Operation 48 [1/1] (1.58ns)   --->   "%store_ln52 = store i64 %select_ln52, i64 %indvar21" [HLS_examen/sources/hls_examen.c:52]   --->   Operation 48 'store' 'store_ln52' <Predicate = (!icmp_ln52)> <Delay = 1.58>
+
+State 4 <SV = 3> <Delay = 5.30>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%shl_ln53 = shl i64 %select_ln53, i64 2" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 49 'shl' 'shl_ln53' <Predicate = (!icmp_ln52)> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln53 = sub i64 %shl_ln53, i64 %select_ln53" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 50 'sub' 'sub_ln53' <Predicate = (!icmp_ln52)> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.65> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 51 [1/1] (5.30ns) (root node of TernaryAdder)   --->   "%add_ln53_3 = add i64 %sub_ln52, i64 %sub_ln53" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 51 'add' 'add_ln53_3' <Predicate = (!icmp_ln52)> <Delay = 5.30> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.65> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 52 [1/1] (3.52ns)   --->   "%add_ln53_2 = add i64 %select_ln53, i64 1" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 52 'add' 'add_ln53_2' <Predicate = (!icmp_ln52)> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 53 [1/1] (1.58ns)   --->   "%store_ln53 = store i64 %add_ln53_2, i64 %indvar23" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 53 'store' 'store_ln53' <Predicate = (!icmp_ln52)> <Delay = 1.58>
+
+State 5 <SV = 4> <Delay = 5.30>
+ST_5 : Operation 54 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln53 = add i64 %zext_ln28_1_cast, i64 %output_r_offset_read" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 54 'add' 'add_ln53' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.65> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 55 [1/1] (5.30ns) (root node of TernaryAdder)   --->   "%add_ln53_1 = add i64 %add_ln53_3, i64 %add_ln53" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 55 'add' 'add_ln53_1' <Predicate = true> <Delay = 5.30> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.65> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%output_r_addr = getelementptr i8 %output_r, i64 %add_ln53_1" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 56 'getelementptr' 'output_r_addr' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 5.84>
+ST_6 : Operation 57 [1/1] (5.84ns)   --->   "%empty_258 = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i8, i8 %output_r_addr, i32 3" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 57 'writereq' 'empty_258' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 5.84>
+ST_7 : Operation 58 [1/1] (5.84ns)   --->   "%write_ln53 = write void @_ssdm_op_Write.m_axi.p1i8, i8 %output_r_addr, i8 %tmp_27, i1 1" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 58 'write' 'write_ln53' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 5.84>
+ST_8 : Operation 59 [1/1] (5.84ns)   --->   "%write_ln53 = write void @_ssdm_op_Write.m_axi.p1i8, i8 %output_r_addr, i8 %tmp_26, i1 1" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 59 'write' 'write_ln53' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 5.84>
+ST_9 : Operation 60 [1/1] (5.84ns)   --->   "%write_ln53 = write void @_ssdm_op_Write.m_axi.p1i8, i8 %output_r_addr, i8 %tmp, i1 1" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 60 'write' 'write_ln53' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 5.84>
+ST_10 : Operation 61 [5/5] (5.84ns)   --->   "%empty_259 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %output_r_addr" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 61 'writeresp' 'empty_259' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 5.84>
+ST_11 : Operation 62 [4/5] (5.84ns)   --->   "%empty_259 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %output_r_addr" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 62 'writeresp' 'empty_259' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_11 : Operation 69 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 69 'ret' 'ret_ln0' <Predicate = (icmp_ln52)> <Delay = 0.00>
+
+State 12 <SV = 11> <Delay = 5.84>
+ST_12 : Operation 63 [3/5] (5.84ns)   --->   "%empty_259 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %output_r_addr" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 63 'writeresp' 'empty_259' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 13 <SV = 12> <Delay = 5.84>
+ST_13 : Operation 64 [2/5] (5.84ns)   --->   "%empty_259 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %output_r_addr" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 64 'writeresp' 'empty_259' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 14 <SV = 13> <Delay = 5.84>
+ST_14 : Operation 65 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_52_5_VITIS_LOOP_53_6_str"   --->   Operation 65 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 66 [1/1] (0.00ns)   --->   "%specpipeline_ln53 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_12" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 66 'specpipeline' 'specpipeline_ln53' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 67 [1/5] (5.84ns)   --->   "%empty_259 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i8, i8 %output_r_addr" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 67 'writeresp' 'empty_259' <Predicate = true> <Delay = 5.84> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_14 : Operation 68 [1/1] (0.00ns)   --->   "%br_ln53 = br void %for.cond62" [HLS_examen/sources/hls_examen.c:53]   --->   Operation 68 'br' 'br_ln53' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 8.000ns, clock uncertainty: 2.160ns.
+
+ <State 1>: 1.588ns
+The critical path consists of the following:
+	'alloca' operation 128 bit ('indvar_flatten6') [11]  (0.000 ns)
+	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'indvar_flatten6' [22]  (1.588 ns)
+
+ <State 2>: 5.352ns
+The critical path consists of the following:
+	'load' operation 128 bit ('indvar_flatten6_load', HLS_examen/sources/hls_examen.c:52) on local variable 'indvar_flatten6' [27]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln52', HLS_examen/sources/hls_examen.c:52) [29]  (5.352 ns)
+
+ <State 3>: 5.001ns
+The critical path consists of the following:
+	'select' operation 64 bit ('select_ln52', HLS_examen/sources/hls_examen.c:52) [39]  (1.481 ns)
+	'shl' operation 64 bit ('shl_ln52_1', HLS_examen/sources/hls_examen.c:52) [41]  (0.000 ns)
+	'sub' operation 64 bit ('sub_ln52', HLS_examen/sources/hls_examen.c:52) [42]  (3.520 ns)
+
+ <State 4>: 5.307ns
+The critical path consists of the following:
+	'shl' operation 64 bit ('shl_ln53', HLS_examen/sources/hls_examen.c:53) [43]  (0.000 ns)
+	'sub' operation 64 bit ('sub_ln53', HLS_examen/sources/hls_examen.c:53) [44]  (0.000 ns)
+	'add' operation 64 bit ('add_ln53_3', HLS_examen/sources/hls_examen.c:53) [46]  (5.307 ns)
+
+ <State 5>: 5.307ns
+The critical path consists of the following:
+	'add' operation 64 bit ('add_ln53', HLS_examen/sources/hls_examen.c:53) [45]  (0.000 ns)
+	'add' operation 64 bit ('add_ln53_1', HLS_examen/sources/hls_examen.c:53) [47]  (5.307 ns)
+
+ <State 6>: 5.840ns
+The critical path consists of the following:
+	bus request operation ('empty_258', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53) [50]  (5.840 ns)
+
+ <State 7>: 5.840ns
+The critical path consists of the following:
+	bus write operation ('write_ln53', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53) [51]  (5.840 ns)
+
+ <State 8>: 5.840ns
+The critical path consists of the following:
+	bus write operation ('write_ln53', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53) [52]  (5.840 ns)
+
+ <State 9>: 5.840ns
+The critical path consists of the following:
+	bus write operation ('write_ln53', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53) [53]  (5.840 ns)
+
+ <State 10>: 5.840ns
+The critical path consists of the following:
+	bus response operation ('empty_259', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53) [54]  (5.840 ns)
+
+ <State 11>: 5.840ns
+The critical path consists of the following:
+	bus response operation ('empty_259', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53) [54]  (5.840 ns)
+
+ <State 12>: 5.840ns
+The critical path consists of the following:
+	bus response operation ('empty_259', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53) [54]  (5.840 ns)
+
+ <State 13>: 5.840ns
+The critical path consists of the following:
+	bus response operation ('empty_259', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53) [54]  (5.840 ns)
+
+ <State 14>: 5.840ns
+The critical path consists of the following:
+	bus response operation ('empty_259', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53) [54]  (5.840 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

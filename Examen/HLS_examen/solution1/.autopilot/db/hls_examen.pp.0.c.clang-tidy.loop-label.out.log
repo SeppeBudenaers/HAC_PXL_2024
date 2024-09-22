@@ -1,0 +1,40 @@
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:799:5: warning: Added loop label VITIS_LOOP_26_1:   [xilinx-label-all-loops]
+    for (int y = 0; y < height; y += blockSize) {
+    ^~~
+    VITIS_LOOP_26_1: 
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:799:5: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:800:9: warning: Added loop label VITIS_LOOP_27_2:   [xilinx-label-all-loops]
+        for (int x = 0; x < width; x += blockSize) {
+        ^~~
+        VITIS_LOOP_27_2: 
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:800:9: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:807:17: warning: Added loop label VITIS_LOOP_34_3:   [xilinx-label-all-loops]
+                for (int yy = y; yy < y + blockSize && yy < height; yy++) {
+                ^~~
+                VITIS_LOOP_34_3: 
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:807:17: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:808:21: warning: Added loop label VITIS_LOOP_35_4:   [xilinx-label-all-loops]
+                    for (int xx = x; xx < x + blockSize && xx < width; xx++) {
+                    ^~~
+                    VITIS_LOOP_35_4: 
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:808:21: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:825:17: warning: Added loop label VITIS_LOOP_52_5:   [xilinx-label-all-loops]
+                for (int yy = y; yy < y + blockSize && yy < height; yy++) {
+                ^~~
+                VITIS_LOOP_52_5: 
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:825:17: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:826:21: warning: Added loop label VITIS_LOOP_53_6:   [xilinx-label-all-loops]
+                    for (int xx = x; xx < x + blockSize && xx < width; xx++) {
+                    ^~~
+                    VITIS_LOOP_53_6: 
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:826:21: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:836:17: warning: Added loop label VITIS_LOOP_63_7:   [xilinx-label-all-loops]
+                for (int yy = y; yy < y + blockSize && yy < height; yy++) {
+                ^~~
+                VITIS_LOOP_63_7: 
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:836:17: note: FIX-IT applied suggested code changes
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:837:21: warning: Added loop label VITIS_LOOP_64_8:   [xilinx-label-all-loops]
+                    for (int xx = x; xx < x + blockSize && xx < width; xx++) {
+                    ^~~
+                    VITIS_LOOP_64_8: 
+C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\solution1\.autopilot\db\hls_examen.pp.0.c:837:21: note: FIX-IT applied suggested code changes

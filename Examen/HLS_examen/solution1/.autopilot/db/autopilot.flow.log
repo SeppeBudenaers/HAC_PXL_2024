@@ -1,0 +1,999 @@
+INFO-FLOW: Workspace C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1 opened at Fri Jun 14 11:19:25 +0200 2024
+Execute     ap_set_clock -name default -period 8 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+Execute     set_part xc7z020-clg400-1 
+Execute       create_platform xc7z020-clg400-1 -board  
+DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis_HLS/2023.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2023.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+Command       create_platform done; 0.312 sec.
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.406 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 0.495 sec.
+Execute   set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+Execute     create_platform xc7z020clg400-1 -board  
+Execute     source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.146 sec.
+Execute   create_clock -period 8 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+Execute   csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.095 seconds; current allocated memory: 115.109 MB.
+Execute       set_directive_top ImageTransform -name=ImageTransform 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+INFO: [HLS 200-10] Analyzing design file 'HLS_examen/sources/hls_examen.c' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling HLS_examen/sources/hls_examen.c as C
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang HLS_examen/sources/hls_examen.c -foptimization-record-file=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis_HLS/2023.2/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=8 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-mingw32 -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.c.clang.out.log 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.c.clang.err.log
+INFO-FLOW: Done: GCC PP 39 time: 0.2 seconds per iteration
+INFO-FLOW: Source syntax check for synthesis
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/clang.out.log 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/clang.err.log
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c std=gnu99 -target fpga  -directive=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/.systemc_flag -fix-errors C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.369 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c std=gnu99 -target fpga  -directive=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/all.directive.json -fix-errors C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c.clang-tidy.loop-label.out.log 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c.clang-tidy.loop-label.err.log
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Command       clang_tidy done; 0.119 sec.
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c.xilinx-dataflow-lawyer.diag.yml C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c.xilinx-dataflow-lawyer.out.log 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c.xilinx-dataflow-lawyer.err.log
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=8 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.bc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c.clang.out.log 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.pp.0.c.clang.err.log
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.568 seconds; current allocated memory: 117.180 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.0.bc -args  "C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.g.bc"  
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/hls_examen.g.bc -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.0.bc > C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log
+INFO-FLOW: 
+Command       run_link_or_opt done; 0.145 sec.
+Execute       run_link_or_opt -opt -out C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.1.lower.bc -args C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.1.lower.bc > C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Command       run_link_or_opt done; 0.361 sec.
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.2.m1.bc -args C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsmc++_39.bc 
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libhlsmc++_39.bc -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.2.m1.bc > C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
+INFO-FLOW: 
+Command       run_link_or_opt done; 1.968 sec.
+Execute       run_link_or_opt -opt -out C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=ImageTransform -reflow-float-conversion 
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=ImageTransform -reflow-float-conversion -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.3.fpc.bc > C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Command       run_link_or_opt done; 0.816 sec.
+Execute       run_link_or_opt -out C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.4.m2.bc -args C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libfloatconversion_39.bc 
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2023.2/win64/lib/libfloatconversion_39.bc -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.4.m2.bc > C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
+INFO-FLOW: 
+Command       run_link_or_opt done; 0.192 sec.
+Execute       run_link_or_opt -opt -out C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=ImageTransform 
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=ImageTransform -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.5.gdce.bc > C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Command       run_link_or_opt done; 0.156 sec.
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute       is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+INFO-FLOW: run_clang (background poll_ms 5000) exec: C:/Xilinx/Vitis_HLS/2023.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.0.bc.clang.reflow.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=ImageTransform -mllvm -hls-db-dir -mllvm C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -enable-fp-thr=0 -mllvm -reflow-bdd-simplify-threshold=1048576 -mllvm -reflow-fanout-threshold=16 -mllvm -assume-maxi-align=1 -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -ftime-report -mllvm -time-passes -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-reserved-saxilite-registers=0 -mllvm -enable-reflow-auto-loop-pipeline -mllvm -reflow-max-unroll-threshold=409600 -mllvm -reflow-assume-no-address-wrap=true -mllvm -reflow-enable-occurrence-inference=true -mllvm -reflow-emit-hint-scope=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=8 -x ir C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.lto.bc {-hls-platform-db-name=C:/Xilinx/Vitis_HLS/2023.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 2> C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.ld.0.bc.clang.reflow.err.log bg_poll_cmd: ::AP::poll_clang_39_closed_source
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 55,235 Compile/Link C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 55,235 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 5,613 Unroll/Inline (step 1) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 5,613 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 2,058 Unroll/Inline (step 2) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 2,058 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 2,152 Unroll/Inline (step 3) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 2,152 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,366 Unroll/Inline (step 4) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,366 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,366 Array/Struct (step 1) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,366 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,366 Array/Struct (step 2) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,366 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,366 Array/Struct (step 3) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,366 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,366 Array/Struct (step 4) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,366 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,392 Array/Struct (step 5) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,392 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,290 Performance (step 1) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,290 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,288 Performance (step 2) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,288 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,288 Performance (step 3) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,288 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,288 Performance (step 4) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,288 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,298 HW Transforms (step 1) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,298 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 1,304 HW Transforms (step 2) C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 1,304 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'int generic_isinf<double>(double)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_isinf.h:16:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'int generic_isnan<double>(double)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_isnan.h:16:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::data() const (.106.116.126.157)' into 'fp_struct<double>::to_double() const (.103.113.123.154)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:494:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_double() const (.103.113.123.154)' into 'fp_struct<double>::to_ieee() const' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:509:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 4, 4, 71, 73>(ap_ufixed<71, -(4), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<73, -(((4) + (4)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 7, 6, 73, 83>(ap_ufixed<73, -(7), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<83, -(((7) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 12, 6, 83, 92>(ap_ufixed<83, -(12), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<92, -(((12) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 17, 6, 92, 87>(ap_ufixed<92, -(17), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<87, -(((17) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 22, 6, 87, 82>(ap_ufixed<87, -(22), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<82, -(((22) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 27, 6, 82, 77>(ap_ufixed<82, -(27), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<77, -(((27) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 6, 77, 72>(ap_ufixed<77, -(32), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<72, -(((32) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'double pow_reduce::pow_generic<double>(double, double)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:292:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'double pow_reduce::pow_generic<double>(double, double)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:292:0)
+INFO: [HLS 214-178] Inlining function 'int generic_isinf<double>(double)' into 'double pow_reduce::pow_generic<double>(double, double)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:292:0)
+INFO: [HLS 214-178] Inlining function 'int generic_isnan<double>(double)' into 'double pow_reduce::pow_generic<double>(double, double)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:292:0)
+INFO: [HLS 214-178] Inlining function 'pow_reduce::pow_traits<double>::exp_Z1P_m_1(ap_ufixed<51, -8, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'double pow_reduce::pow_generic<double>(double, double)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:292:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::mantissa() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::__signbit() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' into 'int generic_cast_IEEE754<int, double>(double, bool)' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, double>(double, bool)' into '__hls_fptosi_double_i32' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:55:0)
+INFO: [HLS 214-178] Inlining function 'pow' into 'ImageTransform' (HLS_examen/sources/hls_examen.c:8:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_double_i32' into 'ImageTransform' (HLS_examen/sources/hls_examen.c:8:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_53_6> at HLS_examen/sources/hls_examen.c:53:38 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_35_4> at HLS_examen/sources/hls_examen.c:35:38 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_64_8> at HLS_examen/sources/hls_examen.c:64:38 
+INFO: [HLS 214-115] Multiple burst reads of length 3 and bit width 8 has been inferred on bundle 'input_r'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (HLS_examen/sources/hls_examen.c:37:33)
+INFO: [HLS 214-115] Multiple burst writes of length 3 and bit width 8 has been inferred on bundle 'output_r'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (HLS_examen/sources/hls_examen.c:53:91)
+INFO: [HLS 214-115] Multiple burst reads of length 3 and bit width 8 has been inferred on bundle 'input_r'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (HLS_examen/sources/hls_examen.c:66:46)
+INFO: [HLS 214-115] Multiple burst writes of length 3 and bit width 8 has been inferred on bundle 'output_r'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (HLS_examen/sources/hls_examen.c:64:91)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 9.685 seconds; current allocated memory: 120.238 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.002 seconds; current allocated memory: 120.242 MB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top ImageTransform -deadargelim -mem2reg -instcombine -dce -presyn-prepare -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.0.bc -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 0.323 sec.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.347 seconds; current allocated memory: 131.504 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.1.bc -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'pow_reduce::pow_generic<double>' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:383) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::log_range_reduction<71>' into 'pow_reduce::pow_generic<double>' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:519) automatically.
+Command         transform done; 0.128 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.181 seconds; current allocated memory: 138.418 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.g.1.bc to C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -scalar-stream -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -clean-array-spec -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.o.1.bc -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'pow_reduce::pow_generic<double>' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:383) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::log_range_reduction<71>' into 'pow_reduce::pow_generic<double>' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:519) automatically.
+Command         transform done; 0.261 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:661:3) in function 'pow_reduce::pow_generic<double>'... converting 9 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'pow_reduce::pow_generic<double>' (C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:18:3)...7 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'ImageTransform' (HLS_examen/sources/hls_examen.c:7:38)...6 expression(s) balanced.
+Command         transform done; 0.155 sec.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.42 seconds; current allocated memory: 167.703 MB.
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -inst-simplify -inst-rectify -instcombine -adce -deadargelim -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -mem2reg -instcombine -gvn -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dce -dump-loop-dep-to-ir -check-all-ssdm -dump-complexity-metric -cdfg-build C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.o.2.bc -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_34_3'(HLS_examen/sources/hls_examen.c:34:34) and 'VITIS_LOOP_35_4'(HLS_examen/sources/hls_examen.c:35:38) in function 'ImageTransform' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_52_5'(HLS_examen/sources/hls_examen.c:52:34) and 'VITIS_LOOP_53_6'(HLS_examen/sources/hls_examen.c:53:38) in function 'ImageTransform' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_63_7'(HLS_examen/sources/hls_examen.c:63:34) and 'VITIS_LOOP_64_8'(HLS_examen/sources/hls_examen.c:64:38) in function 'ImageTransform' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_34_3' (HLS_examen/sources/hls_examen.c:34:34) in function 'ImageTransform'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_52_5' (HLS_examen/sources/hls_examen.c:52:34) in function 'ImageTransform'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_63_7' (HLS_examen/sources/hls_examen.c:63:34) in function 'ImageTransform'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_26_1' (HLS_examen/sources/hls_examen.c:26:22) in function 'ImageTransform'.
+Execute           auto_get_db
+Command         transform done; 0.379 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 203.598 MB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 1.333 sec.
+Command     elaborate done; 12.61 sec.
+Execute     ap_eval exec zip -j C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Command     ap_eval done; 0.147 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'ImageTransform' ...
+Execute       ap_set_top_model ImageTransform 
+WARNING: [SYN 201-103] Legalizing function name 'pow_generic<double>' to 'pow_generic_double_s'.
+Execute       get_model_list ImageTransform -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model ImageTransform 
+Execute       preproc_iomode -model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+Execute       preproc_iomode -model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+Execute       preproc_iomode -model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+Execute       preproc_iomode -model pow_generic<double> 
+Execute       get_model_list ImageTransform -filter all-wo-channel 
+INFO-FLOW: Model list for configure: pow_generic<double> ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 ImageTransform
+INFO-FLOW: Configuring Module : pow_generic<double> ...
+Execute       set_default_model pow_generic<double> 
+Execute       apply_spec_resource_limit pow_generic<double> 
+INFO-FLOW: Configuring Module : ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 ...
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+Execute       apply_spec_resource_limit ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+INFO-FLOW: Configuring Module : ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 ...
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+Execute       apply_spec_resource_limit ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+INFO-FLOW: Configuring Module : ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 ...
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+Execute       apply_spec_resource_limit ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+INFO-FLOW: Configuring Module : ImageTransform ...
+Execute       set_default_model ImageTransform 
+Execute       apply_spec_resource_limit ImageTransform 
+INFO-FLOW: Model list for preprocess: pow_generic<double> ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 ImageTransform
+INFO-FLOW: Preprocessing Module: pow_generic<double> ...
+Execute       set_default_model pow_generic<double> 
+Execute       cdfg_preprocess -model pow_generic<double> 
+Execute       rtl_gen_preprocess pow_generic<double> 
+INFO-FLOW: Preprocessing Module: ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 ...
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+Execute       cdfg_preprocess -model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+Execute       rtl_gen_preprocess ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+INFO-FLOW: Preprocessing Module: ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 ...
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+Execute       cdfg_preprocess -model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+Execute       rtl_gen_preprocess ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+INFO-FLOW: Preprocessing Module: ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 ...
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+Execute       cdfg_preprocess -model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+Execute       rtl_gen_preprocess ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+INFO-FLOW: Preprocessing Module: ImageTransform ...
+Execute       set_default_model ImageTransform 
+Execute       cdfg_preprocess -model ImageTransform 
+Execute       rtl_gen_preprocess ImageTransform 
+INFO-FLOW: Model list for synthesis: pow_generic<double> ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 ImageTransform
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pow_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model pow_generic<double> 
+Execute       schedule -model pow_generic<double> 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln563) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining function 'pow_generic<double>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 70, function 'pow_generic<double>'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.432 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.65 seconds; current allocated memory: 210.906 MB.
+Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/pow_generic_double_s.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/pow_generic_double_s.sched.adb -f 
+INFO-FLOW: Finish scheduling pow_generic<double>.
+Execute       set_default_model pow_generic<double> 
+Execute       bind -model pow_generic<double> 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.159 seconds; current allocated memory: 212.688 MB.
+Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/pow_generic_double_s.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/pow_generic_double_s.bind.adb -f 
+INFO-FLOW: Finish binding pow_generic<double>.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+Execute       schedule -model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_63_7_VITIS_LOOP_64_8'.
+WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8' (loop 'VITIS_LOOP_63_7_VITIS_LOOP_64_8'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation 64 bit ('add_ln64_3', HLS_examen/sources/hls_examen.c:64) and 'icmp' operation 1 bit ('icmp_ln64', HLS_examen/sources/hls_examen.c:64).
+WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8' (loop 'VITIS_LOOP_63_7_VITIS_LOOP_64_8'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('input_r_addr_read_2', HLS_examen/sources/hls_examen.c:66) on port 'input_r' (HLS_examen/sources/hls_examen.c:66) and bus read operation ('input_r_addr_read', HLS_examen/sources/hls_examen.c:66) on port 'input_r' (HLS_examen/sources/hls_examen.c:66).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 22, loop 'VITIS_LOOP_63_7_VITIS_LOOP_64_8'
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.101 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 213.449 MB.
+Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.sched.adb -f 
+INFO-FLOW: Finish scheduling ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+Execute       bind -model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.072 seconds; current allocated memory: 213.527 MB.
+Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.bind.adb -f 
+INFO-FLOW: Finish binding ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+Execute       schedule -model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_34_3_VITIS_LOOP_35_4'.
+WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4' (loop 'VITIS_LOOP_34_3_VITIS_LOOP_35_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation 64 bit ('add_ln35_2', HLS_examen/sources/hls_examen.c:35) and 'icmp' operation 1 bit ('icmp_ln35', HLS_examen/sources/hls_examen.c:35).
+WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4' (loop 'VITIS_LOOP_34_3_VITIS_LOOP_35_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('input_r_addr_read_2', HLS_examen/sources/hls_examen.c:37) on port 'input_r' (HLS_examen/sources/hls_examen.c:37) and bus read operation ('input_r_addr_read', HLS_examen/sources/hls_examen.c:37) on port 'input_r' (HLS_examen/sources/hls_examen.c:37).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 17, loop 'VITIS_LOOP_34_3_VITIS_LOOP_35_4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.159 seconds; current allocated memory: 214.141 MB.
+Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.sched.adb -f 
+INFO-FLOW: Finish scheduling ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+Execute       bind -model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.088 seconds; current allocated memory: 214.172 MB.
+Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.bind.adb -f 
+INFO-FLOW: Finish binding ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+Execute       schedule -model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_52_5_VITIS_LOOP_53_6'.
+WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6' (loop 'VITIS_LOOP_52_5_VITIS_LOOP_53_6'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation 64 bit ('add_ln53_2', HLS_examen/sources/hls_examen.c:53) and 'icmp' operation 1 bit ('icmp_ln53', HLS_examen/sources/hls_examen.c:53).
+WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6' (loop 'VITIS_LOOP_52_5_VITIS_LOOP_53_6'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus write operation ('output_r_addr_write_ln53', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53) and bus write operation ('output_r_addr_write_ln53', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 14, loop 'VITIS_LOOP_52_5_VITIS_LOOP_53_6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.161 seconds; current allocated memory: 214.762 MB.
+Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.sched.adb -f 
+INFO-FLOW: Finish scheduling ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.
+Execute       set_default_model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+Execute       bind -model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.087 seconds; current allocated memory: 214.859 MB.
+Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.bind.adb -f 
+INFO-FLOW: Finish binding ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'ImageTransform' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model ImageTransform 
+Execute       schedule -model ImageTransform 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln28) to 3 in order to utilize available DSP registers.
+WARNING: [HLS 200-871] Estimated clock period (6.442 ns) exceeds the target (target clock period: 8.000 ns, clock uncertainty: 2.160 ns, effective delay budget: 5.840 ns).
+WARNING: [HLS 200-1016] The critical path in module 'ImageTransform' consists of the following:
+	'sitodp' operation 64 bit ('x', HLS_examen/sources/hls_examen.c:26) [78]  (6.442 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.217 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.281 seconds; current allocated memory: 217.195 MB.
+Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.sched.adb -f 
+INFO-FLOW: Finish scheduling ImageTransform.
+Execute       set_default_model ImageTransform 
+Execute       bind -model ImageTransform 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.169 seconds; current allocated memory: 219.004 MB.
+Execute       syn_report -verbosereport -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.bind.adb -f 
+INFO-FLOW: Finish binding ImageTransform.
+Execute       get_model_list ImageTransform -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess pow_generic<double> 
+Execute       rtl_gen_preprocess ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+Execute       rtl_gen_preprocess ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+Execute       rtl_gen_preprocess ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+Execute       rtl_gen_preprocess ImageTransform 
+INFO-FLOW: Model list for RTL generation: pow_generic<double> ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 ImageTransform
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pow_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model pow_generic<double> -top_prefix ImageTransform_ -sub_prefix ImageTransform_ -mg_file C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/pow_generic_double_s.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_inverse_lut_table_pow_0_5_64_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_inverse_lut_table_powbkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_log0_lut_table_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_log0_lut_table_array_ROM_cud' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_4_16_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_dEe' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_6_64_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_eOg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12_6_64_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12fYi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17_6_64_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17g8j' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22_6_64_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22hbi' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27_6_64_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27ibs' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32_6_64_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32jbC' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arkbM' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_arralbW' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arramb6' due to the length limit 80
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'pow_generic_double_s' pipeline 'pow_generic<double>' pipeline type 'function pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'pow_generic_double_s' is 12733 from HDL expression: ((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_ce))
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_15ns_19s_31_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_12s_80ns_90_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_13s_71s_71_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_40ns_40ns_80_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_43ns_36ns_79_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_49ns_44ns_93_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_50ns_50ns_100_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_54s_6ns_54_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_71ns_4ns_75_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_73ns_6ns_79_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_77ns_6ns_83_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_82ns_6ns_88_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_83ns_6ns_89_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_87ns_6ns_93_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_92ns_6ns_98_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pow_generic_double_s'.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_inverse_lut_table_powbkb' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log0_lut_table_array_ROM_cud' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_dEe' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_eOg' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12fYi' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17g8j' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22hbi' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27ibs' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32jbC' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arkbM' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_arralbW' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arramb6' using auto ROMs.
+Command       create_rtl_model done; 0.937 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.118 seconds; current allocated memory: 226.812 MB.
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.rtl_wrap.cfg.tcl 
+Execute       gen_rtl pow_generic<double> -style xilinx -f -lang vhdl -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/vhdl/ImageTransform_pow_generic_double_s 
+Execute       gen_rtl pow_generic<double> -style xilinx -f -lang vlog -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/verilog/ImageTransform_pow_generic_double_s 
+Execute       syn_report -csynth -model pow_generic<double> -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/pow_generic_double_s_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model pow_generic<double> -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/pow_generic_double_s_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model pow_generic<double> -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/pow_generic_double_s.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model pow_generic<double> -f -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/pow_generic_double_s.adb 
+Execute       db_write -model pow_generic<double> -bindview -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info pow_generic<double> -p C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/pow_generic_double_s 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 -top_prefix ImageTransform_ -sub_prefix ImageTransform_ -mg_file C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8' pipeline 'VITIS_LOOP_63_7_VITIS_LOOP_64_8' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.527 seconds; current allocated memory: 233.656 MB.
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.rtl_wrap.cfg.tcl 
+Execute       gen_rtl ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 -style xilinx -f -lang vhdl -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/vhdl/ImageTransform_ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+Execute       gen_rtl ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 -style xilinx -f -lang vlog -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/verilog/ImageTransform_ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+Execute       syn_report -csynth -model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 -f -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.adb 
+Execute       db_write -model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 -bindview -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 -p C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 -top_prefix ImageTransform_ -sub_prefix ImageTransform_ -mg_file C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4' pipeline 'VITIS_LOOP_34_3_VITIS_LOOP_35_4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.183 seconds; current allocated memory: 235.238 MB.
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.rtl_wrap.cfg.tcl 
+Execute       gen_rtl ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 -style xilinx -f -lang vhdl -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/vhdl/ImageTransform_ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+Execute       gen_rtl ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 -style xilinx -f -lang vlog -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/verilog/ImageTransform_ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+Execute       syn_report -csynth -model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 -f -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.adb 
+Execute       db_write -model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 -bindview -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 -p C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 -top_prefix ImageTransform_ -sub_prefix ImageTransform_ -mg_file C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6' pipeline 'VITIS_LOOP_52_5_VITIS_LOOP_53_6' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.192 seconds; current allocated memory: 237.199 MB.
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.rtl_wrap.cfg.tcl 
+Execute       gen_rtl ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 -style xilinx -f -lang vhdl -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/vhdl/ImageTransform_ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+Execute       gen_rtl ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 -style xilinx -f -lang vlog -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/verilog/ImageTransform_ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+Execute       syn_report -csynth -model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 -f -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.adb 
+Execute       db_write -model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 -bindview -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 -p C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'ImageTransform' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model ImageTransform -top_prefix  -sub_prefix ImageTransform_ -mg_file C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ImageTransform/input_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ImageTransform/output_r' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ImageTransform/imageRGBA' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ImageTransform/output_r_offset' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ImageTransform/centerX' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'ImageTransform/centerY' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'ImageTransform' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'centerX', 'centerY' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Bundling port 'imageRGBA' and 'output_r_offset' to AXI-Lite port control_r.
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_8_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dsqrt_64ns_64ns_64_57_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_6ns_6ns_21ns_21_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_11s_11s_22_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_64ns_64ns_128_3_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_6ns_16ns_21_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sdiv_32ns_22s_8_36_seq_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitodp_32ns_64_7_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'ImageTransform'.
+Command       create_rtl_model done; 0.713 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.855 seconds; current allocated memory: 244.398 MB.
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.rtl_wrap.cfg.tcl 
+Execute       gen_rtl ImageTransform -istop -style xilinx -f -lang vhdl -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/vhdl/ImageTransform 
+Execute       gen_rtl ImageTransform -istop -style xilinx -f -lang vlog -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/verilog/ImageTransform 
+Execute       syn_report -csynth -model ImageTransform -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/ImageTransform_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model ImageTransform -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/ImageTransform_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model ImageTransform -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model ImageTransform -f -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.adb 
+Execute       db_write -model ImageTransform -bindview -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info ImageTransform -p C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform 
+Execute       export_constraint_db -f -tool general -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.constraint.tcl 
+Execute       syn_report -designview -model ImageTransform -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.design.xml 
+Execute       syn_report -csynthDesign -model ImageTransform -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth.rpt -MHOut C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/kernel_module_hierarchy.tcl 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -wcfg -model ImageTransform -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model ImageTransform -o C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.protoinst 
+Execute       sc_get_clocks ImageTransform 
+Execute       sc_get_portdomain ImageTransform 
+INFO-FLOW: Model list for RTL component generation: pow_generic<double> ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 ImageTransform
+INFO-FLOW: Handling components in module [pow_generic_double_s] ... 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/pow_generic_double_s.compgen.tcl 
+INFO-FLOW: Found component ImageTransform_mul_40ns_40ns_80_3_1.
+INFO-FLOW: Append model ImageTransform_mul_40ns_40ns_80_3_1
+INFO-FLOW: Found component ImageTransform_mul_49ns_44ns_93_5_1.
+INFO-FLOW: Append model ImageTransform_mul_49ns_44ns_93_5_1
+INFO-FLOW: Found component ImageTransform_mul_50ns_50ns_100_5_1.
+INFO-FLOW: Append model ImageTransform_mul_50ns_50ns_100_5_1
+INFO-FLOW: Found component ImageTransform_mul_54s_6ns_54_5_1.
+INFO-FLOW: Append model ImageTransform_mul_54s_6ns_54_5_1
+INFO-FLOW: Found component ImageTransform_mul_12s_80ns_90_3_1.
+INFO-FLOW: Append model ImageTransform_mul_12s_80ns_90_3_1
+INFO-FLOW: Found component ImageTransform_mul_13s_71s_71_3_1.
+INFO-FLOW: Append model ImageTransform_mul_13s_71s_71_3_1
+INFO-FLOW: Found component ImageTransform_mul_43ns_36ns_79_3_1.
+INFO-FLOW: Append model ImageTransform_mul_43ns_36ns_79_3_1
+INFO-FLOW: Found component ImageTransform_mul_73ns_6ns_79_3_1.
+INFO-FLOW: Append model ImageTransform_mul_73ns_6ns_79_3_1
+INFO-FLOW: Found component ImageTransform_mul_77ns_6ns_83_3_1.
+INFO-FLOW: Append model ImageTransform_mul_77ns_6ns_83_3_1
+INFO-FLOW: Found component ImageTransform_mul_82ns_6ns_88_3_1.
+INFO-FLOW: Append model ImageTransform_mul_82ns_6ns_88_3_1
+INFO-FLOW: Found component ImageTransform_mul_83ns_6ns_89_3_1.
+INFO-FLOW: Append model ImageTransform_mul_83ns_6ns_89_3_1
+INFO-FLOW: Found component ImageTransform_mul_87ns_6ns_93_3_1.
+INFO-FLOW: Append model ImageTransform_mul_87ns_6ns_93_3_1
+INFO-FLOW: Found component ImageTransform_mul_92ns_6ns_98_3_1.
+INFO-FLOW: Append model ImageTransform_mul_92ns_6ns_98_3_1
+INFO-FLOW: Found component ImageTransform_mul_71ns_4ns_75_3_1.
+INFO-FLOW: Append model ImageTransform_mul_71ns_4ns_75_3_1
+INFO-FLOW: Found component ImageTransform_mac_muladd_16s_15ns_19s_31_4_1.
+INFO-FLOW: Append model ImageTransform_mac_muladd_16s_15ns_19s_31_4_1
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_inverse_lut_table_powbkb.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_inverse_lut_table_powbkb
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log0_lut_table_array_ROM_cud.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log0_lut_table_array_ROM_cud
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_dEe.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_dEe
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_eOg.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_eOg
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12fYi.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12fYi
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17g8j.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17g8j
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22hbi.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22hbi
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27ibs.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27ibs
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32jbC.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32jbC
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arkbM.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arkbM
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_arralbW.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_arralbW
+INFO-FLOW: Found component ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arramb6.
+INFO-FLOW: Append model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arramb6
+INFO-FLOW: Handling components in module [ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8] ... 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.compgen.tcl 
+INFO-FLOW: Found component ImageTransform_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model ImageTransform_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4] ... 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.compgen.tcl 
+INFO-FLOW: Found component ImageTransform_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model ImageTransform_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6] ... 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.compgen.tcl 
+INFO-FLOW: Found component ImageTransform_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model ImageTransform_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [ImageTransform] ... 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.compgen.tcl 
+INFO-FLOW: Found component ImageTransform_dadd_64ns_64ns_64_8_full_dsp_1.
+INFO-FLOW: Append model ImageTransform_dadd_64ns_64ns_64_8_full_dsp_1
+INFO-FLOW: Found component ImageTransform_sitodp_32ns_64_7_no_dsp_1.
+INFO-FLOW: Append model ImageTransform_sitodp_32ns_64_7_no_dsp_1
+INFO-FLOW: Found component ImageTransform_dsqrt_64ns_64ns_64_57_no_dsp_1.
+INFO-FLOW: Append model ImageTransform_dsqrt_64ns_64ns_64_57_no_dsp_1
+INFO-FLOW: Found component ImageTransform_mul_64ns_64ns_128_3_1.
+INFO-FLOW: Append model ImageTransform_mul_64ns_64ns_128_3_1
+INFO-FLOW: Found component ImageTransform_mul_6ns_16ns_21_1_1.
+INFO-FLOW: Append model ImageTransform_mul_6ns_16ns_21_1_1
+INFO-FLOW: Found component ImageTransform_mul_11s_11s_22_1_1.
+INFO-FLOW: Append model ImageTransform_mul_11s_11s_22_1_1
+INFO-FLOW: Found component ImageTransform_sdiv_32ns_22s_8_36_seq_1.
+INFO-FLOW: Append model ImageTransform_sdiv_32ns_22s_8_36_seq_1
+INFO-FLOW: Found component ImageTransform_mac_muladd_6ns_6ns_21ns_21_4_1.
+INFO-FLOW: Append model ImageTransform_mac_muladd_6ns_6ns_21ns_21_4_1
+INFO-FLOW: Found component ImageTransform_input_r_m_axi.
+INFO-FLOW: Append model ImageTransform_input_r_m_axi
+INFO-FLOW: Found component ImageTransform_output_r_m_axi.
+INFO-FLOW: Append model ImageTransform_output_r_m_axi
+INFO-FLOW: Found component ImageTransform_control_s_axi.
+INFO-FLOW: Append model ImageTransform_control_s_axi
+INFO-FLOW: Found component ImageTransform_control_r_s_axi.
+INFO-FLOW: Append model ImageTransform_control_r_s_axi
+INFO-FLOW: Append model pow_generic_double_s
+INFO-FLOW: Append model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8
+INFO-FLOW: Append model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4
+INFO-FLOW: Append model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6
+INFO-FLOW: Append model ImageTransform
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: ImageTransform_mul_40ns_40ns_80_3_1 ImageTransform_mul_49ns_44ns_93_5_1 ImageTransform_mul_50ns_50ns_100_5_1 ImageTransform_mul_54s_6ns_54_5_1 ImageTransform_mul_12s_80ns_90_3_1 ImageTransform_mul_13s_71s_71_3_1 ImageTransform_mul_43ns_36ns_79_3_1 ImageTransform_mul_73ns_6ns_79_3_1 ImageTransform_mul_77ns_6ns_83_3_1 ImageTransform_mul_82ns_6ns_88_3_1 ImageTransform_mul_83ns_6ns_89_3_1 ImageTransform_mul_87ns_6ns_93_3_1 ImageTransform_mul_92ns_6ns_98_3_1 ImageTransform_mul_71ns_4ns_75_3_1 ImageTransform_mac_muladd_16s_15ns_19s_31_4_1 ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_inverse_lut_table_powbkb ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log0_lut_table_array_ROM_cud ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_dEe ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_eOg ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12fYi ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17g8j ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22hbi ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27ibs ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32jbC ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arkbM ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_arralbW ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arramb6 ImageTransform_flow_control_loop_pipe_sequential_init ImageTransform_flow_control_loop_pipe_sequential_init ImageTransform_flow_control_loop_pipe_sequential_init ImageTransform_dadd_64ns_64ns_64_8_full_dsp_1 ImageTransform_sitodp_32ns_64_7_no_dsp_1 ImageTransform_dsqrt_64ns_64ns_64_57_no_dsp_1 ImageTransform_mul_64ns_64ns_128_3_1 ImageTransform_mul_6ns_16ns_21_1_1 ImageTransform_mul_11s_11s_22_1_1 ImageTransform_sdiv_32ns_22s_8_36_seq_1 ImageTransform_mac_muladd_6ns_6ns_21ns_21_4_1 ImageTransform_input_r_m_axi ImageTransform_output_r_m_axi ImageTransform_control_s_axi ImageTransform_control_r_s_axi pow_generic_double_s ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 ImageTransform
+INFO-FLOW: Generating C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model ImageTransform_mul_40ns_40ns_80_3_1
+INFO-FLOW: To file: write model ImageTransform_mul_49ns_44ns_93_5_1
+INFO-FLOW: To file: write model ImageTransform_mul_50ns_50ns_100_5_1
+INFO-FLOW: To file: write model ImageTransform_mul_54s_6ns_54_5_1
+INFO-FLOW: To file: write model ImageTransform_mul_12s_80ns_90_3_1
+INFO-FLOW: To file: write model ImageTransform_mul_13s_71s_71_3_1
+INFO-FLOW: To file: write model ImageTransform_mul_43ns_36ns_79_3_1
+INFO-FLOW: To file: write model ImageTransform_mul_73ns_6ns_79_3_1
+INFO-FLOW: To file: write model ImageTransform_mul_77ns_6ns_83_3_1
+INFO-FLOW: To file: write model ImageTransform_mul_82ns_6ns_88_3_1
+INFO-FLOW: To file: write model ImageTransform_mul_83ns_6ns_89_3_1
+INFO-FLOW: To file: write model ImageTransform_mul_87ns_6ns_93_3_1
+INFO-FLOW: To file: write model ImageTransform_mul_92ns_6ns_98_3_1
+INFO-FLOW: To file: write model ImageTransform_mul_71ns_4ns_75_3_1
+INFO-FLOW: To file: write model ImageTransform_mac_muladd_16s_15ns_19s_31_4_1
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_inverse_lut_table_powbkb
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log0_lut_table_array_ROM_cud
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_dEe
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_eOg
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12fYi
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17g8j
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22hbi
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27ibs
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32jbC
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arkbM
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_arralbW
+INFO-FLOW: To file: write model ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arramb6
+INFO-FLOW: To file: write model ImageTransform_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model ImageTransform_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model ImageTransform_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model ImageTransform_dadd_64ns_64ns_64_8_full_dsp_1
+INFO-FLOW: To file: write model ImageTransform_sitodp_32ns_64_7_no_dsp_1
+INFO-FLOW: To file: write model ImageTransform_dsqrt_64ns_64ns_64_57_no_dsp_1
+INFO-FLOW: To file: write model ImageTransform_mul_64ns_64ns_128_3_1
+INFO-FLOW: To file: write model ImageTransform_mul_6ns_16ns_21_1_1
+INFO-FLOW: To file: write model ImageTransform_mul_11s_11s_22_1_1
+INFO-FLOW: To file: write model ImageTransform_sdiv_32ns_22s_8_36_seq_1
+INFO-FLOW: To file: write model ImageTransform_mac_muladd_6ns_6ns_21ns_21_4_1
+INFO-FLOW: To file: write model ImageTransform_input_r_m_axi
+INFO-FLOW: To file: write model ImageTransform_output_r_m_axi
+INFO-FLOW: To file: write model ImageTransform_control_s_axi
+INFO-FLOW: To file: write model ImageTransform_control_r_s_axi
+INFO-FLOW: To file: write model pow_generic_double_s
+INFO-FLOW: To file: write model ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8
+INFO-FLOW: To file: write model ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4
+INFO-FLOW: To file: write model ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6
+INFO-FLOW: To file: write model ImageTransform
+INFO-FLOW: Generating C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/global.setting.tcl
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=8.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/vhdl' dstVlogDir='C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/vlog' tclDir='C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db' modelList='ImageTransform_mul_40ns_40ns_80_3_1
+ImageTransform_mul_49ns_44ns_93_5_1
+ImageTransform_mul_50ns_50ns_100_5_1
+ImageTransform_mul_54s_6ns_54_5_1
+ImageTransform_mul_12s_80ns_90_3_1
+ImageTransform_mul_13s_71s_71_3_1
+ImageTransform_mul_43ns_36ns_79_3_1
+ImageTransform_mul_73ns_6ns_79_3_1
+ImageTransform_mul_77ns_6ns_83_3_1
+ImageTransform_mul_82ns_6ns_88_3_1
+ImageTransform_mul_83ns_6ns_89_3_1
+ImageTransform_mul_87ns_6ns_93_3_1
+ImageTransform_mul_92ns_6ns_98_3_1
+ImageTransform_mul_71ns_4ns_75_3_1
+ImageTransform_mac_muladd_16s_15ns_19s_31_4_1
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_inverse_lut_table_powbkb
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log0_lut_table_array_ROM_cud
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_dEe
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_eOg
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12fYi
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17g8j
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22hbi
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27ibs
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32jbC
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arkbM
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_arralbW
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arramb6
+ImageTransform_flow_control_loop_pipe_sequential_init
+ImageTransform_flow_control_loop_pipe_sequential_init
+ImageTransform_flow_control_loop_pipe_sequential_init
+ImageTransform_dadd_64ns_64ns_64_8_full_dsp_1
+ImageTransform_sitodp_32ns_64_7_no_dsp_1
+ImageTransform_dsqrt_64ns_64ns_64_57_no_dsp_1
+ImageTransform_mul_64ns_64ns_128_3_1
+ImageTransform_mul_6ns_16ns_21_1_1
+ImageTransform_mul_11s_11s_22_1_1
+ImageTransform_sdiv_32ns_22s_8_36_seq_1
+ImageTransform_mac_muladd_6ns_6ns_21ns_21_4_1
+ImageTransform_input_r_m_axi
+ImageTransform_output_r_m_axi
+ImageTransform_control_s_axi
+ImageTransform_control_r_s_axi
+pow_generic_double_s
+ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8
+ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4
+ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6
+ImageTransform
+' expOnly='0'
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/pow_generic_double_s.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.compgen.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.compgen.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.compgen.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         source ./control.slave.tcl 
+Execute         source ./control.slave.tcl 
+Execute         source ./control_r.slave.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.718 seconds; current allocated memory: 251.879 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='ImageTransform_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0.2 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='ImageTransform_mul_40ns_40ns_80_3_1
+ImageTransform_mul_49ns_44ns_93_5_1
+ImageTransform_mul_50ns_50ns_100_5_1
+ImageTransform_mul_54s_6ns_54_5_1
+ImageTransform_mul_12s_80ns_90_3_1
+ImageTransform_mul_13s_71s_71_3_1
+ImageTransform_mul_43ns_36ns_79_3_1
+ImageTransform_mul_73ns_6ns_79_3_1
+ImageTransform_mul_77ns_6ns_83_3_1
+ImageTransform_mul_82ns_6ns_88_3_1
+ImageTransform_mul_83ns_6ns_89_3_1
+ImageTransform_mul_87ns_6ns_93_3_1
+ImageTransform_mul_92ns_6ns_98_3_1
+ImageTransform_mul_71ns_4ns_75_3_1
+ImageTransform_mac_muladd_16s_15ns_19s_31_4_1
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_inverse_lut_table_powbkb
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log0_lut_table_array_ROM_cud
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_dEe
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_eOg
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12fYi
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17g8j
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22hbi
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27ibs
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32jbC
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_arkbM
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_arralbW
+ImageTransform_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arramb6
+ImageTransform_flow_control_loop_pipe_sequential_init
+ImageTransform_flow_control_loop_pipe_sequential_init
+ImageTransform_flow_control_loop_pipe_sequential_init
+ImageTransform_dadd_64ns_64ns_64_8_full_dsp_1
+ImageTransform_sitodp_32ns_64_7_no_dsp_1
+ImageTransform_dsqrt_64ns_64ns_64_57_no_dsp_1
+ImageTransform_mul_64ns_64ns_128_3_1
+ImageTransform_mul_6ns_16ns_21_1_1
+ImageTransform_mul_11s_11s_22_1_1
+ImageTransform_sdiv_32ns_22s_8_36_seq_1
+ImageTransform_mac_muladd_6ns_6ns_21ns_21_4_1
+ImageTransform_input_r_m_axi
+ImageTransform_output_r_m_axi
+ImageTransform_control_s_axi
+ImageTransform_control_r_s_axi
+pow_generic_double_s
+ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8
+ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4
+ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6
+ImageTransform
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/top-io-be.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.tbgen.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.compgen.dataonly.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.compgen.dataonly.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.compgen.dataonly.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.compgen.dataonly.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.rtl_wrap.cfg.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.compgen.dataonly.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/pow_generic_double_s.tbgen.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8.tbgen.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4.tbgen.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6.tbgen.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.tbgen.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/ImageTransform.constraint.tcl 
+Execute       sc_get_clocks ImageTransform 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/impl/misc/ImageTransform_dadd_64ns_64ns_64_8_full_dsp_1_ip.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/impl/misc/ImageTransform_dsqrt_64ns_64ns_64_57_no_dsp_1_ip.tcl 
+Execute       source C:/02_PXL/HAC_PXL_2024/Examen/HLS_examen/solution1/impl/misc/ImageTransform_sitodp_32ns_64_7_no_dsp_1_ip.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_r_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control_r DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME input_r_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME input_r DSP 0 BRAM 2 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME output_r_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME output_r DSP 0 BRAM 2 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }}} report_dict {TOPINST ImageTransform MODULE2INSTS {ImageTransform ImageTransform pow_generic_double_s {grp_pow_generic_double_s_fu_234 grp_pow_generic_double_s_fu_263} ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 grp_ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8_fu_292 ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 grp_ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4_fu_305 ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 grp_ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6_fu_318} INST2MODULE {ImageTransform ImageTransform grp_pow_generic_double_s_fu_234 pow_generic_double_s grp_pow_generic_double_s_fu_263 pow_generic_double_s grp_ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8_fu_292 ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 grp_ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4_fu_305 ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 grp_ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6_fu_318 ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6} INSTDATA {ImageTransform {DEPTH 1 CHILDREN {grp_pow_generic_double_s_fu_234 grp_pow_generic_double_s_fu_263 grp_ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8_fu_292 grp_ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4_fu_305 grp_ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6_fu_318}} grp_pow_generic_double_s_fu_234 {DEPTH 2 CHILDREN {}} grp_pow_generic_double_s_fu_263 {DEPTH 2 CHILDREN {}} grp_ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8_fu_292 {DEPTH 2 CHILDREN {}} grp_ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4_fu_305 {DEPTH 2 CHILDREN {}} grp_ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6_fu_318 {DEPTH 2 CHILDREN {}}} MODULEDATA {pow_generic_double_s {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME b_exp_fu_634_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:486} VARIABLE b_exp LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME b_exp_1_fu_702_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:486} VARIABLE b_exp_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_12s_80ns_90_3_1_U5 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:494} VARIABLE Elog2 LOOP {} BUNDLEDNAME {} DSP 5 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_54s_6ns_54_5_1_U4 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:516} VARIABLE mul_ln516 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_71ns_4ns_75_3_1_U14 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE mul_ln44 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_73ns_6ns_79_3_1_U8 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE mul_ln44_1 LOOP {} BUNDLEDNAME {} DSP 4 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln44_2_fu_1016_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE add_ln44_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_83ns_6ns_89_3_1_U11 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE mul_ln44_2 LOOP {} BUNDLEDNAME {} DSP 5 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln44_2_fu_1042_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE sub_ln44_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln44_3_fu_1103_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE add_ln44_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_92ns_6ns_98_3_1_U13 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE mul_ln44_3 LOOP {} BUNDLEDNAME {} DSP 5 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln44_3_fu_1128_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE sub_ln44_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln44_4_fu_1185_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE add_ln44_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_87ns_6ns_93_3_1_U12 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE mul_ln44_4 LOOP {} BUNDLEDNAME {} DSP 5 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln44_4_fu_1210_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE sub_ln44_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln44_5_fu_1267_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE add_ln44_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_82ns_6ns_88_3_1_U10 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE mul_ln44_5 LOOP {} BUNDLEDNAME {} DSP 5 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln44_5_fu_1292_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE sub_ln44_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln44_6_fu_1349_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE add_ln44_6 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_77ns_6ns_83_3_1_U9 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE mul_ln44_6 LOOP {} BUNDLEDNAME {} DSP 4 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln44_6_fu_1402_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:44} VARIABLE sub_ln44_6 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln209_fu_1452_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:209} VARIABLE add_ln209 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln209_1_fu_1457_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:209} VARIABLE add_ln209_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln209_2_fu_1483_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:209} VARIABLE add_ln209_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln209_3_fu_1463_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:209} VARIABLE add_ln209_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln209_4_fu_1469_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:209} VARIABLE add_ln209_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln209_5_fu_1491_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:209} VARIABLE add_ln209_5 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME log_sum_1_fu_1499_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:209} VARIABLE log_sum_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_40ns_40ns_80_3_1_U1 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:522} VARIABLE mul_ln522 LOOP {} BUNDLEDNAME {} DSP 5 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln522_fu_1528_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:522} VARIABLE sub_ln522 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln525_fu_1554_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:525} VARIABLE add_ln525 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln525_1_fu_1563_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:525} VARIABLE add_ln525_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp_slice LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mac_muladd_16s_15ns_19s_31_4_1_U15 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:563} VARIABLE mul_ln563 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp_slice LATENCY 3 OPTYPE add PRAGMA {} RTLNAME mac_muladd_16s_15ns_19s_31_4_1_U15 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:563} VARIABLE add_ln563 LOOP {} BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln563_1_fu_1635_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:563} VARIABLE add_ln563_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_13s_71s_71_3_1_U6 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:568} VARIABLE mul_ln568 LOOP {} BUNDLEDNAME {} DSP 4 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME m_diff_fu_1671_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:574} VARIABLE m_diff LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME exp_Z4_m_1_fu_1743_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:250} VARIABLE exp_Z4_m_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_43ns_36ns_79_3_1_U7 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:258} VARIABLE mul_ln258 LOOP {} BUNDLEDNAME {} DSP 6 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln265_fu_1786_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:265} VARIABLE add_ln265 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME exp_Z2P_m_1_fu_1795_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:265} VARIABLE exp_Z2P_m_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_49ns_44ns_93_5_1_U2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:277} VARIABLE mul_ln277 LOOP {} BUNDLEDNAME {} DSP 9 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln280_fu_1845_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:280} VARIABLE add_ln280 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME exp_Z1P_m_1_l_fu_1867_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:280} VARIABLE exp_Z1P_m_1_l LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln616_fu_1901_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:616} VARIABLE add_ln616 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_50ns_50ns_100_5_1_U3 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:616} VARIABLE mul_ln616 LOOP {} BUNDLEDNAME {} DSP 9 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln616_1_fu_1916_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:616} VARIABLE add_ln616_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME r_exp_1_fu_1985_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:624} VARIABLE r_exp_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME out_exp_fu_2047_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:657} VARIABLE out_exp LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_log_inverse_lut_table_pow_0_5_64_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_log_inverse_lut_table_pow_0_5_64_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {6 64 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_log0_lut_table_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_log0_lut_table_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 4 URAM 0 STORAGESUBTYPE {} STORAGESIZE {109 64 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_4_16_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_4_4_16_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 3 URAM 0 STORAGESUBTYPE {} STORAGESIZE {105 16 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_6_64_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_7_6_64_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 3 URAM 0 STORAGESUBTYPE {} STORAGESIZE {102 64 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12_6_64_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_12_6_64_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 3 URAM 0 STORAGESUBTYPE {} STORAGESIZE {97 64 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17_6_64_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_17_6_64_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 3 URAM 0 STORAGESUBTYPE {} STORAGESIZE {92 64 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22_6_64_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_22_6_64_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 3 URAM 0 STORAGESUBTYPE {} STORAGESIZE {87 64 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27_6_64_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_27_6_64_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 3 URAM 0 STORAGESUBTYPE {} STORAGESIZE {82 64 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32_6_64_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_log_lut_table_ap_fixed_32_6_64_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 3 URAM 0 STORAGESUBTYPE {} STORAGESIZE {77 64 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 2 URAM 0 STORAGESUBTYPE {} STORAGESIZE {58 256 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_2p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {26 256 1} STORAGEUSAGE rom_2p DISPNAME {bind_storage rom_2p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_U SOURCE {} VARIABLE pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array LOOP {} BUNDLEDNAME {} DSP 0 BRAM 2 URAM 0 STORAGESUBTYPE {} STORAGESIZE {42 256 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p}}} AREA {DSP 70 BRAM 30 URAM 0}} ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln63_fu_204_p2 SOURCE HLS_examen/sources/hls_examen.c:63 VARIABLE add_ln63 LOOP VITIS_LOOP_63_7_VITIS_LOOP_64_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln63_1_fu_221_p2 SOURCE HLS_examen/sources/hls_examen.c:63 VARIABLE add_ln63_1 LOOP VITIS_LOOP_63_7_VITIS_LOOP_64_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln63_fu_250_p2 SOURCE HLS_examen/sources/hls_examen.c:63 VARIABLE sub_ln63 LOOP VITIS_LOOP_63_7_VITIS_LOOP_64_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln64_fu_262_p2 SOURCE HLS_examen/sources/hls_examen.c:64 VARIABLE sub_ln64 LOOP VITIS_LOOP_63_7_VITIS_LOOP_64_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln64_1_fu_296_p2 SOURCE HLS_examen/sources/hls_examen.c:64 VARIABLE add_ln64_1 LOOP VITIS_LOOP_63_7_VITIS_LOOP_64_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln64_2_fu_300_p2 SOURCE HLS_examen/sources/hls_examen.c:64 VARIABLE add_ln64_2 LOOP VITIS_LOOP_63_7_VITIS_LOOP_64_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln64_3_fu_286_p2 SOURCE HLS_examen/sources/hls_examen.c:64 VARIABLE add_ln64_3 LOOP VITIS_LOOP_63_7_VITIS_LOOP_64_8 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln34_fu_205_p2 SOURCE HLS_examen/sources/hls_examen.c:34 VARIABLE add_ln34 LOOP VITIS_LOOP_34_3_VITIS_LOOP_35_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln34_1_fu_222_p2 SOURCE HLS_examen/sources/hls_examen.c:34 VARIABLE add_ln34_1 LOOP VITIS_LOOP_34_3_VITIS_LOOP_35_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln34_fu_251_p2 SOURCE HLS_examen/sources/hls_examen.c:34 VARIABLE sub_ln34 LOOP VITIS_LOOP_34_3_VITIS_LOOP_35_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sumR_1_fu_313_p2 SOURCE HLS_examen/sources/hls_examen.c:37 VARIABLE sumR_1 LOOP VITIS_LOOP_34_3_VITIS_LOOP_35_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sumG_1_fu_331_p2 SOURCE HLS_examen/sources/hls_examen.c:38 VARIABLE sumG_1 LOOP VITIS_LOOP_34_3_VITIS_LOOP_35_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sumB_1_fu_349_p2 SOURCE HLS_examen/sources/hls_examen.c:39 VARIABLE sumB_1 LOOP VITIS_LOOP_34_3_VITIS_LOOP_35_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_2_fu_281_p2 SOURCE HLS_examen/sources/hls_examen.c:35 VARIABLE add_ln35_2 LOOP VITIS_LOOP_34_3_VITIS_LOOP_35_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln52_fu_195_p2 SOURCE HLS_examen/sources/hls_examen.c:52 VARIABLE add_ln52 LOOP VITIS_LOOP_52_5_VITIS_LOOP_53_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln52_1_fu_212_p2 SOURCE HLS_examen/sources/hls_examen.c:52 VARIABLE add_ln52_1 LOOP VITIS_LOOP_52_5_VITIS_LOOP_53_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln52_fu_241_p2 SOURCE HLS_examen/sources/hls_examen.c:52 VARIABLE sub_ln52 LOOP VITIS_LOOP_52_5_VITIS_LOOP_53_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln53_2_fu_271_p2 SOURCE HLS_examen/sources/hls_examen.c:53 VARIABLE add_ln53_2 LOOP VITIS_LOOP_52_5_VITIS_LOOP_53_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} ImageTransform {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln26_fu_439_p2 SOURCE HLS_examen/sources/hls_examen.c:26 VARIABLE sub_ln26 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln26_1_fu_461_p2 SOURCE HLS_examen/sources/hls_examen.c:26 VARIABLE sub_ln26_1 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME empty_fu_409_p2 SOURCE HLS_examen/sources/hls_examen.c:26 VARIABLE empty LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln26_fu_487_p2 SOURCE HLS_examen/sources/hls_examen.c:26 VARIABLE add_ln26 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln26_1_fu_513_p2 SOURCE HLS_examen/sources/hls_examen.c:26 VARIABLE add_ln26_1 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln26_2_fu_518_p2 SOURCE HLS_examen/sources/hls_examen.c:26 VARIABLE add_ln26_2 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln26_3_fu_542_p2 SOURCE HLS_examen/sources/hls_examen.c:26 VARIABLE add_ln26_3 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln26_2_fu_548_p2 SOURCE HLS_examen/sources/hls_examen.c:26 VARIABLE sub_ln26_2 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln26_3_fu_572_p2 SOURCE HLS_examen/sources/hls_examen.c:26 VARIABLE sub_ln26_3 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln26_4_fu_666_p2 SOURCE HLS_examen/sources/hls_examen.c:26 VARIABLE add_ln26_4 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_6ns_16ns_21_1_1_U72 SOURCE HLS_examen/sources/hls_examen.c:63 VARIABLE mul_ln63 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME p_mid121_fu_582_p2 SOURCE HLS_examen/sources/hls_examen.c:26 VARIABLE p_mid121 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln27_fu_721_p2 SOURCE HLS_examen/sources/hls_examen.c:27 VARIABLE sub_ln27 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln27_1_fu_737_p2 SOURCE HLS_examen/sources/hls_examen.c:27 VARIABLE sub_ln27_1 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_11s_11s_22_1_1_U73 SOURCE HLS_examen/sources/hls_examen.c:31 VARIABLE count LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp_slice LATENCY 3 OPTYPE mul PRAGMA {} RTLNAME mac_muladd_6ns_6ns_21ns_21_4_1_U77 SOURCE HLS_examen/sources/hls_examen.c:28 VARIABLE mul_ln28 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL dsp_slice LATENCY 3 OPTYPE add PRAGMA {} RTLNAME mac_muladd_6ns_6ns_21ns_21_4_1_U77 SOURCE HLS_examen/sources/hls_examen.c:28 VARIABLE add_ln28 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 1 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln28_fu_614_p2 SOURCE HLS_examen/sources/hls_examen.c:28 VARIABLE sub_ln28 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 7 OPTYPE dadd PRAGMA {} RTLNAME dadd_64ns_64ns_64_8_full_dsp_1_U67 SOURCE HLS_examen/sources/hls_examen.c:28 VARIABLE add LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op dadd}} {BINDTYPE op ID {} IMPL fabric LATENCY 56 OPTYPE dsqrt PRAGMA {} RTLNAME dsqrt_64ns_64ns_64_57_no_dsp_1_U70 SOURCE HLS_examen/sources/hls_examen.c:28 VARIABLE dc LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op dsqrt}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln486_fu_784_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:486} VARIABLE add_ln486 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln18_fu_798_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:18} VARIABLE sub_ln18 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME result_2_fu_914_p2 SOURCE {C:\scratch\2023.2\hls_product\689\2023.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59} VARIABLE result_2 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln27_fu_932_p2 SOURCE HLS_examen/sources/hls_examen.c:27 VARIABLE add_ln27 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL dsp LATENCY 2 OPTYPE mul PRAGMA {} RTLNAME mul_64ns_64ns_128_3_1_U71 SOURCE HLS_examen/sources/hls_examen.c:31 VARIABLE mul_ln31 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 16 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln27_1_fu_976_p2 SOURCE HLS_examen/sources/hls_examen.c:27 VARIABLE add_ln27_1 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln27_2_fu_981_p2 SOURCE HLS_examen/sources/hls_examen.c:27 VARIABLE add_ln27_2 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln27_3_fu_986_p2 SOURCE HLS_examen/sources/hls_examen.c:27 VARIABLE add_ln27_3 LOOP VITIS_LOOP_26_1_VITIS_LOOP_27_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 162 BRAM 64 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+Execute       send_msg_by_id INFO @200-1603@%s  and missed bursts 
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.373 seconds; current allocated memory: 263.469 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for ImageTransform.
+INFO: [VLOG 209-307] Generating Verilog RTL for ImageTransform.
+Execute       syn_report -model ImageTransform -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 155.23 MHz
+Command     autosyn done; 8.1 sec.
+Command   csynth_design done; 20.948 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 20.948 seconds; current allocated memory: 148.441 MB.
+Command ap_source done; 21.636 sec.
+Execute cleanup_all 

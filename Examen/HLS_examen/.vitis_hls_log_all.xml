@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="HLS_examen" solutionName="solution1" date="2024-06-14T11:19:43.119+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-1016] The critical path in module 'ImageTransform' consists of the following:&#xD;&#xA;&#x9;'sitodp' operation 64 bit ('x', HLS_examen/sources/hls_examen.c:26) [78]  (6.442 ns)&#xD;&#xA;&#xA;&#xD;&#xA;Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-1016.html" projectName="HLS_examen" solutionName="solution1" date="2024-06-14T11:19:40.635+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-871] Estimated clock period (6.442 ns) exceeds the target (target clock period: 8.000 ns, clock uncertainty: 2.160 ns, effective delay budget: 5.840 ns).&#xD;&#xA;Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-871.html" projectName="HLS_examen" solutionName="solution1" date="2024-06-14T11:19:40.620+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6' (loop 'VITIS_LOOP_52_5_VITIS_LOOP_53_6'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus write operation ('output_r_addr_write_ln53', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53) and bus write operation ('output_r_addr_write_ln53', HLS_examen/sources/hls_examen.c:53) on port 'output_r' (HLS_examen/sources/hls_examen.c:53).&#xD;&#xA;Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-880.html" projectName="HLS_examen" solutionName="solution1" date="2024-06-14T11:19:40.228+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_52_5_VITIS_LOOP_53_6' (loop 'VITIS_LOOP_52_5_VITIS_LOOP_53_6'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation 64 bit ('add_ln53_2', HLS_examen/sources/hls_examen.c:53) and 'icmp' operation 1 bit ('icmp_ln53', HLS_examen/sources/hls_examen.c:53).&#xD;&#xA;Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-880.html" projectName="HLS_examen" solutionName="solution1" date="2024-06-14T11:19:40.213+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4' (loop 'VITIS_LOOP_34_3_VITIS_LOOP_35_4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('input_r_addr_read_2', HLS_examen/sources/hls_examen.c:37) on port 'input_r' (HLS_examen/sources/hls_examen.c:37) and bus read operation ('input_r_addr_read', HLS_examen/sources/hls_examen.c:37) on port 'input_r' (HLS_examen/sources/hls_examen.c:37).&#xD;&#xA;Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-880.html" projectName="HLS_examen" solutionName="solution1" date="2024-06-14T11:19:39.947+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_34_3_VITIS_LOOP_35_4' (loop 'VITIS_LOOP_34_3_VITIS_LOOP_35_4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation 64 bit ('add_ln35_2', HLS_examen/sources/hls_examen.c:35) and 'icmp' operation 1 bit ('icmp_ln35', HLS_examen/sources/hls_examen.c:35).&#xD;&#xA;Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-880.html" projectName="HLS_examen" solutionName="solution1" date="2024-06-14T11:19:39.932+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8' (loop 'VITIS_LOOP_63_7_VITIS_LOOP_64_8'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between bus read operation ('input_r_addr_read_2', HLS_examen/sources/hls_examen.c:66) on port 'input_r' (HLS_examen/sources/hls_examen.c:66) and bus read operation ('input_r_addr_read', HLS_examen/sources/hls_examen.c:66) on port 'input_r' (HLS_examen/sources/hls_examen.c:66).&#xD;&#xA;Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-880.html" projectName="HLS_examen" solutionName="solution1" date="2024-06-14T11:19:39.703+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'ImageTransform_Pipeline_VITIS_LOOP_63_7_VITIS_LOOP_64_8' (loop 'VITIS_LOOP_63_7_VITIS_LOOP_64_8'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'add' operation 64 bit ('add_ln64_3', HLS_examen/sources/hls_examen.c:64) and 'icmp' operation 1 bit ('icmp_ln64', HLS_examen/sources/hls_examen.c:64).&#xD;&#xA;Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=200-880.html" projectName="HLS_examen" solutionName="solution1" date="2024-06-14T11:19:39.689+0200" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'pow_generic&lt;double>' to 'pow_generic_double_s'." projectName="HLS_examen" solutionName="solution1" date="2024-06-14T11:19:38.881+0200" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

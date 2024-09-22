@@ -10,11 +10,11 @@ add_files Convolutie/source/Convolutie.c
 add_files Convolutie/source/Convolutie.h
 add_files Convolutie/source/stb_image.h
 add_files Convolutie/source/stb_image_write.h
-add_files -tb Convolutie/source/Convolutie.h
+add_files -tb Convolutie/source/Convolutie.h -cflags "-Wno-unknown-pragmas"
 add_files -tb Convolutie/source/Convolutie_TB.c -cflags "-Wno-unknown-pragmas"
-add_files -tb Convolutie/source/input.png
-add_files -tb Convolutie/source/stb_image.h
-add_files -tb Convolutie/source/stb_image_write.h
+add_files -tb Convolutie/source/input.png -cflags "-Wno-unknown-pragmas"
+add_files -tb Convolutie/source/stb_image.h -cflags "-Wno-unknown-pragmas"
+add_files -tb Convolutie/source/stb_image_write.h -cflags "-Wno-unknown-pragmas"
 open_solution "solution1" -flow_target vivado
 set_part {xc7z020-clg400-1}
 create_clock -period 8 -name default

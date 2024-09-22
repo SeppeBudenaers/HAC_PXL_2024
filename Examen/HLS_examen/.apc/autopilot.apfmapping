@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="hls_examen.h" path="C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\hls_examen.h"/>
+    <originFiles name="hls_examen.c" path="C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\hls_examen.c"/>
+    <originFiles name="stb_image.h" path="C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\stb_image.h"/>
+    <originFiles name="stb_image_write.h" path="C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\stb_image_write.h"/>
+  </source>
+  <testbench>
+    <originFiles name="hls_examen_tb.c" path="C:\02_PXL\HAC_PXL_2024\Examen\HLS_examen\sources\hls_examen_tb.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
